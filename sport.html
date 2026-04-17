@@ -1,0 +1,1077 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport | News Pulse+</title>
+  <meta name="description" content="Follow sport on News Pulse+ with coverage of football, basketball, combat sports, major events, transfers, and standout performances." />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --card-2:#13233a;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(59,160,255,0.10), transparent 28%),
+        linear-gradient(180deg,#07111f 0%, #081321 35%, #091523 100%);
+      color:var(--text);
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.86);
+      backdrop-filter:blur(12px);
+    }
+    .topbar-inner{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .breaking{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .breaking span{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#02111d;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 12px;
+      border-radius:999px;
+      flex-shrink:0;
+    }
+    .breaking p,.topbar-inner>p{margin:0}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,0.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      flex-shrink:0;
+    }
+    .logo{
+      font-size:1.65rem;
+      font-weight:800;
+      letter-spacing:-0.03em;
+      line-height:1;
+    }
+    .logo span{color:var(--accent-2)}
+    .site-tagline{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:#d8e3f1;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    .lang-switch{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .lang-switch:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+    body{top:0 !important;}
+    .hero{
+      padding:34px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.5fr .95fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .hero-main,
+    .hero-side-card,
+    .section-card,
+    .story-card,
+    .mini-card,
+    .ad-slot{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+
+    .hero-main{
+      overflow:hidden;
+      position:relative;
+      min-height:540px;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg, rgba(7,17,31,0.10) 12%, rgba(7,17,31,0.88) 75%),
+        url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80') center/cover;
+    }
+    .hero-main-content{
+      padding:34px;
+      width:100%;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:16px;
+      font-size:.84rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .hero-main h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem,4vw,3.1rem);
+      line-height:1.03;
+      letter-spacing:-0.04em;
+      max-width:760px;
+    }
+    .hero-main p{
+      margin:0 0 18px;
+      color:#d7e2ef;
+      font-size:1.03rem;
+      line-height:1.7;
+      max-width:700px;
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      color:#b7c6d9;
+      font-size:.94rem;
+      margin-bottom:22px;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:700;
+      transition:.25s ease;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#03101c;
+    }
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.04);
+      color:#fff;
+    }
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-2px);
+    }
+
+    .hero-side{
+      display:grid;
+      gap:20px;
+    }
+    .hero-side-card{
+      padding:22px;
+    }
+    .hero-side-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+    }
+    .hero-side-list{
+      display:grid;
+      gap:14px;
+    }
+    .hero-side-item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+    }
+    .hero-side-item:first-child{border-top:0;padding-top:0}
+    .hero-side-item .tag{
+      display:inline-block;
+      font-size:.76rem;
+      font-weight:800;
+      color:var(--accent-2);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+    }
+    .hero-side-item h4{
+      margin:0 0 8px;
+      font-size:1rem;
+      line-height:1.35;
+    }
+    .hero-side-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:.93rem;
+      line-height:1.55;
+    }
+
+    main{
+      padding:8px 0 70px;
+    }
+    section{margin-top:30px}
+    .section-header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+    }
+    .section-header h2{
+      margin:0;
+      font-size:1.65rem;
+      letter-spacing:-0.03em;
+    }
+    .section-header p{
+      margin:8px 0 0;
+      color:var(--muted);
+      max-width:700px;
+      line-height:1.65;
+    }
+    .section-link{
+      color:var(--accent-2);
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .top-stories-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .story-card{
+      overflow:hidden;
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+    .story-card > a{
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+    .story-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 50px rgba(0,0,0,0.34);
+      border-color:rgba(123,209,255,0.2);
+    }
+    .story-thumb{
+      aspect-ratio:16/10;
+      overflow:hidden;
+    }
+    .story-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .35s ease;
+    }
+    .story-card:hover .story-thumb img{
+      transform:scale(1.05);
+    }
+    .story-body{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+    .story-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      color:var(--muted);
+      font-size:.85rem;
+      margin-bottom:12px;
+    }
+    .story-body h3{
+      margin:0 0 10px;
+      font-size:1.14rem;
+      line-height:1.35;
+    }
+    .story-body p{
+      margin:0 0 14px;
+      color:#d1dceb;
+      line-height:1.65;
+      font-size:.96rem;
+    }
+    .story-link{
+      color:var(--accent-2);
+      font-weight:700;
+      margin-top:auto;
+      align-self:flex-start;
+    }
+
+    .news-layout{
+      display:grid;
+      grid-template-columns:1.35fr .9fr;
+      gap:22px;
+      align-items:start;
+    }
+    .section-card{
+      padding:22px;
+    }
+    .stories-stack{
+      display:grid;
+      gap:18px;
+    }
+    .story-row{
+      display:grid;
+      grid-template-columns:190px 1fr;
+      gap:16px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+    }
+    .story-row:last-child{
+      padding-bottom:0;
+      border-bottom:0;
+    }
+    .story-row img{
+      width:100%;
+      height:130px;
+      object-fit:cover;
+      border-radius:16px;
+    }
+    .story-row h3{
+      margin:0 0 8px;
+      font-size:1.06rem;
+      line-height:1.35;
+    }
+    .story-row p{
+      margin:0 0 10px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:.94rem;
+    }
+    .story-row > div{
+      display:flex;
+      flex-direction:column;
+    }
+    .story-actions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:auto;
+    }
+    .story-actions .story-link{
+      margin-top:0;
+    }
+
+    .sidebar-stack{
+      display:grid;
+      gap:20px;
+    }
+    .mini-grid{
+      display:grid;
+      gap:14px;
+    }
+    .mini-card{
+      padding:16px;
+      transition:.25s ease;
+    }
+    .mini-card:hover{
+      transform:translateY(-4px);
+      background:linear-gradient(180deg, rgba(23,40,64,0.98), rgba(12,22,38,0.98));
+    }
+    .mini-card .tag{
+      color:var(--accent-2);
+      font-size:.76rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+      display:block;
+    }
+    .mini-card h4{
+      margin:0 0 8px;
+      line-height:1.35;
+      font-size:1rem;
+    }
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    .insight-list{
+      display:grid;
+      gap:12px;
+    }
+    .insight-item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+      color:#d9e4f2;
+      line-height:1.55;
+    }
+    .insight-item:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+
+    .ad-slot{
+      min-height:120px;
+      display:grid;
+      place-items:center;
+      color:#9fb2c9;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      gap:24px;
+    }
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+    }
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+    }
+    .footer-col a:hover{color:var(--accent-2)}
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (max-width:1100px){
+      .hero-grid,
+      .news-layout{
+        grid-template-columns:1fr;
+      }
+      .top-stories-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:760px){
+
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:100%;
+        justify-content:center;
+      }
+      .site-tagline{
+        max-width:100%;
+      }
+
+      .hero-main{
+        min-height:460px;
+      }
+      .hero-main-content{
+        padding:24px;
+      }
+      .top-stories-grid{
+        grid-template-columns:1fr;
+      }
+      .story-row{
+        grid-template-columns:1fr;
+      }
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+      .section-header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .topbar:not(header){
+        display:none;
+      }
+      .topbar-inner,
+      .navbar{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        padding:12px 16px;
+      }
+      .nav-toggle{
+        display:inline-flex;
+        margin-left:auto;
+      }
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+      }
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Sport</span>
+        <p>Coverage of football, basketball, combat sports, major events, transfers, and standout performances.</p>
+      </div>
+      <p>Updated by the News Pulse+ sport desk.</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <a href="index.html" class="logo">News<span>Pulse+</span></a>
+        <p class="site-tagline">The stories moving the world.</p>
+      </div>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a class="active" href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+              <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div id="google_translate_element"></div>
+
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <article class="hero-main">
+        <div class="hero-main-content">
+          <div class="eyebrow">Sport Desk</div>
+          <h1>Sport reporting that keeps fixtures, results, performances, and big moments easy to follow.</h1>
+          <p>Follow football, basketball, boxing, major events, transfer stories, and standout performances through a premium sport page built for quick reading, strong visuals, and daily updates.</p>
+          <div class="hero-meta">
+            <span>By News Pulse+ Editorial Team</span>
+            <span>Updated April 2026</span>
+            <span>Sport & Events Coverage</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#top-stories">Explore Sport Stories</a>
+            <a class="btn btn-secondary" href="about.html">About News Pulse+</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="hero-side">
+        <div class="hero-side-card">
+          <h3>Sport Briefing</h3>
+          <div class="hero-side-list">
+            <a class="hero-side-item" href="aston-villa-shine-europa-league-quarter-finals.html">
+              <span class="tag">Football</span>
+              <h4>Aston Villa's sharp attacking display in Europe has strengthened belief that they can push deeper into the competition.</h4>
+              <p>Villa's control, pressing, and finishing have turned their latest European performance into the lead football story on the page.</p>
+            </a>
+            <a class="hero-side-item" href="nfl-draft-preparations-take-center-stage.html">
+              <span class="tag">NFL</span>
+              <h4>Draft boards, trade talks, and final evaluations are now shaping one of the most important decision-making periods of the season.</h4>
+              <p>Front offices are balancing long-term planning with immediate roster needs as the draft moves into focus.</p>
+            </a>
+            <a class="hero-side-item" href="carlos-ulberg-leading-contender-ufc-victory.html">
+              <span class="tag">Combat Sports</span>
+              <h4>Carlos Ulberg's latest UFC win has pushed him closer to the top of the light heavyweight contender picture.</h4>
+              <p>His control, striking discipline, and growing momentum are giving the division a fresh challenger to watch.</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="ad-slot">Advertisement Space</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <section id="top-stories">
+        <div class="section-header">
+          <div>
+            <h2>Top Sport Stories</h2>
+            <p>A premium card layout for your biggest sport stories, with stronger hierarchy, cleaner spacing, and better trust signals.</p>
+          </div>
+          <a class="section-link" href="index.html">Back to homepage &rarr;</a>
+        </div>
+
+        <div class="top-stories-grid">
+          <article class="story-card">
+            <a href="aston-villa-shine-europa-league-quarter-finals.html">
+              <div class="story-thumb">
+                <img src="images/aston-villa.jpg" alt="Aston Villa Europa League celebration">
+              </div>
+              <div class="story-body">
+                <div class="story-meta">
+                  <span>Football</span>
+                  <span>By Editorial Team</span>
+                  <span>April 2026</span>
+                </div>
+                <h3>Aston Villa shine with powerful attacking performance in Europa League quarter-finals</h3>
+                <p>Villa combined high pressing, fluid attacking football, and defensive discipline to take a major step forward in Europe.</p>
+                <span class="story-link">Read more &rarr;</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="story-card">
+            <a href="fury-joshua-venue-plans-shift.html">
+              <div class="story-thumb">
+                <img src="images/fury-joshua.jpeg" alt="Tyson Fury and Anthony Joshua promotional image">
+              </div>
+              <div class="story-body">
+                <div class="story-meta">
+                  <span>Boxing</span>
+                  <span>By Editorial Team</span>
+                  <span>April 2026</span>
+                </div>
+                <h3>Tyson Fury vs Anthony Joshua venue plans shift as talks continue</h3>
+                <p>Venue discussions, financial backing, and global hosting options are becoming central to one of boxing's most anticipated heavyweight fights.</p>
+                <span class="story-link">Read more &rarr;</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="story-card">
+            <a href="carlos-ulberg-leading-contender-ufc-victory.html">
+              <div class="story-thumb">
+                <img src="images/carlos-ulberg.jpg" alt="Carlos Ulberg celebrates inside the UFC cage">
+              </div>
+              <div class="story-body">
+                <div class="story-meta">
+                  <span>UFC</span>
+                  <span>By Editorial Team</span>
+                  <span>April 2026</span>
+                </div>
+                <h3>Carlos Ulberg emerges as leading contender after commanding UFC victory</h3>
+                <p>Ulberg's composed striking, control, and growing consistency have pushed him firmly into the UFC light heavyweight contender picture.</p>
+                <span class="story-link">Read more &rarr;</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="news-layout">
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <h2>Latest Coverage</h2>
+              <p>This area works best for fresh sport updates, match recaps, transfer news, and event explainers.</p>
+            </div>
+          </div>
+
+          <div class="stories-stack">
+            <article class="story-row">
+              <a href="aston-villa-shine-europa-league-quarter-finals.html"><img src="images/aston-villa.jpg" alt="Aston Villa Europa League celebration"></a>
+              <div>
+                <div class="story-meta">
+                  <span>Football</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+                <h3><a href="aston-villa-shine-europa-league-quarter-finals.html">Aston Villa shine with powerful attacking performance in Europa League quarter-finals</a></h3>
+                <p>Unai Emery's side delivered a sharp, controlled display that has strengthened belief around Villa's European campaign.</p>
+                <a class="story-link" href="aston-villa-shine-europa-league-quarter-finals.html">Read article &rarr;</a>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="fury-joshua-venue-plans-shift.html"><img src="images/fury-joshua.jpeg" alt="Tyson Fury and Anthony Joshua promotional image"></a>
+              <div>
+                <div class="story-meta">
+                  <span>Boxing</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+                <h3><a href="fury-joshua-venue-plans-shift.html">Tyson Fury vs Anthony Joshua venue plans shift as talks continue</a></h3>
+                <p>Promoters are still weighing venue options, revenue potential, and timing as momentum builds around the heavyweight showdown.</p>
+                <a class="story-link" href="fury-joshua-venue-plans-shift.html">Read article &rarr;</a>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="carlos-ulberg-leading-contender-ufc-victory.html"><img src="images/carlos-ulberg.jpg" alt="Carlos Ulberg celebrates inside the UFC cage"></a>
+              <div>
+                <div class="story-meta">
+                  <span>UFC</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+                <h3><a href="carlos-ulberg-leading-contender-ufc-victory.html">Carlos Ulberg emerges as leading contender after commanding UFC victory</a></h3>
+                <p>A commanding win has moved Ulberg closer to higher-ranked opponents and strengthened his case as one of the division's rising threats.</p>
+                <a class="story-link" href="carlos-ulberg-leading-contender-ufc-victory.html">Read article &rarr;</a>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="nfl-draft-preparations-take-center-stage.html"><img src="images/nfl-draft.jpeg" alt="NFL Draft 2026 logo graphic"></a>
+              <div>
+                <div class="story-meta">
+                  <span>NFL</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+                <h3><a href="nfl-draft-preparations-take-center-stage.html">NFL Draft preparations take center stage as teams finalize strategies</a></h3>
+                <p>Front offices are refining boards, exploring trade scenarios, and aligning roster needs before one of the league's biggest decision-making nights.</p>
+                <a class="story-link" href="nfl-draft-preparations-take-center-stage.html">Read article &rarr;</a>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="premier-league-darts-heats-up.html"><img src="images/premier-league-darts.jpg" alt="Premier League Darts trophy on display"></a>
+              <div>
+                <div class="story-meta">
+                  <span>Darts</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+                <h3><a href="premier-league-darts-heats-up.html">Premier League Darts heats up as rivalries intensify and standings shift</a></h3>
+                <p>Rising pressure, tighter standings, and stronger rivalries are making every week of the tournament feel more significant.</p>
+                <div class="story-actions">
+                  <a class="story-link" href="premier-league-darts-heats-up.html">Read article &rarr;</a>
+                  <a class="story-link" href="sport-stories.html">More articles &rarr;</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="sidebar-stack">
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <h2>Editor’s Notes</h2>
+              </div>
+            </div>
+            <div class="mini-grid">
+              <a class="mini-card" href="newsletter.html">
+                <span class="tag">Newsletter</span>
+                <h4>Sport readers return often, which makes repeat traffic especially valuable.</h4>
+                <p>Add newsletter signups later when you want stronger retention and audience growth.</p>
+              </a>
+              <a class="mini-card" href="about.html">
+                <span class="tag">About</span>
+                <h4>Strong trust pages help readers see the section as part of a real publication.</h4>
+                <p>Keep About, Privacy, Terms, and Contact visible in the footer.</p>
+              </a>
+              <a class="mini-card" href="contact.html">
+                <span class="tag">Contact</span>
+                <h4>Reader feedback and contact routes make the publication feel more active and credible.</h4>
+                <p>Keep the contact page easy to find from major sections.</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <h2>What Readers Want</h2>
+              </div>
+            </div>
+            <div class="insight-list">
+              <div class="insight-item">Clear sport coverage that blends results, performance, context, and big moments.</div>
+              <div class="insight-item">Short summaries that explain why a result, transfer, or event matters right now.</div>
+              <div class="insight-item">A clean route to related sections and fresh stories without clutter.</div>
+            </div>
+          </div>
+
+          <div class="ad-slot">Sidebar Ad Slot</div>
+        </aside>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>News Pulse+</h3>
+        <p>An independent digital publication covering the stories, performances, and moments shaping sport around the world.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false }, 'google_translate_element');
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function toggleLanguage() {
+      const currentLang = localStorage.getItem('preferredLang') || 'en';
+      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+    }
+
+    function changeLanguage(langCode) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+        localStorage.setItem('preferredLang', langCode);
+        updateButtonText(langCode);
+      }
+    }
+
+    function applySavedLanguage() {
+      const savedLang = localStorage.getItem('preferredLang');
+      if (savedLang && savedLang !== 'en') changeLanguage(savedLang);
+      else updateButtonText('en');
+    }
+
+    function updateButtonText(lang) {
+      const btn = document.getElementById('lang-text');
+      if (btn) btn.innerText = lang === 'en' ? 'BG' : 'EN';
+    }
+    function toggleMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (!nav || !button || window.innerWidth > 760) return;
+      const isOpen = nav.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.innerText = isOpen ? 'Close' : 'Menu';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('nav-open');
+      if (button) {
+        button.setAttribute('aria-expanded', 'false');
+        button.innerText = 'Menu';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.getElementById('site-nav');
+      if (!nav) return;
+
+      nav.querySelectorAll('a, .lang-switch').forEach(function (item) {
+        item.addEventListener('click', function () {
+          if (window.innerWidth <= 760) closeMenu();
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 760) closeMenu();
+      });
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

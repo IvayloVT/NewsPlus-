@@ -1,0 +1,1161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politics | News Pulse+</title>
+  <meta name="description" content="Follow politics on News Pulse+ with coverage of elections, government, public policy, courts, campaigns, and political debate." />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --card-2:#13233a;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(59,160,255,0.10), transparent 28%),
+        linear-gradient(180deg,#07111f 0%, #081321 35%, #091523 100%);
+      color:var(--text);
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.86);
+      backdrop-filter:blur(12px);
+    }
+    .topbar-inner{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .breaking{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .breaking span{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#02111d;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 12px;
+      border-radius:999px;
+      flex-shrink:0;
+    }
+    .breaking p,.topbar-inner>p{margin:0}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,0.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      flex-shrink:0;
+    }
+    .logo{
+      font-size:1.65rem;
+      font-weight:800;
+      letter-spacing:-0.03em;
+      line-height:1;
+    }
+    .logo span{color:var(--accent-2)}
+    .site-tagline{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:#d8e3f1;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    .lang-switch{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .lang-switch:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+    body{top:0 !important;}
+    .hero{
+      padding:34px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.5fr .95fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .hero-main,
+    .hero-side-card,
+    .section-card,
+    .story-card,
+    .mini-card,
+    .ad-slot{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+
+    .hero-main{
+      overflow:hidden;
+      position:relative;
+      min-height:540px;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg, rgba(7,17,31,0.10) 12%, rgba(7,17,31,0.88) 75%),
+        url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=80') center/cover;
+    }
+    .hero-main-content{
+      padding:34px;
+      width:100%;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:16px;
+      font-size:.84rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .hero-main h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem,4vw,3.1rem);
+      line-height:1.03;
+      letter-spacing:-0.04em;
+      max-width:760px;
+    }
+    .hero-main p{
+      margin:0 0 18px;
+      color:#d7e2ef;
+      font-size:1.03rem;
+      line-height:1.7;
+      max-width:700px;
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      color:#b7c6d9;
+      font-size:.94rem;
+      margin-bottom:22px;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:700;
+      transition:.25s ease;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#03101c;
+    }
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.04);
+      color:#fff;
+    }
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-2px);
+    }
+
+    .hero-side{
+      display:grid;
+      gap:20px;
+    }
+    .hero-side-card{
+      padding:22px;
+    }
+    .hero-side-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+    }
+    .hero-side-list{
+      display:grid;
+      gap:14px;
+    }
+    .hero-side-item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+    }
+    .hero-side-item:first-child{border-top:0;padding-top:0}
+    .hero-side-item .tag{
+      display:inline-block;
+      font-size:.76rem;
+      font-weight:800;
+      color:var(--accent-2);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+    }
+    .hero-side-item h4{
+      margin:0 0 8px;
+      font-size:1rem;
+      line-height:1.35;
+    }
+    .hero-side-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:.93rem;
+      line-height:1.55;
+    }
+
+    main{
+      padding:8px 0 70px;
+    }
+    section{margin-top:30px}
+    .section-header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+    }
+    .section-header h2{
+      margin:0;
+      font-size:1.65rem;
+      letter-spacing:-0.03em;
+    }
+    .section-header p{
+      margin:8px 0 0;
+      color:var(--muted);
+      max-width:700px;
+      line-height:1.65;
+    }
+    .section-link{
+      color:var(--accent-2);
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .top-stories-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .story-card{
+      overflow:hidden;
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+    .story-card > a{
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+    .story-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 50px rgba(0,0,0,0.34);
+      border-color:rgba(123,209,255,0.2);
+    }
+    .story-thumb{
+      aspect-ratio:16/10;
+      overflow:hidden;
+    }
+    .story-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .35s ease;
+    }
+    .story-card:hover .story-thumb img{
+      transform:scale(1.05);
+    }
+    .story-body{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+    .story-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      color:var(--muted);
+      font-size:.85rem;
+      margin-bottom:12px;
+    }
+    .story-body h3{
+      margin:0 0 10px;
+      font-size:1.14rem;
+      line-height:1.35;
+    }
+    .story-body p{
+      margin:0 0 14px;
+      color:#d1dceb;
+      line-height:1.65;
+      font-size:.96rem;
+    }
+    .story-link{
+      color:var(--accent-2);
+      font-weight:700;
+      margin-top:auto;
+      align-self:flex-start;
+    }
+
+    .news-layout{
+      display:grid;
+      grid-template-columns:1.35fr .9fr;
+      gap:22px;
+      align-items:start;
+    }
+    .section-card{
+      padding:22px;
+    }
+    .stories-stack{
+      display:grid;
+      gap:18px;
+    }
+    .story-row{
+      display:grid;
+      grid-template-columns:190px 1fr;
+      gap:16px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+    }
+    .story-row:last-child{
+      padding-bottom:0;
+      border-bottom:0;
+    }
+    .story-row img{
+      width:100%;
+      height:130px;
+      object-fit:cover;
+      border-radius:16px;
+    }
+    .story-row h3{
+      margin:0 0 8px;
+      font-size:1.06rem;
+      line-height:1.35;
+    }
+    .story-row p{
+      margin:0 0 10px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:.94rem;
+    }
+    .story-row > div{
+      display:flex;
+      flex-direction:column;
+    }
+    .story-actions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:auto;
+    }
+    .story-actions .story-link{
+      margin-top:0;
+    }
+
+    .sidebar-stack{
+      display:grid;
+      gap:20px;
+    }
+    .mini-grid{
+      display:grid;
+      gap:14px;
+    }
+    .mini-card{
+      padding:16px;
+      transition:.25s ease;
+    }
+    .mini-card:hover{
+      transform:translateY(-4px);
+      background:linear-gradient(180deg, rgba(23,40,64,0.98), rgba(12,22,38,0.98));
+    }
+    .mini-card .tag{
+      color:var(--accent-2);
+      font-size:.76rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+      display:block;
+    }
+    .mini-card h4{
+      margin:0 0 8px;
+      line-height:1.35;
+      font-size:1rem;
+    }
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    .insight-list{
+      display:grid;
+      gap:12px;
+    }
+    .insight-item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+      color:#d9e4f2;
+      line-height:1.55;
+    }
+    .insight-item:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+
+    .ad-slot{
+      min-height:120px;
+      display:grid;
+      place-items:center;
+      color:#9fb2c9;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      gap:24px;
+    }
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+    }
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+    }
+    .footer-col a:hover{color:var(--accent-2)}
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (max-width:1100px){
+      .hero-grid,
+      .news-layout{
+        grid-template-columns:1fr;
+      }
+      .top-stories-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:760px){
+
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:100%;
+        justify-content:center;
+      }
+      .site-tagline{
+        max-width:100%;
+      }
+
+      .hero-main{
+        min-height:460px;
+      }
+      .hero-main-content{
+        padding:24px;
+      }
+      .top-stories-grid{
+        grid-template-columns:1fr;
+      }
+      .story-row{
+        grid-template-columns:1fr;
+      }
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+      .section-header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .topbar:not(header){
+        display:none;
+      }
+      .topbar-inner,
+      .navbar{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        padding:12px 16px;
+      }
+      .nav-toggle{
+        display:inline-flex;
+        margin-left:auto;
+      }
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+      }
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Politics</span>
+        <p>Daily coverage of elections, government, policy change, courts, and public debate.</p>
+      </div>
+      <p>Updated by the News Pulse+ politics desk.</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <a href="index.html" class="logo">News<span>Pulse+</span></a>
+        <p class="site-tagline">The stories moving the world.</p>
+      </div>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a class="active" href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+              <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div id="google_translate_element"></div>
+
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <article class="hero-main">
+        <div class="hero-main-content">
+          <div class="eyebrow">Politics Desk</div>
+          <h1>Political reporting that makes fast-moving power, policy, and public debate easier to follow.</h1>
+          <p>Track elections, campaigns, parliament, courts, reform, and public-interest issues through a premium politics page built for readable analysis, stronger trust, and quick daily scanning.</p>
+          <div class="hero-meta">
+            <span>By News Pulse+ Editorial Team</span>
+            <span>Updated April 2026</span>
+            <span>Politics & Policy Coverage</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#top-stories">Explore Politics Stories</a>
+            <a class="btn btn-secondary" href="about.html">About News Pulse+</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="hero-side">
+        <div class="hero-side-card">
+          <h3>Politics Briefing</h3>
+          <div class="hero-side-list">
+            <a class="hero-side-item" href="russia-europe-targets-ukraine.html">
+              <span class="tag">Foreign Policy</span>
+              <h4>Russia's warning over European sites linked to Ukraine support is pushing security strategy and escalation fears back to the center of politics.</h4>
+              <p>Use this area for short political briefings that guide readers into your lead coverage.</p>
+            </a>
+            <a class="hero-side-item" href="eu-defence-expansion-strategy.html">
+              <span class="tag">Institutions</span>
+              <h4>European Union leaders are debating stronger defence coordination, spending, and long-term institutional strategy.</h4>
+              <p>Fast summaries here help the section feel active, balanced, and regularly updated.</p>
+            </a>
+            <a class="hero-side-item" href="china-economic-diplomacy.html">
+              <span class="tag">China</span>
+              <h4>China's economic diplomacy is expanding its influence through trade, infrastructure, and long-term political partnerships.</h4>
+              <p>Mix security, alliances, and global strategy to make the page feel complete.</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="ad-slot">Advertisement Space</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <section id="top-stories">
+        <div class="section-header">
+          <div>
+            <h2>Top Politics Stories</h2>
+            <p>A premium card layout for your biggest politics stories, with cleaner spacing, better hierarchy, and stronger trust signals.</p>
+          </div>
+          <a class="section-link" href="index.html">Back to homepage &rarr;</a>
+        </div>
+
+        <div class="top-stories-grid">
+          <article class="story-card">
+            <a href="russia-europe-targets-ukraine.html">
+              <div class="story-thumb">
+                <img src="images/russia-flag.jpg" alt="Russian flag">
+              </div>
+              <div class="story-body">
+                <div class="story-meta">
+                  <span>Geopolitics</span>
+                  <span>By Editorial Team</span>
+                  <span>April 2026</span>
+                </div>
+
+                <h3>
+                  Russia names European sites as potential targets amid rising tensions over Ukraine support
+                </h3>
+
+                <p>
+                  Moscow warns European facilities linked to Ukraine’s drone program could become targets, raising fears of escalation.
+                </p>
+
+                <span class="story-link">Read more →</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="story-card">
+            <a href="eu-defence-expansion-strategy.html">
+              <div class="story-thumb">
+                <img src="images/eu-flag.jpg" alt="European Union flag">
+              </div>
+              <div class="story-body">
+                <div class="story-meta">
+                  <span>European Union</span>
+                  <span>By Editorial Team</span>
+                  <span>April 2026</span>
+                </div>
+
+                <h3>
+                  European Union debates defence expansion strategy amid rising security concerns
+                </h3>
+
+                <p>
+                  EU leaders are pushing for stronger defence coordination, higher spending, and long-term security planning.
+                </p>
+
+                <span class="story-link">Read more →</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="story-card">
+            <a href="china-economic-diplomacy.html">
+              <div class="story-thumb">
+                <img src="images/china-flag.jpg" alt="Chinese flag">
+              </div>
+              <div class="story-body">
+                <div class="story-meta">
+                  <span>China</span>
+                  <span>By Editorial Team</span>
+                  <span>April 2026</span>
+                </div>
+
+                <h3>
+                  China strengthens global influence through economic diplomacy
+                </h3>
+
+                <p>
+                  Trade, infrastructure investment, and long-term partnerships are expanding China’s global reach.
+                </p>
+
+                <span class="story-link">Read more →</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="news-layout">
+        <div class="section-card">
+          <div class="section-header">
+            <div>
+              <h2>Latest Coverage</h2>
+              <p>This area works best for new politics stories, quick analysis, and ongoing developments.</p>
+            </div>
+          </div>
+
+          <div class="stories-stack">
+            <article class="story-row">
+              <a href="russia-europe-targets-ukraine.html">
+                <img src="images/russia-flag.jpg" alt="Russian flag">
+              </a>
+
+              <div>
+                <div class="story-meta">
+                  <span>Geopolitics</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+
+                <h3>
+                  <a href="russia-europe-targets-ukraine.html">
+                    Russia names European sites as potential targets amid rising tensions over Ukraine support
+                  </a>
+                </h3>
+
+                <p>
+                  Russia publishes a list of European-linked facilities tied to Ukraine’s drone program, warning of possible escalation.
+                </p>
+
+                <a class="story-link" href="russia-europe-targets-ukraine.html">
+                  Read article →
+                </a>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="eu-defence-expansion-strategy.html">
+                <img src="images/eu-flag.jpg" alt="European Union flag">
+              </a>
+
+              <div>
+                <div class="story-meta">
+                  <span>European Union</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+
+                <h3>
+                  <a href="eu-defence-expansion-strategy.html">
+                    European Union debates defence expansion strategy amid rising security concerns
+                  </a>
+                </h3>
+
+                <p>
+                  European leaders are weighing defence expansion plans as geopolitical pressure and security risks continue to rise.
+                </p>
+
+                <a class="story-link" href="eu-defence-expansion-strategy.html">
+                  Read article →
+                </a>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="china-economic-diplomacy.html">
+                <img src="images/china-flag.jpg" alt="Chinese flag">
+              </a>
+
+              <div>
+                <div class="story-meta">
+                  <span>China</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+
+                <h3>
+                  <a href="china-economic-diplomacy.html">
+                    China strengthens global influence through economic diplomacy
+                  </a>
+                </h3>
+
+                <p>
+                  Beijing is expanding its influence through trade, infrastructure projects, and strategic investment worldwide.
+                </p>
+
+                <div class="story-actions">
+                  <a class="story-link" href="china-economic-diplomacy.html">
+                    Read article →
+                  </a>
+                  <a class="story-link" href="politics-stories.html">
+                    More articles →
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="oil-markets-war-tensions.html">
+                <img src="images/oil-market.jpg" alt="Oil barrels and drilling pumps at sunset">
+              </a>
+              <div>
+                <div class="story-meta">
+                  <span>Energy Markets</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+                <h3>
+                  <a href="oil-markets-war-tensions.html">
+                    Oil markets fluctuate amid war tensions as global uncertainty grows
+                  </a>
+                </h3>
+                <p>
+                  Global oil prices remain volatile as supply risks, conflict fears, and uncertain demand keep energy markets under pressure.
+                </p>
+                <a class="story-link" href="oil-markets-war-tensions.html">Read article →</a>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <a href="global-debt-risks.html">
+                <img src="images/global-economy.jpg" alt="Global economy and money concept">
+              </a>
+              <div>
+                <div class="story-meta">
+                  <span>Global Economy</span>
+                  <span>By News Pulse+ Editorial Team</span>
+                  <span>5 min read</span>
+                </div>
+                <h3>
+                  <a href="global-debt-risks.html">
+                    Global economy faces rising debt risks
+                  </a>
+                </h3>
+                <p>
+                  Rising borrowing costs, slower growth, and high public debt are putting governments under growing financial and political pressure.
+                </p>
+                <div class="story-actions">
+                  <a class="story-link" href="global-debt-risks.html">Read article →</a>
+                  <a class="story-link" href="politics-stories.html">More articles →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="sidebar-stack">
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <h2>Editor’s Notes</h2>
+              </div>
+            </div>
+            <div class="mini-grid">
+              <a class="mini-card" href="contact.html">
+                <span class="tag">Tips</span>
+                <h4>Reader tips and contact routes make political coverage feel more active and credible.</h4>
+                <p>Keep tip links and contact access visible on major pages.</p>
+              </a>
+              <a class="mini-card" href="newsletter.html">
+                <span class="tag">Newsletter</span>
+                <h4>Politics readers often return often, which makes repeat traffic especially valuable.</h4>
+                <p>Add newsletter signups later when you want stronger audience retention.</p>
+              </a>
+              <a class="mini-card" href="about.html">
+                <span class="tag">About</span>
+                <h4>Strong trust pages help readers see the section as part of a real publication.</h4>
+                <p>Keep About, Privacy, Terms, and Contact visible in the footer.</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <h2>What Readers Want</h2>
+              </div>
+            </div>
+            <div class="insight-list">
+              <div class="insight-item">Explanations that connect political headlines to real public impact.</div>
+              <div class="insight-item">Clear separation between campaign stories, policy stories, and court-related developments.</div>
+              <div class="insight-item">A clean route to related sections and current stories without clutter.</div>
+            </div>
+          </div>
+
+          <div class="ad-slot">Sidebar Ad Slot</div>
+        </aside>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>News Pulse+</h3>
+        <p>An independent digital publication covering the stories, trends, and debates shaping politics and public life.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false }, 'google_translate_element');
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function toggleLanguage() {
+      const currentLang = localStorage.getItem('preferredLang') || 'en';
+      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+    }
+
+    function changeLanguage(langCode) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+        localStorage.setItem('preferredLang', langCode);
+        updateButtonText(langCode);
+      }
+    }
+
+    function applySavedLanguage() {
+      const savedLang = localStorage.getItem('preferredLang');
+      if (savedLang && savedLang !== 'en') changeLanguage(savedLang);
+      else updateButtonText('en');
+    }
+
+    function updateButtonText(lang) {
+      const btn = document.getElementById('lang-text');
+      if (btn) btn.innerText = lang === 'en' ? 'BG' : 'EN';
+    }
+    function toggleMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (!nav || !button || window.innerWidth > 760) return;
+      const isOpen = nav.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.innerText = isOpen ? 'Close' : 'Menu';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('nav-open');
+      if (button) {
+        button.setAttribute('aria-expanded', 'false');
+        button.innerText = 'Menu';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.getElementById('site-nav');
+      if (!nav) return;
+
+      nav.querySelectorAll('a, .lang-switch').forEach(function (item) {
+        item.addEventListener('click', function () {
+          if (window.innerWidth <= 760) closeMenu();
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 760) closeMenu();
+      });
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

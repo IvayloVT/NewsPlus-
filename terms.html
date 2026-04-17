@@ -1,0 +1,753 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms | News Pulse+</title>
+  <meta name="description" content="Read the Terms of Use for News Pulse+ and learn the rules, conditions, and guidelines for using the website and its content." />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(59,160,255,0.10), transparent 28%),
+        linear-gradient(180deg,#07111f 0%, #081321 35%, #091523 100%);
+      color:var(--text);
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.86);
+      backdrop-filter:blur(12px);
+    }
+    .topbar-inner{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .breaking{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .breaking span{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#02111d;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 12px;
+      border-radius:999px;
+      flex-shrink:0;
+    }
+    .breaking p,.topbar-inner>p{margin:0}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,0.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      flex-shrink:0;
+    }
+    .logo{
+      font-size:1.65rem;
+      font-weight:800;
+      letter-spacing:-0.03em;
+      line-height:1;
+    }
+    .logo span{color:var(--accent-2)}
+    .site-tagline{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:#d8e3f1;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+    .nav-links a:hover{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    .hero{
+      padding:34px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.5fr .95fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .hero-main,
+    .hero-side-card,
+    .section-card,
+    .mini-card{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+    .hero-main{
+      overflow:hidden;
+      position:relative;
+      min-height:520px;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg, rgba(7,17,31,0.10) 12%, rgba(7,17,31,0.88) 75%),
+        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80') center/cover;
+    }
+    .hero-main-content{
+      padding:34px;
+      width:100%;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:16px;
+      font-size:.84rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .hero-main h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem,4vw,3.1rem);
+      line-height:1.03;
+      letter-spacing:-0.04em;
+      max-width:760px;
+    }
+    .hero-main p{
+      margin:0 0 18px;
+      color:#d7e2ef;
+      font-size:1.03rem;
+      line-height:1.7;
+      max-width:700px;
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      color:#b7c6d9;
+      font-size:.94rem;
+    }
+
+    .hero-side{
+      display:grid;
+      gap:20px;
+    }
+    .hero-side-card{
+      padding:22px;
+    }
+    .hero-side-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+    }
+    .hero-side-list{
+      display:grid;
+      gap:14px;
+    }
+    .hero-side-item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+    }
+    .hero-side-item:first-child{border-top:0;padding-top:0}
+    .hero-side-item .tag{
+      display:inline-block;
+      font-size:.76rem;
+      font-weight:800;
+      color:var(--accent-2);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+    }
+    .hero-side-item h4{
+      margin:0 0 8px;
+      font-size:1rem;
+      line-height:1.35;
+    }
+    .hero-side-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:.93rem;
+      line-height:1.55;
+    }
+
+    main{
+      padding:8px 0 70px;
+    }
+    .news-layout{
+      display:grid;
+      grid-template-columns:1.35fr .9fr;
+      gap:22px;
+      align-items:start;
+      margin-top:30px;
+    }
+    .section-card{
+      padding:22px;
+    }
+    .section-header{
+      margin-bottom:18px;
+    }
+    .section-header h2{
+      margin:0;
+      font-size:1.65rem;
+      letter-spacing:-0.03em;
+    }
+    .section-header p{
+      margin:10px 0 0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .terms-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .terms-item{
+      padding:20px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+    }
+    .terms-item h3{
+      margin:0 0 10px;
+      font-size:1.05rem;
+    }
+    .terms-item p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.95rem;
+    }
+
+    .sidebar-stack{
+      display:grid;
+      gap:20px;
+    }
+    .mini-grid{
+      display:grid;
+      gap:14px;
+    }
+    .mini-card{
+      padding:16px;
+      transition:.25s ease;
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius-sm);
+    }
+    .mini-card:hover{
+      transform:translateY(-4px);
+      background:linear-gradient(180deg, rgba(23,40,64,0.98), rgba(12,22,38,0.98));
+    }
+    .mini-card .tag{
+      color:var(--accent-2);
+      font-size:.76rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+      display:block;
+    }
+    .mini-card h4{
+      margin:0 0 8px;
+      line-height:1.35;
+      font-size:1rem;
+    }
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    .info-list{
+      display:grid;
+      gap:12px;
+    }
+    .info-item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+      color:#d9e4f2;
+      line-height:1.55;
+    }
+    .info-item:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      gap:24px;
+    }
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+    }
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+    }
+    .footer-col a:hover{color:var(--accent-2)}
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (max-width:1100px){
+      .hero-grid,
+      .news-layout,
+      .terms-grid{
+        grid-template-columns:1fr;
+      }
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:760px){
+
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:100%;
+        justify-content:center;
+      }
+      .site-tagline{
+        max-width:100%;
+      }
+
+      .hero-main{
+        min-height:460px;
+      }
+      .hero-main-content{
+        padding:24px;
+      }
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+      .topbar:not(header){
+        display:none;
+      }
+      .topbar-inner,
+      .navbar{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        padding:12px 16px;
+      }
+      .nav-toggle{
+        display:inline-flex;
+        margin-left:auto;
+      }
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+      }
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Terms</span>
+        <p>Read the rules, conditions, and guidelines for using News Pulse+.</p>
+      </div>
+      <p>Clear site terms for readers and visitors.</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <a href="index.html" class="logo">News<span>Pulse+</span></a>
+        <p class="site-tagline">The stories moving the world.</p>
+      </div>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+              <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div id="google_translate_element"></div>
+
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <article class="hero-main">
+        <div class="hero-main-content">
+          <div class="eyebrow">Terms of Use</div>
+          <h1>Terms and conditions for using News Pulse+ and its content.</h1>
+          <p>These terms outline the rules, responsibilities, and conditions that apply when using News Pulse+, its pages, content, and related features.</p>
+          <div class="hero-meta">
+            <span>Site Use</span>
+            <span>Content Rules</span>
+            <span>Advertising & Liability</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="hero-side">
+        <div class="hero-side-card">
+          <h3>Terms Overview</h3>
+          <div class="hero-side-list">
+            <div class="hero-side-item">
+              <span class="tag">Access</span>
+              <h4>Using the site means agreeing to the general rules and conditions outlined here.</h4>
+              <p>These terms help define how News Pulse+ content and features may be accessed and used.</p>
+            </div>
+            <div class="hero-side-item">
+              <span class="tag">Content</span>
+              <h4>Articles, design, and materials are provided for informational and publication purposes.</h4>
+              <p>Use of content should respect the site’s terms, permissions, and general guidelines.</p>
+            </div>
+            <div class="hero-side-item">
+              <span class="tag">Changes</span>
+              <h4>Terms may change over time as the site evolves and improves.</h4>
+              <p>Continued use of the website means readers accept updated terms when they are published.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <section class="news-layout">
+        <div class="section-card">
+          <div class="section-header">
+            <h2>Terms of Use</h2>
+            <p>Below is an overview of the main conditions that apply when using News Pulse+.</p>
+          </div>
+
+          <div class="terms-grid">
+            <div class="terms-item">
+              <h3>Acceptance of Terms</h3>
+              <p>By accessing and using News Pulse+, you accept and agree to be bound by these Terms of Use.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>About the Website</h3>
+              <p>News Pulse+ is an independent digital publication providing news, analysis, and informational content across multiple sections.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>Use of Content</h3>
+              <p>All content on this website is for informational purposes only. You may not copy, reproduce, distribute, or exploit content without permission.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>Accuracy of Information</h3>
+              <p>We aim to provide clear and up-to-date information, but we do not guarantee completeness, accuracy, or reliability at all times.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>User Conduct</h3>
+              <p>You agree not to use the website for unlawful purposes or to submit harmful, abusive, or misleading content through any form or feature.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>External Links</h3>
+              <p>This website may contain links to third-party websites. News Pulse+ is not responsible for the content or policies of those external sites.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>Advertising and Monetization</h3>
+              <p>News Pulse+ may display advertisements, sponsored content, or affiliate links. We may earn commissions from certain links at no additional cost to users.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>Limitation of Liability</h3>
+              <p>We are not liable for losses or damages arising from the use of this website or reliance on the content published on it.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>Changes to Terms</h3>
+              <p>We reserve the right to update or modify these Terms at any time. Continued use of the website means you accept any changes.</p>
+            </div>
+
+            <div class="terms-item">
+              <h3>Contact</h3>
+              <p>If you have any questions about these Terms, please use the Contact page to get in touch with the News Pulse+ team.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sidebar-stack">
+          <div class="section-card">
+            <div class="section-header">
+              <h2>Useful Pages</h2>
+            </div>
+            <div class="mini-grid">
+              <a class="mini-card" href="contact.html">
+                <span class="tag">Contact</span>
+                <h4>Reach the team with questions about site use or general enquiries.</h4>
+                <p>Use the contact page if you need clarification or want to get in touch directly.</p>
+              </a>
+              <a class="mini-card" href="privacy-policy.html">
+                <span class="tag">Privacy</span>
+                <h4>Learn how user information is collected, used, and protected.</h4>
+                <p>Privacy and terms together help support transparency and trust across the site.</p>
+              </a>
+              <a class="mini-card" href="about.html">
+                <span class="tag">About</span>
+                <h4>Learn more about the editorial identity behind News Pulse+.</h4>
+                <p>Trust pages work best when they stay clear, consistent, and easy to access.</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-header">
+              <h2>Key Points</h2>
+            </div>
+            <div class="info-list">
+              <div class="info-item">Use of the site means accepting the published terms and conditions.</div>
+              <div class="info-item">Content is provided for informational purposes and should not be reused without permission.</div>
+              <div class="info-item">News Pulse+ may display advertising, sponsored material, or affiliate links.</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>News Pulse+</h3>
+        <p>Terms, privacy, contact, and about pages help support transparency, trust, and a stronger publication identity.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false }, 'google_translate_element');
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function toggleLanguage() {
+      const currentLang = localStorage.getItem('preferredLang') || 'en';
+      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+    }
+
+    function changeLanguage(langCode) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+        localStorage.setItem('preferredLang', langCode);
+        updateButtonText(langCode);
+      }
+    }
+
+    function applySavedLanguage() {
+      const savedLang = localStorage.getItem('preferredLang');
+      if (savedLang && savedLang !== 'en') changeLanguage(savedLang);
+      else updateButtonText('en');
+    }
+
+    function updateButtonText(lang) {
+      const btn = document.getElementById('lang-text');
+      if (btn) btn.innerText = lang === 'en' ? 'BG' : 'EN';
+    }
+    function toggleMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (!nav || !button || window.innerWidth > 760) return;
+      const isOpen = nav.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.innerText = isOpen ? 'Close' : 'Menu';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('nav-open');
+      if (button) {
+        button.setAttribute('aria-expanded', 'false');
+        button.innerText = 'Menu';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.getElementById('site-nav');
+      if (!nav) return;
+
+      nav.querySelectorAll('a, .lang-switch').forEach(function (item) {
+        item.addEventListener('click', function () {
+          if (window.innerWidth <= 760) closeMenu();
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 760) closeMenu();
+      });
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Driving Car Malfunction Sparks Debate After Getting Stuck in a Loop | News Pulse+</title>
+  <meta name="description" content="A self-driving car repeatedly circling instead of completing its route has gone viral, raising new questions about edge cases, public trust, and the limits of autonomous driving." />
+  <meta name="keywords" content="self-driving car, autonomous vehicle, viral tech video, AI driving, smart car malfunction, News Pulse+" />
+  <meta name="theme-color" content="#07111f" />
+  <meta property="og:title" content="Self-Driving Car Malfunction Sparks Debate After Getting Stuck in a Loop" />
+  <meta property="og:description" content="A viral clip of an autonomous car repeatedly driving in circles has reignited debate about how ready self-driving technology really is for widespread use." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="images/self-driving-car.jpg" />
+  <meta property="og:site_name" content="News Pulse+" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --card-2:#13233a;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --danger:#ff5e7a;
+      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --radius:28px;
+      --max-width:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(59,160,255,0.08), transparent 30%),
+        linear-gradient(180deg, #081221 0%, #050c16 100%);
+      color:var(--text);
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(var(--max-width), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.88);
+      backdrop-filter:blur(14px);
+      position:sticky;
+      top:0;
+      z-index:20;
+      transition:transform .3s ease;
+    }
+
+    .topbar-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:1.4rem;
+      letter-spacing:-0.03em;
+    }
+
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#dce7f5;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    .lang-switch,
+    .nav-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .lang-switch:hover,
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+
+    .nav-toggle{
+      display:none;
+      margin-left:auto;
+    }
+
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+
+    body{top:0 !important;}
+
+    .article-hero{
+      padding:34px 0 24px;
+    }
+
+    .article-hero-card,
+    .article-card,
+    .sidebar-card,
+    .related-card,
+    .summary-box,
+    .author-card,
+    .timeline-card{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+
+    .article-hero-card{
+      overflow:hidden;
+    }
+
+    .hero-image{
+      position:relative;
+    }
+
+    .hero-image img{
+      width:100%;
+      height:min(52vw, 520px);
+      object-fit:cover;
+    }
+
+    .breaking-badge{
+      position:absolute;
+      top:18px;
+      left:18px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background:rgba(6,14,26,.78);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      backdrop-filter:blur(10px);
+    }
+
+    .pulse-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--danger);
+      box-shadow:0 0 0 0 rgba(255,94,122,0.75);
+      animation:pulse 1.8s infinite;
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(255,94,122,0.75)}
+      70%{box-shadow:0 0 0 14px rgba(255,94,122,0)}
+      100%{box-shadow:0 0 0 0 rgba(255,94,122,0)}
+    }
+
+    .hero-content{
+      padding:28px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:14px;
+      font-size:0.84rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+
+    .hero-content h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.06;
+      letter-spacing:-0.04em;
+      max-width:930px;
+    }
+
+    .hero-content p{
+      margin:0;
+      color:#dbe7f4;
+      font-size:1.05rem;
+      line-height:1.75;
+      max-width:900px;
+    }
+
+    .article-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-top:20px;
+      color:var(--muted);
+      font-size:0.98rem;
+    }
+
+    .article-layout{
+      display:grid;
+      grid-template-columns:minmax(0, 1.9fr) minmax(280px, 0.9fr);
+      gap:24px;
+      align-items:start;
+    }
+
+    .stack-main,
+    .sidebar-stack{
+      display:grid;
+      gap:24px;
+    }
+
+    .summary-box,
+    .author-card,
+    .timeline-card{
+      padding:24px;
+    }
+
+    .summary-box h2,
+    .author-card h3,
+    .timeline-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+      letter-spacing:-0.02em;
+    }
+
+    .summary-points{
+      margin:0;
+      padding-left:18px;
+      display:grid;
+      gap:12px;
+      color:#dce8f5;
+      line-height:1.7;
+    }
+
+    .article-card{
+      padding:28px;
+    }
+
+    .article-card p{
+      margin:0 0 18px;
+      color:#dde8f4;
+      line-height:1.85;
+      font-size:1rem;
+    }
+
+    .article-card h2{
+      margin:26px 0 12px;
+      font-size:1.35rem;
+      line-height:1.25;
+      letter-spacing:-0.03em;
+    }
+
+    .article-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
+    }
+
+    .tag{
+      padding:9px 14px;
+      border-radius:999px;
+      background:rgba(123,209,255,0.12);
+      border:1px solid rgba(123,209,255,0.22);
+      color:#dff4ff;
+      font-size:0.86rem;
+      font-weight:700;
+    }
+
+        .share-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .share-btn{
+      min-height:44px;
+      padding:0 18px;
+      border:none;
+      border-radius:999px;
+      font:inherit;
+      font-size:0.92rem;
+      font-weight:700;
+      cursor:pointer;
+      color:#06111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow:0 14px 28px rgba(59,160,255,0.22);
+    }
+
+    .share-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+    }
+
+    .timeline-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns:110px 1fr;
+      gap:14px;
+      align-items:start;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+    }
+
+    .timeline-item:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .timeline-time{
+      color:#89d3ff;
+      font-size:.88rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .timeline-text{
+      color:#dce8f5;
+      line-height:1.7;
+      font-size:.96rem;
+    }
+
+    .author-line{
+      margin:0;
+      color:#dce7f3;
+      line-height:1.75;
+    }
+
+    .sidebar-card{
+      padding:22px;
+    }
+
+    .sidebar-card h3{
+      margin:0 0 14px;
+      font-size:1.08rem;
+      letter-spacing:-0.02em;
+    }
+
+    .sidebar-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .sidebar-item{
+      color:#dce7f4;
+      line-height:1.7;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+    }
+
+    .sidebar-item:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .sidebar-item a{
+      color:#8fd6ff;
+    }
+
+    .related-section{
+      padding:32px 0 56px;
+    }
+
+    .related-section h2{
+      margin:0 0 18px;
+      font-size:1.45rem;
+      letter-spacing:-0.03em;
+    }
+
+    .related-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:20px;
+    }
+
+    .related-card{
+      overflow:hidden;
+      transition:transform .22s ease, border-color .22s ease;
+    }
+
+    .related-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(123,209,255,0.26);
+    }
+
+    .related-thumb img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    .related-body{
+      padding:18px;
+    }
+
+    .related-body h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+      line-height:1.35;
+      letter-spacing:-0.02em;
+    }
+
+    .related-body p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.95rem;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:#050d18;
+      margin-top:18px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr 1fr;
+      gap:26px;
+      padding:34px 0 20px;
+    }
+
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+      font-size:1rem;
+    }
+
+    .footer-brand p,
+    .footer-col a{
+      color:var(--muted);
+      line-height:1.8;
+      font-size:0.95rem;
+    }
+
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:16px 0 24px;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    @media (max-width:1100px){
+      .article-layout{
+        grid-template-columns:1fr;
+      }
+      .related-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:820px){
+      .nav-toggle{
+        display:inline-flex;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:calc(100% + 10px);
+        left:16px;
+        right:16px;
+        padding:14px;
+        border-radius:24px;
+        border:1px solid var(--line);
+        background:rgba(8,18,33,0.98);
+        box-shadow:var(--shadow);
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .nav-links.nav-open{
+        display:flex;
+      }
+
+      .lang-switch{
+        margin-left:0;
+      }
+
+      .hero-content,
+      .article-card,
+      .summary-box,
+      .author-card,
+      .timeline-card{
+        padding:24px;
+      }
+
+      .related-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:640px){
+      .container{
+        width:min(var(--max-width), calc(100% - 20px));
+      }
+
+      .topbar-inner{
+        min-height:68px;
+      }
+
+      .brand p{
+        display:none;
+      }
+
+      .article-hero{
+        padding-top:18px;
+      }
+
+      .hero-image img{
+        height:300px;
+      }
+
+      .timeline-item{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="google_translate_element"></div>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="News Pulse+ homepage">
+        <h1>News Pulse+</h1>
+        <p>The stories moving the world.</p>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html" class="active">Viral</a>
+        <button class="lang-switch" type="button" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <article class="article-hero-card">
+        <div class="hero-image">
+          <img src="images/self-driving-car.jpg" alt="Interior view of a modern self-driving car at night" />
+          <div class="breaking-badge">
+            <span class="pulse-dot"></span>
+            Breaking
+          </div>
+        </div>
+        <div class="hero-content">
+          <span class="eyebrow">Viral</span>
+          <h1>Self-Driving Car Malfunction Sparks Debate After Getting Stuck in a Loop</h1>
+          <p>
+            A widely shared clip of an autonomous vehicle repeatedly circling instead of completing its route has turned a strange tech glitch into a major viral talking point.
+          </p>
+          <div class="article-meta">
+            <span>By News Pulse+ Editorial Team</span>
+            <span>April 2026</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="article-layout">
+        <div class="stack-main">
+
+          <section class="summary-box">
+            <h2>Key Points</h2>
+            <ul class="summary-points">
+              <li>A self-driving vehicle went viral after footage showed it repeatedly driving in circles instead of finishing a simple route.</li>
+              <li>The incident appears to reflect a failure to properly interpret a challenging real-world traffic scenario.</li>
+              <li>While the clip was humorous to many viewers, it also raised serious questions about reliability and edge cases in autonomous driving.</li>
+              <li>The moment has renewed debate around public trust, regulation, and how ready self-driving systems are for wider use.</li>
+            </ul>
+          </section>
+
+          <article class="article-card">
+            <p>
+              A recent incident involving a self-driving vehicle has gone viral after footage showed the car repeatedly driving in circles, leaving passengers confused and raising fresh questions about the reliability of autonomous technology. The clip, widely shared across social media, captures the vehicle navigating what appears to be a simple route but failing to complete it, instead looping continuously without reaching its destination.
+            </p>
+
+            <p>
+              The situation unfolded in an urban setting, where autonomous vehicles are increasingly being tested and deployed. According to reports, the car's system encountered a scenario it could not properly interpret, possibly due to conflicting signals from traffic patterns, mapping data, or nearby obstacles. Rather than stopping or rerouting effectively, the vehicle defaulted to a repetitive motion, highlighting a limitation in its decision-making process.
+            </p>
+
+            <h2>Why the clip struck a nerve</h2>
+
+            <p>
+              While no injuries were reported, the incident quickly attracted global attention. Many viewers found humor in the situation, comparing it to a “confused robot” or a glitch in a video game. However, beyond the jokes, the footage has prompted more serious discussions about the readiness of self-driving technology for widespread use.
+            </p>
+
+            <p>
+              Autonomous vehicles rely on a combination of sensors, cameras, and artificial intelligence to interpret their surroundings. These systems are designed to process large amounts of data in real time, allowing the car to make driving decisions without human input. However, when faced with unfamiliar or complex scenarios, the technology can struggle to respond appropriately. Situations like this demonstrate that while significant progress has been made, there are still challenges to overcome.
+            </p>
+
+            <h2>Trust, edge cases, and public confidence</h2>
+
+            <p>
+              Industry experts have pointed out that edge cases, unusual or unexpected situations, remain one of the biggest hurdles for autonomous driving systems. Even a minor misinterpretation of the environment can lead to unintended behavior, such as the looping pattern seen in this case. Developers continue to refine algorithms and improve data accuracy to reduce these risks.
+            </p>
+
+            <p>
+              The incident also raises broader questions about safety, regulation, and public trust. As more self-driving vehicles appear on roads, maintaining confidence in the technology becomes increasingly important. Transparency about limitations and ongoing improvements will be key to gaining widespread acceptance.
+            </p>
+
+            <p>
+              Although the situation was ultimately harmless, it serves as a reminder that autonomous driving is still evolving. The viral moment may have entertained millions, but it also underscores the need for continued development to ensure that these systems can handle real-world conditions reliably.
+            </p>
+
+            <div class="article-tags">
+              <span class="tag">Viral</span>
+              <span class="tag">Technology</span>
+              <span class="tag">AI</span>
+              <span class="tag">Autonomous Vehicles</span>
+              <span class="tag">Smart Mobility</span>
+            </div>
+
+            <div class="share-row">
+              <button class="share-btn" onclick="copyArticleLink()">Copy Link</button>
+              <button class="share-btn" onclick="shareOnX()">Share on X</button>
+              <button class="share-btn" onclick="shareOnFacebook()">Share on Facebook</button>
+            </div>
+          </article>
+
+          <section class="timeline-card">
+            <h3>Live Update Timeline</h3>
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="timeline-time">Latest</div>
+                <div class="timeline-text">The looping self-driving car clip continues spreading online as viewers debate whether the moment is funny, alarming, or both.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Earlier</div>
+                <div class="timeline-text">Reports suggested the vehicle encountered a confusing urban scenario and failed to select a safe, effective alternative route.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Context</div>
+                <div class="timeline-text">Developers of autonomous systems continue working to reduce edge-case failures that can damage trust even when no one is harmed.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="author-card">
+            <h3>About the author</h3>
+            <p class="author-line">
+              <strong>News Pulse+ Editorial Team</strong> covers viral tech moments, internet culture, and the real-world questions hidden behind the web's most shareable clips.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="sidebar-stack">
+          <div class="sidebar-card">
+            <h3>Article Details</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><strong>Category:</strong> Viral</div>
+              <div class="sidebar-item"><strong>Author:</strong> News Pulse+ Editorial Team</div>
+              <div class="sidebar-item"><strong>Published:</strong> April 2026</div>
+              <div class="sidebar-item"><strong>Reading time:</strong> 5 minutes</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Related Topics</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="viral.html">Viral</a></div>
+              <div class="sidebar-item"><a href="economic.html">Economic</a></div>
+              <div class="sidebar-item"><a href="world-news.html">World News</a></div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Quick Links</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="index.html">Back to homepage</a></div>
+              <div class="sidebar-item"><a href="viral.html">More viral stories</a></div>
+              <div class="sidebar-item"><a href="smart-dog-goes-viral-ordering-food-doorbell.html">Smart dog feature</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="related-section">
+        <h2>Related Coverage</h2>
+        <div class="related-grid">
+          <a class="related-card" href="viral.html">
+            <div class="related-thumb">
+              <img src="images/self-driving-car.jpg" alt="Self-driving car viral story" />
+            </div>
+            <div class="related-body">
+              <h3>Tech glitches spread fastest when they mix humor, confusion, and bigger questions about what comes next</h3>
+              <p>Moments that feel funny at first often become much bigger stories once they tap into public trust and everyday safety concerns.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="smart-dog-goes-viral-ordering-food-doorbell.html">
+            <div class="related-thumb">
+              <img src="images/dor-order-food.jpeg" alt="Smart dog story" />
+            </div>
+            <div class="related-body">
+              <h3>The internet keeps turning strange everyday interactions with technology into major viral talking points</h3>
+              <p>Whether the star is a pet or a self-driving car, audiences react fastest when familiar tools behave in unexpected ways.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="uk-economy-shows-surprise-growth.html">
+            <div class="related-thumb">
+              <img src="images/uk-economy.jpg" alt="Technology and economy story" />
+            </div>
+            <div class="related-body">
+              <h3>New technologies always face a tougher public test when confidence, cost, and reliability are under scrutiny</h3>
+              <p>Trust remains critical whenever innovation moves from impressive theory into everyday real-world use.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>News Pulse+</h3>
+        <p>An independent digital publication covering the stories, trends, and debates shaping politics, entertainment, business, sport, and public life.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    let currentLanguage = "en";
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "en",
+        includedLanguages: "bg,en",
+        autoDisplay: false
+      }, "google_translate_element");
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function setLanguage(language) {
+      const combo = document.querySelector(".goog-te-combo");
+      if (!combo) return;
+      combo.value = language;
+      combo.dispatchEvent(new Event("change"));
+      currentLanguage = language;
+      localStorage.setItem("preferredLang", language);
+      document.getElementById("lang-text").textContent = language === "en" ? "BG" : "EN";
+    }
+
+    function applySavedLanguage() {
+      const savedLanguage = localStorage.getItem("preferredLang") || "en";
+      if (savedLanguage !== "en") {
+        setLanguage(savedLanguage);
+      } else {
+        currentLanguage = "en";
+        document.getElementById("lang-text").textContent = "BG";
+      }
+    }
+
+    function toggleLanguage() {
+      const savedLanguage = localStorage.getItem("preferredLang") || currentLanguage || "en";
+      setLanguage(savedLanguage === "en" ? "bg" : "en");
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById("site-nav");
+      const button = document.querySelector(".nav-toggle");
+      const isOpen = nav.classList.toggle("nav-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    function copyArticleLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert("Article link copied.");
+      }).catch(() => {
+        alert("Unable to copy the link right now.");
+      });
+    }
+
+    function shareOnX() {
+      const text = encodeURIComponent("Self-Driving Car Malfunction Sparks Debate After Getting Stuck in a Loop");
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+    }
+
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
