@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Steals the Spotlight After Interrupting Live TV Broadcast | News Pulse+</title>
+  <meta name="description" content="A cat interrupting a live television segment has become a viral sensation, highlighting the humor, unpredictability, and adaptability of live broadcasting." />
+  <meta name="keywords" content="viral cat story, live TV cat, broadcast interruption, viral pet clip, TV mishap, News Pulse+" />
+  <meta name="theme-color" content="#07111f" />
+  <meta property="og:title" content="Cat Steals the Spotlight After Interrupting Live TV Broadcast" />
+  <meta property="og:description" content="A routine TV segment turned into a global viral moment when a curious cat wandered into frame and stole the entire show." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="images/cat-broadcast.jpeg" />
+  <meta property="og:site_name" content="News Pulse+" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --card-2:#13233a;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --danger:#ff5e7a;
+      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --radius:28px;
+      --max-width:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(59,160,255,0.08), transparent 30%),
+        linear-gradient(180deg, #081221 0%, #050c16 100%);
+      color:var(--text);
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max-width), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.88);
+      backdrop-filter:blur(14px);
+      position:sticky;
+      top:0;
+      z-index:20;
+      transition:transform .3s ease;
+    }
+
+    .topbar-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:1.4rem;
+      letter-spacing:-0.03em;
+    }
+
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#dce7f5;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    .lang-switch,
+    .nav-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .lang-switch:hover,
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+
+    .nav-toggle{
+      display:none;
+      margin-left:auto;
+    }
+
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+
+    body{top:0 !important;}
+
+    .article-hero{
+      padding:34px 0 24px;
+    }
+
+    .article-hero-card,
+    .article-card,
+    .sidebar-card,
+    .related-card,
+    .summary-box,
+    .author-card,
+    .timeline-card{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+
+    .article-hero-card{overflow:hidden}
+    .hero-image{position:relative}
+
+    .hero-image img{
+      width:100%;
+      height:min(52vw, 520px);
+      object-fit:cover;
+    }
+
+    .breaking-badge{
+      position:absolute;
+      top:18px;
+      left:18px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background:rgba(6,14,26,.78);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      backdrop-filter:blur(10px);
+    }
+
+    .pulse-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--danger);
+      box-shadow:0 0 0 0 rgba(255,94,122,0.75);
+      animation:pulse 1.8s infinite;
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(255,94,122,0.75)}
+      70%{box-shadow:0 0 0 14px rgba(255,94,122,0)}
+      100%{box-shadow:0 0 0 0 rgba(255,94,122,0)}
+    }
+
+    .hero-content{padding:28px}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:14px;
+      font-size:0.84rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+
+    .hero-content h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.06;
+      letter-spacing:-0.04em;
+      max-width:930px;
+    }
+
+    .hero-content p{
+      margin:0;
+      color:#dbe7f4;
+      font-size:1.05rem;
+      line-height:1.75;
+      max-width:900px;
+    }
+
+    .article-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-top:20px;
+      color:var(--muted);
+      font-size:0.98rem;
+    }
+
+    .article-layout{
+      display:grid;
+      grid-template-columns:minmax(0, 1.9fr) minmax(280px, 0.9fr);
+      gap:24px;
+      align-items:start;
+    }
+
+    .stack-main,
+    .sidebar-stack{
+      display:grid;
+      gap:24px;
+    }
+
+    .summary-box,
+    .author-card,
+    .timeline-card{
+      padding:24px;
+    }
+
+    .summary-box h2,
+    .author-card h3,
+    .timeline-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+      letter-spacing:-0.02em;
+    }
+
+    .summary-points{
+      margin:0;
+      padding-left:18px;
+      display:grid;
+      gap:12px;
+      color:#dce8f5;
+      line-height:1.7;
+    }
+
+    .article-card{padding:28px}
+
+    .article-card p{
+      margin:0 0 18px;
+      color:#dde8f4;
+      line-height:1.85;
+      font-size:1rem;
+    }
+
+    .article-card h2{
+      margin:26px 0 12px;
+      font-size:1.35rem;
+      line-height:1.25;
+      letter-spacing:-0.03em;
+    }
+
+    .article-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
+    }
+
+    .tag{
+      padding:9px 14px;
+      border-radius:999px;
+      background:rgba(123,209,255,0.12);
+      border:1px solid rgba(123,209,255,0.22);
+      color:#dff4ff;
+      font-size:0.86rem;
+      font-weight:700;
+    }
+
+        .share-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .share-btn{
+      min-height:44px;
+      padding:0 18px;
+      border:none;
+      border-radius:999px;
+      font:inherit;
+      font-size:0.92rem;
+      font-weight:700;
+      cursor:pointer;
+      color:#06111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow:0 14px 28px rgba(59,160,255,0.22);
+    }
+
+    .share-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+    }
+
+    .timeline-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns:110px 1fr;
+      gap:14px;
+      align-items:start;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+    }
+
+    .timeline-item:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .timeline-time{
+      color:#89d3ff;
+      font-size:.88rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .timeline-text{
+      color:#dce8f5;
+      line-height:1.7;
+      font-size:.96rem;
+    }
+
+    .author-line{
+      margin:0;
+      color:#dce7f3;
+      line-height:1.75;
+    }
+
+    .sidebar-card{padding:22px}
+
+    .sidebar-card h3{
+      margin:0 0 14px;
+      font-size:1.08rem;
+      letter-spacing:-0.02em;
+    }
+
+    .sidebar-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .sidebar-item{
+      color:#dce7f4;
+      line-height:1.7;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+    }
+
+    .sidebar-item:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .sidebar-item a{color:#8fd6ff}
+
+    .related-section{
+      padding:32px 0 56px;
+    }
+
+    .related-section h2{
+      margin:0 0 18px;
+      font-size:1.45rem;
+      letter-spacing:-0.03em;
+    }
+
+    .related-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:20px;
+    }
+
+    .related-card{
+      overflow:hidden;
+      transition:transform .22s ease, border-color .22s ease;
+    }
+
+    .related-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(123,209,255,0.26);
+    }
+
+    .related-thumb img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    .related-body{padding:18px}
+
+    .related-body h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+      line-height:1.35;
+      letter-spacing:-0.02em;
+    }
+
+    .related-body p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.95rem;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:#050d18;
+      margin-top:18px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr 1fr;
+      gap:26px;
+      padding:34px 0 20px;
+    }
+
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+      font-size:1rem;
+    }
+
+    .footer-brand p,
+    .footer-col a{
+      color:var(--muted);
+      line-height:1.8;
+      font-size:0.95rem;
+    }
+
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:16px 0 24px;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    @media (max-width:1100px){
+      .article-layout{grid-template-columns:1fr}
+      .related-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+
+      .nav-links{
+        position:absolute;
+        top:calc(100% + 10px);
+        left:16px;
+        right:16px;
+        padding:14px;
+        border-radius:24px;
+        border:1px solid var(--line);
+        background:rgba(8,18,33,0.98);
+        box-shadow:var(--shadow);
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .nav-links.nav-open{display:flex}
+      .lang-switch{margin-left:0}
+
+      .hero-content,
+      .article-card,
+      .summary-box,
+      .author-card,
+      .timeline-card{
+        padding:24px;
+      }
+
+      .related-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width:640px){
+      .container{width:min(var(--max-width), calc(100% - 20px))}
+      .topbar-inner{min-height:68px}
+      .brand p{display:none}
+      .article-hero{padding-top:18px}
+      .hero-image img{height:300px}
+      .timeline-item{grid-template-columns:1fr;gap:6px}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div id="google_translate_element"></div>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="News Pulse+ homepage">
+        <h1>News Pulse+</h1>
+        <p>The stories moving the world.</p>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html" class="active">Viral</a>
+        <button class="lang-switch" type="button" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <article class="article-hero-card">
+        <div class="hero-image">
+          <img src="images/cat-broadcast.jpeg" alt="Cat interrupting a live broadcast beside a presenter" />
+          <div class="breaking-badge">
+            <span class="pulse-dot"></span>
+            Breaking
+          </div>
+        </div>
+        <div class="hero-content">
+          <span class="eyebrow">Viral</span>
+          <h1>Cat Steals the Spotlight After Interrupting Live TV Broadcast</h1>
+          <p>
+            A calm live segment turned into an instant viral hit when a curious cat wandered into view and completely changed the tone of the broadcast.
+          </p>
+          <div class="article-meta">
+            <span>By News Pulse+ Editorial Team</span>
+            <span>April 2026</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="article-layout">
+        <div class="stack-main">
+
+          <section class="summary-box">
+            <h2>Key Points</h2>
+            <ul class="summary-points">
+              <li>A cat unexpectedly wandered into a live television segment and instantly turned the broadcast into a viral moment.</li>
+              <li>The presenter tried to continue professionally, but the cat's confident desk exploration became impossible to ignore.</li>
+              <li>Clips spread rapidly online as viewers praised both the cat's timing and the presenter's composure.</li>
+              <li>The moment reinforced how unpredictability and authenticity can make live media especially memorable.</li>
+            </ul>
+          </section>
+
+          <article class="article-card">
+            <p>
+              A live television segment took an unexpected turn when a curious cat wandered into the frame, instantly transforming a routine broadcast into a viral moment. The incident, which was captured in real time, quickly spread across social media as viewers reacted to the unexpected and amusing interruption.
+            </p>
+
+            <p>
+              The broadcast appeared to be proceeding as normal, with the presenter delivering news in a calm and professional manner. Without warning, the cat leaped onto the desk, confidently positioning itself in front of the camera. The sudden appearance caught both the presenter and viewers off guard, creating a brief moment of surprise before turning into a lighthearted exchange.
+            </p>
+
+            <h2>Why the interruption worked so well online</h2>
+
+            <p>
+              Rather than panicking, the presenter attempted to continue speaking, though the situation quickly became difficult to ignore. The cat, seemingly unfazed by the bright lights and unfamiliar environment, began exploring the desk, occasionally blocking the camera's view. This only added to the humor of the moment, as the presenter struggled to maintain composure.
+            </p>
+
+            <p>
+              Within minutes, clips of the interruption began circulating online, attracting millions of views. Audiences were drawn to the authenticity of the moment, which contrasted sharply with the typically controlled nature of live television. Many praised the presenter for handling the situation with professionalism, while others focused on the cat's confident behavior.
+            </p>
+
+            <h2>Live media, spontaneity, and viral reach</h2>
+
+            <p>
+              The incident highlights how unpredictable live broadcasts can be. Despite careful planning and preparation, unexpected events can occur at any time. In this case, the presence of the cat introduced a level of spontaneity that resonated with viewers, making the moment more memorable than the segment itself.
+            </p>
+
+            <p>
+              Animal-related content has long been popular online, and this event reinforced that trend. The combination of a live setting and an unplanned interruption created a perfect formula for viral success. The cat's behavior, paired with the presenter's reaction, provided a relatable and entertaining experience for audiences worldwide.
+            </p>
+
+            <p>
+              Beyond the humor, the moment also demonstrated the importance of adaptability in live media. Broadcasters must be prepared to respond to unexpected situations while maintaining professionalism, a challenge that was clearly visible during the segment.
+            </p>
+
+            <p>
+              Although the interruption lasted only a short time, its impact extended far beyond the broadcast. The clip continues to circulate as a reminder that even in structured environments, unpredictability can lead to moments that capture global attention.
+            </p>
+
+            <div class="article-tags">
+              <span class="tag">Viral</span>
+              <span class="tag">Pets</span>
+              <span class="tag">Television</span>
+              <span class="tag">Broadcast</span>
+              <span class="tag">Internet Culture</span>
+            </div>
+
+            <div class="share-row">
+              <button class="share-btn" onclick="copyArticleLink()">Copy Link</button>
+              <button class="share-btn" onclick="shareOnX()">Share on X</button>
+              <button class="share-btn" onclick="shareOnFacebook()">Share on Facebook</button>
+            </div>
+          </article>
+
+          <section class="timeline-card">
+            <h3>Live Update Timeline</h3>
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="timeline-time">Latest</div>
+                <div class="timeline-text">Clips of the cat interruption continue circulating as viewers celebrate the contrast between broadcast professionalism and total feline chaos.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Earlier</div>
+                <div class="timeline-text">The cat jumped into frame mid-segment, immediately shifting the tone from routine broadcast to unexpected comedy.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Context</div>
+                <div class="timeline-text">Live TV remains especially vulnerable to viral moments because unplanned interruptions feel more authentic than polished studio content.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="author-card">
+            <h3>About the author</h3>
+            <p class="author-line">
+              <strong>News Pulse+ Editorial Team</strong> covers viral broadcast moments, online culture, and the unpredictable incidents that travel furthest across the internet.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="sidebar-stack">
+          <div class="sidebar-card">
+            <h3>Article Details</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><strong>Category:</strong> Viral</div>
+              <div class="sidebar-item"><strong>Author:</strong> News Pulse+ Editorial Team</div>
+              <div class="sidebar-item"><strong>Published:</strong> April 2026</div>
+              <div class="sidebar-item"><strong>Reading time:</strong> 5 minutes</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Related Topics</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="viral.html">Viral</a></div>
+              <div class="sidebar-item"><a href="entertainment.html">Entertainment</a></div>
+              <div class="sidebar-item"><a href="index.html">Homepage</a></div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Quick Links</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="index.html">Back to homepage</a></div>
+              <div class="sidebar-item"><a href="viral.html">More viral stories</a></div>
+              <div class="sidebar-item"><a href="smart-dog-goes-viral-ordering-food-doorbell.html">Smart dog feature</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="related-section">
+        <h2>Related Coverage</h2>
+        <div class="related-grid">
+          <a class="related-card" href="viral.html">
+            <div class="related-thumb">
+              <img src="images/cat-broadcast.jpeg" alt="Cat broadcast viral story" />
+            </div>
+            <div class="related-body">
+              <h3>Live settings create especially memorable viral moments when something unexpected instantly breaks the format</h3>
+              <p>Audiences respond fastest when professionalism, surprise, and genuine reactions all collide in the same clip.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="smart-dog-goes-viral-ordering-food-doorbell.html">
+            <div class="related-thumb">
+              <img src="images/dor-order-food.jpeg" alt="Smart dog story" />
+            </div>
+            <div class="related-body">
+              <h3>Animals still dominate the internet whenever curiosity and timing combine in the funniest possible way</h3>
+              <p>Pet stories spread globally because they are easy to understand, emotionally warm, and instantly replayable.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="passenger-sparks-viral-moment-plane-window-shade.html">
+            <div class="related-thumb">
+              <img src="images/window-shade.jpeg" alt="Plane window shade story" />
+            </div>
+            <div class="related-body">
+              <h3>Unexpected disruptions keep going viral when they happen in structured spaces people assume will stay under control</h3>
+              <p>Broadcast studios and airplane cabins both become internet fuel the moment a small surprise breaks the expected rhythm.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>News Pulse+</h3>
+        <p>An independent digital publication covering the stories, trends, and debates shaping politics, entertainment, business, sport, and public life.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    let currentLanguage = "en";
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "en",
+        includedLanguages: "bg,en",
+        autoDisplay: false
+      }, "google_translate_element");
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function setLanguage(language) {
+      const combo = document.querySelector(".goog-te-combo");
+      if (!combo) return;
+      combo.value = language;
+      combo.dispatchEvent(new Event("change"));
+      currentLanguage = language;
+      localStorage.setItem("preferredLang", language);
+      document.getElementById("lang-text").textContent = language === "en" ? "BG" : "EN";
+    }
+
+    function applySavedLanguage() {
+      const savedLanguage = localStorage.getItem("preferredLang") || "en";
+      if (savedLanguage !== "en") {
+        setLanguage(savedLanguage);
+      } else {
+        currentLanguage = "en";
+        document.getElementById("lang-text").textContent = "BG";
+      }
+    }
+
+    function toggleLanguage() {
+      const savedLanguage = localStorage.getItem("preferredLang") || currentLanguage || "en";
+      setLanguage(savedLanguage === "en" ? "bg" : "en");
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById("site-nav");
+      const button = document.querySelector(".nav-toggle");
+      const isOpen = nav.classList.toggle("nav-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    function copyArticleLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert("Article link copied.");
+      }).catch(() => {
+        alert("Unable to copy the link right now.");
+      });
+    }
+
+    function shareOnX() {
+      const text = encodeURIComponent("Cat Steals the Spotlight After Interrupting Live TV Broadcast");
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+    }
+
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

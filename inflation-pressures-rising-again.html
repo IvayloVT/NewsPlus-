@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inflation pressures rising again | News Pulse+</title>
+  <meta name="description" content="Renewed price pressures in energy, food, and services are raising concern that inflation may remain a major challenge for economies and households in the months ahead." />
+  <meta name="keywords" content="inflation, prices, central banks, global economy, energy costs, food prices, economic news, News Pulse+" />
+  <meta name="theme-color" content="#07111f" />
+  <meta property="og:title" content="Inflation pressures rising again" />
+  <meta property="og:description" content="New price pressures are emerging across several sectors, increasing concern that inflation could remain stubborn and continue shaping economic policy worldwide." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="images/inflation.jpg" />
+  <meta property="og:site_name" content="News Pulse+" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --card-2:#13233a;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --danger:#ff5e7a;
+      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --radius:28px;
+      --max-width:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(59,160,255,0.08), transparent 30%),
+        linear-gradient(180deg, #081221 0%, #050c16 100%);
+      color:var(--text);
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(var(--max-width), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.88);
+      backdrop-filter:blur(14px);
+      position:sticky;
+      top:0;
+      z-index:20;
+      transition:transform .3s ease;
+    }
+
+    .topbar-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:1.4rem;
+      letter-spacing:-0.03em;
+    }
+
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#dce7f5;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    .lang-switch,
+    .nav-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .lang-switch:hover,
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+
+    .nav-toggle{
+      display:none;
+      margin-left:auto;
+    }
+
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+
+    body{top:0 !important;}
+
+    .article-hero{
+      padding:34px 0 24px;
+    }
+
+    .article-hero-card,
+    .article-card,
+    .sidebar-card,
+    .related-card,
+    .summary-box,
+    .author-card,
+    .timeline-card{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+
+    .article-hero-card{
+      overflow:hidden;
+    }
+
+    .hero-image{
+      position:relative;
+    }
+
+    .hero-image img{
+      width:100%;
+      height:min(52vw, 520px);
+      object-fit:cover;
+    }
+
+    .breaking-badge{
+      position:absolute;
+      top:18px;
+      left:18px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background:rgba(6,14,26,.78);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      backdrop-filter:blur(10px);
+    }
+
+    .pulse-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--danger);
+      box-shadow:0 0 0 0 rgba(255,94,122,0.75);
+      animation:pulse 1.8s infinite;
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(255,94,122,0.75)}
+      70%{box-shadow:0 0 0 14px rgba(255,94,122,0)}
+      100%{box-shadow:0 0 0 0 rgba(255,94,122,0)}
+    }
+
+    .hero-content{
+      padding:28px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:14px;
+      font-size:0.84rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+
+    .hero-content h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1.06;
+      letter-spacing:-0.04em;
+      max-width:930px;
+    }
+
+    .standfirst{
+      margin:0 0 18px;
+      color:#d7e2ef;
+      font-size:1.04rem;
+      line-height:1.75;
+      max-width:860px;
+    }
+
+    .article-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:0.94rem;
+    }
+
+    .article-meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .article-meta span:not(:last-child)::after{
+      content:"•";
+      color:#6f88a3;
+      margin-left:12px;
+    }
+
+    main{
+      padding:0 0 50px;
+    }
+
+    .article-layout{
+      display:grid;
+      grid-template-columns:minmax(0, 1.9fr) minmax(280px, 0.9fr);
+      gap:24px;
+      align-items:start;
+    }
+
+    .stack-main{
+      display:grid;
+      gap:20px;
+    }
+
+    .summary-box,
+    .author-card,
+    .timeline-card{
+      padding:24px;
+    }
+
+    .summary-box h2,
+    .author-card h3,
+    .timeline-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+      letter-spacing:-0.02em;
+    }
+
+    .summary-points{
+      display:grid;
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .summary-points li{
+      position:relative;
+      padding-left:22px;
+      color:#dbe7f5;
+      line-height:1.7;
+    }
+
+    .summary-points li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.68em;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 0 18px rgba(123,209,255,.3);
+    }
+
+    .article-card{
+      padding:28px;
+    }
+
+    .article-body{
+      color:#dce8f5;
+      font-size:1.02rem;
+      line-height:1.85;
+    }
+
+    .article-body p{
+      margin:0 0 20px;
+    }
+
+    .article-body h2{
+      margin:30px 0 14px;
+      font-size:1.34rem;
+      letter-spacing:-0.03em;
+      color:#f7fbff;
+    }
+
+    .timeline-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns:110px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:14px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .timeline-item:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .timeline-time{
+      color:#89d3ff;
+      font-size:.88rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .timeline-text{
+      color:#dce8f5;
+      line-height:1.7;
+      font-size:.96rem;
+    }
+
+    .article-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:9px 14px;
+      border-radius:999px;
+      border:1px solid rgba(123,209,255,0.22);
+      color:#d6f0ff;
+      background:rgba(59,160,255,0.08);
+      font-size:0.88rem;
+    }
+
+        .share-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .share-btn{
+      min-height:44px;
+      padding:0 18px;
+      border:none;
+      border-radius:999px;
+      font:inherit;
+      font-size:0.92rem;
+      font-weight:700;
+      cursor:pointer;
+      color:#06111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow:0 14px 28px rgba(59,160,255,0.22);
+    }
+
+    .share-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.03);
+    }
+
+    .author-line{
+      color:#dce8f5;
+      line-height:1.75;
+      margin:0;
+    }
+
+    .sidebar-stack{
+      display:grid;
+      gap:18px;
+    }
+
+    .sidebar-card{
+      padding:22px;
+    }
+
+    .sidebar-card h3{
+      margin:0 0 14px;
+      font-size:1.06rem;
+      letter-spacing:-0.02em;
+    }
+
+    .sidebar-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .sidebar-item{
+      color:#dbe7f5;
+      line-height:1.65;
+    }
+
+    .sidebar-item strong{
+      color:#fff;
+    }
+
+    .sidebar-item a{
+      color:#bfe4ff;
+    }
+
+    .sidebar-item a:hover{
+      color:#fff;
+    }
+
+    .related-section{
+      margin-top:28px;
+    }
+
+    .related-section h2{
+      margin:0 0 18px;
+      font-size:1.5rem;
+      letter-spacing:-0.02em;
+    }
+
+    .related-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .related-card{
+      overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+
+    .related-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 22px 42px rgba(0,0,0,0.24);
+    }
+
+    .related-thumb{
+      aspect-ratio:16/10;
+      overflow:hidden;
+    }
+
+    .related-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .related-body{
+      padding:18px;
+    }
+
+    .related-body h3{
+      margin:0 0 8px;
+      font-size:1rem;
+      line-height:1.4;
+    }
+
+    .related-body p{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.6;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      gap:24px;
+    }
+
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+    }
+
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+    }
+
+    .footer-col a:hover{
+      color:var(--accent-2)
+    }
+
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (max-width:1100px){
+      .article-layout{
+        grid-template-columns:1fr;
+      }
+      .related-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:760px){
+      .hero-content,
+      .article-card,
+      .summary-box,
+      .author-card,
+      .timeline-card{
+        padding:24px;
+      }
+
+      .related-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .topbar-inner{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:14px;
+        padding:12px 0;
+      }
+
+      .nav-toggle{
+        display:inline-flex;
+      }
+
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+      }
+
+      .nav-links.nav-open{
+        display:flex;
+      }
+
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
+
+      .timeline-item{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="siteHeader">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <h1><a href="index.html">News Pulse+</a></h1>
+        <p>The stories moving the world.</p>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a class="active" href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div id="google_translate_element"></div>
+
+  <section class="article-hero">
+    <div class="container">
+      <article class="article-hero-card">
+        <div class="hero-image">
+          <img src="images/inflation.jpg" alt="Inflation concept with rising coins and price arrow" />
+          <div class="breaking-badge">
+            <span class="pulse-dot"></span>
+            Breaking
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <div class="eyebrow">Economic</div>
+          <h1>Inflation pressures rising again</h1>
+          <p class="standfirst">
+            After earlier signs of easing, rising costs in energy, food, and services are once again putting inflation at the centre of the global economic conversation.
+          </p>
+          <div class="article-meta">
+            <span>By News Pulse+ Editorial Team</span>
+            <span>April 2026</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="article-layout">
+        <div class="stack-main">
+
+          <section class="summary-box">
+            <h2>Key Points</h2>
+            <ul class="summary-points">
+              <li>Higher energy and transport costs are once again feeding into broader price increases.</li>
+              <li>Food and household essentials are becoming more expensive in many regions.</li>
+              <li>Central banks may delay rate cuts if inflation proves more persistent than expected.</li>
+              <li>Households and businesses are feeling renewed pressure as borrowing and living costs remain high.</li>
+            </ul>
+          </section>
+
+          <article class="article-card">
+            <div class="article-body">
+              <p>
+                Inflation is returning to the centre of economic debate as prices begin rising again across several essential parts of daily life. After months in which many countries appeared to be making progress, fresh pressure in energy, food, and services is creating concern that the fight against inflation is far from finished. For governments, central banks, businesses, and households, the latest shift is a reminder of how fragile the recovery in price stability has been.
+              </p>
+
+              <p>
+                One of the main drivers of renewed inflation is energy. Oil and gas prices have moved higher as supply concerns, transport disruption, and geopolitical uncertainty continue to affect global markets. Because energy touches nearly every part of the economy, those increases do not stay isolated. They feed into delivery costs, production expenses, heating bills, and transport fares, gradually lifting prices in many other sectors as well.
+              </p>
+
+              <p>
+                Food is another major source of pressure. Weather disruptions, supply chain strain, and higher transport costs are making essential goods more expensive to produce and deliver. For households, that means the cost of everyday shopping can rise even when wages do not keep pace. The effect is often most severe for lower-income families, who spend a larger share of their income on necessities.
+              </p>
+
+              <h2>Central banks face a more difficult path</h2>
+
+              <p>
+                Policymakers had hoped that easing inflation would create room to lower interest rates and support growth. But if prices continue rising, central banks may decide they must hold rates higher for longer. That can help restrain inflation, but it also raises borrowing costs for households and businesses. Mortgages, loans, and investment decisions all become more expensive, which can slow wider economic activity.
+              </p>
+
+              <p>
+                Financial markets are also responding to the renewed uncertainty. Investors are reassessing expectations for future rate cuts, corporate profits, and consumer demand. Some commodity-linked sectors may benefit from higher prices, but many businesses face weaker spending and tighter margins.
+              </p>
+
+              <h2>Pressure on the broader economy</h2>
+
+              <p>
+                What makes the current situation especially important is that inflation does not operate in isolation. Higher prices affect confidence, spending habits, savings, and long-term planning. When households feel squeezed, demand can weaken. When businesses face higher costs, expansion becomes harder.
+              </p>
+
+              <p>
+                The latest rise in inflation pressure shows that the global economy remains sensitive to shocks. Earlier optimism has not disappeared, but the renewed increase in prices makes clear that stability is still not guaranteed. In the months ahead, inflation is likely to remain one of the defining forces shaping markets, policy decisions, and everyday financial life.
+              </p>
+</div>
+
+            <div class="article-tags">
+              <span class="tag">Economic</span>
+              <span class="tag">Inflation</span>
+              <span class="tag">Prices</span>
+              <span class="tag">Central Banks</span>
+              <span class="tag">Global Economy</span>
+            </div>
+
+            <div class="share-row">
+              <button class="share-btn" onclick="copyArticleLink()">Copy Link</button>
+              <button class="share-btn" onclick="shareOnX()">Share on X</button>
+              <button class="share-btn" onclick="shareOnFacebook()">Share on Facebook</button>
+            </div>
+          </article>
+
+          <section class="timeline-card">
+            <h3>Price Pressure Timeline</h3>
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="timeline-time">Latest</div>
+                <div class="timeline-text">Fresh price increases in energy, food, and services renew concern that inflation may be strengthening again.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Earlier</div>
+                <div class="timeline-text">Central banks weigh whether interest rates must stay higher for longer to prevent inflation from becoming entrenched.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Ongoing</div>
+                <div class="timeline-text">Households and businesses continue adjusting to a period of elevated living costs and tighter financial conditions.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="author-card">
+            <h3>About the author</h3>
+            <p class="author-line">
+              <strong>News Pulse+ Editorial Team</strong> covers major international developments with a focus on clear reporting, clean presentation, and premium digital storytelling.
+            </p>
+          </section>
+
+        </div>
+
+        <aside class="sidebar-stack">
+          <div class="sidebar-card">
+            <h3>Article Details</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><strong>Category:</strong> Economic</div>
+              <div class="sidebar-item"><strong>Author:</strong> News Pulse+ Editorial Team</div>
+              <div class="sidebar-item"><strong>Published:</strong> April 2026</div>
+              <div class="sidebar-item"><strong>Reading time:</strong> 5 minutes</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Related Topics</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="economic.html">Economic</a></div>
+              <div class="sidebar-item"><a href="world-news.html">World News</a></div>
+              <div class="sidebar-item"><a href="economic.html">Economic</a></div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Quick Links</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="index.html">Homepage</a></div>
+              <div class="sidebar-item"><a href="about.html">About</a></div>
+              <div class="sidebar-item"><a href="contact.html">Contact</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="related-section">
+        <h2>Related Stories</h2>
+        <div class="related-grid">
+          <a class="related-card" href="imf-world-bank-meetings-highlight-global-risks.html">
+            <div class="related-thumb">
+              <img src="images/imf.jpg" alt="IMF and World Bank meetings highlight global risks" />
+            </div>
+            <div class="related-body">
+              <h3>IMF &amp; World Bank meetings highlight global risks</h3>
+              <p>Policymakers continue to warn that inflation, debt, and instability are testing the global economy.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="energy-crisis-and-oil-shocks-hit-markets.html">
+            <div class="related-thumb">
+              <img src="images/inflation.jpg" alt="Russian flag" />
+            </div>
+            <div class="related-body">
+              <h3>Energy crisis and oil shocks hit markets</h3>
+              <p>Higher fuel costs are adding pressure to inflation and keeping markets on edge.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="politics.html">
+            <div class="related-thumb">
+              <img src="images/Trump.jpg" alt="Political coverage" />
+            </div>
+            <div class="related-body">
+              <h3>Markets remain focused on prices, rates, and consumer pressure</h3>
+              <p>Investors are watching closely for signs that inflation could stay elevated for longer.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>News Pulse+</h3>
+        <p>A premium digital publication covering the stories, trends, and conversations shaping the world.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    function copyArticleLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert("Article link copied.");
+      });
+    }
+
+    function shareOnX() {
+      const text = encodeURIComponent("Inflation pressures rising again");
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+    }
+
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false },
+        'google_translate_element'
+      );
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function toggleLanguage() {
+      const currentLang = localStorage.getItem('preferredLang') || 'en';
+      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+    }
+
+    function changeLanguage(langCode) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+        localStorage.setItem('preferredLang', langCode);
+        updateButtonText(langCode);
+      }
+    }
+
+    function applySavedLanguage() {
+      const savedLang = localStorage.getItem('preferredLang');
+      if (savedLang && savedLang !== 'en') changeLanguage(savedLang);
+      else updateButtonText('en');
+    }
+
+    function updateButtonText(lang) {
+      const btn = document.getElementById('lang-text');
+      if (btn) btn.innerText = lang === 'en' ? 'BG' : 'EN';
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (!nav || !button || window.innerWidth > 760) return;
+      const isOpen = nav.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.innerText = isOpen ? 'Close' : 'Menu';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('nav-open');
+      if (button) {
+        button.setAttribute('aria-expanded', 'false');
+        button.innerText = 'Menu';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.getElementById('site-nav');
+      if (nav) {
+        nav.querySelectorAll('a, .lang-switch').forEach(function (item) {
+          item.addEventListener('click', function () {
+            if (window.innerWidth <= 760) closeMenu();
+          });
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 760) closeMenu();
+        });
+      }
+
+      const header = document.getElementById('siteHeader');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', function () {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (window.innerWidth <= 760) {
+          if (currentScroll > lastScroll && currentScroll > 80) {
+            header.style.transform = 'translateY(-100%)';
+          } else {
+            header.style.transform = 'translateY(0)';
+          }
+        } else {
+          header.style.transform = 'translateY(0)';
+        }
+
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+      });
+    });
+  </script>
+
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

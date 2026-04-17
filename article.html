@@ -1,0 +1,791 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article Title | News Pulse+</title>
+  <meta name="description" content="Read the full article on News Pulse+." />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(59,160,255,0.10), transparent 28%),
+        linear-gradient(180deg,#07111f 0%, #081321 35%, #091523 100%);
+      color:var(--text);
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.86);
+      backdrop-filter:blur(12px);
+    }
+    .topbar-inner{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .breaking{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .breaking span{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#02111d;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 12px;
+      border-radius:999px;
+      flex-shrink:0;
+    }
+    .breaking p,.topbar-inner>p{margin:0}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,0.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      flex-shrink:0;
+    }
+    .logo{
+      font-size:1.65rem;
+      font-weight:800;
+      letter-spacing:-0.03em;
+      line-height:1;
+    }
+    .logo span{color:var(--accent-2)}
+    .site-tagline{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:#d8e3f1;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+
+    .lang-switch{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .lang-switch:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+    body{top:0 !important;}
+    .article-hero{
+      padding:34px 0 20px;
+    }
+    .article-hero-card{
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+    }
+    .hero-image{
+      aspect-ratio:16/7;
+      overflow:hidden;
+    }
+    .hero-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .hero-content{
+      padding:30px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:16px;
+      font-size:.84rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .hero-content h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem,4vw,3.3rem);
+      line-height:1.03;
+      letter-spacing:-0.04em;
+      max-width:900px;
+    }
+    .hero-content .standfirst{
+      margin:0 0 18px;
+      color:#d7e2ef;
+      font-size:1.06rem;
+      line-height:1.75;
+      max-width:900px;
+    }
+    .article-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      color:#b7c6d9;
+      font-size:.94rem;
+    }
+
+    main{
+      padding:10px 0 70px;
+    }
+    .article-layout{
+      display:grid;
+      grid-template-columns:1.35fr .85fr;
+      gap:22px;
+      align-items:start;
+    }
+    .article-card,
+    .sidebar-card,
+    .related-card{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+    .article-card{
+      padding:30px;
+    }
+
+    .article-body{
+      color:#edf3fb;
+      font-size:1.02rem;
+      line-height:1.9;
+    }
+    .article-body p{
+      margin:0 0 22px;
+      color:#dce7f5;
+    }
+    .article-body h2{
+      margin:34px 0 14px;
+      font-size:1.55rem;
+      line-height:1.2;
+      letter-spacing:-0.02em;
+    }
+    .article-body blockquote{
+      margin:28px 0;
+      padding:18px 20px;
+      border-left:4px solid var(--accent-2);
+      background:rgba(255,255,255,0.03);
+      border-radius:16px;
+      color:#eef5ff;
+      font-size:1rem;
+      line-height:1.8;
+    }
+
+    .article-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.05);
+      color:#dce8f5;
+      font-size:.9rem;
+      font-weight:600;
+    }
+
+    .sidebar-stack{
+      display:grid;
+      gap:20px;
+    }
+    .sidebar-card{
+      padding:22px;
+    }
+    .sidebar-card h3{
+      margin:0 0 14px;
+      font-size:1.15rem;
+    }
+    .sidebar-list{
+      display:grid;
+      gap:12px;
+    }
+    .sidebar-item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+      color:#d9e4f2;
+      line-height:1.6;
+    }
+    .sidebar-item:first-child{
+      border-top:0;
+      padding-top:0;
+    }
+
+    .related-section{
+      margin-top:28px;
+    }
+    .related-section h2{
+      margin:0 0 18px;
+      font-size:1.5rem;
+      letter-spacing:-0.02em;
+    }
+    .related-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .related-card{
+      overflow:hidden;
+      transition:transform .25s ease;
+    }
+    .related-card:hover{
+      transform:translateY(-4px);
+    }
+    .related-thumb{
+      aspect-ratio:16/10;
+      overflow:hidden;
+    }
+    .related-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .related-body{
+      padding:18px;
+    }
+    .related-body h3{
+      margin:0 0 8px;
+      font-size:1rem;
+      line-height:1.4;
+    }
+    .related-body p{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.6;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      gap:24px;
+    }
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+    }
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+    }
+    .footer-col a:hover{color:var(--accent-2)}
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (max-width:1100px){
+      .article-layout{
+        grid-template-columns:1fr;
+      }
+      .related-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:760px){
+
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:100%;
+        justify-content:center;
+      }
+      .site-tagline{
+        max-width:100%;
+      }
+
+      .hero-content,
+      .article-card{
+        padding:24px;
+      }
+      .related-grid{
+        grid-template-columns:1fr;
+      }
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+      .topbar:not(header){
+        display:none;
+      }
+      .topbar-inner,
+      .navbar{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        padding:12px 16px;
+      }
+      .nav-toggle{
+        display:inline-flex;
+        margin-left:auto;
+      }
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+      }
+      .nav-links.nav-open{
+        display:flex;
+      }
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Latest</span>
+        <p>Full article coverage from News Pulse+ with a premium reading experience.</p>
+      </div>
+      <p>Updated by the News Pulse+ editorial team.</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <a href="index.html" class="logo">News<span>Pulse+</span></a>
+        <p class="site-tagline">The stories moving the world.</p>
+      </div>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+              <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <div id="google_translate_element"></div>
+
+  <section class="article-hero">
+    <div class="container">
+      <article class="article-hero-card">
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1600&q=80" alt="Article hero image">
+        </div>
+        <div class="hero-content">
+          <div class="eyebrow">World News</div>
+          <h1>Article headline goes here with a strong, publication-style title</h1>
+          <p class="standfirst">
+            This is the short summary or standfirst. Use it to explain the story clearly in two or three sentences before the reader enters the full article.
+          </p>
+          <div class="article-meta">
+            <span>By News Pulse+ Editorial Team</span>
+            <span>April 2026</span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="article-layout">
+
+        <article class="article-card">
+          <div class="article-body">
+            <p>
+              Start the article with a strong opening paragraph that explains what happened, why it matters, and who is affected. Keep it clear, readable, and direct.
+            </p>
+
+            <p>
+              Continue with details that expand the story in a natural way. Use your own words and avoid copying other websites directly. This helps the site feel more original and improves trust.
+            </p>
+
+            <h2>Why this story matters</h2>
+
+            <p>
+              Use a subheading like this to break the article into sections. This makes long articles easier to scan and gives the page a more professional news-style structure.
+            </p>
+
+            <blockquote>
+              â€œThis is a sample quote block. You can use it for a key statement, an official comment, or a short highlighted line from the story.â€
+            </blockquote>
+
+            <p>
+              Add more context, background, or reaction here. Explain the wider impact of the story so readers understand not only what happened, but why it is important.
+            </p>
+
+            <h2>What happens next</h2>
+
+            <p>
+              End the article by looking ahead. Tell the reader what to expect next, what questions remain, or what developments may follow.
+            </p>
+          </div>
+
+          <div class="article-tags">
+            <span class="tag">News</span>
+            <span class="tag">Analysis</span>
+            <span class="tag">Breaking Story</span>
+          </div>
+        </article>
+
+        <aside class="sidebar-stack">
+          <div class="sidebar-card">
+            <h3>Article Details</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item">Category: World News</div>
+              <div class="sidebar-item">Author: News Pulse+ Editorial Team</div>
+              <div class="sidebar-item">Published: April 2026</div>
+              <div class="sidebar-item">Reading time: 6 minutes</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Related Topics</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="world-news.html">World News</a></div>
+              <div class="sidebar-item"><a href="politics.html">Politics</a></div>
+              <div class="sidebar-item"><a href="economic.html">Economic</a></div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Quick Links</h3>
+            <div class="sidebar-list">
+              <div class="sidebar-item"><a href="index.html">Homepage</a></div>
+              <div class="sidebar-item"><a href="about.html">About</a></div>
+              <div class="sidebar-item"><a href="contact.html">Contact</a></div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      <section class="related-section">
+        <h2>Related Stories</h2>
+        <div class="related-grid">
+          <a class="related-card" href="#">
+            <div class="related-thumb">
+              <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80" alt="Related story">
+            </div>
+            <div class="related-body">
+              <h3>Related story headline number one</h3>
+              <p>Short summary for the related story card.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="#">
+            <div class="related-thumb">
+              <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80" alt="Related story">
+            </div>
+            <div class="related-body">
+              <h3>Related story headline number two</h3>
+              <p>Short summary for the related story card.</p>
+            </div>
+          </a>
+
+          <a class="related-card" href="#">
+            <div class="related-thumb">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Related story">
+            </div>
+            <div class="related-body">
+              <h3>Related story headline number three</h3>
+              <p>Short summary for the related story card.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>News Pulse+</h3>
+        <p>A premium digital publication covering the stories, trends, and conversations shaping the world.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false }, 'google_translate_element');
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function toggleLanguage() {
+      const currentLang = localStorage.getItem('preferredLang') || 'en';
+      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+    }
+
+    function changeLanguage(langCode) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+        localStorage.setItem('preferredLang', langCode);
+        updateButtonText(langCode);
+      }
+    }
+
+    function applySavedLanguage() {
+      const savedLang = localStorage.getItem('preferredLang');
+      if (savedLang && savedLang !== 'en') changeLanguage(savedLang);
+      else updateButtonText('en');
+    }
+
+    function updateButtonText(lang) {
+      const btn = document.getElementById('lang-text');
+      if (btn) btn.innerText = lang === 'en' ? 'BG' : 'EN';
+    }
+    function toggleMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (!nav || !button || window.innerWidth > 760) return;
+      const isOpen = nav.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.innerText = isOpen ? 'Close' : 'Menu';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('nav-open');
+      if (button) {
+        button.setAttribute('aria-expanded', 'false');
+        button.innerText = 'Menu';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.getElementById('site-nav');
+      if (!nav) return;
+
+      nav.querySelectorAll('a, .lang-switch').forEach(function (item) {
+        item.addEventListener('click', function () {
+          if (window.innerWidth <= 760) closeMenu();
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 760) closeMenu();
+      });
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
