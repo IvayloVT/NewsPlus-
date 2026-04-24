@@ -337,3 +337,160 @@ iframe.skiptranslate,
     width:100% !important;
   }
 }
+/* Stronger homepage editorial system */
+.homepage-hero{
+  padding-top:34px !important;
+}
+
+.homepage-lead{
+  min-height:610px !important;
+  background:
+    linear-gradient(180deg, rgba(5,12,22,0.08) 0%, rgba(5,12,22,0.38) 48%, rgba(5,12,22,0.92) 100%),
+    url('../images/radev-won.jpg') center/cover !important;
+}
+
+.homepage-lead .hero-main-content{
+  max-width:900px;
+}
+
+.homepage-lead h1{
+  max-width:850px !important;
+  font-size:clamp(2.35rem, 4.8vw, 4.3rem) !important;
+  line-height:.98 !important;
+}
+
+.homepage-lead p{
+  max-width:760px !important;
+  font-size:1.08rem !important;
+}
+
+.homepage-briefing-panel{
+  grid-template-rows:1fr auto;
+}
+
+.homepage-focus-card{
+  background:linear-gradient(180deg, rgba(13,27,45,0.98), rgba(7,17,31,0.98));
+  border:1px solid var(--premium-line);
+  border-radius:var(--premium-radius);
+  padding:22px;
+  display:grid;
+  gap:8px;
+}
+
+.homepage-focus-card span,
+.homepage-briefing-strip span,
+.spotlight-card span{
+  color:var(--premium-accent-2);
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.homepage-focus-card strong{
+  color:#fff;
+  font-size:3.2rem;
+  line-height:.95;
+  letter-spacing:-0.06em;
+}
+
+.homepage-focus-card p{
+  margin:0;
+  color:var(--premium-muted);
+  line-height:1.65;
+}
+
+.homepage-briefing-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:8px;
+}
+
+.homepage-briefing-strip a,
+.spotlight-card{
+  background:linear-gradient(180deg, rgba(13,27,45,0.98), rgba(7,17,31,0.98));
+  border:1px solid var(--premium-line);
+  border-radius:var(--premium-radius-sm);
+  box-shadow:none;
+}
+
+.homepage-briefing-strip a{
+  min-height:118px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.homepage-briefing-strip strong{
+  color:#f7fbff;
+  font-size:1rem;
+  line-height:1.35;
+}
+
+.homepage-spotlight{
+  margin-top:34px;
+}
+
+.spotlight-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.spotlight-card{
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  transition:transform .22s ease, border-color .22s ease !important;
+}
+
+.spotlight-card:hover,
+.homepage-briefing-strip a:hover{
+  transform:translateY(-3px);
+  border-color:rgba(155,232,255,0.28);
+}
+
+.spotlight-card img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+}
+
+.spotlight-card div{
+  padding:18px;
+  display:grid;
+  gap:10px;
+}
+
+.spotlight-card h3{
+  margin:0;
+  color:#fff;
+  font-size:1rem;
+  line-height:1.35;
+}
+
+@media (max-width:1100px){
+  .homepage-briefing-strip,
+  .spotlight-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:760px){
+  .homepage-lead{
+    min-height:520px !important;
+  }
+
+  .homepage-lead h1{
+    font-size:clamp(2rem, 11vw, 2.9rem) !important;
+  }
+
+  .homepage-briefing-strip,
+  .spotlight-grid{
+    grid-template-columns:1fr;
+  }
+}
