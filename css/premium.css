@@ -3858,3 +3858,112 @@ body.legal-page .site-tagline,
 body:not(.article-page):not(.category-page):not(.trending-page) header .site-tagline{
   color:#f4f8fd !important;
 }
+/* Static page hero photos */
+body.about-photo-page .hero-main,
+body.contact-photo-page .hero-main,
+body.privacy-photo-page .hero-main,
+body.terms-photo-page .hero-main,
+body.newsletter-photo-page .hero-main{
+  position:relative !important;
+  overflow:hidden !important;
+  min-height:clamp(560px, 62vw, 760px) !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  isolation:isolate;
+}
+
+body.about-photo-page .hero-main{
+  background-image:
+    linear-gradient(180deg, rgba(5,12,22,0.18) 0%, rgba(5,12,22,0.62) 46%, rgba(5,12,22,0.94) 100%),
+    url('../images/middle-east-agenda.jpg') !important;
+  background-position:center 30% !important;
+}
+
+body.contact-photo-page .hero-main{
+  background-image:
+    linear-gradient(180deg, rgba(5,12,22,0.14) 0%, rgba(5,12,22,0.58) 48%, rgba(5,12,22,0.95) 100%),
+    url('../images/starmer.jpg') !important;
+  background-position:center 24% !important;
+}
+
+body.privacy-photo-page .hero-main{
+  background-image:
+    linear-gradient(180deg, rgba(5,12,22,0.18) 0%, rgba(5,12,22,0.64) 48%, rgba(5,12,22,0.96) 100%),
+    url('../images/global-markets.jpg') !important;
+  background-position:center 42% !important;
+}
+
+body.terms-photo-page .hero-main{
+  background-image:
+    linear-gradient(180deg, rgba(5,12,22,0.18) 0%, rgba(5,12,22,0.62) 48%, rgba(5,12,22,0.96) 100%),
+    url('../images/eu-flag.jpg') !important;
+  background-position:center 30% !important;
+}
+
+body.newsletter-photo-page .hero-main{
+  background-image:
+    linear-gradient(180deg, rgba(5,12,22,0.16) 0%, rgba(5,12,22,0.58) 46%, rgba(5,12,22,0.96) 100%),
+    url('../images/global-music.jpg') !important;
+  background-position:center 28% !important;
+}
+
+body.about-photo-page .hero-main::before,
+body.contact-photo-page .hero-main::before,
+body.privacy-photo-page .hero-main::before,
+body.terms-photo-page .hero-main::before,
+body.newsletter-photo-page .hero-main::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(123,209,255,0.16), transparent 34%),
+    linear-gradient(90deg, rgba(5,12,22,0.86), rgba(5,12,22,0.24) 58%, rgba(5,12,22,0.72));
+}
+
+body.about-photo-page .hero-main-content,
+body.contact-photo-page .hero-main-content,
+body.privacy-photo-page .hero-main-content,
+body.terms-photo-page .hero-main-content,
+body.newsletter-photo-page .hero-main-content{
+  max-width:980px !important;
+  padding-top:clamp(210px, 28vw, 340px) !important;
+  text-shadow:0 2px 18px rgba(0,0,0,0.42);
+}
+
+body.about-photo-page .hero-main .eyebrow,
+body.contact-photo-page .hero-main .eyebrow,
+body.privacy-photo-page .hero-main .eyebrow,
+body.terms-photo-page .hero-main .eyebrow,
+body.newsletter-photo-page .hero-main .eyebrow{
+  text-shadow:none;
+}
+
+@media (max-width:760px){
+  body.about-photo-page .hero-main,
+  body.contact-photo-page .hero-main,
+  body.privacy-photo-page .hero-main,
+  body.terms-photo-page .hero-main,
+  body.newsletter-photo-page .hero-main{
+    min-height:560px !important;
+    background-position:center center !important;
+  }
+
+  body.about-photo-page .hero-main-content,
+  body.contact-photo-page .hero-main-content,
+  body.privacy-photo-page .hero-main-content,
+  body.terms-photo-page .hero-main-content,
+  body.newsletter-photo-page .hero-main-content{
+    padding-top:210px !important;
+  }
+}
+
+@media (max-width:480px){
+  body.about-photo-page .hero-main,
+  body.contact-photo-page .hero-main,
+  body.privacy-photo-page .hero-main,
+  body.terms-photo-page .hero-main,
+  body.newsletter-photo-page .hero-main{
+    min-height:620px !important;
+  }
+}
