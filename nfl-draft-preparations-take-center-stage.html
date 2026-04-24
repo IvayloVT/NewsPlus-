@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -77,24 +77,37 @@
       justify-content:space-between;
       gap:20px;
     }
-
     .brand{
       display:flex;
       flex-direction:column;
-      gap:4px;
+      gap:2px;
+      flex-shrink:0;
     }
-
     .brand h1{
       margin:0;
-      font-size:1.4rem;
-      letter-spacing:-0.03em;
+      font-size:clamp(2rem, 3vw, 2.4rem);
+      font-weight:900;
+      letter-spacing:-0.055em;
+      line-height:0.92;
+      color:#f4f8fd;
     }
-
     .brand p{
       margin:0;
-      color:var(--muted);
-      font-size:0.92rem;
+      color:#a8b4c6;
+      font-size:clamp(0.96rem, 1-2vw, 1.08rem);
+      font-weight:500;
+      letter-spacing:-0.02em;
+      line-height:1.15;
     }
+    .brand h1 a{
+      color:inherit;
+      display:inline-block;
+    }
+
+    .brand h1 span{
+      color:var(--accent-2);
+    }
+
 
     .nav-links{
       display:flex;
@@ -178,7 +191,7 @@
     .summary-box,
     .author-card,
     .timeline-card{
-      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11-21,37,0.96));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
@@ -326,7 +339,7 @@
     .article-card h2{
       margin:26px 0 12px;
       font-size:1.35rem;
-      line-height:1.25;
+      line-height:1-25;
       letter-spacing:-0.03em;
     }
 
@@ -346,32 +359,34 @@
       font-size:0.86rem;
       font-weight:700;
     }
-
-        .share-row{
+    .share-row{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
-      margin-top:22px;
+      gap:18px;
+      margin-top:26px;
     }
-
     .share-btn{
-      min-height:44px;
-      padding:0 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:0 28px;
       border:none;
       border-radius:999px;
       font:inherit;
-      font-size:0.92rem;
-      font-weight:700;
+      font-size:1rem;
+      font-weight:800;
+      letter-spacing:-0.02em;
       cursor:pointer;
       color:#06111d;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      background:linear-gradient(180deg, #71c4ff 0%, #55aff6 100%);
+      box-shadow:0 16px 32px rgba(59,160,255,0.22);
       transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
-      box-shadow:0 14px 28px rgba(59,160,255,0.22);
     }
-
     .share-btn:hover{
       transform:translateY(-2px);
-      filter:brightness(1.03);
+      filter:brightness(1.04);
+      box-shadow:0 20px 36px rgba(59,160,255,0.28);
     }
 
     .timeline-list{
@@ -493,50 +508,25 @@
       line-height:1.7;
       font-size:0.95rem;
     }
-
-    footer{
-      border-top:1px solid var(--line);
-      background:#050d18;
-      margin-top:18px;
+    @media (min-width:761px){
+      .navbar{
+        flex-wrap:nowrap;
+      }
+      .nav-links{
+        flex:1 1 auto;
+        min-width:0;
+        flex-wrap:nowrap;
+        justify-content:flex-end;
+        gap:8px;
+      }
+      .nav-links a{
+        white-space:nowrap;
+      }
+      .lang-switch{
+        flex-shrink:0;
+        white-space:nowrap;
+      }
     }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.35fr 1fr 1fr 1fr;
-      gap:26px;
-      padding:34px 0 20px;
-    }
-
-    .footer-brand h3,
-    .footer-col h4{
-      margin:0 0 12px;
-      font-size:1rem;
-    }
-
-    .footer-brand p,
-    .footer-col a{
-      color:var(--muted);
-      line-height:1.8;
-      font-size:0.95rem;
-    }
-
-    .footer-col{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-
-    .footer-bottom{
-      border-top:1px solid var(--line);
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      padding:16px 0 24px;
-      color:var(--muted);
-      font-size:0.9rem;
-    }
-
     @media (max-width:1100px){
       .article-layout{
         grid-template-columns:1fr;
@@ -598,10 +588,14 @@
       .topbar-inner{
         min-height:68px;
       }
-
-      .brand p{
-        display:none;
-      }
+    .brand p{
+      margin:0;
+      color:#a8b4c6;
+      font-size:clamp(0.96rem, 1-2vw, 1.08rem);
+      font-weight:500;
+      letter-spacing:-0.02em;
+      line-height:1.15;
+    }
 
       .article-hero{
         padding-top:18px;
@@ -620,7 +614,53 @@
         grid-template-columns:1fr;
       }
     }
-  </style>
+  
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+      margin-top:34px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr 1fr;
+      gap:24px;
+    }
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+      font-size:1rem;
+    }
+    .footer-brand h3 span{color:var(--accent-2)}
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+      line-height:1.7;
+    }
+    .footer-col a:hover{color:var(--accent-2)}
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+</style>
 </head>
 <body>
   <div id="google_translate_element"></div>
@@ -628,7 +668,7 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="News Pulse+ homepage">
-        <h1>News Pulse+</h1>
+        <h1>News<span>Pulse+</span></h1>
         <p>The stories moving the world.</p>
       </a>
 
@@ -800,34 +840,32 @@
 
       <section class="related-section">
         <h2>Related Coverage</h2>
-        <div class="related-grid">
-          <a class="related-card" href="sport.html">
-            <div class="related-thumb">
-              <img src="images/nfl-draft.jpeg" alt="NFL Draft related story" />
-            </div>
-            <div class="related-body">
-              <h3>Big draft nights often reveal which teams trust preparation, patience, and precise decision-making most</h3>
-              <p>Board discipline, trade timing, and long-term planning can redefine a roster faster than almost any other offseason event.</p>
-            </div>
-          </a>
-
+                <div class="related-grid">
           <a class="related-card" href="aston-villa-shine-europa-league-quarter-finals.html">
             <div class="related-thumb">
-              <img src="images/aston-villa.jpg" alt="Aston Villa related story" />
+              <img src="images/aston-villa.jpg" alt="Aston Villa Europa League story" />
             </div>
             <div class="related-body">
-              <h3>Major sporting momentum often grows from planning, execution, and confidence under pressure</h3>
-              <p>Across football and American sport, the strongest results usually begin with preparation long before the biggest moments arrive.</p>
+              <h3>Aston Villa shine with powerful attacking performance in Europa League quarter-finals</h3>
+              <p>Villa delivered a composed and forceful display, combining sharp attacking movement with the defensive structure needed for a major European result.</p>
             </div>
           </a>
-
           <a class="related-card" href="fury-joshua-venue-plans-shift.html">
             <div class="related-thumb">
-              <img src="images/fury-joshua.jpeg" alt="Boxing venue story" />
+              <img src="images/fury-joshua.jpeg" alt="Tyson Fury and Anthony Joshua story" />
             </div>
             <div class="related-body">
-              <h3>High-profile events are often shaped as much by planning and negotiation as by the action itself</h3>
-              <p>Whether building a fight card or draft board, strategy behind the scenes remains central to the final outcome.</p>
+              <h3>Tyson Fury vs Anthony Joshua venue plans shift as talks continue</h3>
+              <p>Venue uncertainty, financial backing, and scheduling talks are still shaping one of boxing's most anticipated heavyweight matchups.</p>
+            </div>
+          </a>
+          <a class="related-card" href="carlos-ulberg-leading-contender-ufc-victory.html">
+            <div class="related-thumb">
+              <img src="images/carlos-ulberg.jpg" alt="Carlos Ulberg UFC story" />
+            </div>
+            <div class="related-body">
+              <h3>Carlos Ulberg emerges as leading contender after commanding UFC victory</h3>
+              <p>Ulberg's latest performance has strengthened his case as one of the division's leading challengers, with discipline and precision driving his rise.</p>
             </div>
           </a>
         </div>
@@ -836,42 +874,42 @@
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <h3>News Pulse+</h3>
-        <p>An independent digital publication covering the stories, trends, and debates shaping politics, entertainment, business, sport, and public life.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Sections</h4>
-        <a href="world-news.html">World News</a>
-        <a href="politics.html">Politics</a>
-        <a href="economic.html">Economic</a>
-        <a href="entertainment.html">Entertainment</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>More</h4>
-        <a href="sport.html">Sport</a>
-        <a href="viral.html">Viral</a>
-        <a href="newsletter.html">Newsletter</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-      </div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h3>News<span>Pulse+</span></h3>
+      <p>An independent digital publication covering the stories, trends, and debates shaping politics, entertainment, business, sport, and public life.</p>
     </div>
 
-    <div class="container footer-bottom">
-      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
-      <a href="index.html">Back to homepage</a>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="world-news.html">World News</a>
+      <a href="politics.html">Politics</a>
+      <a href="economic.html">Economic</a>
+      <a href="entertainment.html">Entertainment</a>
     </div>
-  </footer>
+
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="sport.html">Sport</a>
+      <a href="viral.html">Viral</a>
+      <a href="trending.html">Trending</a>
+      <a href="newsletter.html">Newsletter</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+    <a href="index.html">Back to homepage</a>
+  </div>
+</footer>
 
   <script>
     let currentLanguage = "en";
@@ -939,3 +977,6 @@
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+
+
+

@@ -95,16 +95,20 @@
       flex-shrink:0;
     }
     .logo{
-      font-size:1.65rem;
-      font-weight:800;
-      letter-spacing:-0.03em;
-      line-height:1;
+      font-size:clamp(2rem, 3vw, 2.4rem);
+      font-weight:900;
+      letter-spacing:-0.055em;
+      line-height:0.92;
+      color:#f4f8fd;
     }
-    .logo span{color:var(--accent-2)}
+.logo span{color:var(--accent-2)}
     .site-tagline{
       margin:0;
-      color:var(--muted);
-      font-size:.92rem;
+      color:#a8b4c6;
+      font-size:clamp(0.96rem, 1-2vw, 1.08rem);
+      font-weight:500;
+      letter-spacing:-0.02em;
+      line-height:1.15;
     }
     .nav-links{
       display:flex;
@@ -124,6 +128,68 @@
       background:rgba(255,255,255,0.08);
       color:#fff;
     }
+    .lang-switch{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .lang-switch:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      font-family:inherit;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+    body{top:0 !important;}
 
     .hero{
       padding:34px 0 26px;
@@ -138,7 +204,7 @@
     .hero-side-card,
     .section-card,
     .mini-card{
-      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11-21,37,0.96));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
@@ -294,7 +360,7 @@
     .mini-card{
       padding:16px;
       transition:.25s ease;
-      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11-21,37,0.96));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius-sm);
@@ -339,48 +405,6 @@
       padding-top:0;
     }
 
-    footer{
-      border-top:1px solid var(--line);
-      background:rgba(3,9,17,0.55);
-      padding:34px 0 0;
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr .8fr .8fr;
-      gap:24px;
-    }
-    .footer-brand h3,
-    .footer-col h4{
-      margin:0 0 12px;
-    }
-    .footer-brand p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.7;
-      max-width:380px;
-    }
-    .footer-col{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .footer-col a{
-      color:#dce8f5;
-      width:fit-content;
-    }
-    .footer-col a:hover{color:var(--accent-2)}
-    .footer-bottom{
-      margin-top:26px;
-      padding:18px 0;
-      border-top:1px solid var(--line);
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:.94rem;
-    }
-
     @media (max-width:1100px){
       .hero-grid,
       .news-layout,
@@ -402,9 +426,14 @@
         width:100%;
         justify-content:center;
       }
-      .site-tagline{
-        max-width:100%;
-      }
+    .site-tagline{
+      margin:0;
+      color:#a8b4c6;
+      font-size:clamp(0.96rem, 1-2vw, 1.08rem);
+      font-weight:500;
+      letter-spacing:-0.02em;
+      line-height:1.15;
+    }
 
       .hero-main{
         min-height:460px;
@@ -452,7 +481,73 @@
         text-align:center;
       }
     }
-  </style>
+  
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+      margin-top:34px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr 1fr;
+      gap:24px;
+    }
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+      font-size:1rem;
+    }
+    .footer-brand h3 span{color:var(--accent-2)}
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+      line-height:1.7;
+    }
+    .footer-col a:hover{color:var(--accent-2)}
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (min-width:761px){
+      .navbar{
+        flex-wrap:nowrap;
+      }
+      .nav-links{
+        flex:1 1 auto;
+        min-width:0;
+        flex-wrap:nowrap;
+        justify-content:flex-end;
+        gap:8px;
+      }
+      .nav-links a{
+        white-space:nowrap;
+      }
+      .lang-switch{
+        flex-shrink:0;
+        white-space:nowrap;
+      }
+    }
+</style>
 </head>
 <body>
 
@@ -568,7 +663,7 @@
 
             <div class="policy-item">
               <h3>Third-Party Vendors</h3>
-              <p>Third-party vendors, including Google, may use cookies to serve ads based on a user’s prior visits to this website or other websites.</p>
+              <p>Third-party vendors, including Google, may use cookies to serve ads based on a user's prior visits to this website or other websites.</p>
             </div>
 
             <div class="policy-item">
@@ -592,7 +687,7 @@
             </div>
 
             <div class="policy-item">
-              <h3>Children’s Information</h3>
+              <h3>Children's Information</h3>
               <p>This website does not knowingly collect personal data from children under the age of 13.</p>
             </div>
 
@@ -643,42 +738,42 @@
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <h3>News Pulse+</h3>
-        <p>Privacy and trust pages help support transparency, credibility, and a stronger publication identity.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Sections</h4>
-        <a href="world-news.html">World News</a>
-        <a href="politics.html">Politics</a>
-        <a href="economic.html">Economic</a>
-        <a href="entertainment.html">Entertainment</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>More</h4>
-        <a href="sport.html">Sport</a>
-        <a href="viral.html">Viral</a>
-        <a href="newsletter.html">Newsletter</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-      </div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h3>News<span>Pulse+</span></h3>
+      <p>An independent digital publication covering the stories, trends, and debates shaping politics, entertainment, business, sport, and public life.</p>
     </div>
 
-    <div class="container footer-bottom">
-      <span>&copy; 2026 News Pulse+. All rights reserved.</span>
-      <a href="index.html">Back to homepage</a>
+    <div class="footer-col">
+      <h4>Sections</h4>
+      <a href="world-news.html">World News</a>
+      <a href="politics.html">Politics</a>
+      <a href="economic.html">Economic</a>
+      <a href="entertainment.html">Entertainment</a>
     </div>
-  </footer>
+
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="sport.html">Sport</a>
+      <a href="viral.html">Viral</a>
+      <a href="trending.html">Trending</a>
+      <a href="newsletter.html">Newsletter</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; 2026 News Pulse+. All rights reserved.</span>
+    <a href="index.html">Back to homepage</a>
+  </div>
+</footer>
 
   <script>
     function googleTranslateElementInit() {
@@ -748,6 +843,8 @@
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+
+
 
 
 

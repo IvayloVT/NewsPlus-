@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trump on Hungary's new prime minister: I like him, he will do well | News Pulse+</title>
-  <meta name="description" content="Donald Trump reacts to Hungary's political transition after Viktor Orban's defeat and the rise of Peter Magyar and the TISZA movement." />
-  <meta name="keywords" content="Donald Trump, Hungary, Viktor Orban, Peter Magyar, TISZA, world news, politics, News Pulse+" />
+  <title>Middle East crisis shapes global political agenda | News Pulse+</title>
+  <meta name="description" content="The escalating Middle East crisis is reshaping diplomatic strategy, energy policy, and security planning across the global political landscape." />
+  <meta name="keywords" content="Middle East crisis, Iran, Israel, United States, politics, diplomacy, Strait of Hormuz, global agenda, News Pulse+" />
   <meta name="theme-color" content="#07111f" />
-  <meta property="og:title" content="Trump on Hungary's new prime minister: I like him, he will do well" />
-  <meta property="og:description" content="A major political transition in Hungary has drawn global attention after Viktor Orban's defeat, with Donald Trump expressing confidence in the country's incoming leader." />
+  <meta property="og:title" content="Middle East crisis shapes global political agenda" />
+  <meta property="og:description" content="Tensions involving Iran, Israel, and the United States are influencing diplomatic choices, energy strategy, and security planning far beyond the region." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="images/trump.jpg" />
+  <meta property="og:image" content="images/middle-east-agenda.jpg" />
   <meta property="og:site_name" content="News Pulse+" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,15 +45,8 @@
       color:var(--text);
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
     .container{
       width:min(var(--max-width), calc(100% - 32px));
@@ -91,14 +84,6 @@
       line-height:0.92;
       color:#f4f8fd;
     }
-    .brand p{
-      margin:0;
-      color:#a8b4c6;
-      font-size:clamp(0.96rem, 1-2vw, 1.08rem);
-      font-weight:500;
-      letter-spacing:-0.02em;
-      line-height:1.15;
-    }
     .brand h1 a{
       color:inherit;
       display:inline-block;
@@ -107,7 +92,14 @@
     .brand h1 span{
       color:var(--accent-2);
     }
-
+    .brand p{
+      margin:0;
+      color:#a8b4c6;
+      font-size:clamp(0.96rem, 1-2vw, 1.08rem);
+      font-weight:500;
+      letter-spacing:-0.02em;
+      line-height:1.15;
+    }
 
     .nav-links{
       display:flex;
@@ -197,13 +189,8 @@
       border-radius:var(--radius);
     }
 
-    .article-hero-card{
-      overflow:hidden;
-    }
-
-    .hero-image{
-      position:relative;
-    }
+    .article-hero-card{overflow:hidden}
+    .hero-image{position:relative}
 
     .hero-image img{
       width:100%;
@@ -245,9 +232,7 @@
       100%{box-shadow:0 0 0 0 rgba(255,94,122,0)}
     }
 
-    .hero-content{
-      padding:28px;
-    }
+    .hero-content{padding:28px}
 
     .eyebrow{
       display:inline-flex;
@@ -288,32 +273,17 @@
       font-size:0.94rem;
     }
 
-    .article-meta span{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .article-meta span:not(:last-child)::after{
-      content:"•";
-      color:#6f88a3;
-      margin-left:12px;
-    }
-
-    main{
-      padding:0 0 50px;
-    }
-
     .article-layout{
       display:grid;
-      grid-template-columns:minmax(0, 1.9fr) minmax(280px, 0.9fr);
-      gap:24px;
+      grid-template-columns:minmax(0, 2fr) minmax(280px, .9fr);
+      gap:22px;
       align-items:start;
     }
 
-    .stack-main{
+    .stack-main,
+    .sidebar-stack{
       display:grid;
-      gap:20px;
+      gap:22px;
     }
 
     .summary-box,
@@ -357,58 +327,19 @@
       box-shadow:0 0 18px rgba(123,209,255,.3);
     }
 
-    .article-card{
-      padding:28px;
-    }
-
-    .article-body{
-      color:#dce8f5;
-      font-size:1.02rem;
-      line-height:1.85;
-    }
+    .article-card{padding:28px}
 
     .article-body p{
-      margin:0 0 20px;
+      margin:0 0 18px;
+      color:#dce8f5;
+      line-height:1.82;
+      font-size:1rem;
     }
 
     .article-body h2{
-      margin:30px 0 14px;
-      font-size:1.34rem;
+      margin:28px 0 12px;
+      font-size:1.45rem;
       letter-spacing:-0.03em;
-      color:#f7fbff;
-    }
-
-    .timeline-list{
-      display:grid;
-      gap:14px;
-    }
-
-    .timeline-item{
-      display:grid;
-      grid-template-columns:110px 1fr;
-      gap:14px;
-      align-items:start;
-      padding:14px 0;
-      border-top:1px solid var(--line);
-    }
-
-    .timeline-item:first-child{
-      border-top:none;
-      padding-top:0;
-    }
-
-    .timeline-time{
-      color:#89d3ff;
-      font-size:.88rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .timeline-text{
-      color:#dce8f5;
-      line-height:1.7;
-      font-size:.96rem;
     }
 
     .article-tags{
@@ -421,12 +352,14 @@
     .tag{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       padding:9px 14px;
       border-radius:999px;
-      border:1px solid rgba(123,209,255,0.22);
-      color:#d6f0ff;
-      background:rgba(59,160,255,0.08);
-      font-size:0.88rem;
+      background:rgba(123,209,255,.1);
+      color:#dff2ff;
+      border:1px solid rgba(123,209,255,.22);
+      font-size:.88rem;
+      font-weight:700;
     }
     .share-row{
       display:flex;
@@ -458,131 +391,61 @@
       box-shadow:0 20px 36px rgba(59,160,255,0.28);
     }
 
+    .timeline-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      display:grid;
+      gap:6px;
+      padding-left:16px;
+      border-left:2px solid rgba(123,209,255,.28);
+    }
+
+    .timeline-time{
+      color:#bfe4ff;
+      font-size:.82rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .timeline-text{
+      color:#dce8f5;
+      line-height:1.7;
+      font-size:.96rem;
+    }
+
     .author-line{
+      margin:0;
       color:#dce8f5;
       line-height:1.75;
-      margin:0;
     }
 
-    .sidebar-stack{
-      display:grid;
-      gap:18px;
-    }
+    .sidebar-card{padding:22px}
+    .sidebar-card h3{margin:0 0 14px;font-size:1.05rem}
+    .sidebar-list{display:grid;gap:12px}
+    .sidebar-item{color:#dbe7f5;line-height:1.65}
+    .sidebar-item strong{color:#fff}
+    .sidebar-item a{color:#bfe4ff}
+    .sidebar-item a:hover{color:#fff}
 
-    .sidebar-card{
-      padding:22px;
-    }
+    .related-section{margin-top:28px}
+    .related-section h2{margin:0 0 18px;font-size:1.5rem;letter-spacing:-0.02em}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .related-card{overflow:hidden;transition:transform .25s ease, box-shadow .25s ease}
+    .related-card:hover{transform:translateY(-4px);box-shadow:0 22px 42px rgba(0,0,0,0.24)}
+    .related-thumb{aspect-ratio:16/10;overflow:hidden}
+    .related-thumb img{width:100%;height:100%;object-fit:cover}
+    .related-body{padding:18px}
+    .related-body h3{margin:0 0 8px;font-size:1rem;line-height:1.4}
+    .related-body p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
 
-    .sidebar-card h3{
-      margin:0 0 14px;
-      font-size:1.06rem;
-      letter-spacing:-0.02em;
-    }
-
-    .sidebar-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .sidebar-item{
-      color:#dbe7f5;
-      line-height:1.65;
-    }
-
-    .sidebar-item strong{
-      color:#fff;
-    }
-
-    .sidebar-item a{
-      color:#bfe4ff;
-    }
-
-    .sidebar-item a:hover{
-      color:#fff;
-    }
-
-    .related-section{
-      margin-top:28px;
-    }
-
-    .related-section h2{
-      margin:0 0 18px;
-      font-size:1.5rem;
-      letter-spacing:-0.02em;
-    }
-
-    .related-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .related-card{
-      overflow:hidden;
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-
-    .related-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 22px 42px rgba(0,0,0,0.24);
-    }
-
-    .related-thumb{
-      aspect-ratio:16/10;
-      overflow:hidden;
-    }
-
-    .related-thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .related-body{
-      padding:18px;
-    }
-
-    .related-body h3{
-      margin:0 0 8px;
-      font-size:1rem;
-      line-height:1.4;
-    }
-
-    .related-body p{
-      margin:0;
-      color:var(--muted);
-      font-size:.92rem;
-      line-height:1.6;
-    }
-    @media (min-width:761px){
-      .navbar{
-        flex-wrap:nowrap;
-      }
-      .nav-links{
-        flex:1 1 auto;
-        min-width:0;
-        flex-wrap:nowrap;
-        justify-content:flex-end;
-        gap:8px;
-      }
-      .nav-links a{
-        white-space:nowrap;
-      }
-      .lang-switch{
-        flex-shrink:0;
-        white-space:nowrap;
-      }
-    }
-    @media (max-width:1100px){
-      .article-layout{
-        grid-template-columns:1fr;
-      }
-      .related-grid{
-        grid-template-columns:1fr 1fr;
-      }
-      .footer-grid{
-        grid-template-columns:1fr 1fr;
-      }
+    @media (max-width:980px){
+      .article-layout{grid-template-columns:1fr}
+      .related-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
     }
 
     @media (max-width:760px){
@@ -590,31 +453,10 @@
       .article-card,
       .summary-box,
       .author-card,
-      .timeline-card{
-        padding:24px;
-      }
-
-      .related-grid{
-        grid-template-columns:1fr;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .topbar-inner{
-        flex-wrap:wrap;
-        flex-direction:row;
-        align-items:center;
-        justify-content:space-between;
-        gap:14px;
-        padding:12px 0;
-      }
-
-      .nav-toggle{
-        display:inline-flex;
-      }
-
+      .timeline-card{padding:24px}
+      .related-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .nav-toggle{display:inline-flex}
       .nav-links{
         display:none;
         width:100%;
@@ -624,23 +466,14 @@
         gap:8px;
         padding-top:8px;
       }
-
-      .nav-links.nav-open{
-        display:flex;
-      }
-
-      .nav-links a,
-      .lang-switch{
-        width:auto;
-        min-width:96px;
-        margin:0 auto;
-        justify-content:center;
-        text-align:center;
-      }
-
-      .timeline-item{
-        grid-template-columns:1fr;
-        gap:6px;
+      .nav-links.nav-open{display:flex}
+      .topbar-inner{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:14px;
+        padding:12px 0;
       }
     }
   
@@ -692,6 +525,8 @@
 </style>
 </head>
 <body>
+  <div id="google_translate_element"></div>
+
   <header class="topbar" id="siteHeader">
     <div class="container topbar-inner">
       <div class="brand">
@@ -701,26 +536,24 @@
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
 
-      <nav class="nav-links" id="site-nav" aria-label="Primary">
+      <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a class="active" href="world-news.html">World News</a>
-        <a href="politics.html">Politics</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html" class="active">Politics</a>
         <a href="economic.html">Economic</a>
         <a href="entertainment.html">Entertainment</a>
         <a href="sport.html">Sport</a>
         <a href="viral.html">Viral</a>
-        <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+        <button class="lang-switch" type="button" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
       </nav>
     </div>
   </header>
-
-  <div id="google_translate_element"></div>
 
   <section class="article-hero">
     <div class="container">
       <article class="article-hero-card">
         <div class="hero-image">
-          <img src="images/trump.jpg" alt="Donald Trump speaking during a public appearance" />
+          <img src="images/middle-east-agenda.jpg" alt="Political montage showing leaders and military tension across the Middle East" />
           <div class="breaking-badge">
             <span class="pulse-dot"></span>
             Breaking
@@ -728,10 +561,10 @@
         </div>
 
         <div class="hero-content">
-          <div class="eyebrow">World News</div>
-          <h1>Trump on Hungary's new prime minister: I like him, he will do well</h1>
+          <div class="eyebrow">Politics</div>
+          <h1>Middle East crisis shapes global political agenda</h1>
           <p class="standfirst">
-            A major political transition in Hungary has drawn global attention after Viktor Orban's defeat, with U.S. President Donald Trump expressing confidence in the country's incoming leader.
+            The escalating crisis in the Middle East is driving diplomatic recalculations, energy concerns, and security decisions across the global political landscape.
           </p>
           <div class="article-meta">
             <span>By News Pulse+ Editorial Team</span>
@@ -751,54 +584,56 @@
           <section class="summary-box">
             <h2>Key Points</h2>
             <ul class="summary-points">
-              <li>Donald Trump said Hungary's incoming prime minister would do well after Viktor Orban's defeat.</li>
-              <li>The election ended Orban's long period in power and brought Peter Magyar and the TISZA movement into office.</li>
-              <li>The result is being seen as a wider political turning point for Hungary and for Central Europe.</li>
-              <li>Attention is now focused on whether the new government can deliver reform and rebuild international confidence.</li>
+              <li>The Middle East crisis is now influencing foreign policy, energy strategy, and security planning well beyond the region.</li>
+              <li>A temporary ceasefire has slowed major fighting, but underlying political and strategic tensions remain unresolved.</li>
+              <li>The Strait of Hormuz remains a major global concern because instability there quickly affects oil markets and economic confidence.</li>
+              <li>Governments worldwide are trying to protect their own interests without taking steps that could worsen the conflict.</li>
             </ul>
           </section>
 
           <article class="article-card">
             <div class="article-body">
               <p>
-                A major political transition in Hungary has drawn international attention after the defeat of long-time Prime Minister Viktor Orban, ending his 16-year rule. The election result, marked by a record voter turnout of nearly 80%, brought Peter Magyar and his centre-right TISZA movement to power, signalling a significant shift in the country's political direction.
+                The escalating crisis in the Middle East has emerged as the central issue influencing global politics, affecting diplomatic relations, economic decisions, and international security strategies. Ongoing tensions between Iran and Israel, combined with the involvement of the United States, have created a highly sensitive situation that continues to draw worldwide concern.
+              </p>
+              <p>
+                Although efforts have been made to reduce hostilities through a temporary ceasefire, the region remains unstable. While large-scale confrontations have slowed, smaller incidents, military positioning, and persistent threats indicate that the situation is far from resolved. The ceasefire has provided a brief pause, but it has not addressed the deeper political and strategic disputes driving the conflict.
+              </p>
+              <p>
+                The effects of the crisis are being felt far beyond the Middle East. Countries across the globe are adjusting their foreign policies as they navigate alliances and economic interests tied to the region. The United States has strengthened its military presence, focusing on protecting trade routes and maintaining regional stability. At the same time, other nations are urging restraint and pushing for renewed diplomatic engagement to prevent further escalation.
               </p>
 
+              <h2>Energy pressure and strategic interests</h2>
               <p>
-                Reacting to the outcome, U.S. President Donald Trump downplayed concerns about Orban's loss. Speaking to reporters, Trump said he was not worried about the change in leadership and expressed confidence in Hungary's incoming prime minister.
+                A critical concern remains the Strait of Hormuz, a key route for global oil transport. Instability in this area has direct consequences for energy markets, contributing to rising fuel prices and economic uncertainty worldwide. This has made the conflict not only a regional security issue but also a major global economic challenge.
+              </p>
+              <p>
+                International bodies such as the United Nations are working to ease tensions through dialogue and mediation. Emergency meetings and diplomatic initiatives are focused on preserving the ceasefire and encouraging negotiations. However, progress has been limited, as longstanding rivalries and deep political divisions continue to complicate efforts.
               </p>
 
+              <h2>Governments face harder political choices</h2>
               <p>
-                Trump said he believed the new leader would perform well and described him as a good man. He also suggested that his own influence over the Hungarian political contest was limited, even while making clear that he still viewed Orban positively despite the defeat.
+                Governments across Europe, Asia, and other regions are facing difficult choices. They must respond carefully to protect their own interests while avoiding actions that could worsen the situation. The conflict is influencing a wide range of policies, from defense planning to energy strategies, highlighting its broad global impact.
+              </p>
+              <p>
+                As developments continue, the Middle East remains at the forefront of international attention. The direction this crisis takes in the coming weeks will be crucial in determining not only regional stability but also the broader global political landscape.
               </p>
 
-              <h2>A major political shift</h2>
-
+              <h2>A crisis with global political reach</h2>
               <p>
-                Orban's defeat represents more than a routine leadership change. For more than a decade he was one of Europe's most recognisable nationalist leaders, often associated with democratic backsliding, clashes with Brussels, and a political model that attracted supporters well beyond Hungary itself. His removal from office signals a sharp break with that era.
+                The crisis is no longer only about military confrontation in one region. It is shaping how countries think about alliances, deterrence, energy security, and diplomatic credibility. That broader political reach is what has turned the Middle East into one of the defining agenda-setting issues in current international politics.
               </p>
-
               <p>
-                Magyar, a former insider turned reformist challenger, campaigned on promises to tackle corruption, reform state institutions, and restore Hungary's international standing. His rise reflects growing frustration among voters who wanted political renewal, stronger accountability, and closer alignment with European democratic norms.
-              </p>
-
-              <h2>What happens next</h2>
-
-              <p>
-                Analysts view the election as a broader test for Central Europe, where economic strain, institutional fatigue, and public dissatisfaction have been reshaping politics. While Trump's comments suggest acceptance of the new reality, the harder question is whether Hungary's incoming leadership can convert public optimism into workable reform.
-              </p>
-
-              <p>
-                The transition now enters a critical stage. Expectations are high at home and abroad, and the new government will be judged not only on tone but on whether it can deliver concrete changes in governance, credibility, and economic direction.
+                Whether the current pause holds or collapses, leaders around the world are already adapting to its consequences. For governments trying to balance security, economics, and diplomacy all at once, the crisis has become a central test of political judgment and strategic restraint.
               </p>
             </div>
 
             <div class="article-tags">
-              <span class="tag">World News</span>
               <span class="tag">Politics</span>
-              <span class="tag">Hungary</span>
-              <span class="tag">Donald Trump</span>
-              <span class="tag">Peter Magyar</span>
+              <span class="tag">Middle East</span>
+              <span class="tag">Diplomacy</span>
+              <span class="tag">Energy Strategy</span>
+              <span class="tag">Global Agenda</span>
             </div>
 
             <div class="share-row">
@@ -813,15 +648,15 @@
             <div class="timeline-list">
               <div class="timeline-item">
                 <div class="timeline-time">Latest</div>
-                <div class="timeline-text">Trump says Hungary's new prime minister will do well after the country's election result reshapes its political future.</div>
+                <div class="timeline-text">The Middle East crisis remains the defining issue shaping global political attention and diplomatic urgency.</div>
               </div>
               <div class="timeline-item">
                 <div class="timeline-time">Earlier</div>
-                <div class="timeline-text">Peter Magyar and the TISZA movement defeat Viktor Orban, ending his long period in office.</div>
+                <div class="timeline-text">A temporary ceasefire has slowed larger clashes, but instability and military positioning continue across the region.</div>
               </div>
               <div class="timeline-item">
                 <div class="timeline-time">Ongoing</div>
-                <div class="timeline-text">Observers across Europe are watching whether Hungary's incoming government can deliver reform and reset its international position.</div>
+                <div class="timeline-text">Governments worldwide are recalibrating energy, security, and alliance policy as the crisis evolves.</div>
               </div>
             </div>
           </section>
@@ -839,7 +674,7 @@
           <div class="sidebar-card">
             <h3>Article Details</h3>
             <div class="sidebar-list">
-              <div class="sidebar-item"><strong>Category:</strong> World News</div>
+              <div class="sidebar-item"><strong>Category:</strong> Politics</div>
               <div class="sidebar-item"><strong>Author:</strong> News Pulse+ Editorial Team</div>
               <div class="sidebar-item"><strong>Published:</strong> April 2026</div>
               <div class="sidebar-item"><strong>Reading time:</strong> 6 minutes</div>
@@ -849,8 +684,8 @@
           <div class="sidebar-card">
             <h3>Related Topics</h3>
             <div class="sidebar-list">
-              <div class="sidebar-item"><a href="world-news.html">World News</a></div>
               <div class="sidebar-item"><a href="politics.html">Politics</a></div>
+              <div class="sidebar-item"><a href="world-news.html">World News</a></div>
               <div class="sidebar-item"><a href="economic.html">Economic</a></div>
             </div>
           </div>
@@ -869,31 +704,31 @@
       <section class="related-section">
         <h2>Related Stories</h2>
                 <div class="related-grid">
-          <a class="related-card" href="global-climate-summit-shift-away-fossil-fuels.html">
+          <a class="related-card" href="uk-under-pressure-falklands-tensions-domestic-controversies.html">
             <div class="related-thumb">
-              <img src="images/fossil-fuel.jpg" alt="Climate protest banner calling for fossil fuels to be phased out" />
+              <img src="images/falkland.jpg" alt="British politician speaking in Parliament during a period of political pressure" />
             </div>
             <div class="related-body">
-              <h3>Global climate summit intensifies shift away from fossil fuels</h3>
-              <p>Leaders in Colombia are debating how to speed up renewable investment and reduce dependence on oil, gas, and coal without derailing growth.</p>
+              <h3>UK under pressure amid Falklands tensions and domestic controversies</h3>
+              <p>Renewed Falklands tensions and a series of domestic controversies are putting fresh pressure on the UK government and sharpening debate over leadership and credibility.</p>
             </div>
           </a>
-          <a class="related-card" href="global-markets-under-pressure-conflict-economic-uncertainty.html">
+          <a class="related-card" href="tensions-build-ahead-of-us-midterm-elections.html">
             <div class="related-thumb">
-              <img src="images/global-markets.jpg" alt="Graphic showing global markets under pressure and rising energy costs" />
+              <img src="images/midterm-elections.jpg" alt="Decision 2026 button in front of a U.S. flag" />
             </div>
             <div class="related-body">
-              <h3>Global markets under pressure amid conflict and economic uncertainty</h3>
-              <p>Rising energy costs, supply-chain disruption, and investor caution are deepening volatility across global markets as conflict risks remain elevated.</p>
+              <h3>Tensions build ahead of U.S. midterm elections</h3>
+              <p>Both major parties are intensifying their campaigns as control of Congress hangs in the balance and economic concerns dominate debate.</p>
             </div>
           </a>
-          <a class="related-card" href="middle-east-tensions-persist-despite-ceasefire-efforts.html">
+          <a class="related-card" href="bulgaria-signals-political-reset-after-election-shift.html">
             <div class="related-thumb">
-              <img src="images/ceasfire-efforts.jpg" alt="Conflict damage and soldiers in the Middle East" />
+              <img src="images/bulgaria-political.jpg" alt="Election posters in Bulgaria reflecting a shifting political landscape" />
             </div>
             <div class="related-body">
-              <h3>Middle East tensions persist despite ceasefire efforts</h3>
-              <p>A fragile ceasefire has slowed major fighting, but tensions around Iran, Israel, the United States, and the Strait of Hormuz remain dangerously high.</p>
+              <h3>Bulgaria signals political reset after election shift</h3>
+              <p>The election result is being read as a push for reform, stronger institutions, and a more stable political direction after years of turbulence.</p>
             </div>
           </a>
         </div>
@@ -947,7 +782,7 @@
     }
 
     function shareOnX() {
-      const text = encodeURIComponent("Trump on Hungary's new prime minister: I like him, he will do well");
+      const text = encodeURIComponent("Middle East crisis shapes global political agenda");
       const url = encodeURIComponent(window.location.href);
       window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
     }
@@ -1048,6 +883,5 @@
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
-
 
 

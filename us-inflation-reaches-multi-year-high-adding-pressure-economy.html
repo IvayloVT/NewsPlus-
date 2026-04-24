@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trump on Hungary's new prime minister: I like him, he will do well | News Pulse+</title>
-  <meta name="description" content="Donald Trump reacts to Hungary's political transition after Viktor Orban's defeat and the rise of Peter Magyar and the TISZA movement." />
-  <meta name="keywords" content="Donald Trump, Hungary, Viktor Orban, Peter Magyar, TISZA, world news, politics, News Pulse+" />
+  <title>U.S. inflation reaches multi-year high, adding pressure on economy | News Pulse+</title>
+  <meta name="description" content="Inflation in the United States has climbed to a multi-year high, increasing pressure on households, markets, and policymakers." />
+  <meta name="keywords" content="U.S. inflation, Federal Reserve, fuel prices, food prices, economy, consumer spending, News Pulse+" />
   <meta name="theme-color" content="#07111f" />
-  <meta property="og:title" content="Trump on Hungary's new prime minister: I like him, he will do well" />
-  <meta property="og:description" content="A major political transition in Hungary has drawn global attention after Viktor Orban's defeat, with Donald Trump expressing confidence in the country's incoming leader." />
+  <meta property="og:title" content="U.S. inflation reaches multi-year high, adding pressure on economy" />
+  <meta property="og:description" content="Rising energy, food, housing, and service costs are putting new pressure on the U.S. economy as markets and policymakers watch inflation closely." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="images/trump.jpg" />
+  <meta property="og:image" content="images/us-inflation.jpg" />
   <meta property="og:site_name" content="News Pulse+" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,15 +45,8 @@
       color:var(--text);
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
     .container{
       width:min(var(--max-width), calc(100% - 32px));
@@ -197,13 +190,8 @@
       border-radius:var(--radius);
     }
 
-    .article-hero-card{
-      overflow:hidden;
-    }
-
-    .hero-image{
-      position:relative;
-    }
+    .article-hero-card{overflow:hidden}
+    .hero-image{position:relative}
 
     .hero-image img{
       width:100%;
@@ -245,23 +233,21 @@
       100%{box-shadow:0 0 0 0 rgba(255,94,122,0)}
     }
 
-    .hero-content{
-      padding:28px;
-    }
+    .hero-content{padding:28px}
 
     .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:8px;
       margin-bottom:14px;
-      font-size:0.84rem;
+      font-size:.84rem;
       font-weight:800;
       color:#02111d;
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
       padding:9px 14px;
       border-radius:999px;
       text-transform:uppercase;
-      letter-spacing:0.08em;
+      letter-spacing:.08em;
     }
 
     .hero-content h1{
@@ -285,35 +271,20 @@
       flex-wrap:wrap;
       gap:12px;
       color:var(--muted);
-      font-size:0.94rem;
-    }
-
-    .article-meta span{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .article-meta span:not(:last-child)::after{
-      content:"•";
-      color:#6f88a3;
-      margin-left:12px;
-    }
-
-    main{
-      padding:0 0 50px;
+      font-size:.94rem;
     }
 
     .article-layout{
       display:grid;
-      grid-template-columns:minmax(0, 1.9fr) minmax(280px, 0.9fr);
-      gap:24px;
+      grid-template-columns:minmax(0, 2fr) minmax(280px, .9fr);
+      gap:22px;
       align-items:start;
     }
 
-    .stack-main{
+    .stack-main,
+    .sidebar-stack{
       display:grid;
-      gap:20px;
+      gap:22px;
     }
 
     .summary-box,
@@ -357,58 +328,19 @@
       box-shadow:0 0 18px rgba(123,209,255,.3);
     }
 
-    .article-card{
-      padding:28px;
-    }
-
-    .article-body{
-      color:#dce8f5;
-      font-size:1.02rem;
-      line-height:1.85;
-    }
+    .article-card{padding:28px}
 
     .article-body p{
-      margin:0 0 20px;
+      margin:0 0 18px;
+      color:#dce8f5;
+      line-height:1.82;
+      font-size:1rem;
     }
 
     .article-body h2{
-      margin:30px 0 14px;
-      font-size:1.34rem;
+      margin:28px 0 12px;
+      font-size:1.45rem;
       letter-spacing:-0.03em;
-      color:#f7fbff;
-    }
-
-    .timeline-list{
-      display:grid;
-      gap:14px;
-    }
-
-    .timeline-item{
-      display:grid;
-      grid-template-columns:110px 1fr;
-      gap:14px;
-      align-items:start;
-      padding:14px 0;
-      border-top:1px solid var(--line);
-    }
-
-    .timeline-item:first-child{
-      border-top:none;
-      padding-top:0;
-    }
-
-    .timeline-time{
-      color:#89d3ff;
-      font-size:.88rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .timeline-text{
-      color:#dce8f5;
-      line-height:1.7;
-      font-size:.96rem;
     }
 
     .article-tags{
@@ -421,12 +353,14 @@
     .tag{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       padding:9px 14px;
       border-radius:999px;
-      border:1px solid rgba(123,209,255,0.22);
-      color:#d6f0ff;
-      background:rgba(59,160,255,0.08);
-      font-size:0.88rem;
+      background:rgba(123,209,255,.1);
+      color:#dff2ff;
+      border:1px solid rgba(123,209,255,.22);
+      font-size:.88rem;
+      font-weight:700;
     }
     .share-row{
       display:flex;
@@ -458,102 +392,56 @@
       box-shadow:0 20px 36px rgba(59,160,255,0.28);
     }
 
+    .timeline-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      display:grid;
+      gap:6px;
+      padding-left:16px;
+      border-left:2px solid rgba(123,209,255,.28);
+    }
+
+    .timeline-time{
+      color:#bfe4ff;
+      font-size:.82rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .timeline-text{
+      color:#dce8f5;
+      line-height:1.7;
+      font-size:.96rem;
+    }
+
     .author-line{
+      margin:0;
       color:#dce8f5;
       line-height:1.75;
-      margin:0;
     }
 
-    .sidebar-stack{
-      display:grid;
-      gap:18px;
-    }
+    .sidebar-card{padding:22px}
+    .sidebar-card h3{margin:0 0 14px;font-size:1.05rem}
+    .sidebar-list{display:grid;gap:12px}
+    .sidebar-item{color:#dbe7f5;line-height:1.65}
+    .sidebar-item strong{color:#fff}
+    .sidebar-item a{color:#bfe4ff}
+    .sidebar-item a:hover{color:#fff}
 
-    .sidebar-card{
-      padding:22px;
-    }
-
-    .sidebar-card h3{
-      margin:0 0 14px;
-      font-size:1.06rem;
-      letter-spacing:-0.02em;
-    }
-
-    .sidebar-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .sidebar-item{
-      color:#dbe7f5;
-      line-height:1.65;
-    }
-
-    .sidebar-item strong{
-      color:#fff;
-    }
-
-    .sidebar-item a{
-      color:#bfe4ff;
-    }
-
-    .sidebar-item a:hover{
-      color:#fff;
-    }
-
-    .related-section{
-      margin-top:28px;
-    }
-
-    .related-section h2{
-      margin:0 0 18px;
-      font-size:1.5rem;
-      letter-spacing:-0.02em;
-    }
-
-    .related-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .related-card{
-      overflow:hidden;
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-
-    .related-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 22px 42px rgba(0,0,0,0.24);
-    }
-
-    .related-thumb{
-      aspect-ratio:16/10;
-      overflow:hidden;
-    }
-
-    .related-thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .related-body{
-      padding:18px;
-    }
-
-    .related-body h3{
-      margin:0 0 8px;
-      font-size:1rem;
-      line-height:1.4;
-    }
-
-    .related-body p{
-      margin:0;
-      color:var(--muted);
-      font-size:.92rem;
-      line-height:1.6;
-    }
+    .related-section{margin-top:28px}
+    .related-section h2{margin:0 0 18px;font-size:1.5rem;letter-spacing:-0.02em}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .related-card{overflow:hidden;transition:transform .25s ease, box-shadow .25s ease}
+    .related-card:hover{transform:translateY(-4px);box-shadow:0 22px 42px rgba(0,0,0,0.24)}
+    .related-thumb{aspect-ratio:16/10;overflow:hidden}
+    .related-thumb img{width:100%;height:100%;object-fit:cover}
+    .related-body{padding:18px}
+    .related-body h3{margin:0 0 8px;font-size:1rem;line-height:1.4}
+    .related-body p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
     @media (min-width:761px){
       .navbar{
         flex-wrap:nowrap;
@@ -574,15 +462,9 @@
       }
     }
     @media (max-width:1100px){
-      .article-layout{
-        grid-template-columns:1fr;
-      }
-      .related-grid{
-        grid-template-columns:1fr 1fr;
-      }
-      .footer-grid{
-        grid-template-columns:1fr 1fr;
-      }
+      .article-layout{grid-template-columns:1fr}
+      .related-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
     }
 
     @media (max-width:760px){
@@ -590,18 +472,9 @@
       .article-card,
       .summary-box,
       .author-card,
-      .timeline-card{
-        padding:24px;
-      }
-
-      .related-grid{
-        grid-template-columns:1fr;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
+      .timeline-card{padding:24px}
+      .related-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
       .topbar-inner{
         flex-wrap:wrap;
         flex-direction:row;
@@ -610,11 +483,7 @@
         gap:14px;
         padding:12px 0;
       }
-
-      .nav-toggle{
-        display:inline-flex;
-      }
-
+      .nav-toggle{display:inline-flex}
       .nav-links{
         display:none;
         width:100%;
@@ -624,11 +493,7 @@
         gap:8px;
         padding-top:8px;
       }
-
-      .nav-links.nav-open{
-        display:flex;
-      }
-
+      .nav-links.nav-open{display:flex}
       .nav-links a,
       .lang-switch{
         width:auto;
@@ -636,11 +501,6 @@
         margin:0 auto;
         justify-content:center;
         text-align:center;
-      }
-
-      .timeline-item{
-        grid-template-columns:1fr;
-        gap:6px;
       }
     }
   
@@ -703,9 +563,9 @@
 
       <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a class="active" href="world-news.html">World News</a>
+        <a href="world-news.html">World News</a>
         <a href="politics.html">Politics</a>
-        <a href="economic.html">Economic</a>
+        <a class="active" href="economic.html">Economic</a>
         <a href="entertainment.html">Entertainment</a>
         <a href="sport.html">Sport</a>
         <a href="viral.html">Viral</a>
@@ -720,7 +580,7 @@
     <div class="container">
       <article class="article-hero-card">
         <div class="hero-image">
-          <img src="images/trump.jpg" alt="Donald Trump speaking during a public appearance" />
+          <img src="images/us-inflation.jpg" alt="U.S. flag with economic chart illustrating inflation pressure" />
           <div class="breaking-badge">
             <span class="pulse-dot"></span>
             Breaking
@@ -728,10 +588,10 @@
         </div>
 
         <div class="hero-content">
-          <div class="eyebrow">World News</div>
-          <h1>Trump on Hungary's new prime minister: I like him, he will do well</h1>
+          <div class="eyebrow">Economic</div>
+          <h1>U.S. inflation reaches multi-year high, adding pressure on economy</h1>
           <p class="standfirst">
-            A major political transition in Hungary has drawn global attention after Viktor Orban's defeat, with U.S. President Donald Trump expressing confidence in the country's incoming leader.
+            Rising fuel, food, housing, and service costs are adding pressure across the U.S. economy as households, markets, and policymakers grow more cautious.
           </p>
           <div class="article-meta">
             <span>By News Pulse+ Editorial Team</span>
@@ -751,54 +611,60 @@
           <section class="summary-box">
             <h2>Key Points</h2>
             <ul class="summary-points">
-              <li>Donald Trump said Hungary's incoming prime minister would do well after Viktor Orban's defeat.</li>
-              <li>The election ended Orban's long period in power and brought Peter Magyar and the TISZA movement into office.</li>
-              <li>The result is being seen as a wider political turning point for Hungary and for Central Europe.</li>
-              <li>Attention is now focused on whether the new government can deliver reform and rebuild international confidence.</li>
+              <li>U.S. inflation has climbed to a multi-year high, increasing pressure on households, businesses, and policymakers.</li>
+              <li>Higher energy and food costs are feeding through into broader consumer prices across multiple sectors.</li>
+              <li>The Federal Reserve faces a difficult balance between controlling inflation and avoiding excessive damage to growth.</li>
+              <li>Consumers are cutting back in non-essential areas as higher everyday costs reshape spending behaviour.</li>
             </ul>
           </section>
 
           <article class="article-card">
             <div class="article-body">
               <p>
-                A major political transition in Hungary has drawn international attention after the defeat of long-time Prime Minister Viktor Orban, ending his 16-year rule. The election result, marked by a record voter turnout of nearly 80%, brought Peter Magyar and his centre-right TISZA movement to power, signalling a significant shift in the country's political direction.
+                Inflation across the United States has climbed to levels not seen in several years, increasing concern among policymakers, businesses, and households. The steady rise in prices is affecting everyday life, from basic necessities to long-term financial decisions, and is becoming one of the most pressing economic challenges facing the country.
               </p>
 
               <p>
-                Reacting to the outcome, U.S. President Donald Trump downplayed concerns about Orban's loss. Speaking to reporters, Trump said he was not worried about the change in leadership and expressed confidence in Hungary's incoming prime minister.
+                A major factor behind the increase is the surge in energy costs. Global supply disruptions and geopolitical tensions have pushed fuel prices higher, which then feeds into transportation and production expenses. As businesses absorb these rising costs, many pass them on to consumers, contributing to widespread price increases across multiple sectors.
               </p>
 
               <p>
-                Trump said he believed the new leader would perform well and described him as a good man. He also suggested that his own influence over the Hungarian political contest was limited, even while making clear that he still viewed Orban positively despite the defeat.
+                Food prices have also risen, adding another layer of pressure on household budgets. Higher costs in farming, transportation, and distribution have made essential goods more expensive. For many families, this means spending a larger portion of their income on necessities, leaving less room for discretionary purchases.
               </p>
 
-              <h2>A major political shift</h2>
+              <h2>The Federal Reserve faces a harder balancing act</h2>
 
               <p>
-                Orban's defeat represents more than a routine leadership change. For more than a decade he was one of Europe's most recognisable nationalist leaders, often associated with democratic backsliding, clashes with Brussels, and a political model that attracted supporters well beyond Hungary itself. His removal from office signals a sharp break with that era.
-              </p>
-
-              <p>
-                Magyar, a former insider turned reformist challenger, campaigned on promises to tackle corruption, reform state institutions, and restore Hungary's international standing. His rise reflects growing frustration among voters who wanted political renewal, stronger accountability, and closer alignment with European democratic norms.
-              </p>
-
-              <h2>What happens next</h2>
-
-              <p>
-                Analysts view the election as a broader test for Central Europe, where economic strain, institutional fatigue, and public dissatisfaction have been reshaping politics. While Trump's comments suggest acceptance of the new reality, the harder question is whether Hungary's incoming leadership can convert public optimism into workable reform.
+                The Federal Reserve is closely tracking inflation trends as it considers its next steps. Controlling price growth remains a key priority, but policy decisions, particularly around interest rates, must be handled carefully. Increasing borrowing costs can help reduce inflation, but it may also slow economic activity by limiting spending and investment.
               </p>
 
               <p>
-                The transition now enters a critical stage. Expectations are high at home and abroad, and the new government will be judged not only on tone but on whether it can deliver concrete changes in governance, credibility, and economic direction.
+                Financial markets have reacted with caution to the situation. Investors are adjusting expectations in response to potential policy changes, leading to fluctuations in stock prices and bond yields. Uncertainty about how long inflation will remain elevated is adding to the cautious mood.
+              </p>
+
+              <h2>Households are under visible strain</h2>
+
+              <p>
+                For consumers, the impact is becoming increasingly visible. Rising costs for fuel, groceries, housing, and services are forcing households to rethink their spending habits. Many are prioritizing essential expenses while cutting back in other areas, which could gradually affect overall economic growth.
+              </p>
+
+              <p>
+                Despite the challenges, some parts of the economy continue to show resilience. Employment levels remain relatively stable, and certain industries are still expanding. However, the broader outlook remains uncertain, particularly if inflation persists for an extended period.
+              </p>
+
+              <h2>The next phase depends on whether prices ease</h2>
+
+              <p>
+                Looking ahead, the direction of inflation will play a crucial role in shaping economic policy and performance. Whether price increases begin to ease or continue climbing will determine how both policymakers and consumers respond in the months to come.
               </p>
             </div>
 
             <div class="article-tags">
-              <span class="tag">World News</span>
-              <span class="tag">Politics</span>
-              <span class="tag">Hungary</span>
-              <span class="tag">Donald Trump</span>
-              <span class="tag">Peter Magyar</span>
+              <span class="tag">Economic</span>
+              <span class="tag">United States</span>
+              <span class="tag">Inflation</span>
+              <span class="tag">Federal Reserve</span>
+              <span class="tag">Consumer Prices</span>
             </div>
 
             <div class="share-row">
@@ -813,15 +679,15 @@
             <div class="timeline-list">
               <div class="timeline-item">
                 <div class="timeline-time">Latest</div>
-                <div class="timeline-text">Trump says Hungary's new prime minister will do well after the country's election result reshapes its political future.</div>
+                <div class="timeline-text">U.S. inflation has reached a multi-year high, increasing pressure on households, markets, and policymakers.</div>
               </div>
               <div class="timeline-item">
                 <div class="timeline-time">Earlier</div>
-                <div class="timeline-text">Peter Magyar and the TISZA movement defeat Viktor Orban, ending his long period in office.</div>
+                <div class="timeline-text">Higher fuel, food, housing, and service costs have continued to widen the impact across the wider economy.</div>
               </div>
               <div class="timeline-item">
-                <div class="timeline-time">Ongoing</div>
-                <div class="timeline-text">Observers across Europe are watching whether Hungary's incoming government can deliver reform and reset its international position.</div>
+                <div class="timeline-time">Watchlist</div>
+                <div class="timeline-text">Investors are watching the Federal Reserve for signals on rates, inflation control, and the durability of consumer demand.</div>
               </div>
             </div>
           </section>
@@ -839,7 +705,7 @@
           <div class="sidebar-card">
             <h3>Article Details</h3>
             <div class="sidebar-list">
-              <div class="sidebar-item"><strong>Category:</strong> World News</div>
+              <div class="sidebar-item"><strong>Category:</strong> Economic</div>
               <div class="sidebar-item"><strong>Author:</strong> News Pulse+ Editorial Team</div>
               <div class="sidebar-item"><strong>Published:</strong> April 2026</div>
               <div class="sidebar-item"><strong>Reading time:</strong> 6 minutes</div>
@@ -869,31 +735,31 @@
       <section class="related-section">
         <h2>Related Stories</h2>
                 <div class="related-grid">
-          <a class="related-card" href="global-climate-summit-shift-away-fossil-fuels.html">
+          <a class="related-card" href="oil-prices-climb-sharply-amid-supply-disruptions.html">
             <div class="related-thumb">
-              <img src="images/fossil-fuel.jpg" alt="Climate protest banner calling for fossil fuels to be phased out" />
+              <img src="images/oil-prices-climb.jpg" alt="Oil barrels and rising chart" />
             </div>
             <div class="related-body">
-              <h3>Global climate summit intensifies shift away from fossil fuels</h3>
-              <p>Leaders in Colombia are debating how to speed up renewable investment and reduce dependence on oil, gas, and coal without derailing growth.</p>
+              <h3>Oil prices climb sharply amid supply disruptions.</h3>
+              <p>Supply constraints, shipping-route fears, and geopolitical instability are driving oil higher and spreading inflation pressure.</p>
             </div>
           </a>
-          <a class="related-card" href="global-markets-under-pressure-conflict-economic-uncertainty.html">
+          <a class="related-card" href="global-markets-unsettled-rising-middle-east-tensions.html">
             <div class="related-thumb">
-              <img src="images/global-markets.jpg" alt="Graphic showing global markets under pressure and rising energy costs" />
+              <img src="images/global-markets-unsettled.jpg" alt="Global markets unsettled visual" />
             </div>
             <div class="related-body">
-              <h3>Global markets under pressure amid conflict and economic uncertainty</h3>
-              <p>Rising energy costs, supply-chain disruption, and investor caution are deepening volatility across global markets as conflict risks remain elevated.</p>
+              <h3>Global markets unsettled by rising Middle East tensions.</h3>
+              <p>Energy-price spikes, trade-route disruption, and investor caution are creating fresh instability across global markets.</p>
             </div>
           </a>
-          <a class="related-card" href="middle-east-tensions-persist-despite-ceasefire-efforts.html">
+          <a class="related-card" href="uk-economy-under-strain-confidence-weakens.html">
             <div class="related-thumb">
-              <img src="images/ceasfire-efforts.jpg" alt="Conflict damage and soldiers in the Middle East" />
+              <img src="images/uk-economy-under.jpg" alt="UK market graphic showing financial strain and weakening confidence" />
             </div>
             <div class="related-body">
-              <h3>Middle East tensions persist despite ceasefire efforts</h3>
-              <p>A fragile ceasefire has slowed major fighting, but tensions around Iran, Israel, the United States, and the Strait of Hormuz remain dangerously high.</p>
+              <h3>UK economy under strain as confidence weakens.</h3>
+              <p>Consumers and businesses are becoming more cautious as higher costs, weaker demand, and wider instability weigh on the UK outlook.</p>
             </div>
           </a>
         </div>
@@ -947,7 +813,7 @@
     }
 
     function shareOnX() {
-      const text = encodeURIComponent("Trump on Hungary's new prime minister: I like him, he will do well");
+      const text = encodeURIComponent("U.S. inflation reaches multi-year high, adding pressure on economy");
       const url = encodeURIComponent(window.location.href);
       window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
     }
@@ -1029,22 +895,19 @@
 
       window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
         if (window.innerWidth <= 760) {
           if (currentScroll > lastScroll && currentScroll > 80) {
             header.style.transform = 'translateY(-100%)';
           } else {
             header.style.transform = 'translateY(0)';
           }
+          lastScroll = currentScroll <= 0 ? 0 : currentScroll;
         } else {
           header.style.transform = 'translateY(0)';
         }
-
-        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
       });
     });
   </script>
-
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
