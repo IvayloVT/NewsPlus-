@@ -1736,3 +1736,199 @@ footer{
     grid-template-columns:1fr !important;
   }
 }
+/* Visually unique category identities */
+.category-page{
+  --section-accent:var(--premium-accent-2, #7bd1ff);
+  --section-accent-rgb:123,209,255;
+  --section-surface:#07111f;
+  background:
+    linear-gradient(180deg, rgba(var(--section-accent-rgb),0.08), rgba(5,12,22,0) 360px),
+    #050c16 !important;
+}
+
+.world-page{
+  --section-accent:#7bd1ff;
+  --section-accent-rgb:123,209,255;
+}
+
+.politics-page{
+  --section-accent:#9be8ff;
+  --section-accent-rgb:155,232,255;
+}
+
+.economic-page{
+  --section-accent:#7ee6b8;
+  --section-accent-rgb:126,230,184;
+}
+
+.entertainment-page{
+  --section-accent:#ffb7d5;
+  --section-accent-rgb:255,183,213;
+}
+
+.sport-page{
+  --section-accent:#a9f08a;
+  --section-accent-rgb:169,240,138;
+}
+
+.viral-page{
+  --section-accent:#ffd36e;
+  --section-accent-rgb:255,211,110;
+}
+
+.category-page .topbar{
+  border-bottom-color:rgba(var(--section-accent-rgb),0.2) !important;
+}
+
+.category-page .breaking span,
+.category-page .eyebrow,
+.category-page .tag,
+.category-page .story-meta span:first-child,
+.category-page .premium-trending-head span,
+.category-page .premium-trend-card span,
+.category-page .homepage-briefing-strip span,
+.category-page .spotlight-card span,
+.category-page .homepage-focus-card span{
+  color:var(--section-accent) !important;
+}
+
+.category-page .breaking span,
+.category-page .btn-primary{
+  background:var(--section-accent) !important;
+  color:#02111d !important;
+}
+
+.category-page .nav-links a.active{
+  background:rgba(var(--section-accent-rgb),0.16) !important;
+  color:#fff !important;
+}
+
+.category-page .category-lead{
+  border-color:rgba(var(--section-accent-rgb),0.24) !important;
+}
+
+.category-page .category-lead::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(var(--section-accent-rgb),0.12), transparent 44%),
+    linear-gradient(90deg, rgba(var(--section-accent-rgb),0.18), transparent 48%);
+  mix-blend-mode:screen;
+  opacity:.68;
+}
+
+.category-page .category-lead .hero-main-content{
+  position:relative;
+  z-index:1;
+}
+
+.category-page .hero-side-card,
+.category-page .homepage-focus-card,
+.category-page .homepage-briefing-strip a,
+.category-page .premium-trending,
+.category-page .premium-trend-card,
+.category-page .spotlight-card,
+.category-page .section-card,
+.category-page .story-card,
+.category-page .mini-card{
+  border-color:rgba(var(--section-accent-rgb),0.14) !important;
+}
+
+.category-page .homepage-focus-card{
+  background:
+    linear-gradient(135deg, rgba(var(--section-accent-rgb),0.12), rgba(7,17,31,0.98) 52%),
+    #07111f !important;
+}
+
+.category-page .homepage-focus-card strong{
+  color:var(--section-accent) !important;
+}
+
+.category-page .premium-trending{
+  background:
+    linear-gradient(135deg, rgba(var(--section-accent-rgb),0.12), rgba(7,17,31,0.98) 42%),
+    #07111f !important;
+}
+
+.category-page .premium-trend-card strong{
+  color:rgba(var(--section-accent-rgb),0.36) !important;
+}
+
+.category-page .section-link,
+.category-page .story-link,
+.category-page .related-read-more,
+.category-page .footer-bottom a,
+.category-page .premium-trending-head a{
+  color:var(--section-accent) !important;
+}
+
+.category-page .homepage-briefing-strip a:hover,
+.category-page .premium-trend-card:hover,
+.category-page .spotlight-card:hover,
+.category-page .story-card:hover,
+.category-page .mini-card:hover{
+  border-color:rgba(var(--section-accent-rgb),0.42) !important;
+}
+
+.category-page .section-header h2::after,
+.category-page .premium-trending-head h2::after{
+  content:"";
+  display:block;
+  width:54px;
+  height:3px;
+  margin-top:12px;
+  border-radius:999px;
+  background:var(--section-accent);
+}
+
+.world-page .category-lead{
+  background:
+    linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
+    url('../images/radev-won.jpg') center/cover !important;
+}
+
+.politics-page .category-lead{
+  background:
+    linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
+    url('../images/midterm-elections.jpg') center/cover !important;
+}
+
+.economic-page .category-lead{
+  background:
+    linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
+    url('../images/global-markets.jpg') center/cover !important;
+}
+
+.entertainment-page .category-lead{
+  background:
+    linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
+    url('../images/Top-Gun-3.jpg') center/cover !important;
+}
+
+.sport-page .category-lead{
+  background:
+    linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
+    url('../images/aston-villa.jpg') center/cover !important;
+}
+
+.viral-page .category-lead{
+  background:
+    linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
+    url('../images/cat-broadcast.jpeg') center/cover !important;
+}
+
+@media (max-width:760px){
+  .category-page{
+    background:
+      linear-gradient(180deg, rgba(var(--section-accent-rgb),0.08), rgba(5,12,22,0) 280px),
+      #050c16 !important;
+  }
+
+  .category-page .section-header h2::after,
+  .category-page .premium-trending-head h2::after{
+    width:42px;
+    margin-top:10px;
+  }
+}
