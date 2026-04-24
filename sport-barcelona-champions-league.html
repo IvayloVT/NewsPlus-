@@ -759,6 +759,30 @@
 
 <body>
 
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <h1><a href="index.html">News<span>Pulse+</span></a></h1>
+        <p>The stories moving the world.</p>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a class="active" href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </div>
+
+  <div id="google_translate_element"></div>
+
 <div class="container">
 
   <h1>Barcelona Deliver Late Drama in Champions League Clash</h1>
@@ -879,6 +903,74 @@
       </div>
     </div>
   </footer>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false }, 'google_translate_element');
+      setTimeout(applySavedLanguage, 1000);
+    }
+
+    function toggleLanguage() {
+      const currentLang = localStorage.getItem('preferredLang') || 'en';
+      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+    }
+
+    function changeLanguage(langCode) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+        localStorage.setItem('preferredLang', langCode);
+        updateButtonText(langCode);
+      }
+    }
+
+    function applySavedLanguage() {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      updateButtonText(savedLang);
+      if (savedLang !== 'en') changeLanguage(savedLang);
+    }
+
+    function updateButtonText(langCode) {
+      const langText = document.getElementById('lang-text');
+      if (langText) langText.textContent = langCode === 'en' ? 'BG' : 'EN';
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (!nav || !button || window.innerWidth > 760) return;
+      const isOpen = nav.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.innerText = isOpen ? 'Close' : 'Menu';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('site-nav');
+      const button = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('nav-open');
+      if (button) {
+        button.setAttribute('aria-expanded', 'false');
+        button.innerText = 'Menu';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.getElementById('site-nav');
+      if (!nav) return;
+      nav.querySelectorAll('a, .lang-switch').forEach(function (item) {
+        item.addEventListener('click', function () {
+          if (window.innerWidth <= 760) closeMenu();
+        });
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 760) closeMenu();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+    });
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
 
