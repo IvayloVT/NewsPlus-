@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | NewsPulse+</title>
+  <meta name="description" content="The page could not be found. Return to NewsPulse+ for the latest world news, politics, economy, entertainment, sport, viral stories, and trending coverage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/premium.css" />
+  <style>
+    .not-found-page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .not-found-hero{
+      flex:1;
+      display:grid;
+      align-items:center;
+      padding:clamp(42px, 8vw, 96px) 0;
+    }
+
+    .not-found-panel{
+      display:grid;
+      grid-template-columns:minmax(0, 1.1fr) minmax(280px, .9fr);
+      gap:clamp(24px, 5vw, 64px);
+      align-items:center;
+      padding:clamp(28px, 5vw, 58px);
+      border:1px solid rgba(123,209,255,0.18);
+      border-radius:28px;
+      background:
+        linear-gradient(135deg, rgba(123,209,255,0.14), rgba(7,17,31,0.98) 46%),
+        #07111f;
+    }
+
+    .error-code{
+      display:inline-flex;
+      align-items:center;
+      min-height:42px;
+      padding:0 16px;
+      border:1px solid rgba(123,209,255,0.3);
+      border-radius:999px;
+      color:#8ee6ff;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .not-found-panel h1{
+      max-width:760px;
+      margin:18px 0 18px;
+      color:#fff;
+      font-size:clamp(2.6rem, 6vw, 6.2rem);
+      line-height:.9;
+      letter-spacing:-0.055em;
+    }
+
+    .not-found-panel p{
+      max-width:720px;
+      margin:0;
+      color:#c6d5e8;
+      font-size:clamp(1.05rem, 1.6vw, 1.28rem);
+      line-height:1.72;
+    }
+
+    .not-found-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .not-found-desk{
+      display:grid;
+      gap:14px;
+    }
+
+    .not-found-card{
+      display:block;
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.09);
+      border-radius:18px;
+      background:rgba(255,255,255,0.035);
+      transition:transform .22s ease, border-color .22s ease, background-color .22s ease;
+    }
+
+    .not-found-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(123,209,255,0.36);
+      background:rgba(123,209,255,0.06);
+    }
+
+    .not-found-card span{
+      display:block;
+      margin-bottom:8px;
+      color:#8ee6ff;
+      font-size:.78rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .not-found-card strong{
+      display:block;
+      color:#fff;
+      font-size:1.04rem;
+      line-height:1.35;
+    }
+
+    @media (max-width:840px){
+      .not-found-panel{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:560px){
+      .not-found-panel{
+        padding:22px;
+        border-radius:22px;
+      }
+
+      .not-found-actions .btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body class="not-found-page">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Notice</span>
+        <p>The story link may have moved, changed, or been removed.</p>
+      </div>
+      <p>Return to the newsroom and keep reading.</p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <a href="index.html" class="logo">News<span>Pulse+</span></a>
+        <p class="site-tagline">The stories moving the world.</p>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links" id="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="not-found-hero">
+    <div class="container">
+      <section class="not-found-panel" aria-labelledby="not-found-title">
+        <div>
+          <span class="error-code">404 / Page not found</span>
+          <h1 id="not-found-title">This story has slipped out of the archive.</h1>
+          <p>The address does not match a live NewsPulse+ page. Head back to the homepage, browse the latest trending archive, or jump into one of the main sections.</p>
+          <div class="not-found-actions">
+            <a class="btn btn-primary" href="index.html">Back to homepage</a>
+            <a class="btn btn-secondary" href="trending.html">Open trending archive</a>
+          </div>
+        </div>
+
+        <div class="not-found-desk" aria-label="Suggested destinations">
+          <a class="not-found-card" href="world-news.html">
+            <span>World News</span>
+            <strong>Follow international developments and political shifts.</strong>
+          </a>
+          <a class="not-found-card" href="economic.html">
+            <span>Economic</span>
+            <strong>Track markets, inflation, energy, and global pressure points.</strong>
+          </a>
+          <a class="not-found-card" href="entertainment.html">
+            <span>Entertainment</span>
+            <strong>Read the latest culture, film, celebrity, and media stories.</strong>
+          </a>
+          <a class="not-found-card" href="sport.html">
+            <span>Sport</span>
+            <strong>Catch up on the newest sport headlines and big fixtures.</strong>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="premium-footer">
+    <div class="container footer-topline">
+      <div class="footer-brief">
+        <a href="index.html" class="footer-logo">News<span>Pulse+</span></a>
+        <p>An independent digital publication covering the stories, trends, and conversations shaping the world.</p>
+      </div>
+      <form class="footer-newsletter" action="thank-you.html">
+        <label for="footer-email">Get the editor's briefing</label>
+        <div>
+          <input id="footer-email" type="email" placeholder="Email address" required />
+          <button class="footer-pill" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="trending.html">Trending</a>
+        <a href="newsletter.html">Newsletter</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 News Pulse+. All rights reserved.</p>
+      <a href="index.html">Back to homepage</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById('site-nav');
+      var button = document.querySelector('.nav-toggle');
+      var isOpen = nav.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    function toggleLanguage() {
+      var label = document.getElementById('lang-text');
+      label.textContent = label.textContent === 'BG' ? 'EN' : 'BG';
+    }
+  </script>
+</body>
+</html>
