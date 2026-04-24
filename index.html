@@ -531,48 +531,58 @@
     }
 
     .newsletter-card{
-      padding:26px;
+      padding:28px 38px;
       display:grid;
-      grid-template-columns:1-2fr .8fr;
+      grid-template-columns:minmax(0, 1.35fr) minmax(400px, .9fr);
       gap:24px;
       align-items:center;
     }
     .newsletter-card h2{
       margin:0 0 10px;
-      font-size:1.8rem;
-      letter-spacing:-0.03em;
+      font-size:clamp(1.75rem, 2.6vw, 2.1rem);
+      line-height:1.08;
+      letter-spacing:-0.04em;
     }
     .newsletter-card p{
       margin:0;
       color:var(--muted);
-      line-height:1.7;
+      line-height:1.55;
+      max-width:760px;
     }
     .newsletter-form{
       display:flex;
+      align-items:center;
       gap:12px;
-      flex-wrap:wrap;
+      flex-wrap:nowrap;
       justify-content:flex-end;
     }
     .newsletter-form input{
-      flex:1 1-220px;
-      min-height:50px;
-      border-radius:14px;
+      flex:1 1 auto;
+      min-width:0;
+      min-height:64px;
+      border-radius:18px;
       border:1px solid var(--line);
       background:rgba(255,255,255,0.05);
       color:#fff;
-      padding:0 16px;
+      padding:0 24px;
+      font-size:.98rem;
       outline:none;
     }
-    .newsletter-form input::placeholder{color:#9eb0c5}
+    .newsletter-form input::placeholder{
+      color:#9eb0c5;
+      font-size:.98rem;
+    }
     .newsletter-form button{
-      min-height:50px;
-      padding:0 18px;
+      min-height:64px;
+      padding:0 26px;
       border:0;
-      border-radius:14px;
+      border-radius:18px;
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
       color:#03101c;
       font-weight:800;
+      font-size:.98rem;
       cursor:pointer;
+      white-space:nowrap;
     }
 
     .ad-slot{
@@ -604,6 +614,7 @@
       }
       .newsletter-form{
         justify-content:flex-start;
+        flex-wrap:wrap;
       }
     }
 
@@ -684,6 +695,9 @@
     .footer-col h4{
       margin:0 0 12px;
       font-size:1rem;
+    }
+    .footer-brand h3{
+      font-size:1.14rem;
     }
     .footer-brand h3 span{color:var(--accent-2)}
     .footer-brand p{
@@ -1012,7 +1026,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <h3>News<span>Pulse+</span></h3>
-      <p>An independent digital publication covering the stories, trends, and debates shaping politics, entertainment, business, sport, and public life.</p>
+      <p>An independent digital publication covering the stories, trends, and conversations shaping the world.</p>
     </div>
 
     <div class="footer-col">
@@ -1114,6 +1128,8 @@
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+
+
 
 
 
