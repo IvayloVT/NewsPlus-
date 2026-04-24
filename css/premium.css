@@ -54,13 +54,8 @@ header{
 
 .logo,
 .brand h1,
-.footer-brand h3{
-  letter-spacing:-0.04em;
-}
-
 .logo span,
 .brand h1 span,
-.footer-brand h3 span,
 .brand-accent{
   color:var(--premium-accent-2) !important;
 }
@@ -82,7 +77,6 @@ header{
 .section-card,
 .story-card,
 .mini-card,
-.newsletter-card,
 .ad-slot,
 .article-hero-card,
 .article-card,
@@ -93,11 +87,7 @@ header{
 .timeline-card,
 .category-link,
 .pager-card,
-.archive-card,
-.contact-card,
-.policy-card,
-.form-card,
-.thank-you-card{
+.archive-card{
   background:linear-gradient(180deg, rgba(13,27,45,0.98), rgba(7,17,31,0.98)) !important;
   border:1px solid var(--premium-line) !important;
   border-radius:var(--premium-radius) !important;
@@ -171,9 +161,7 @@ header{
 .story-meta,
 .hero-meta,
 .sidebar-item,
-.footer-brand p,
 .footer-bottom,
-.newsletter-card p,
 .section-header p,
 .related-body p,
 .story-body p,
@@ -253,10 +241,6 @@ header{
   line-height:1.4 !important;
 }
 
-.newsletter-card{
-  gap:24px !important;
-}
-
 .newsletter-form input{
   background:rgba(255,255,255,0.045) !important;
   border:1px solid var(--premium-line) !important;
@@ -322,8 +306,7 @@ iframe.skiptranslate,
   .author-card,
   .timeline-card,
   .sidebar-card,
-  .section-card,
-  .newsletter-card{
+  .section-card{
     padding:22px !important;
   }
 
@@ -891,7 +874,6 @@ main > .container > section,
 
 .hero-side-card,
 .section-card,
-.newsletter-card,
 .summary-box,
 .article-card,
 .sidebar-card,
@@ -1014,7 +996,6 @@ footer{
   .spotlight-card div,
   .hero-side-card,
   .section-card,
-  .newsletter-card,
   .summary-box,
   .article-card,
   .sidebar-card,
@@ -1163,7 +1144,6 @@ footer{
   .related-card,
   .section-card,
   .mini-card,
-  .newsletter-card,
   .article-hero-card,
   .article-card,
   .summary-box,
@@ -1247,12 +1227,7 @@ footer{
     grid-template-columns:1fr !important;
     gap:6px !important;
   }
-
-  .newsletter-card{
-    gap:18px !important;
-  }
-
-  .newsletter-form{
+.newsletter-form{
     display:grid !important;
     grid-template-columns:1fr !important;
     gap:10px !important;
@@ -1437,7 +1412,6 @@ footer{
 .sidebar-card,
 .timeline-card,
 .author-card,
-.newsletter-card,
 .section-card{
   background-clip:padding-box !important;
 }
@@ -1576,8 +1550,7 @@ footer{
   margin-bottom:22px;
 }
 
-.premium-trending-head span,
-.premium-trend-card span{
+.premium-trending-head span{
   color:var(--premium-accent-2, #7bd1ff);
   font-size:.78rem;
   font-weight:900;
@@ -1596,44 +1569,6 @@ footer{
   color:#dce8f5;
   font-weight:800;
   white-space:nowrap;
-}
-
-.premium-trending-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-}
-
-.premium-trend-card{
-  min-height:190px;
-  padding:20px;
-  border:1px solid var(--premium-line, rgba(255,255,255,0.08));
-  border-radius:18px;
-  background:#07111f;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  transition:transform .22s ease, border-color .22s ease, background-color .22s ease;
-}
-
-.premium-trend-card:hover{
-  transform:translateY(-3px);
-  border-color:rgba(155,232,255,0.28);
-  background:#0a1728;
-}
-
-.premium-trend-card strong{
-  color:rgba(123,209,255,0.28);
-  font-size:2.4rem;
-  line-height:.9;
-  letter-spacing:-0.06em;
-}
-
-.premium-trend-card h3{
-  margin:auto 0 0;
-  color:#fff;
-  font-size:1.06rem;
-  line-height:1.35;
 }
 
 .story-card,
@@ -1665,12 +1600,6 @@ footer{
   width:max-content !important;
   color:var(--premium-accent-2, #7bd1ff) !important;
   font-weight:900 !important;
-}
-
-@media (max-width:900px){
-  .premium-trending-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
 }
 
 @media (max-width:760px){
@@ -1720,14 +1649,6 @@ footer{
   .premium-trending-head{
     align-items:flex-start;
     flex-direction:column;
-  }
-
-  .premium-trending-grid{
-    grid-template-columns:1fr;
-  }
-
-  .premium-trend-card{
-    min-height:150px;
   }
 }
 
@@ -1785,7 +1706,6 @@ footer{
 .category-page .tag,
 .category-page .story-meta span:first-child,
 .category-page .premium-trending-head span,
-.category-page .premium-trend-card span,
 .category-page .homepage-briefing-strip span,
 .category-page .spotlight-card span,
 .category-page .homepage-focus-card span{
@@ -1828,7 +1748,6 @@ footer{
 .category-page .homepage-focus-card,
 .category-page .homepage-briefing-strip a,
 .category-page .premium-trending,
-.category-page .premium-trend-card,
 .category-page .spotlight-card,
 .category-page .section-card,
 .category-page .story-card,
@@ -1852,10 +1771,6 @@ footer{
     #07111f !important;
 }
 
-.category-page .premium-trend-card strong{
-  color:rgba(var(--section-accent-rgb),0.36) !important;
-}
-
 .category-page .section-link,
 .category-page .story-link,
 .category-page .related-read-more,
@@ -1865,7 +1780,6 @@ footer{
 }
 
 .category-page .homepage-briefing-strip a:hover,
-.category-page .premium-trend-card:hover,
 .category-page .spotlight-card:hover,
 .category-page .story-card:hover,
 .category-page .mini-card:hover{
@@ -2231,10 +2145,6 @@ footer{
   margin:0;
   color:#b8c6d8;
   line-height:1.62;
-}
-
-.premium-trending-grid{
-  display:none !important;
 }
 
 @media (max-width:1100px){
@@ -2797,7 +2707,6 @@ footer{
 .related-card,
 .spotlight-card,
 .premium-trending,
-.newsletter-card,
 .summary-box,
 .timeline-card,
 .author-card,
@@ -2820,7 +2729,6 @@ footer{
 .related-card,
 .spotlight-card,
 .mini-card,
-.premium-trend-card,
 .trend-ranked-item,
 .trend-lead-card,
 .homepage-briefing-strip a,
@@ -2842,7 +2750,6 @@ footer{
 .related-card:hover,
 .spotlight-card:hover,
 .mini-card:hover,
-.premium-trend-card:hover,
 .trend-ranked-item:hover,
 .trend-lead-card:hover,
 .homepage-briefing-strip a:hover,
