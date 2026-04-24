@@ -733,3 +733,94 @@ iframe.skiptranslate,
     display:none !important;
   }
 }
+/* Premium image system */
+img{
+  image-rendering:auto;
+}
+
+.hero-main,
+.article-hero-card,
+.story-card,
+.related-card,
+.spotlight-card,
+.story-row{
+  background-color:#07111f !important;
+}
+
+.hero-main{
+  background-position:center !important;
+}
+
+.story-thumb,
+.related-thumb,
+.spotlight-card,
+.hero-image{
+  background:linear-gradient(180deg, #102036, #07111f);
+}
+
+.story-thumb,
+.related-thumb{
+  aspect-ratio:16/10 !important;
+}
+
+.story-thumb img,
+.related-thumb img,
+.spotlight-card img,
+.story-row img,
+.hero-image img{
+  display:block;
+  filter:saturate(1.04) contrast(1.03);
+}
+
+.story-thumb img,
+.related-thumb img,
+.spotlight-card img{
+  height:100% !important;
+  object-fit:cover !important;
+}
+
+.story-row img{
+  aspect-ratio:16/10;
+  height:auto !important;
+  min-height:128px;
+  object-fit:cover !important;
+}
+
+img[src*="radev"],
+img[src*="Radev"]{
+  object-position:center 22% !important;
+}
+
+img[src*="Top-Gun"],
+img[src*="aston-villa"],
+img[src*="highlander"],
+img[src*="fury-joshua"]{
+  object-position:center center !important;
+}
+
+img[src*="sydney-sweeney"]{
+  object-position:center 18% !important;
+}
+
+img[src*="global-markets"],
+img[src*="us-inflation"],
+img[src*="oil"],
+img[src*="middle-east"]{
+  object-position:center center !important;
+}
+
+img[src*="Trump"],
+img[src*="starmer"],
+img[src*="rumen-radev"]{
+  object-position:center 20% !important;
+}
+
+.homepage-lead{
+  background-position:center 28% !important;
+}
+
+@media (max-width:760px){
+  .story-row img{
+    min-height:0;
+  }
+}
