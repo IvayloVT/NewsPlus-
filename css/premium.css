@@ -2430,3 +2430,28 @@ footer{
     flex-direction:column !important;
   }
 }
+/* High contrast accent buttons */
+.footer-newsletter button,
+.footer-pill,
+.category-page .footer-pill,
+.category-page .footer-newsletter button,
+.newsletter-form button,
+.btn-primary{
+  color:#02111d !important;
+  text-shadow:none !important;
+}
+
+.footer-pill:hover,
+.footer-newsletter button:hover{
+  color:#02111d !important;
+}
+/* Force footer pill text to match Subscribe button */
+.premium-footer .footer-col a.footer-pill,
+.premium-footer .footer-col a.footer-pill:visited,
+.premium-footer .footer-col a.footer-pill:hover,
+.category-page .premium-footer .footer-col a.footer-pill,
+.category-page .premium-footer .footer-col a.footer-pill:hover{
+  color:#02111d !important;
+  -webkit-text-fill-color:#02111d !important;
+  text-shadow:none !important;
+}
