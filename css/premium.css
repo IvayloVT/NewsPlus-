@@ -3585,3 +3585,236 @@ img[src*="self-driving-car"]{
     aspect-ratio:1 / 1 !important;
   }
 }
+/* Clean mobile article spacing */
+@media (max-width:760px){
+  body:has(.article-hero-card),
+  body:has(.article-card){
+    overflow-x:hidden;
+  }
+
+  .article-hero{
+    padding:18px 0 10px !important;
+  }
+
+  .article-hero + main{
+    padding-top:10px !important;
+  }
+
+  .article-hero-card{
+    display:block !important;
+    border-radius:18px !important;
+  }
+
+  .article-hero-card .hero-image{
+    aspect-ratio:16 / 10 !important;
+    border-radius:18px 18px 0 0 !important;
+  }
+
+  .article-hero-card .hero-content{
+    padding:20px !important;
+  }
+
+  .article-hero-card .eyebrow{
+    margin-bottom:12px !important;
+  }
+
+  .article-hero-card h1{
+    margin:0 0 12px !important;
+    font-size:clamp(1.85rem, 9vw, 2.5rem) !important;
+    line-height:1.04 !important;
+    letter-spacing:-0.045em !important;
+  }
+
+  .article-hero-card .standfirst{
+    margin:0 0 14px !important;
+    font-size:.98rem !important;
+    line-height:1.6 !important;
+  }
+
+  .article-meta{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:7px 10px !important;
+    margin-top:10px !important;
+    font-size:.78rem !important;
+    line-height:1.35 !important;
+  }
+
+  .article-meta span:not(:last-child)::after{
+    display:none !important;
+  }
+
+  .article-layout{
+    gap:16px !important;
+    margin-top:8px !important;
+  }
+
+  .stack-main{
+    gap:16px !important;
+  }
+
+  .article-card,
+  .summary-box,
+  .timeline-card,
+  .author-card,
+  .sidebar-card{
+    padding:20px !important;
+    border-radius:18px !important;
+  }
+
+  .article-body{
+    font-size:.98rem !important;
+    line-height:1.72 !important;
+  }
+
+  .article-body p{
+    margin:0 0 15px !important;
+    line-height:1.72 !important;
+  }
+
+  .article-body p:last-child{
+    margin-bottom:0 !important;
+  }
+
+  .article-body h2{
+    margin:26px 0 10px !important;
+    font-size:1.18rem !important;
+    line-height:1.25 !important;
+    letter-spacing:-0.02em !important;
+  }
+
+  .summary-points{
+    gap:10px !important;
+    padding-left:0 !important;
+  }
+
+  .summary-points li{
+    padding-left:20px !important;
+    line-height:1.58 !important;
+    margin-bottom:10px !important;
+  }
+
+  .summary-points li::before{
+    top:.62em !important;
+  }
+
+  .article-tags{
+    margin-top:20px !important;
+    gap:8px !important;
+  }
+
+  .article-tags .tag{
+    min-height:32px !important;
+    padding:0 11px !important;
+    font-size:.72rem !important;
+    border-radius:999px !important;
+  }
+
+  .share-row{
+    margin-top:18px !important;
+    gap:8px !important;
+  }
+
+  .share-btn{
+    min-height:38px !important;
+    padding:0 12px !important;
+    font-size:.75rem !important;
+  }
+
+  .sidebar-stack{
+    gap:14px !important;
+  }
+
+  .sidebar-card h3,
+  .timeline-card h3,
+  .author-card h3{
+    margin:0 0 12px !important;
+    font-size:1rem !important;
+  }
+
+  .sidebar-list{
+    gap:10px !important;
+  }
+
+  .sidebar-item{
+    gap:2px !important;
+    line-height:1.55 !important;
+    font-size:.88rem !important;
+  }
+
+  .timeline-list{
+    gap:12px !important;
+  }
+
+  .timeline-item{
+    padding-left:18px !important;
+    line-height:1.58 !important;
+  }
+
+  .timeline-time{
+    margin-bottom:3px !important;
+    font-size:.72rem !important;
+  }
+
+  .author-line{
+    line-height:1.65 !important;
+  }
+
+  .related-section{
+    margin-top:24px !important;
+  }
+
+  .related-grid{
+    gap:14px !important;
+  }
+
+  .related-body{
+    padding:16px !important;
+  }
+
+  .related-body h3{
+    margin:0 0 8px !important;
+  }
+
+  .related-body p{
+    margin:0 0 12px !important;
+    line-height:1.58 !important;
+  }
+}
+
+@media (max-width:480px){
+  .article-hero{
+    padding-top:12px !important;
+  }
+
+  .article-hero-card .hero-content,
+  .article-card,
+  .summary-box,
+  .timeline-card,
+  .author-card,
+  .sidebar-card{
+    padding:16px !important;
+  }
+
+  .article-hero-card .hero-image{
+    aspect-ratio:4 / 3 !important;
+  }
+
+  .article-hero-card h1{
+    font-size:clamp(1.72rem, 10vw, 2.25rem) !important;
+  }
+
+  .article-meta{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  .article-body{
+    font-size:.95rem !important;
+  }
+
+  .article-tools,
+  .article-detail-strip{
+    gap:8px !important;
+  }
+}
