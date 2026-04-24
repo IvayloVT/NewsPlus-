@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#07111f" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -21,7 +21,7 @@
       --muted:#a9b6c8;
       --accent:#3ba0ff;
       --accent-2:#7bd1ff;
-      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --shadow:none;
       --radius:24px;
       --radius-sm:16px;
       --max:1240px;
@@ -31,10 +31,11 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:'Inter',sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(59,160,255,0.10), transparent 28%),
-        linear-gradient(180deg,#07111f 0%, #081321 35%, #091523 100%);
+      font-family:'Inter', Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
+      background:#050c16;
       color:var(--text);
     }
 
@@ -143,7 +144,7 @@
     .story-row,
     .pager-card,
     .footer-card{
-      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11-21,37,0.96));
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
@@ -396,7 +397,43 @@
         white-space:nowrap;
       }
     }
-</style>
+
+    /* Clean page surface override */
+    html,
+    body{
+      background:#050c16 !important;
+    }
+    #siteHeader,
+    header,
+    .topbar{
+      position:static !important;
+      top:auto !important;
+      bottom:auto !important;
+      left:auto !important;
+      right:auto !important;
+      z-index:auto !important;
+      transform:none !important;
+      transition:none !important;
+      box-shadow:none !important;
+      filter:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }
+    .hero,
+    .article-hero,
+    .timeline-card,
+    .related-card,
+    .sidebar-card,
+    .category-card,
+    .story-card,
+    .feature-card,
+    .newsletter-card,
+    footer{
+      box-shadow:none !important;
+      filter:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }</style>
 </head>
 <body>
   <div id="google_translate_element"></div>

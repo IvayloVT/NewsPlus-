@@ -12,12 +12,10 @@
   <meta property="og:type" content="article" />
   <meta property="og:image" content="images/global-music.jpg" />
   <meta property="og:site_name" content="News Pulse+" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <style>
+<style>
     :root{
       --bg:#07111f;
       --bg-soft:#0c1728;
@@ -29,7 +27,7 @@
       --accent:#3ba0ff;
       --accent-2:#7bd1ff;
       --danger:#ff5e7a;
-      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --shadow:none;
       --radius:28px;
       --max-width:1180px;
     }
@@ -38,10 +36,11 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:"Inter",sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(59,160,255,0.08), transparent 30%),
-        linear-gradient(180deg, #081221 0%, #050c16 100%);
+      font-family:'Inter', Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
+      background:#050c16;
       color:var(--text);
     }
 
@@ -62,11 +61,7 @@
 
     .topbar{
       border-bottom:1px solid var(--line);
-      background:rgba(7,17,31,0.88);
-      backdrop-filter:blur(14px);
-      position:sticky;
-      top:0;
-      z-index:20;
+      background:#07111f;
       transition:transform .3s ease;
     }
 
@@ -140,7 +135,10 @@
       border:2px solid rgba(255,255,255,0.88);
       background:rgba(255,255,255,0.02);
       color:#fff;
-      font-family:inherit;
+      
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
       font-size:.92rem;
       font-weight:800;
       line-height:1;
@@ -191,7 +189,7 @@
     .summary-box,
     .author-card,
     .timeline-card{
-      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11-21,37,0.96));
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
@@ -224,10 +222,9 @@
       font-weight:900;
       letter-spacing:.08em;
       text-transform:uppercase;
-      background:rgba(6,14,26,.78);
+      background:#060e1a;
       border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 10px 25px rgba(0,0,0,.25);
-      backdrop-filter:blur(10px);
+      box-shadow:none;
     }
 
     .pulse-dot{
@@ -235,14 +232,14 @@
       height:10px;
       border-radius:50%;
       background:var(--danger);
-      box-shadow:0 0 0 0 rgba(255,94,122,0.75);
+      box-shadow:none;
       animation:pulse 1.8s infinite;
     }
 
     @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(255,94,122,0.75)}
-      70%{box-shadow:0 0 0 14px rgba(255,94,122,0)}
-      100%{box-shadow:0 0 0 0 rgba(255,94,122,0)}
+      0%{box-shadow:none}
+      70%{box-shadow:none}
+      100%{box-shadow:none}
     }
 
     .hero-content{
@@ -274,37 +271,52 @@
 
     .standfirst{
       margin:0 0 18px;
-      color:#dce8f5;
-      font-size:1.1rem;
-      line-height:1.7;
-      max-width:930px;
+      color:#d7e2ef;
+      font-size:1.04rem;
+      line-height:1.75;
+      max-width:860px;
     }
 
     .article-meta{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
+      gap:12px;
       color:var(--muted);
-      font-size:.95rem;
+      font-size:0.94rem;
+    }
+
+    .article-meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .article-meta span:not(:last-child)::after{
+      content:"";
+      color:#6f88a3;
+      margin-left:12px;
+    }
+
+    main{
+      padding:0 0 50px;
     }
 
     .article-layout{
       display:grid;
-      grid-template-columns:minmax(0, 2fr) minmax(280px, .9fr);
-      gap:22px;
+      grid-template-columns:minmax(0, 1.9fr) minmax(280px, 0.9fr);
+      gap:24px;
       align-items:start;
     }
 
     .stack-main{
       display:grid;
-      gap:22px;
+      gap:20px;
     }
 
-    .article-card,
     .summary-box,
     .author-card,
     .timeline-card{
-      padding:28px;
+      padding:24px;
     }
 
     .summary-box h2,
@@ -315,32 +327,101 @@
       letter-spacing:-0.02em;
     }
 
-    .summary-points{
+        .summary-points{
       display:grid;
       gap:12px;
       margin:0;
-      padding-left:20px;
+      padding:0;
+      list-style:none;
       color:#dce7f5;
     }
 
     .summary-points li{
-      line-height:1.65;
+      position:relative;
+      padding-left:22px;
+      line-height:1.7;
     }
 
-    .article-card h2{
-      margin:26px 0 12px;
-      font-size:1.4rem;
-      letter-spacing:-0.03em;
+    .summary-points li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.68em;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:none;
     }
 
-    .article-card h2:first-child{
-      margin-top:0;
+    .article-card{
+      padding:28px;
     }
 
-    .article-card p{
-      margin:0 0 18px;
-      color:#d9e5f3;
+    .article-body{
+      color:#dce8f5;
+      font-size:1.02rem;
       line-height:1.85;
+    }
+
+    .article-body p{
+      margin:0 0 20px;
+    }
+
+    .article-body h2{
+      margin:30px 0 14px;
+      font-size:1.34rem;
+      letter-spacing:-0.03em;
+      color:#f7fbff;
+    }
+
+    .timeline-list{
+      display:grid;
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .timeline-item{
+      position:relative;
+      display:block;
+      padding-left:22px;
+      color:#dbe7f5;
+      line-height:1.7;
+      border:0;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.68em;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:none;
+    }
+
+    .timeline-time{
+      display:inline;
+      color:#dbe7f5;
+      font-size:1rem;
+      font-weight:400;
+      line-height:1.7;
+      text-transform:none;
+      letter-spacing:0;
+    }
+
+    .timeline-time::after{
+      content:": ";
+    }
+
+    .timeline-text{
+      display:inline;
+      color:#dbe7f5;
+      line-height:1.7;
       font-size:1rem;
     }
 
@@ -348,79 +429,47 @@
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-top:12px;
+      margin-top:26px;
     }
 
     .tag{
       display:inline-flex;
       align-items:center;
+      padding:9px 14px;
       border-radius:999px;
-      padding:8px 13px;
-      font-size:.82rem;
-      font-weight:700;
-      background:rgba(255,255,255,.06);
-      color:#dce7f5;
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid rgba(123,209,255,0.22);
+      color:#d6f0ff;
+      background:rgba(59,160,255,0.08);
+      font-size:0.88rem;
     }
     .share-row{
       display:flex;
       flex-wrap:wrap;
-      gap:18px;
-      margin-top:26px;
+      gap:10px;
+      margin-top:18px;
     }
     .share-btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:58px;
-      padding:0 28px;
+      min-height:34px;
+      padding:0 14px;
       border:none;
       border-radius:999px;
       font:inherit;
-      font-size:1rem;
+      font-size:.72rem;
       font-weight:800;
-      letter-spacing:-0.02em;
+      letter-spacing:-0.01em;
       cursor:pointer;
       color:#06111d;
       background:linear-gradient(180deg, #71c4ff 0%, #55aff6 100%);
-      box-shadow:0 16px 32px rgba(59,160,255,0.22);
+      box-shadow:none;
       transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
     }
     .share-btn:hover{
-      transform:translateY(-2px);
-      filter:brightness(1.04);
-      box-shadow:0 20px 36px rgba(59,160,255,0.28);
-    }
-
-    .timeline-list{
-      display:grid;
-      gap:16px;
-    }
-
-    .timeline-item{
-      display:grid;
-      grid-template-columns:96px 1fr;
-      gap:14px;
-      padding-top:14px;
-      border-top:1px solid var(--line);
-    }
-
-    .timeline-item:first-child{
-      border-top:none;
-      padding-top:0;
-    }
-
-    .timeline-time{
-      color:var(--accent-2);
-      font-weight:800;
-      font-size:.88rem;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-    }
-
-    .timeline-text{
-      color:#dce8f5;
-      line-height:1.7;
+      transform:translateY(-1px);
+      filter:none;
+      box-shadow:none;
     }
 
     .author-line{
@@ -480,16 +529,20 @@
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:18px;
-    }
+    
+      align-items:stretch;}
 
     .related-card{
       overflow:hidden;
       transition:transform .25s ease, box-shadow .25s ease;
-    }
+    
+      display:flex;
+      flex-direction:column;
+      height:100%;}
 
     .related-card:hover{
       transform:translateY(-4px);
-      box-shadow:0 22px 42px rgba(0,0,0,0.24);
+      box-shadow:none;
     }
 
     .related-thumb{
@@ -504,22 +557,40 @@
     }
 
     .related-body{
-      padding:18px;
-    }
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+    
+      flex:1;}
 
     .related-body h3{
-      margin:0 0 8px;
-      font-size:1rem;
-      line-height:1.4;
+      margin:0 0 10px;
+      font-size:1.14rem;
+      line-height:1.35;
+      font-family:'Inter', Arial, Helvetica, sans-serif;
     }
 
     .related-body p{
-      margin:0;
-      color:var(--muted);
-      font-size:.92rem;
-      line-height:1.6;
-    }
-    @media (min-width:761px){
+      margin:0 0 14px;
+      color:#d1dceb;
+      font-size:.96rem;
+      line-height:1.65;
+      font-family:'Inter', Arial, Helvetica, sans-serif;
+    
+      flex:1;}
+    
+    .related-read-more{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:auto;
+      color:var(--accent-2);
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.4;
+      letter-spacing:0;
+      font-family:'Inter', Arial, Helvetica, sans-serif;
+    }@media (min-width:761px){
       .navbar{
         flex-wrap:nowrap;
       }
@@ -544,7 +615,8 @@
       }
       .related-grid{
         grid-template-columns:1fr 1fr;
-      }
+      
+      align-items:stretch;}
       .footer-grid{
         grid-template-columns:1fr 1fr;
       }
@@ -561,7 +633,8 @@
 
       .related-grid{
         grid-template-columns:1fr;
-      }
+      
+      align-items:stretch;}
 
       .footer-grid{
         grid-template-columns:1fr;
@@ -657,7 +730,36 @@
       color:var(--muted);
       font-size:.94rem;
     }
-</style>
+
+    #siteHeader,
+    .topbar{
+      position:static !important;
+      top:auto !important;
+      bottom:auto !important;
+      left:auto !important;
+      right:auto !important;
+      z-index:auto !important;
+      transform:none !important;
+      transition:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }
+    /* Clean page surface override */
+    html,
+    body{
+      background:#050c16 !important;
+    }
+    .article-hero,
+    .timeline-card,
+    .related-card,
+    .sidebar-card,
+    footer,
+    .topbar{
+      box-shadow:none !important;
+      filter:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }</style>
 </head>
 <body>
   <header class="topbar" id="siteHeader">
@@ -834,6 +936,7 @@
             <div class="related-body">
               <h3>Top Gun 3 moves forward as franchise films dominate</h3>
               <p>Studios are leaning further into established franchises as recognizable stories and global appeal continue to shape major film decisions.</p>
+              <span class="related-read-more">Read more &rarr;</span>
             </div>
           </a>
           <a class="related-card" href="highlander-reboot-sparks-interest.html">
@@ -843,6 +946,7 @@
             <div class="related-body">
               <h3>Highlander reboot sparks interest with modern approach</h3>
               <p>The new reboot is drawing attention as studios continue reworking classic ideas with updated visuals, bigger scale, and fresh star power.</p>
+              <span class="related-read-more">Read more &rarr;</span>
             </div>
           </a>
           <a class="related-card" href="celebrity-influence-continues-to-shape-entertainment.html">
@@ -852,6 +956,7 @@
             <div class="related-body">
               <h3>Celebrity influence continues to shape entertainment</h3>
               <p>Celebrity narratives remain central to how audiences engage with media, brand partnerships, and the wider entertainment conversation.</p>
+              <span class="related-read-more">Read more &rarr;</span>
             </div>
           </a>
         </div>
@@ -960,7 +1065,6 @@
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
     }
   </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
 

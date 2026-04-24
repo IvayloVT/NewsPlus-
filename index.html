@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#07111f" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -22,7 +22,7 @@
       --accent:#3ba0ff;
       --accent-2:#7bd1ff;
       --success:#19c37d;
-      --shadow:0 18px 45px rgba(0,0,0,0.28);
+      --shadow:none;
       --radius:24px;
       --radius-sm:16px;
       --max:1240px;
@@ -32,10 +32,11 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:'Inter',sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(59,160,255,0.12), transparent 28%),
-        linear-gradient(180deg,#07111f 0%, #081321 35%, #091523 100%);
+      font-family:'Inter', Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
+      background:#050c16;
       color:var(--text);
     }
 
@@ -46,7 +47,7 @@
     .topbar{
       border-bottom:1px solid var(--line);
       background:rgba(7,17,31,0.86);
-      backdrop-filter:blur(12px);
+      backdrop-filter:none;
     }
     .topbar-inner{
       min-height:52px;
@@ -81,7 +82,7 @@
       top:0;
       z-index:1000;
       background:rgba(7,17,31,0.82);
-      backdrop-filter:blur(16px);
+      backdrop-filter:none;
       border-bottom:1px solid var(--line);
     }
     .navbar{
@@ -212,7 +213,7 @@
     .mini-card,
     .newsletter-card,
     .ad-slot{
-      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11-21,37,0.96));
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
@@ -384,7 +385,7 @@
     }
     .story-card:hover{
       transform:translateY(-6px);
-      box-shadow:0 24px 50px rgba(0,0,0,0.34);
+      box-shadow:none;
       border-color:rgba(123,209,255,0.2);
     }
     .story-thumb{
@@ -748,7 +749,23 @@
         white-space:nowrap;
       }
     }
-</style>
+
+    /* Clean homepage surface override */
+    html,
+    body{
+      background:#050c16 !important;
+    }
+    header,
+    .topbar,
+    .newsletter-card,
+    .story-card,
+    .mini-card,
+    footer{
+      box-shadow:none !important;
+      filter:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }</style>
 </head>
 <body>
 
