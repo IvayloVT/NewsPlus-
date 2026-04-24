@@ -3967,3 +3967,38 @@ body.newsletter-photo-page .hero-main .eyebrow{
     min-height:620px !important;
   }
 }
+/* Contact form bottom action row */
+.contact-action-row{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:16px !important;
+  margin-top:6px !important;
+}
+
+.contact-action-row .submit-btn,
+.contact-action-row .app-download-btn{
+  width:auto !important;
+  min-width:220px !important;
+}
+
+.contact-action-row .app-download-btn{
+  margin-left:auto !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+
+@media (max-width:760px){
+  .contact-action-row{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+
+  .contact-action-row .submit-btn,
+  .contact-action-row .app-download-btn{
+    width:100% !important;
+    min-width:0 !important;
+  }
+}
