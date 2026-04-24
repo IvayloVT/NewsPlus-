@@ -2773,3 +2773,114 @@ footer{
     flex-direction:column;
   }
 }
+/* Small premium motion */
+@keyframes premiumFadeUp{
+  from{
+    opacity:0;
+    transform:translateY(12px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes premiumGlowPulse{
+  0%,100%{ box-shadow:0 0 0 rgba(123,209,255,0); }
+  50%{ box-shadow:0 0 0 4px rgba(123,209,255,0.08); }
+}
+
+.hero-main,
+.article-hero-card,
+.section-card,
+.story-card,
+.related-card,
+.spotlight-card,
+.premium-trending,
+.newsletter-card,
+.summary-box,
+.timeline-card,
+.author-card,
+.sidebar-card,
+.premium-footer{
+  animation:premiumFadeUp .45s ease both;
+}
+
+.story-card:nth-child(2),
+.related-card:nth-child(2),
+.spotlight-card:nth-child(2){ animation-delay:.04s; }
+.story-card:nth-child(3),
+.related-card:nth-child(3),
+.spotlight-card:nth-child(3){ animation-delay:.08s; }
+.story-card:nth-child(4),
+.related-card:nth-child(4),
+.spotlight-card:nth-child(4){ animation-delay:.12s; }
+
+.story-card,
+.related-card,
+.spotlight-card,
+.mini-card,
+.premium-trend-card,
+.trend-ranked-item,
+.trend-lead-card,
+.homepage-briefing-strip a,
+.category-link,
+.share-btn,
+.btn,
+.footer-pill,
+.footer-newsletter button,
+.nav-links a{
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    background-color .22s ease,
+    color .22s ease,
+    opacity .22s ease !important;
+}
+
+.story-card:hover,
+.related-card:hover,
+.spotlight-card:hover,
+.mini-card:hover,
+.premium-trend-card:hover,
+.trend-ranked-item:hover,
+.trend-lead-card:hover,
+.homepage-briefing-strip a:hover,
+.category-link:hover{
+  transform:translateY(-4px) !important;
+}
+
+.story-thumb img,
+.related-thumb img,
+.spotlight-card img,
+.trend-lead-card img,
+.hero-image img{
+  transition:transform .45s ease, filter .3s ease !important;
+}
+
+.story-card:hover .story-thumb img,
+.related-card:hover .related-thumb img,
+.spotlight-card:hover img,
+.trend-lead-card:hover img,
+.article-hero-card:hover .hero-image img{
+  transform:scale(1.035) !important;
+}
+
+.pulse-dot,
+.breaking-badge .pulse-dot{
+  animation:premiumGlowPulse 1.8s ease-in-out infinite;
+}
+
+.nav-links.nav-open{
+  animation:premiumFadeUp .22s ease both;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
