@@ -3433,3 +3433,155 @@ body.article-consistent > .container:not(.footer-topline):not(.footer-grid):not(
     flex:1 1 auto;
   }
 }
+/* Page-wide image cropping upgrade */
+.hero-image,
+.story-thumb,
+.related-thumb,
+.front-lead-story,
+.front-support-card,
+.spotlight-card,
+.trend-lead-card,
+.trending-desk-lead,
+.category-lead,
+.homepage-lead{
+  overflow:hidden !important;
+}
+
+.hero-image img,
+.story-thumb img,
+.related-thumb img,
+.story-row img,
+.spotlight-card img,
+.front-lead-story img,
+.front-support-card img,
+.trend-lead-card img,
+.trending-desk-lead img,
+.category-lead img,
+.homepage-lead img{
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+}
+
+.hero-image,
+.article-hero-card .hero-image{
+  aspect-ratio:16 / 9 !important;
+}
+
+.story-thumb,
+.related-thumb,
+.spotlight-card img,
+.front-support-card img{
+  aspect-ratio:16 / 10 !important;
+}
+
+.story-row img{
+  aspect-ratio:16 / 9 !important;
+  min-height:150px !important;
+}
+
+.front-lead-story,
+.trend-lead-card,
+.trending-desk-lead{
+  min-height:clamp(340px, 42vw, 540px) !important;
+}
+
+.homepage-lead,
+.category-lead{
+  min-height:clamp(460px, 58vw, 720px) !important;
+}
+
+img[src*="sydney-sweeney"],
+img[src*="carlos-ulberg"],
+img[src*="fury-joshua"],
+img[src*="cat-broadcast"],
+img[src*="passenger"],
+img[src*="gamer"]{
+  object-position:center 18% !important;
+}
+
+img[src*="Top-Gun-3"],
+img[src*="aston-villa"],
+img[src*="nfl-draft"],
+img[src*="darts"],
+img[src*="highlander"],
+img[src*="olivier-awards"]{
+  object-position:center 30% !important;
+}
+
+img[src*="middle-east"],
+img[src*="bulgaria"],
+img[src*="rumen-radev"],
+img[src*="falkland"],
+img[src*="midterm"],
+img[src*="trump"],
+img[src*="starmer"],
+img[src*="eu-flag"],
+img[src*="china-flag"]{
+  object-position:center 24% !important;
+}
+
+img[src*="oil"],
+img[src*="inflation"],
+img[src*="global-markets"],
+img[src*="uk-economy"],
+img[src*="energy"],
+img[src*="imf"]{
+  object-position:center 42% !important;
+}
+
+img[src*="dor-order-food"],
+img[src*="self-driving-car"]{
+  object-position:center 35% !important;
+}
+
+.article-hero-card .hero-image img{
+  object-position:center 28% !important;
+}
+
+.related-card .related-thumb img,
+.story-card .story-thumb img,
+.mini-card img{
+  transition:transform .35s ease, filter .35s ease, object-position .35s ease !important;
+}
+
+@media (max-width:760px){
+  .hero-image,
+  .article-hero-card .hero-image,
+  .story-thumb,
+  .related-thumb,
+  .spotlight-card img,
+  .front-support-card img{
+    aspect-ratio:4 / 3 !important;
+  }
+
+  .front-lead-story,
+  .trend-lead-card,
+  .trending-desk-lead{
+    min-height:320px !important;
+  }
+
+  .homepage-lead,
+  .category-lead{
+    min-height:520px !important;
+  }
+
+  .story-row img{
+    aspect-ratio:4 / 3 !important;
+    min-height:0 !important;
+  }
+}
+
+@media (max-width:480px){
+  .hero-image,
+  .article-hero-card .hero-image,
+  .story-thumb,
+  .related-thumb,
+  .story-row img,
+  .spotlight-card img,
+  .front-support-card img{
+    aspect-ratio:1 / 1 !important;
+  }
+}
