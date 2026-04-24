@@ -3834,3 +3834,27 @@ body.category-page .site-tagline,
 body.category-page .brand p{
   color:#f4f8fd !important;
 }
+/* Main page header logo color split */
+body.home-page .logo,
+body.info-page .logo,
+body.newsletter-page .logo,
+body.legal-page .logo,
+body:not(.article-page):not(.category-page):not(.trending-page) header .logo{
+  color:#f4f8fd !important;
+}
+
+body.home-page .logo span,
+body.info-page .logo span,
+body.newsletter-page .logo span,
+body.legal-page .logo span,
+body:not(.article-page):not(.category-page):not(.trending-page) header .logo span{
+  color:var(--premium-accent-2, #7bd1ff) !important;
+}
+
+body.home-page .site-tagline,
+body.info-page .site-tagline,
+body.newsletter-page .site-tagline,
+body.legal-page .site-tagline,
+body:not(.article-page):not(.category-page):not(.trending-page) header .site-tagline{
+  color:#f4f8fd !important;
+}
