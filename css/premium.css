@@ -3818,3 +3818,19 @@ img[src*="self-driving-car"]{
     gap:8px !important;
   }
 }
+/* Category header logo color split */
+body.category-page .logo,
+body.category-page .brand h1,
+body.category-page .brand h1 a{
+  color:#f4f8fd !important;
+}
+
+body.category-page .logo span,
+body.category-page .brand h1 span{
+  color:var(--premium-accent-2, #7bd1ff) !important;
+}
+
+body.category-page .site-tagline,
+body.category-page .brand p{
+  color:#f4f8fd !important;
+}
