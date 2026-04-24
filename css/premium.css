@@ -3096,3 +3096,88 @@ footer{
     border-radius:20px;
   }
 }
+/* Trending header matches homepage */
+body.trending-page header{
+  background:rgba(7,17,31,0.82) !important;
+  border-bottom:1px solid var(--line, rgba(255,255,255,0.08)) !important;
+}
+
+body.trending-page .navbar{
+  min-height:78px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+}
+
+body.trending-page .brand{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:4px !important;
+  flex-shrink:0 !important;
+}
+
+body.trending-page .logo{
+  font-size:clamp(2rem, 3vw, 2.4rem) !important;
+  font-weight:900 !important;
+  letter-spacing:-0.055em !important;
+  line-height:0.92 !important;
+  color:#f4f8fd !important;
+}
+
+body.trending-page .logo span{
+  color:var(--premium-accent-2, #7bd1ff) !important;
+}
+
+body.trending-page .site-tagline{
+  margin:0 !important;
+  color:#a8b4c6 !important;
+  font-size:clamp(0.96rem, 1.2vw, 1.08rem) !important;
+  font-weight:500 !important;
+  letter-spacing:-0.02em !important;
+  line-height:1.15 !important;
+}
+
+body.trending-page .nav-links{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  flex-wrap:wrap !important;
+  justify-content:flex-end !important;
+  position:static !important;
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+body.trending-page .nav-links a{
+  color:#d8e3f1 !important;
+  font-weight:600 !important;
+  padding:10px 14px !important;
+  border-radius:999px !important;
+}
+
+body.trending-page .nav-links a:hover{
+  background:rgba(255,255,255,0.08) !important;
+  color:#fff !important;
+}
+
+@media (max-width:760px){
+  body.trending-page .navbar{
+    align-items:flex-start !important;
+  }
+
+  body.trending-page .nav-links{
+    display:none !important;
+    position:static !important;
+    width:100% !important;
+    padding:10px !important;
+    border:1px solid rgba(255,255,255,0.12) !important;
+    background:#07111f !important;
+  }
+
+  body.trending-page .nav-links.nav-open{
+    display:grid !important;
+  }
+}

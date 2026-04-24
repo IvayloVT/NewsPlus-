@@ -436,19 +436,18 @@
     }</style>
   <link rel="stylesheet" href="css/premium.css" />
 </head>
-<body>
+<body class="trending-page">
   <div id="google_translate_element"></div>
-
   <header>
     <div class="container navbar">
       <div class="brand">
-        <div class="logo">News<span>Pulse+</span></div>
+        <a href="index.html" class="logo">News<span>Pulse+</span></a>
         <p class="site-tagline">The stories moving the world.</p>
       </div>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
 
-      <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
+      <nav class="nav-links" id="site-nav">
         <a href="index.html">Home</a>
         <a href="world-news.html">World News</a>
         <a href="politics.html">Politics</a>
@@ -456,7 +455,7 @@
         <a href="entertainment.html">Entertainment</a>
         <a href="sport.html">Sport</a>
         <a href="viral.html">Viral</a>
-        <button class="lang-switch" type="button" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+        <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
       </nav>
     </div>
   </header>
@@ -746,9 +745,10 @@
     function toggleMenu() {
       const nav = document.getElementById('site-nav');
       const button = document.querySelector('.nav-toggle');
-      if (!nav || !button || window.innerWidth > 900) return;
+      if (!nav || !button || window.innerWidth > 760) return;
       const isOpen = nav.classList.toggle('nav-open');
-      button.setAttribute('aria-expanded', String(isOpen));
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.innerText = isOpen ? 'Close' : 'Menu';
     }
   </script>
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
