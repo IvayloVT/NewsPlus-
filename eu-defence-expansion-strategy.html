@@ -1314,6 +1314,74 @@
   }
 })();
 </script>
+<!-- News Pulse+ AdSense placement controller -->
+<script>
+window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
+  homepageAfterBriefing: '',
+  homepageInFeed: '',
+  homepageBeforeTrending: '',
+  categoryInFeed: '',
+  articleAfterIntro: '',
+  articleAfterBody: ''
+};
+
+(function () {
+  function canLoadAds() {
+    return location.protocol === 'http:' || location.protocol === 'https:';
+  }
+
+  function createAd(slotName, format) {
+    var slotId = window.NEWS_PULSE_AD_SLOTS && window.NEWS_PULSE_AD_SLOTS[slotName];
+    if (!slotId || !canLoadAds()) {
+      return null;
+    }
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'np-ad np-ad-' + slotName.replace(/[A-Z]/g, function (match) {
+      return '-' + match.toLowerCase();
+    });
+    wrapper.setAttribute('aria-label', 'Advertisement');
+
+    var ad = document.createElement('ins');
+    ad.className = 'adsbygoogle';
+    ad.style.display = 'block';
+    ad.setAttribute('data-ad-client', 'ca-pub-6406860901026617');
+    ad.setAttribute('data-ad-slot', slotId);
+    ad.setAttribute('data-ad-format', format || 'auto');
+    ad.setAttribute('data-full-width-responsive', 'true');
+    wrapper.appendChild(ad);
+
+    return wrapper;
+  }
+
+  function insertAfter(target, ad) {
+    if (target && ad && target.parentNode) {
+      target.parentNode.insertBefore(ad, target.nextSibling);
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (error) {}
+    }
+  }
+
+  function insertBefore(target, ad) {
+    if (target && ad && target.parentNode) {
+      target.parentNode.insertBefore(ad, target);
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (error) {}
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    insertAfter(document.querySelector('.homepage-briefing-strip'), createAd('homepageAfterBriefing', 'auto'));
+    insertAfter(document.querySelector('.stories-stack .story-row:nth-of-type(2)'), createAd('homepageInFeed', 'fluid'));
+    insertBefore(document.querySelector('.premium-trending'), createAd('homepageBeforeTrending', 'auto'));
+    insertAfter(document.querySelector('.category-page .story-grid, .category-grid'), createAd('categoryInFeed', 'fluid'));
+    insertAfter(document.querySelector('.article-body p:nth-of-type(2), .article-content p:nth-of-type(2)'), createAd('articleAfterIntro', 'auto'));
+    insertBefore(document.querySelector('.related-section'), createAd('articleAfterBody', 'auto'));
+  });
+})();
+</script>
 </body>
 </html>
 

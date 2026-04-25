@@ -4196,3 +4196,38 @@ body.story-archive-page .lang-switch:hover{
     transform:none !important;
   }
 }
+
+/* Policy-safe AdSense-ready placement system.
+   Empty until real AdSense slot IDs are added in NEWS_PULSE_AD_SLOTS. */
+.np-ad{
+  width:min(100%, 970px);
+  min-height:90px;
+  margin:clamp(26px, 4vw, 44px) auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.np-ad .adsbygoogle{
+  width:100%;
+  min-height:90px;
+}
+
+.np-ad-homepage-in-feed,
+.np-ad-category-in-feed{
+  min-height:250px;
+}
+
+@media (max-width:760px){
+  .np-ad{
+    width:100%;
+    min-height:100px;
+    margin:24px auto;
+  }
+
+  .np-ad-homepage-in-feed,
+  .np-ad-category-in-feed{
+    min-height:280px;
+  }
+}
