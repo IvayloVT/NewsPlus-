@@ -4011,3 +4011,10 @@ body.newsletter-photo-page .hero-main .eyebrow{
   line-height:1 !important;
   letter-spacing:0 !important;
 }
+/* About hero badge text contrast */
+body.about-photo-page .hero-main .eyebrow,
+body.about-photo-page .hero-main .eyebrow span,
+body.about-photo-page .hero-main .eyebrow .brand-accent{
+  color:#03101c !important;
+  text-shadow:none !important;
+}
