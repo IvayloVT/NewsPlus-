@@ -292,8 +292,13 @@
 <!-- News Pulse+ managed Google Translate toggle -->
 <script>
 (function () {
-  var bgCookie = '/en/bg';
-  var enCookie = '/en/en';
+  var languages = [
+    { code: 'en', label: 'EN', cookie: '/en/en' },
+    { code: 'bg', label: 'BG', cookie: '/en/bg' },
+    { code: 'fr', label: 'FR', cookie: '/en/fr' },
+    { code: 'de', label: 'DE', cookie: '/en/de' },
+    { code: 'es', label: 'ES', cookie: '/en/es' }
+  ];
 
   function cookieValue(name) {
     var match = document.cookie.split(';').map(function (part) {
@@ -316,19 +321,24 @@
     }
   }
 
-  function isBulgarian() {
-    return cookieValue('googtrans').indexOf('/bg') !== -1;
+  function currentLanguageIndex() {
+    var selected = cookieValue('googtrans').split('/').pop() || 'en';
+    var index = languages.findIndex(function (language) {
+      return language.code === selected;
+    });
+    return index === -1 ? 0 : index;
   }
 
   window.updateButtonText = function () {
     var label = document.getElementById('lang-text');
     if (label) {
-      label.textContent = isBulgarian() ? 'EN' : 'BG';
+      label.textContent = languages[currentLanguageIndex()].label;
     }
   };
 
   window.toggleLanguage = function () {
-    setTranslateCookie(isBulgarian() ? enCookie : bgCookie);
+    var next = languages[(currentLanguageIndex() + 1) % languages.length];
+    setTranslateCookie(next.cookie);
     window.location.reload();
   };
 
@@ -344,7 +354,7 @@
     if (window.google && google.translate && google.translate.TranslateElement) {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
-        includedLanguages: 'en,bg',
+        includedLanguages: 'en,bg,fr,de,es',
         autoDisplay: false
       }, 'google_translate_element');
     }

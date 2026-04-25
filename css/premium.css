@@ -4243,3 +4243,28 @@ header .brand h1 span,
 header a.logo span{
   color:var(--premium-accent-2, #7bd1ff) !important;
 }
+
+/* Keep the original mobile header styling, but force the menu into two columns */
+@media (max-width:760px){
+  .nav-links.nav-open,
+  body.story-archive-page .nav-links.nav-open{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .nav-links a:first-child{
+    grid-column:auto !important;
+  }
+
+  body.story-archive-page .nav-links a,
+  body.story-archive-page .lang-switch{
+    width:100% !important;
+  }
+}
+
+@media (max-width:420px){
+  .nav-links.nav-open,
+  body.story-archive-page .nav-links.nav-open{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+}

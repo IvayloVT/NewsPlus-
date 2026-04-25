@@ -42,7 +42,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Trending Stories","headline":"Trending Stories","description":"Browse the Trending archive on News Pulse+ with the latest stories from every section, ranked by recency and split into 10-story pages.","url":"https://newspulseplus.com/trending.html","image":["https://newspulseplus.com/images/middle-east-agenda.jpg"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -82,7 +82,6 @@
       top:0;
       z-index:1000;
       background:rgba(7,17,31,0.82);
-      backdrop-filter:blur(16px);
       border-bottom:1px solid var(--line);
     }
     .navbar{
@@ -138,7 +137,10 @@
       border:2px solid rgba(255,255,255,0.88);
       background:rgba(255,255,255,0.02);
       color:#fff;
-      font-family:inherit;
+      
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
       font-size:.92rem;
       font-weight:800;
       line-height:1;
@@ -805,15 +807,17 @@
   <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        { pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false },
+        { pageLanguage: 'en', includedLanguages: 'en,bg,fr,de,es', autoDisplay: false },
         'google_translate_element'
       );
       setTimeout(applySavedLanguage, 1000);
     }
 
     function toggleLanguage() {
+      const languageOrder = ['en', 'bg', 'fr', 'de', 'es'];
       const currentLang = localStorage.getItem('preferredLang') || 'en';
-      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+      const currentIndex = Math.max(0, languageOrder.indexOf(currentLang));
+      changeLanguage(languageOrder[(currentIndex + 1) % languageOrder.length]);
     }
 
     function changeLanguage(langCode) {
@@ -834,7 +838,8 @@
 
     function updateButtonText(lang) {
       const btn = document.getElementById('lang-text');
-      if (btn) btn.innerText = lang === 'en' ? 'BG' : 'EN';
+      const labels = { en: 'EN', bg: 'BG', fr: 'FR', de: 'DE', es: 'ES' };
+      if (btn) btn.innerText = labels[lang] || 'EN';
     }
 
     function toggleMenu() {
@@ -849,8 +854,13 @@
 <!-- News Pulse+ managed Google Translate toggle -->
 <script>
 (function () {
-  var bgCookie = '/en/bg';
-  var enCookie = '/en/en';
+  var languages = [
+    { code: 'en', label: 'EN', cookie: '/en/en' },
+    { code: 'bg', label: 'BG', cookie: '/en/bg' },
+    { code: 'fr', label: 'FR', cookie: '/en/fr' },
+    { code: 'de', label: 'DE', cookie: '/en/de' },
+    { code: 'es', label: 'ES', cookie: '/en/es' }
+  ];
 
   function cookieValue(name) {
     var match = document.cookie.split(';').map(function (part) {
@@ -873,19 +883,24 @@
     }
   }
 
-  function isBulgarian() {
-    return cookieValue('googtrans').indexOf('/bg') !== -1;
+  function currentLanguageIndex() {
+    var selected = cookieValue('googtrans').split('/').pop() || 'en';
+    var index = languages.findIndex(function (language) {
+      return language.code === selected;
+    });
+    return index === -1 ? 0 : index;
   }
 
   window.updateButtonText = function () {
     var label = document.getElementById('lang-text');
     if (label) {
-      label.textContent = isBulgarian() ? 'EN' : 'BG';
+      label.textContent = languages[currentLanguageIndex()].label;
     }
   };
 
   window.toggleLanguage = function () {
-    setTranslateCookie(isBulgarian() ? enCookie : bgCookie);
+    var next = languages[(currentLanguageIndex() + 1) % languages.length];
+    setTranslateCookie(next.cookie);
     window.location.reload();
   };
 
@@ -901,7 +916,7 @@
     if (window.google && google.translate && google.translate.TranslateElement) {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
-        includedLanguages: 'en,bg',
+        includedLanguages: 'en,bg,fr,de,es',
         autoDisplay: false
       }, 'google_translate_element');
     }
@@ -1004,6 +1019,10 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
+
+
+
+
 
 
 

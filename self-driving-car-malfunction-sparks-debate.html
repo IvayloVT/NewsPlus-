@@ -833,7 +833,7 @@
             A widely shared clip of an autonomous vehicle repeatedly circling instead of completing its route has turned a strange tech glitch into a major viral talking point.
           </p>
           <div class="article-meta">
-            <span>By News Pulse+ Editorial Team</span>
+            <span>By News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</span>
             <span>April 2026</span>
             <span>5 min read</span>
           </div>
@@ -869,7 +869,7 @@
             <h2>Why the clip struck a nerve</h2>
 
             <p>
-              While no injuries were reported, the incident quickly attracted global attention. Many viewers found humor in the situation, comparing it to a “confused robot” or a glitch in a video game. However, beyond the jokes, the footage has prompted more serious discussions about the readiness of self-driving technology for widespread use.
+              While no injuries were reported, the incident quickly attracted global attention. Many viewers found humor in the situation, comparing it to a �confused robot� or a glitch in a video game. However, beyond the jokes, the footage has prompted more serious discussions about the readiness of self-driving technology for widespread use.
             </p>
 
             <p>
@@ -926,7 +926,7 @@
           <section class="author-card">
             <h3>About the author</h3>
             <p class="author-line">
-              <strong>News Pulse+ Editorial Team</strong> covers viral tech moments, internet culture, and the real-world questions hidden behind the web's most shareable clips.
+              <strong>News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</strong> covers viral tech moments, internet culture, and the real-world questions hidden behind the web's most shareable clips.
             </p>
           </section>
 
@@ -937,7 +937,7 @@
             <h3>Article Details</h3>
             <div class="sidebar-list">
               <div class="sidebar-item"><strong>Category:</strong> Viral</div>
-              <div class="sidebar-item"><strong>Author:</strong> News Pulse+ Editorial Team</div>
+              <div class="sidebar-item"><strong>Author:</strong> News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</div>
               <div class="sidebar-item"><strong>Published:</strong> April 2026</div>
               <div class="sidebar-item"><strong>Reading time:</strong> 5 minutes</div>
             </div>
@@ -1184,8 +1184,13 @@
 <!-- News Pulse+ managed Google Translate toggle -->
 <script>
 (function () {
-  var bgCookie = '/en/bg';
-  var enCookie = '/en/en';
+  var languages = [
+    { code: 'en', label: 'EN', cookie: '/en/en' },
+    { code: 'bg', label: 'BG', cookie: '/en/bg' },
+    { code: 'fr', label: 'FR', cookie: '/en/fr' },
+    { code: 'de', label: 'DE', cookie: '/en/de' },
+    { code: 'es', label: 'ES', cookie: '/en/es' }
+  ];
 
   function cookieValue(name) {
     var match = document.cookie.split(';').map(function (part) {
@@ -1208,19 +1213,24 @@
     }
   }
 
-  function isBulgarian() {
-    return cookieValue('googtrans').indexOf('/bg') !== -1;
+  function currentLanguageIndex() {
+    var selected = cookieValue('googtrans').split('/').pop() || 'en';
+    var index = languages.findIndex(function (language) {
+      return language.code === selected;
+    });
+    return index === -1 ? 0 : index;
   }
 
   window.updateButtonText = function () {
     var label = document.getElementById('lang-text');
     if (label) {
-      label.textContent = isBulgarian() ? 'EN' : 'BG';
+      label.textContent = languages[currentLanguageIndex()].label;
     }
   };
 
   window.toggleLanguage = function () {
-    setTranslateCookie(isBulgarian() ? enCookie : bgCookie);
+    var next = languages[(currentLanguageIndex() + 1) % languages.length];
+    setTranslateCookie(next.cookie);
     window.location.reload();
   };
 
@@ -1236,7 +1246,7 @@
     if (window.google && google.translate && google.translate.TranslateElement) {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
-        includedLanguages: 'en,bg',
+        includedLanguages: 'en,bg,fr,de,es',
         autoDisplay: false
       }, 'google_translate_element');
     }
@@ -1339,6 +1349,13 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

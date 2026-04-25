@@ -796,9 +796,9 @@
     <div class="container topbar-inner">
       <div class="breaking">
         <span>Latest</span>
-        <p>Full article coverage from News Pulse+ with a premium reading experience.</p>
+        <p>Full article coverage from News<span style="color:var(--accent-2)">Pulse+</span> with a premium reading experience.</p>
       </div>
-      <p>Updated by the News Pulse+ editorial team.</p>
+      <p>Updated by the News<span style="color:var(--accent-2)">Pulse+</span> editorial team.</p>
     </div>
   </div>
 
@@ -839,7 +839,7 @@
             This is the short summary or standfirst. Use it to explain the story clearly in two or three sentences before the reader enters the full article.
           </p>
           <div class="article-meta">
-            <span>By News Pulse+ Editorial Team</span>
+            <span>By News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</span>
             <span>April 2026</span>
             <span>6 min read</span>
           </div>
@@ -869,7 +869,7 @@
             </p>
 
             <blockquote>
-              “This is a sample quote block. You can use it for a key statement, an official comment, or a short highlighted line from the story.”
+              �This is a sample quote block. You can use it for a key statement, an official comment, or a short highlighted line from the story.�
             </blockquote>
 
             <p>
@@ -895,7 +895,7 @@
             <h3>Article Details</h3>
             <div class="sidebar-list">
               <div class="sidebar-item">Category: World News</div>
-              <div class="sidebar-item">Author: News Pulse+ Editorial Team</div>
+              <div class="sidebar-item">Author: News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</div>
               <div class="sidebar-item">Published: April 2026</div>
               <div class="sidebar-item">Reading time: 6 minutes</div>
             </div>
@@ -1021,13 +1021,15 @@
 
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg', autoDisplay: false }, 'google_translate_element');
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,fr,de,es', autoDisplay: false }, 'google_translate_element');
       setTimeout(applySavedLanguage, 1000);
     }
 
     function toggleLanguage() {
+      const languageOrder = ['en', 'bg', 'fr', 'de', 'es'];
       const currentLang = localStorage.getItem('preferredLang') || 'en';
-      changeLanguage(currentLang === 'en' ? 'bg' : 'en');
+      const currentIndex = Math.max(0, languageOrder.indexOf(currentLang));
+      changeLanguage(languageOrder[(currentIndex + 1) % languageOrder.length]);
     }
 
     function changeLanguage(langCode) {
@@ -1048,7 +1050,8 @@
 
     function updateButtonText(lang) {
       const btn = document.getElementById('lang-text');
-      if (btn) btn.innerText = lang === 'en' ? 'BG' : 'EN';
+      const labels = { en: 'EN', bg: 'BG', fr: 'FR', de: 'DE', es: 'ES' };
+      if (btn) btn.innerText = labels[lang] || 'EN';
     }
     function toggleMenu() {
       const nav = document.getElementById('site-nav');
@@ -1148,8 +1151,13 @@
 <!-- News Pulse+ managed Google Translate toggle -->
 <script>
 (function () {
-  var bgCookie = '/en/bg';
-  var enCookie = '/en/en';
+  var languages = [
+    { code: 'en', label: 'EN', cookie: '/en/en' },
+    { code: 'bg', label: 'BG', cookie: '/en/bg' },
+    { code: 'fr', label: 'FR', cookie: '/en/fr' },
+    { code: 'de', label: 'DE', cookie: '/en/de' },
+    { code: 'es', label: 'ES', cookie: '/en/es' }
+  ];
 
   function cookieValue(name) {
     var match = document.cookie.split(';').map(function (part) {
@@ -1172,19 +1180,24 @@
     }
   }
 
-  function isBulgarian() {
-    return cookieValue('googtrans').indexOf('/bg') !== -1;
+  function currentLanguageIndex() {
+    var selected = cookieValue('googtrans').split('/').pop() || 'en';
+    var index = languages.findIndex(function (language) {
+      return language.code === selected;
+    });
+    return index === -1 ? 0 : index;
   }
 
   window.updateButtonText = function () {
     var label = document.getElementById('lang-text');
     if (label) {
-      label.textContent = isBulgarian() ? 'EN' : 'BG';
+      label.textContent = languages[currentLanguageIndex()].label;
     }
   };
 
   window.toggleLanguage = function () {
-    setTranslateCookie(isBulgarian() ? enCookie : bgCookie);
+    var next = languages[(currentLanguageIndex() + 1) % languages.length];
+    setTranslateCookie(next.cookie);
     window.location.reload();
   };
 
@@ -1200,7 +1213,7 @@
     if (window.google && google.translate && google.translate.TranslateElement) {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
-        includedLanguages: 'en,bg',
+        includedLanguages: 'en,bg,fr,de,es',
         autoDisplay: false
       }, 'google_translate_element');
     }
@@ -1303,6 +1316,10 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
+
+
+
+
 
 
 
