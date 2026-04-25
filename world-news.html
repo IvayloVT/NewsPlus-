@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6406860901026617"
-     crossorigin="anonymous"></script>
+<script>
+(function () {
+  if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+
+  if (document.querySelector('script[data-news-pulse-adsense]')) {
+    return;
+  }
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6406860901026617';
+  script.crossOrigin = 'anonymous';
+  script.setAttribute('data-news-pulse-adsense', 'true');
+  document.head.appendChild(script);
+})();
+</script>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>World News | News Pulse+</title>
