@@ -4002,3 +4002,12 @@ body.newsletter-photo-page .hero-main .eyebrow{
     min-width:0 !important;
   }
 }
+/* Match contact action button typography */
+.contact-action-row .submit-btn,
+.contact-action-row .app-download-btn{
+  font-family:'Inter', Arial, Helvetica, sans-serif !important;
+  font-size:1rem !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+  letter-spacing:0 !important;
+}
