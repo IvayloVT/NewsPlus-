@@ -967,7 +967,73 @@
       });
     });
   </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- News Pulse+ managed Google Translate toggle -->
+<script>
+(function () {
+  var bgCookie = '/en/bg';
+  var enCookie = '/en/en';
+
+  function cookieValue(name) {
+    var match = document.cookie.split(';').map(function (part) {
+      return part.trim();
+    }).filter(function (part) {
+      return part.indexOf(name + '=') === 0;
+    })[0];
+
+    return match ? decodeURIComponent(match.slice(name.length + 1)) : '';
+  }
+
+  function setTranslateCookie(value) {
+    var expires = 'expires=' + new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+    var base = 'googtrans=' + value + '; ' + expires + '; path=/';
+    document.cookie = base;
+
+    if (location.hostname && location.hostname.indexOf('.') !== -1) {
+      document.cookie = base + '; domain=' + location.hostname;
+      document.cookie = base + '; domain=.' + location.hostname.replace(/^www\./, '');
+    }
+  }
+
+  function isBulgarian() {
+    return cookieValue('googtrans').indexOf('/bg') !== -1;
+  }
+
+  window.updateButtonText = function () {
+    var label = document.getElementById('lang-text');
+    if (label) {
+      label.textContent = isBulgarian() ? 'EN' : 'BG';
+    }
+  };
+
+  window.toggleLanguage = function () {
+    setTranslateCookie(isBulgarian() ? enCookie : bgCookie);
+    window.location.reload();
+  };
+
+  window.googleTranslateElementInit = function () {
+    var holder = document.getElementById('google_translate_element');
+    if (!holder) {
+      holder = document.createElement('div');
+      holder.id = 'google_translate_element';
+      holder.style.display = 'none';
+      document.body.appendChild(holder);
+    }
+
+    if (window.google && google.translate && google.translate.TranslateElement) {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,bg',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    window.updateButtonText();
+  };
+
+  document.addEventListener('DOMContentLoaded', window.updateButtonText);
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
 
