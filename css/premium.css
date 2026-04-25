@@ -4231,3 +4231,15 @@ body.story-archive-page .lang-switch:hover{
     min-height:280px;
   }
 }
+
+/* Article/story header logo color split */
+header .brand h1,
+header .brand h1 a,
+header a.logo{
+  color:#f4f8fd !important;
+}
+
+header .brand h1 span,
+header a.logo span{
+  color:var(--premium-accent-2, #7bd1ff) !important;
+}
