@@ -805,6 +805,20 @@
       -webkit-backdrop-filter:none !important;
     }</style>
   <link rel="stylesheet" href="css/premium.css" />
+<style id="homepage-mobile-menu-final">
+@media (max-width:760px){
+  .navbar #site-nav{
+    display:none !important;
+    width:100% !important;
+  }
+
+  .navbar #site-nav.homepage-menu-open{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:8px !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -825,7 +839,7 @@
         <p class="site-tagline">The stories moving the world.</p>
       </div>
 
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" id="homepage-menu-button">Menu</button>
 
       <nav class="nav-links" id="site-nav">
         <a href="index.html" class="active">Home</a>
@@ -1385,9 +1399,47 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   });
 })();
 </script>
+<script id="homepage-menu-script">
+(function () {
+  function setMenu(open) {
+    var nav = document.getElementById('site-nav');
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!nav || !button) return;
+
+    nav.classList.toggle('homepage-menu-open', open);
+    nav.classList.toggle('nav-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
+
+    if (open) {
+      nav.style.setProperty('display', 'grid', 'important');
+      nav.style.setProperty('grid-template-columns', 'repeat(2, minmax(0, 1fr))', 'important');
+      nav.style.setProperty('width', '100%', 'important');
+    } else {
+      nav.style.removeProperty('display');
+      nav.style.removeProperty('grid-template-columns');
+      nav.style.removeProperty('width');
+    }
+  }
+
+  window.toggleMenu = function () {
+    var nav = document.getElementById('site-nav');
+    setMenu(!(nav && nav.classList.contains('homepage-menu-open')));
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.toggleMenu();
+    });
+  });
+})();
+</script>
 </body>
 </html>
-
 
 
 
