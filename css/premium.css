@@ -4179,3 +4179,20 @@ body.story-archive-page .lang-switch:hover{
     text-align:center !important;
   }
 }
+/* Clean mobile close button */
+@media (max-width:760px){
+  .nav-toggle[aria-expanded="true"]{
+    gap:0 !important;
+  }
+
+  .nav-toggle[aria-expanded="true"]::before,
+  .nav-toggle[aria-expanded="true"]::after{
+    content:none !important;
+    display:none !important;
+    width:0 !important;
+    height:0 !important;
+    margin:0 !important;
+    background:none !important;
+    transform:none !important;
+  }
+}
