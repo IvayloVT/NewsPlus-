@@ -849,7 +849,7 @@
         <a href="entertainment.html">Entertainment</a>
         <a href="sport.html">Sport</a>
         <a href="viral.html">Viral</a>
-              <button class="lang-switch notranslate" onclick="toggleLanguage()" translate="no"><span id="lang-text" class="notranslate" translate="no">EN</span></button>
+              <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
       </nav>
     </div>
   </header>
@@ -1282,8 +1282,8 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 <script id="news-pulse-language-controller">
 (function () {
-  var languages = ['en', 'bg'];
-  var labels = { en: 'EN', bg: 'BG' };
+  var languages = ['en', 'bg', 'fr', 'de', 'es'];
+  var labels = { en: 'EN', bg: 'BG', fr: 'FR', de: 'DE', es: 'ES' };
 
   function savedLanguage() {
     return localStorage.getItem('preferredLang') || 'en';
@@ -1297,7 +1297,7 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 
   function updateLanguageButton(lang) {
     var label = document.getElementById('lang-text');
-    if (label) label.textContent = labels[lang || savedLanguage()] || 'EN';
+    if (label) label.textContent = labels[nextLanguage(lang || savedLanguage())] || 'BG';
   }
 
   function setTranslateCookie(lang) {
@@ -1399,48 +1399,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   });
 })();
 </script>
-<script id="homepage-language-fix">
-(function () {
-  function currentLanguage() {
-    var saved = localStorage.getItem('preferredLang');
-    if (saved === 'bg') return 'bg';
-    return 'en';
-  }
-
-  function nextLanguage(lang) {
-    return lang === 'bg' ? 'en' : 'bg';
-  }
-
-  function updateHomepageLanguageLabel(lang) {
-    var label = document.getElementById('lang-text');
-    if (label) label.textContent = (lang || currentLanguage()).toUpperCase();
-  }
-
-  var previousToggleLanguage = window.toggleLanguage;
-  window.toggleLanguage = function () {
-    if (typeof previousToggleLanguage === 'function') {
-      previousToggleLanguage();
-    }
-
-    setTimeout(function () {
-      if (localStorage.getItem('preferredLang') !== 'bg') {
-        localStorage.setItem('preferredLang', 'en');
-      }
-      updateHomepageLanguageLabel(currentLanguage());
-    }, 300);
-  };
-
-  document.addEventListener('DOMContentLoaded', function () {
-    if (localStorage.getItem('preferredLang') !== 'bg') {
-      localStorage.setItem('preferredLang', 'en');
-    }
-    updateHomepageLanguageLabel(currentLanguage());
-    setTimeout(function () {
-      updateHomepageLanguageLabel(currentLanguage());
-    }, 1200);
-  });
-})();
-</script>
 <script id="homepage-menu-script">
 (function () {
   function setMenu(open) {
@@ -1482,7 +1440,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
 
 
 
