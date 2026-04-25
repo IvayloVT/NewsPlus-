@@ -981,9 +981,30 @@
   };
 
   document.addEventListener('DOMContentLoaded', window.updateButtonText);
+
+  function loadTranslateScript() {
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+      return;
+    }
+
+    if (document.querySelector('script[data-news-pulse-translate]')) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    script.setAttribute('data-news-pulse-translate', 'true');
+    document.head.appendChild(script);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadTranslateScript);
+  } else {
+    loadTranslateScript();
+  }
 })();
 </script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
 
