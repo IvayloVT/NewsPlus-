@@ -808,16 +808,18 @@
 <style id="homepage-mobile-menu-final">
 @media (max-width:760px){
   .navbar{
-    flex-wrap:nowrap !important;
+    flex-wrap:wrap !important;
     align-items:flex-start !important;
     justify-content:space-between !important;
-    gap:10px !important;
+    gap:10px 8px !important;
     padding:14px !important;
   }
 
   .brand{
-    flex:1 1 auto !important;
+    order:1 !important;
+    flex:1 1 0 !important;
     min-width:0 !important;
+    max-width:calc(100% - 142px) !important;
   }
 
   .logo{
@@ -832,10 +834,11 @@
   }
 
   .nav-toggle{
+    order:2 !important;
     flex:0 0 auto !important;
     min-width:0 !important;
     min-height:44px !important;
-    margin-left:6px !important;
+    margin-left:auto !important;
     padding:0 12px !important;
     font-size:clamp(.78rem, 3.15vw, .95rem) !important;
     white-space:nowrap !important;
@@ -847,13 +850,22 @@
 
   .navbar #site-nav{
     display:none !important;
+    order:3 !important;
+    flex:0 0 100% !important;
     width:100% !important;
+    margin-top:8px !important;
   }
 
   .navbar #site-nav.homepage-menu-open{
     display:grid !important;
     grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
     gap:8px !important;
+  }
+
+  .navbar #site-nav a,
+  .navbar #site-nav .lang-switch{
+    width:100% !important;
+    min-width:0 !important;
   }
 }
 
@@ -863,8 +875,12 @@
     padding:12px !important;
   }
 
+  .brand{
+    max-width:calc(100% - 124px) !important;
+  }
+
   .logo{
-    font-size:clamp(1.65rem, 7.4vw, 1.8rem) !important;
+    font-size:1.68rem !important;
   }
 
   .site-tagline{
@@ -874,6 +890,20 @@
   .nav-toggle{
     padding:0 10px !important;
     font-size:.76rem !important;
+  }
+}
+
+@media (max-width:340px){
+  .brand{
+    max-width:100% !important;
+  }
+
+  .logo{
+    font-size:1.55rem !important;
+  }
+
+  .nav-toggle{
+    margin-left:0 !important;
   }
 }
 </style>
@@ -1498,7 +1528,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
 
 
 
