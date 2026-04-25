@@ -849,7 +849,7 @@
         <a href="entertainment.html">Entertainment</a>
         <a href="sport.html">Sport</a>
         <a href="viral.html">Viral</a>
-              <button class="lang-switch notranslate" onclick="toggleLanguage()" translate="no"><span id="lang-text" class="notranslate" translate="no">BG</span></button>
+              <button class="lang-switch notranslate" onclick="toggleLanguage()" translate="no"><span id="lang-text" class="notranslate" translate="no">EN</span></button>
       </nav>
     </div>
   </header>
@@ -1297,7 +1297,7 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 
   function updateLanguageButton(lang) {
     var label = document.getElementById('lang-text');
-    if (label) label.textContent = labels[nextLanguage(lang || savedLanguage())] || 'BG';
+    if (label) label.textContent = labels[lang || savedLanguage()] || 'EN';
   }
 
   function setTranslateCookie(lang) {
@@ -1413,7 +1413,7 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 
   function updateHomepageLanguageLabel(lang) {
     var label = document.getElementById('lang-text');
-    if (label) label.textContent = nextLanguage(lang || currentLanguage()).toUpperCase();
+    if (label) label.textContent = (lang || currentLanguage()).toUpperCase();
   }
 
   var previousToggleLanguage = window.toggleLanguage;
@@ -1482,7 +1482,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
 
 
 
