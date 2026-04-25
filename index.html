@@ -807,6 +807,44 @@
   <link rel="stylesheet" href="css/premium.css" />
 <style id="homepage-mobile-menu-final">
 @media (max-width:760px){
+  .navbar{
+    flex-wrap:nowrap !important;
+    align-items:flex-start !important;
+    justify-content:space-between !important;
+    gap:10px !important;
+    padding:14px !important;
+  }
+
+  .brand{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+  }
+
+  .logo{
+    font-size:clamp(1.8rem, 7.8vw, 2.55rem) !important;
+    letter-spacing:-0.055em !important;
+    white-space:nowrap !important;
+  }
+
+  .site-tagline{
+    font-size:clamp(.82rem, 3.25vw, 1.08rem) !important;
+    line-height:1.12 !important;
+  }
+
+  .nav-toggle{
+    flex:0 0 auto !important;
+    min-width:0 !important;
+    min-height:44px !important;
+    margin-left:6px !important;
+    padding:0 12px !important;
+    font-size:clamp(.78rem, 3.15vw, .95rem) !important;
+    white-space:nowrap !important;
+  }
+
+  .nav-toggle::before{
+    flex:0 0 16px !important;
+  }
+
   .navbar #site-nav{
     display:none !important;
     width:100% !important;
@@ -816,6 +854,26 @@
     display:grid !important;
     grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
     gap:8px !important;
+  }
+}
+
+@media (max-width:380px){
+  .navbar{
+    gap:8px !important;
+    padding:12px !important;
+  }
+
+  .logo{
+    font-size:clamp(1.65rem, 7.4vw, 1.8rem) !important;
+  }
+
+  .site-tagline{
+    font-size:.78rem !important;
+  }
+
+  .nav-toggle{
+    padding:0 10px !important;
+    font-size:.76rem !important;
   }
 }
 </style>
@@ -1440,7 +1498,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
 
 
 
