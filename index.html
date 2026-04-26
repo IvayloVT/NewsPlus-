@@ -846,6 +846,15 @@
     width:100% !important;
     min-width:0 !important;
   }
+
+  body.homepage-lang-de .site-tagline{
+    max-width:13.5rem !important;
+  }
+
+  body.homepage-lang-de .nav-toggle{
+    align-self:flex-start !important;
+    margin-top:2px !important;
+  }
 }
 </style>
 </head>
@@ -1325,8 +1334,10 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   }
 
   function updateLanguageButton(lang) {
+    lang = lang || savedLanguage();
     var label = document.getElementById('lang-text');
-    if (label) label.textContent = labels[lang || savedLanguage()] || 'EN';
+    if (label) label.textContent = labels[lang] || 'EN';
+    document.body.classList.toggle('homepage-lang-de', lang === 'de');
   }
 
   function setTranslateCookie(lang) {
@@ -1469,7 +1480,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
 
 
 
