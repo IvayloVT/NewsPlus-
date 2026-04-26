@@ -811,7 +811,7 @@
         <a href="entertainment.html">Entertainment</a>
         <a href="sport.html" class="active">Sport</a>
         <a href="viral.html">Viral</a>
-        <button class="lang-switch" type="button" onclick="toggleLanguage()"><span id="lang-text">BG</span></button>
+        <button class="lang-switch" type="button" onclick="toggleLanguage()"><span id="lang-text">EN</span></button>
       </nav>
     </div>
   </header>
@@ -1267,7 +1267,7 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   function updateLanguageButton(lang) {
     var label = document.getElementById('lang-text');
     lang = lang || savedLanguage();
-    if (label) label.textContent = labels[nextLanguage(lang)] || 'BG';
+    if (label) label.textContent = labels[lang] || 'EN';
     if (document.body) document.body.classList.toggle('site-lang-de', lang === 'de');
   }
 
