@@ -848,12 +848,14 @@
   }
 
   body.homepage-lang-de .site-tagline{
-    max-width:13.5rem !important;
+    max-width:12rem !important;
+    display:block !important;
+    line-height:1.08 !important;
   }
 
   body.homepage-lang-de .nav-toggle{
     align-self:flex-start !important;
-    margin-top:2px !important;
+    margin-top:0 !important;
   }
 }
 </style>
@@ -1337,7 +1339,14 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     lang = lang || savedLanguage();
     var label = document.getElementById('lang-text');
     if (label) label.textContent = labels[lang] || 'EN';
-    document.body.classList.toggle('homepage-lang-de', lang === 'de');
+    updateGermanHeaderState(lang);
+  }
+
+  function updateGermanHeaderState(lang) {
+    var tagline = document.querySelector('.site-tagline');
+    var taglineText = tagline ? tagline.textContent.toLowerCase() : '';
+    var looksGerman = taglineText.indexOf('geschichten') !== -1 || taglineText.indexOf('welt bewegen') !== -1;
+    document.body.classList.toggle('homepage-lang-de', lang === 'de' || looksGerman);
   }
 
   function setTranslateCookie(lang) {
@@ -1435,6 +1444,12 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 
   document.addEventListener('DOMContentLoaded', function () {
     updateLanguageButton(savedLanguage());
+    var tagline = document.querySelector('.site-tagline');
+    if (tagline && window.MutationObserver) {
+      new MutationObserver(function () {
+        updateGermanHeaderState(savedLanguage());
+      }).observe(tagline, { childList: true, characterData: true, subtree: true });
+    }
     loadTranslateScript();
   });
 })();
@@ -1480,7 +1495,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
 
 
 
