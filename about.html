@@ -990,7 +990,9 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 
   function updateLanguageButton(lang) {
     var label = document.getElementById('lang-text');
-    if (label) label.textContent = labels[nextLanguage(lang || savedLanguage())] || 'BG';
+    lang = lang || savedLanguage();
+    if (label) label.textContent = labels[nextLanguage(lang)] || 'BG';
+    if (document.body) document.body.classList.toggle('site-lang-de', lang === 'de');
   }
 
   function setTranslateCookie(lang) {
@@ -1108,26 +1110,32 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     var text = Array.prototype.map.call(document.querySelectorAll('header .site-tagline, header .brand p'), function (node) {
       return node.textContent || '';
     }).join(' ').toLowerCase();
-    return text.indexOf('geschichten') !== -1 || text.indexOf('welt bewegen') !== -1;
+    return text.indexOf('geschichten') !== -1 || text.indexOf('welt bewegen') !== -1 || text.indexOf('die welt') !== -1;
   }
 
   function updateGermanHeader() {
+    if (!document.body) return;
     var select = document.querySelector('.goog-te-combo');
     var isGerman = savedLanguage() === 'de' || cookieLanguage() === 'de' || (select && select.value === 'de') || headerLooksGerman();
     document.body.classList.toggle('site-lang-de', isGerman);
   }
 
+  window.newsPulseUpdateGermanHeader = updateGermanHeader;
+  updateGermanHeader();
+
   document.addEventListener('DOMContentLoaded', function () {
     updateGermanHeader();
     if (window.MutationObserver) {
-      new MutationObserver(updateGermanHeader).observe(document.body, { childList: true, characterData: true, subtree: true });
+      new MutationObserver(updateGermanHeader).observe(document.documentElement, { childList: true, characterData: true, subtree: true });
     }
+    document.addEventListener('change', updateGermanHeader, true);
+    document.addEventListener('click', function () { setTimeout(updateGermanHeader, 50); }, true);
     var checks = 0;
     var timer = setInterval(function () {
       updateGermanHeader();
       checks += 1;
-      if (checks >= 20) clearInterval(timer);
-    }, 500);
+      if (checks >= 60) clearInterval(timer);
+    }, 250);
   });
 })();
 </script>
