@@ -1513,6 +1513,45 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   });
 })();
 </script>
+<script id="news-pulse-german-header-controller">
+(function () {
+  function savedLanguage() {
+    try { return localStorage.getItem('preferredLang') || ''; }
+    catch (error) { return ''; }
+  }
+
+  function cookieLanguage() {
+    var match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+    return match ? decodeURIComponent(match[1]) : '';
+  }
+
+  function headerLooksGerman() {
+    var text = Array.prototype.map.call(document.querySelectorAll('header .site-tagline, header .brand p'), function (node) {
+      return node.textContent || '';
+    }).join(' ').toLowerCase();
+    return text.indexOf('geschichten') !== -1 || text.indexOf('welt bewegen') !== -1;
+  }
+
+  function updateGermanHeader() {
+    var select = document.querySelector('.goog-te-combo');
+    var isGerman = savedLanguage() === 'de' || cookieLanguage() === 'de' || (select && select.value === 'de') || headerLooksGerman();
+    document.body.classList.toggle('site-lang-de', isGerman);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateGermanHeader();
+    if (window.MutationObserver) {
+      new MutationObserver(updateGermanHeader).observe(document.body, { childList: true, characterData: true, subtree: true });
+    }
+    var checks = 0;
+    var timer = setInterval(function () {
+      updateGermanHeader();
+      checks += 1;
+      if (checks >= 20) clearInterval(timer);
+    }, 500);
+  });
+})();
+</script>
 </body>
 </html>
 

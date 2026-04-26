@@ -869,175 +869,7 @@
         <a href="index.html">Back to homepage</a>
       </div>
     </div>
-  </footer>
-
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,fr,de,es', autoDisplay: false }, 'google_translate_element');
-      setTimeout(applySavedLanguage, 1000);
-    }
-
-    function toggleLanguage() {
-      const languageOrder = ['en', 'bg', 'fr', 'de', 'es'];
-      const currentLang = localStorage.getItem('preferredLang') || 'en';
-      const currentIndex = Math.max(0, languageOrder.indexOf(currentLang));
-      changeLanguage(languageOrder[(currentIndex + 1) % languageOrder.length]);
-    }
-
-    function changeLanguage(langCode) {
-      const select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = langCode;
-        select.dispatchEvent(new Event('change'));
-        localStorage.setItem('preferredLang', langCode);
-        updateButtonText(langCode);
-      }
-    }
-
-    function applySavedLanguage() {
-      const savedLang = localStorage.getItem('preferredLang');
-      if (savedLang && savedLang !== 'en') changeLanguage(savedLang);
-      else updateButtonText('en');
-    }
-
-    function updateButtonText(lang) {
-      const btn = document.getElementById('lang-text');
-      const labels = { en: 'EN', bg: 'BG', fr: 'FR', de: 'DE', es: 'ES' };
-      if (btn) btn.innerText = labels[lang] || 'EN';
-    }
-    function toggleMenu() {
-      const nav = document.getElementById('site-nav');
-      const button = document.querySelector('.nav-toggle');
-      if (!nav || !button || window.innerWidth > 760) return;
-      const isOpen = nav.classList.toggle('nav-open');
-      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      button.innerText = isOpen ? 'Close' : 'Menu';
-    }
-
-    function closeMenu() {
-      const nav = document.getElementById('site-nav');
-      const button = document.querySelector('.nav-toggle');
-      if (nav) nav.classList.remove('nav-open');
-      if (button) {
-        button.setAttribute('aria-expanded', 'false');
-        button.innerText = 'Menu';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const nav = document.getElementById('site-nav');
-      if (!nav) return;
-
-      nav.querySelectorAll('a, .lang-switch').forEach(function (item) {
-        item.addEventListener('click', function () {
-          if (window.innerWidth <= 760) closeMenu();
-        });
-      });
-
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 760) closeMenu();
-      });
-    });
-  </script>
-<!-- News Pulse+ managed Google Translate toggle -->
-<script>
-(function () {
-  var languages = [
-    { code: 'en', label: 'EN', cookie: '/en/en' },
-    { code: 'bg', label: 'BG', cookie: '/en/bg' },
-    { code: 'fr', label: 'FR', cookie: '/en/fr' },
-    { code: 'de', label: 'DE', cookie: '/en/de' },
-    { code: 'es', label: 'ES', cookie: '/en/es' }
-  ];
-
-  function cookieValue(name) {
-    var match = document.cookie.split(';').map(function (part) {
-      return part.trim();
-    }).filter(function (part) {
-      return part.indexOf(name + '=') === 0;
-    })[0];
-
-    return match ? decodeURIComponent(match.slice(name.length + 1)) : '';
-  }
-
-  function setTranslateCookie(value) {
-    var expires = 'expires=' + new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
-    var base = 'googtrans=' + value + '; ' + expires + '; path=/';
-    document.cookie = base;
-
-    if (location.hostname && location.hostname.indexOf('.') !== -1) {
-      document.cookie = base + '; domain=' + location.hostname;
-      document.cookie = base + '; domain=.' + location.hostname.replace(/^www\./, '');
-    }
-  }
-
-  function currentLanguageIndex() {
-    var selected = cookieValue('googtrans').split('/').pop() || 'en';
-    var index = languages.findIndex(function (language) {
-      return language.code === selected;
-    });
-    return index === -1 ? 0 : index;
-  }
-
-  window.updateButtonText = function () {
-    var label = document.getElementById('lang-text');
-    if (label) {
-      label.textContent = languages[currentLanguageIndex()].label;
-    }
-  };
-
-  window.toggleLanguage = function () {
-    var next = languages[(currentLanguageIndex() + 1) % languages.length];
-    setTranslateCookie(next.cookie);
-    window.location.reload();
-  };
-
-  window.googleTranslateElementInit = function () {
-    var holder = document.getElementById('google_translate_element');
-    if (!holder) {
-      holder = document.createElement('div');
-      holder.id = 'google_translate_element';
-      holder.style.display = 'none';
-      document.body.appendChild(holder);
-    }
-
-    if (window.google && google.translate && google.translate.TranslateElement) {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,bg,fr,de,es',
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-
-    window.updateButtonText();
-  };
-
-  document.addEventListener('DOMContentLoaded', window.updateButtonText);
-
-  function loadTranslateScript() {
-    if (location.protocol !== 'http:' && location.protocol !== 'https:') {
-      return;
-    }
-
-    if (document.querySelector('script[data-news-pulse-translate]')) {
-      return;
-    }
-
-    var script = document.createElement('script');
-    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    script.async = true;
-    script.setAttribute('data-news-pulse-translate', 'true');
-    document.head.appendChild(script);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadTranslateScript);
-  } else {
-    loadTranslateScript();
-  }
-})();
-</script>
-<!-- News Pulse+ AdSense placement controller -->
+  </footer><!-- News Pulse+ AdSense placement controller -->
 <script>
 window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   homepageAfterBriefing: '',
@@ -1102,6 +934,164 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     insertAfter(document.querySelector('.category-page .story-grid, .category-grid'), createAd('categoryInFeed', 'fluid'));
     insertAfter(document.querySelector('.article-body p:nth-of-type(2), .article-content p:nth-of-type(2)'), createAd('articleAfterIntro', 'auto'));
     insertBefore(document.querySelector('.related-section'), createAd('articleAfterBody', 'auto'));
+  });
+})();
+</script>
+<script id="news-pulse-language-controller">
+(function () {
+  var languages = ['en', 'bg', 'fr', 'de', 'es'];
+  var labels = { en: 'EN', bg: 'BG', fr: 'FR', de: 'DE', es: 'ES' };
+
+  function savedLanguage() {
+    return localStorage.getItem('preferredLang') || 'en';
+  }
+
+  function nextLanguage(lang) {
+    var index = languages.indexOf(lang || 'en');
+    if (index < 0) index = 0;
+    return languages[(index + 1) % languages.length];
+  }
+
+  function updateLanguageButton(lang) {
+    var label = document.getElementById('lang-text');
+    if (label) label.textContent = labels[nextLanguage(lang || savedLanguage())] || 'BG';
+  }
+
+  function setTranslateCookie(lang) {
+    var value = '/en/' + lang;
+    var expires = 'expires=' + new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+    var base = 'googtrans=' + value + '; ' + expires + '; path=/';
+    document.cookie = base;
+
+    if (location.hostname && location.hostname.indexOf('.') !== -1) {
+      document.cookie = base + '; domain=' + location.hostname;
+      document.cookie = base + '; domain=.' + location.hostname.replace(/^www\./, '');
+    }
+  }
+
+  function clearTranslateCookie() {
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+    if (location.hostname && location.hostname.indexOf('.') !== -1) {
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname;
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname.replace(/^www\./, '');
+    }
+  }
+
+  function loadTranslateScript() {
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+    if (document.querySelector('script[data-news-pulse-translate]')) return;
+
+    var script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    script.setAttribute('data-news-pulse-translate', 'true');
+    document.head.appendChild(script);
+  }
+
+  window.googleTranslateElementInit = function () {
+    var holder = document.getElementById('google_translate_element');
+    if (!holder) {
+      holder = document.createElement('div');
+      holder.id = 'google_translate_element';
+      holder.style.display = 'none';
+      document.body.appendChild(holder);
+    }
+
+    if (window.google && google.translate && google.translate.TranslateElement) {
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,fr,de,es', autoDisplay: false }, 'google_translate_element');
+    }
+
+    setTimeout(function () {
+      applyLanguage(savedLanguage(), false, 0);
+    }, 600);
+  };
+
+  function triggerSelector(lang, attempt) {
+    var select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      return true;
+    }
+
+    loadTranslateScript();
+    if (attempt < 24) {
+      setTimeout(function () {
+        triggerSelector(lang, attempt + 1);
+      }, 250);
+    }
+    return false;
+  }
+
+  function applyLanguage(lang, reloadIfNeeded, attempt) {
+    localStorage.setItem('preferredLang', lang);
+    updateLanguageButton(lang);
+
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+
+    if (lang === 'en') {
+      clearTranslateCookie();
+      if (reloadIfNeeded) window.location.reload();
+      return;
+    }
+
+    setTranslateCookie(lang);
+    var applied = triggerSelector(lang, attempt || 0);
+    if (!applied && reloadIfNeeded) {
+      setTimeout(function () {
+        window.location.reload();
+      }, 1800);
+    }
+  }
+
+  window.toggleLanguage = function () {
+    applyLanguage(nextLanguage(savedLanguage()), true, 0);
+  };
+
+  window.updateButtonText = updateLanguageButton;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateLanguageButton(savedLanguage());
+    loadTranslateScript();
+  });
+})();
+</script>
+<script id="news-pulse-german-header-controller">
+(function () {
+  function savedLanguage() {
+    try { return localStorage.getItem('preferredLang') || ''; }
+    catch (error) { return ''; }
+  }
+
+  function cookieLanguage() {
+    var match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+    return match ? decodeURIComponent(match[1]) : '';
+  }
+
+  function headerLooksGerman() {
+    var text = Array.prototype.map.call(document.querySelectorAll('header .site-tagline, header .brand p'), function (node) {
+      return node.textContent || '';
+    }).join(' ').toLowerCase();
+    return text.indexOf('geschichten') !== -1 || text.indexOf('welt bewegen') !== -1;
+  }
+
+  function updateGermanHeader() {
+    var select = document.querySelector('.goog-te-combo');
+    var isGerman = savedLanguage() === 'de' || cookieLanguage() === 'de' || (select && select.value === 'de') || headerLooksGerman();
+    document.body.classList.toggle('site-lang-de', isGerman);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateGermanHeader();
+    if (window.MutationObserver) {
+      new MutationObserver(updateGermanHeader).observe(document.body, { childList: true, characterData: true, subtree: true });
+    }
+    var checks = 0;
+    var timer = setInterval(function () {
+      updateGermanHeader();
+      checks += 1;
+      if (checks >= 20) clearInterval(timer);
+    }, 500);
   });
 })();
 </script>

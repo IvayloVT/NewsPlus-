@@ -4268,3 +4268,53 @@ header a.logo span{
     grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+/* German mobile header alignment across all pages */
+@media (max-width:760px){
+  body.site-lang-de header .navbar,
+  body.site-lang-de header .topbar-inner{
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:14px !important;
+  }
+
+  body.site-lang-de header .brand{
+    order:1 !important;
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    max-width:calc(100% - 156px) !important;
+  }
+
+  body.site-lang-de header .logo,
+  body.site-lang-de header .brand h1,
+  body.site-lang-de header .brand h1 a{
+    max-width:100% !important;
+    font-size:clamp(1.85rem, 8vw, 2.2rem) !important;
+    line-height:.95 !important;
+    white-space:nowrap !important;
+  }
+
+  body.site-lang-de header .site-tagline,
+  body.site-lang-de header .brand p{
+    max-width:12rem !important;
+    display:block !important;
+    line-height:1.08 !important;
+  }
+
+  body.site-lang-de header .nav-toggle{
+    order:2 !important;
+    flex:0 0 auto !important;
+    align-self:flex-start !important;
+    margin-left:auto !important;
+    margin-top:0 !important;
+    white-space:nowrap !important;
+  }
+
+  body.site-lang-de header .nav-links{
+    order:3 !important;
+    flex:0 0 100% !important;
+    width:100% !important;
+    margin-top:8px !important;
+  }
+}
