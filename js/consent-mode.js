@@ -1,6 +1,8 @@
 (function () {
   var STORAGE_KEY = 'newsPulseConsentMode';
   var VERSION = 1;
+  var ADSENSE_CLIENT = 'ca-pub-6406860901026617';
+  var ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT;
 
   function getStoredConsent() {
     try {
@@ -35,6 +37,26 @@
       ad_user_data: settings.ads ? 'granted' : 'denied',
       ad_personalization: settings.ads ? 'granted' : 'denied'
     });
+
+    if (settings.ads) {
+      loadAdsense();
+    }
+
+    try {
+      window.dispatchEvent(new CustomEvent('newsPulseConsentUpdated', { detail: settings }));
+    } catch (error) {}
+  }
+
+  function loadAdsense() {
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+    if (document.querySelector('script[data-news-pulse-adsense]')) return;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = ADSENSE_SRC;
+    script.crossOrigin = 'anonymous';
+    script.setAttribute('data-news-pulse-adsense', 'true');
+    document.head.appendChild(script);
   }
 
   function injectStyles() {
