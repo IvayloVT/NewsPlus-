@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script data-news-pulse-consent-default>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+try {
+  var newsPulseConsent = JSON.parse(localStorage.getItem('newsPulseConsentMode') || 'null');
+  if (newsPulseConsent && newsPulseConsent.version === 1) {
+    gtag('consent', 'update', {
+      analytics_storage: newsPulseConsent.analytics ? 'granted' : 'denied',
+      ad_storage: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_user_data: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_personalization: newsPulseConsent.ads ? 'granted' : 'denied'
+    });
+  }
+} catch (error) {}
+</script>
 <script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
@@ -22,7 +46,7 @@
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | News Pulse+</title>
-  <meta name="description" content="Learn about News Pulse+, an independent digital publication focused on clear storytelling, trusted coverage, and responsive editorial design." />
+  <meta name="description" content="Learn who runs News Pulse+, the site's mission, editorial standards, AI-assisted workflow, and clear value for readers who want summaries, context, and analysis." />
   <meta name="theme-color" content="#07111f" />
 
   <!-- Managed SEO and social preview metadata -->
@@ -30,16 +54,16 @@
   <meta name="robots" content="index, follow" />
   <meta property="og:site_name" content="NewsPulse+" />
   <meta property="og:title" content="About" />
-  <meta property="og:description" content="Learn about News Pulse+, an independent digital publication focused on clear storytelling, trusted coverage, and responsive editorial design." />
+  <meta property="og:description" content="Learn who runs News Pulse+, the site's mission, editorial standards, AI-assisted workflow, and clear value for readers who want summaries, context, and analysis." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://newspulseplus.com/about.html" />
   <meta property="og:image" content="https://newspulseplus.com/images/middle-east-agenda.jpg" />
   <meta property="og:image:alt" content="About" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About" />
-  <meta name="twitter:description" content="Learn about News Pulse+, an independent digital publication focused on clear storytelling, trusted coverage, and responsive editorial design." />
+  <meta name="twitter:description" content="Learn who runs News Pulse+, the site's mission, editorial standards, AI-assisted workflow, and clear value for readers who want summaries, context, and analysis." />
   <meta name="twitter:image" content="https://newspulseplus.com/images/middle-east-agenda.jpg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"About","headline":"About","description":"Learn about News Pulse+, an independent digital publication focused on clear storytelling, trusted coverage, and responsive editorial design.","url":"https://newspulseplus.com/about.html","image":["https://newspulseplus.com/images/middle-east-agenda.jpg"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About NewsPulse+","headline":"About NewsPulse+","description":"Learn who runs News Pulse+, the site's mission, editorial standards, AI-assisted workflow, and clear value for readers who want summaries, context, and analysis.","url":"https://newspulseplus.com/about.html","image":["https://newspulseplus.com/images/middle-east-agenda.jpg"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/","founder":{"@type":"Person","name":"Ivaylo Tsvetkov"}}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -435,6 +459,16 @@
       line-height:1.65;
       font-size:.95rem;
     }
+    .info-block ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.95rem;
+    }
+    .info-block li+li{
+      margin-top:8px;
+    }
 
     .sidebar-stack{
       display:grid;
@@ -695,6 +729,7 @@
       -webkit-backdrop-filter:none !important;
     }</style>
   <link rel="stylesheet" href="css/premium.css" />
+  <script src="js/consent-mode.js" defer></script>
 </head>
 <body class="about-photo-page">
 
@@ -715,10 +750,11 @@
         <p class="site-tagline">The stories moving the world.</p>
       </div>
 
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+            <input class="menu-toggle" id="menu-toggle" type="checkbox" aria-label="Toggle menu">
+      <label class="nav-toggle" for="menu-toggle">Menu</label>
 
       <nav class="nav-links" id="site-nav">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="world-news.html">World News</a>
         <a href="politics.html">Politics</a>
         <a href="economic.html">Economic</a>
@@ -738,8 +774,8 @@
       <article class="hero-main">
         <div class="hero-main-content">
           <div class="eyebrow">About News<span class="brand-accent">Pulse+</span></div>
-          <h1>An independent digital publication built around clarity, pace, and personality.</h1>
-          <p>News Pulse+ delivers a modern editorial experience with a clear identity, trusted coverage, and a strong digital-first approach across major news, culture, and public-interest topics.</p>
+          <h1>An independent digital publication built for clear, responsible storytelling.</h1>
+          <p>News Pulse+ is founded and maintained by Ivaylo Tsvetkov as an independent online publication that turns fast-moving headlines into clear summaries, context, and analysis across public-interest news, politics, economics, entertainment, sport, and digital culture.</p>
           <div class="hero-meta">
             <span>Independent Digital Publication</span>
             <span>Updated April 2026</span>
@@ -758,18 +794,18 @@
           <div class="hero-side-list">
             <div class="hero-side-item">
               <span class="tag">Mission</span>
-              <h4>Clear, accessible coverage built for modern digital readers.</h4>
-              <p>News Pulse+ is designed to make complex stories easier to follow without losing depth or pace.</p>
+              <h4>Make important stories easier to understand and follow.</h4>
+              <p>The site is designed for readers who want direct, accessible coverage without unnecessary noise.</p>
             </div>
             <div class="hero-side-item">
-              <span class="tag">Coverage</span>
-              <h4>News, politics, economics, entertainment, sport, and digital culture.</h4>
-              <p>The publication brings multiple sections together under one consistent editorial identity.</p>
+              <span class="tag">Standards</span>
+              <h4>Accuracy, transparency, and readable context guide each story.</h4>
+              <p>Stories are checked for basic facts, clear wording, and relevance before they are published.</p>
             </div>
             <div class="hero-side-item">
-              <span class="tag">Design</span>
-              <h4>A premium interface focused on readability, hierarchy, and trust.</h4>
-              <p>Strong spacing, modern cards, and clear navigation help the site feel polished and complete.</p>
+              <span class="tag">Value</span>
+              <h4>Readers get the story, the context, and the wider pattern.</h4>
+              <p>NewsPulse+ connects headlines across politics, markets, culture, sport, and online attention so stories are easier to understand.</p>
             </div>
           </div>
         </div>
@@ -785,24 +821,44 @@
           <div class="section-header">
             <div>
               <h2>About News<span class="brand-accent">Pulse+</span></h2>
-              <p>News Pulse+ is an independent digital publication covering major news stories, politics, business, entertainment, sport, and culture in a clear and accessible format.</p>
+              <p>News Pulse+ is an independent digital publication founded and maintained by Ivaylo Tsvetkov. The site brings together major news, politics, economics, entertainment, sport, and culture with a focus on quick summaries, useful context, and clear analysis for everyday readers.</p>
             </div>
           </div>
 
           <div class="info-grid">
             <div class="info-block">
+              <h3>Who We Are</h3>
+              <p>News Pulse+ is run as an independent digital publishing project by Ivaylo Tsvetkov, with a focus on building a useful, easy-to-read news experience. The site is not owned by a political party, public body, or advertiser.</p>
+            </div>
+
+            <div class="info-block">
               <h3>Our Mission</h3>
-              <p>Present important stories with a modern editorial rhythm that feels readable, energetic, and easy to explore across every section of the site.</p>
+              <p>The mission of News Pulse+ is to help readers quickly understand the stories shaping public life, markets, culture, sport, and online conversation. We aim to explain what happened, why it matters, and where readers can go next.</p>
             </div>
 
             <div class="info-block">
-              <h3>Editorial Mix</h3>
-              <p>World news, politics, economics, entertainment, sport, and viral content all sit under one consistent publication brand with a digital-first structure.</p>
+              <h3>Editorial Standards</h3>
+              <ul>
+                <li>Stories should be clear, fair, and written in plain language.</li>
+                <li>Headlines should reflect the article and avoid misleading claims.</li>
+                <li>News, opinion, entertainment, and viral coverage should be easy to tell apart.</li>
+                <li>Errors should be corrected when identified through review or reader feedback.</li>
+              </ul>
             </div>
 
             <div class="info-block">
-              <h3>Design Direction</h3>
-              <p>The interface uses bold contrast, strong typography, modern cards, and clean navigation to create a premium reading experience.</p>
+              <h3>How Content Is Created</h3>
+              <p>Stories are selected from current public-interest topics, developed into readable summaries, reviewed for clarity and basic factual consistency, and published with section navigation so readers can explore related coverage. Digital tools, including AI-assisted drafting and summary support, may help with research structure, formatting, and translation, but editorial decisions stay with News Pulse+.</p>
+            </div>
+
+            <div class="info-block">
+              <h3>What Makes Us Different</h3>
+              <p>NewsPulse+ is not designed to be a simple headline feed. The site focuses on explaining the point of a story quickly, adding context around why it matters, and connecting developments across politics, economics, culture, sport, and viral attention.</p>
+            </div>
+
+            <div class="info-block">
+              <h3>Corrections & Feedback</h3>
+              <p>If a reader spots an error, unclear wording, outdated information, or a source concern, they can contact News Pulse+ through the contact page. Feedback is reviewed so published pages can be improved where needed.</p>
             </div>
           </div>
         </div>
@@ -840,9 +896,10 @@
               </div>
             </div>
             <div class="insight-list">
-              <div class="insight-item">Clear editorial structure across major news categories.</div>
-              <div class="insight-item">Responsive layouts designed for desktop and mobile readers.</div>
-              <div class="insight-item">A modern visual identity built around readability and trust.</div>
+              <div class="insight-item">Fast summaries for readers who want the main point quickly.</div>
+              <div class="insight-item">Plain-language context that explains why each story matters.</div>
+              <div class="insight-item">AI-assisted workflow used for structure and summaries, with human editorial review.</div>
+              <div class="insight-item">Accessible contact, privacy, and terms pages for reader confidence.</div>
             </div>
           </div>
         </aside>
@@ -887,6 +944,7 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
         <a href="terms.html">Terms</a>
       </div>
 
@@ -901,6 +959,7 @@
       <span>&copy; 2026 NewsPulse+. All rights reserved.</span>
       <div>
         <a href="privacy-policy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookies</a>
         <a href="terms.html">Terms</a>
         <a href="index.html">Back to homepage</a>
       </div>
@@ -1094,6 +1153,30 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   });
 })();
 </script>
+<script>
+function toggleMenu(){
+  var nav = document.getElementById("site-nav");
+  var btn = document.querySelector(".nav-toggle");
+  if (!nav || !btn) return;
+
+  var isOpen = btn.getAttribute("aria-expanded") !== "true";
+
+  btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  btn.textContent = isOpen ? "Close" : "Menu";
+
+  if (isOpen) {
+    nav.classList.add("nav-open");
+    nav.style.display = "grid";
+    nav.style.gridTemplateColumns = "repeat(2, minmax(0, 1fr))";
+    nav.style.width = "100%";
+  } else {
+    nav.classList.remove("nav-open");
+    nav.style.display = "";
+    nav.style.gridTemplateColumns = "";
+    nav.style.width = "";
+  }
+}
+</script>
 <script id="news-pulse-german-header-controller">
 (function () {
   function savedLanguage() {
@@ -1141,14 +1224,6 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 

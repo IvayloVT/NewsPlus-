@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script data-news-pulse-consent-default>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+try {
+  var newsPulseConsent = JSON.parse(localStorage.getItem('newsPulseConsentMode') || 'null');
+  if (newsPulseConsent && newsPulseConsent.version === 1) {
+    gtag('consent', 'update', {
+      analytics_storage: newsPulseConsent.analytics ? 'granted' : 'denied',
+      ad_storage: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_user_data: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_personalization: newsPulseConsent.ads ? 'granted' : 'denied'
+    });
+  }
+} catch (error) {}
+</script>
 <script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
@@ -40,7 +64,7 @@
   <meta name="twitter:title" content="Spain plans to legalize up to 500,000 undocumented migrants in major reform" />
   <meta name="twitter:description" content="Spain is preparing a major immigration reform that could give legal status to as many as 500,000 undocumented migrants while addressing labour shortages." />
   <meta name="twitter:image" content="https://newspulseplus.com/images/spain-migrant.jpg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","name":"Spain plans to legalize up to 500,000 undocumented migrants in major reform","headline":"Spain plans to legalize up to 500,000 undocumented migrants in major reform","description":"Spain is preparing a major immigration reform that could give legal status to as many as 500,000 undocumented migrants while addressing labour shortages.","url":"https://newspulseplus.com/spain-legalize-migrants.html","image":["https://newspulseplus.com/images/spain-migrant.jpg"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/"},"author":{"@type":"Organization","name":"NewsPulse+ Editorial Team"},"articleSection":"World News","datePublished":"2026-04-01"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","name":"Spain plans to legalize up to 500,000 undocumented migrants in major reform","headline":"Spain plans to legalize up to 500,000 undocumented migrants in major reform","description":"Spain is preparing a major immigration reform that could give legal status to as many as 500,000 undocumented migrants while addressing labour shortages.","url":"https://newspulseplus.com/spain-legalize-migrants.html","image":["https://newspulseplus.com/images/spain-migrant.jpg"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/"},"author":{"@type":"Person","name":"Ivaylo Tsvetkov","description":"Founder of NewsPulse+, covering global politics, economics, public-interest news, sport, entertainment, and digital culture."},"articleSection":"World News","datePublished":"2026-04-01"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -790,6 +814,7 @@
       -webkit-backdrop-filter:none !important;
     }</style>
   <link rel="stylesheet" href="css/premium.css" />
+  <script src="js/consent-mode.js" defer></script>
 </head>
 <body>
   <header class="topbar" id="siteHeader">
@@ -799,7 +824,8 @@
         <p>The stories moving the world.</p>
       </div>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+      <input class="menu-toggle" id="menu-toggle" type="checkbox" aria-label="Toggle menu">
+      <label class="nav-toggle" for="menu-toggle">Menu</label>
 
       <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="index.html">Home</a>
@@ -834,7 +860,7 @@
             Spain is preparing one of Europe's most ambitious immigration reforms, aiming to regularize hundreds of thousands of undocumented migrants while helping employers fill persistent labour gaps.
           </p>
           <div class="article-meta">
-            <span>By News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</span>
+            <span>By Ivaylo Tsvetkov</span>
             <span>April 2026</span>
             <span>5 min read</span>
           </div>
@@ -925,7 +951,7 @@
           <section class="author-card">
             <h3>About the author</h3>
             <p class="author-line">
-              <strong>News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</strong> covers major international developments with a focus on clear reporting, clean presentation, and premium digital storytelling.
+              <strong>Ivaylo Tsvetkov</strong> is the founder of NewsPulse+ and covers global politics, economics, public-interest news, sport, entertainment, and digital culture with a focus on clear, responsible reporting.
             </p>
           </section>
 
@@ -936,7 +962,7 @@
             <h3>Article Details</h3>
             <div class="sidebar-list">
               <div class="sidebar-item"><strong>Category:</strong> World News</div>
-              <div class="sidebar-item"><strong>Author:</strong> News<span style="color:var(--accent-2)">Pulse+</span> Editorial Team</div>
+              <div class="sidebar-item"><strong>Author:</strong> Ivaylo Tsvetkov</div>
               <div class="sidebar-item"><strong>Published:</strong> April 2026</div>
               <div class="sidebar-item"><strong>Reading time:</strong> 6 minutes</div>
             </div>
@@ -1036,6 +1062,7 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
         <a href="terms.html">Terms</a>
       </div>
 
@@ -1050,6 +1077,7 @@
       <span>&copy; 2026 NewsPulse+. All rights reserved.</span>
       <div>
         <a href="privacy-policy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookies</a>
         <a href="terms.html">Terms</a>
         <a href="index.html">Back to homepage</a>
       </div>
@@ -1191,7 +1219,7 @@
         var meta = hero.querySelector('.article-meta');
         var category = (hero.querySelector('.eyebrow') || {}).textContent || 'Article';
         var spans = meta ? Array.from(meta.querySelectorAll('span')).map(function (span) { return span.textContent.trim(); }) : [];
-        var author = spans.find(function (text) { return text.toLowerCase().includes('editorial') || text.toLowerCase().includes('team'); }) || 'NewsPulse+ Editorial Team';
+        var author = spans.find(function (text) { return text.toLowerCase().includes('ivaylo') || text.toLowerCase().includes('author'); }) || 'Ivaylo Tsvetkov';
         var date = spans.find(function (text) { return text.toLowerCase().includes('2026') || text.toLowerCase().includes('april'); }) || 'April 2026';
         var read = spans.find(function (text) { return text.toLowerCase().includes('min'); }) || '5 min read';
         var strip = document.createElement('div');
@@ -1204,22 +1232,10 @@
         hero.appendChild(strip);
       }
 
-      function addArticleTools() {
-        var article = document.querySelector('.article-card .article-body');
-        if (!article || article.querySelector('.article-tools')) return;
-        var words = article.innerText.trim().split(/\s+/).filter(Boolean).length;
-        var minutes = Math.max(1, Math.round(words / 220));
-        var tools = document.createElement('div');
-        tools.className = 'article-tools';
-        tools.innerHTML = '<span><strong>Reading mode</strong> Clean article layout active</span><span>' + words + ' words / about ' + minutes + ' min</span>';
-        article.prepend(tools);
-      }
-
       document.addEventListener('DOMContentLoaded', function () {
         if (!document.querySelector('.article-hero-card, .article-card')) return;
         ensureReadingProgress();
         addArticleDetails();
-        addArticleTools();
         updateReadingProgress();
         window.addEventListener('scroll', updateReadingProgress, { passive: true });
         window.addEventListener('resize', updateReadingProgress);
@@ -1414,6 +1430,30 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     loadTranslateScript();
   });
 })();
+</script>
+<script>
+function toggleMenu(){
+  var nav = document.getElementById("site-nav");
+  var btn = document.querySelector(".nav-toggle");
+  if (!nav || !btn) return;
+
+  var isOpen = btn.getAttribute("aria-expanded") !== "true";
+
+  btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  btn.textContent = isOpen ? "Close" : "Menu";
+
+  if (isOpen) {
+    nav.classList.add("nav-open");
+    nav.style.display = "grid";
+    nav.style.gridTemplateColumns = "repeat(2, minmax(0, 1fr))";
+    nav.style.width = "100%";
+  } else {
+    nav.classList.remove("nav-open");
+    nav.style.display = "";
+    nav.style.gridTemplateColumns = "";
+    nav.style.width = "";
+  }
+}
 </script>
 <script id="news-pulse-german-header-controller">
 (function () {

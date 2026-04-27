@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script data-news-pulse-consent-default>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+try {
+  var newsPulseConsent = JSON.parse(localStorage.getItem('newsPulseConsentMode') || 'null');
+  if (newsPulseConsent && newsPulseConsent.version === 1) {
+    gtag('consent', 'update', {
+      analytics_storage: newsPulseConsent.analytics ? 'granted' : 'denied',
+      ad_storage: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_user_data: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_personalization: newsPulseConsent.ads ? 'granted' : 'denied'
+    });
+  }
+} catch (error) {}
+</script>
 <script>
 (function () {
   if (location.protocol !== 'http:' && location.protocol !== 'https:') {
@@ -161,6 +185,7 @@
       }
     }
   </style>
+  <script src="js/consent-mode.js" defer></script>
 </head>
 <body class="not-found-page">
 <div id="google_translate_element" style="display:none"></div>
@@ -181,7 +206,8 @@
         <p class="site-tagline">The stories moving the world.</p>
       </div>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" onclick="toggleMenu()">Menu</button>
+      <input class="menu-toggle" id="menu-toggle" type="checkbox" aria-label="Toggle menu">
+      <label class="nav-toggle" for="menu-toggle">Menu</label>
 
       <nav class="nav-links" id="site-nav">
         <a href="index.html" class="active">Home</a>
@@ -266,6 +292,7 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
         <a href="terms.html">Terms</a>
       </div>
     </div>
@@ -477,6 +504,30 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     loadTranslateScript();
   });
 })();
+</script>
+<script>
+function toggleMenu(){
+  var nav = document.getElementById("site-nav");
+  var btn = document.querySelector(".nav-toggle");
+  if (!nav || !btn) return;
+
+  var isOpen = btn.getAttribute("aria-expanded") !== "true";
+
+  btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  btn.textContent = isOpen ? "Close" : "Menu";
+
+  if (isOpen) {
+    nav.classList.add("nav-open");
+    nav.style.display = "grid";
+    nav.style.gridTemplateColumns = "repeat(2, minmax(0, 1fr))";
+    nav.style.width = "100%";
+  } else {
+    nav.classList.remove("nav-open");
+    nav.style.display = "";
+    nav.style.gridTemplateColumns = "";
+    nav.style.width = "";
+  }
+}
 </script>
 <script id="news-pulse-german-header-controller">
 (function () {
