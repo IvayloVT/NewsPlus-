@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script data-news-pulse-consent-default>
@@ -943,7 +943,7 @@ try {
           <p>A decisive election shift has turned public frustration into a mandate for reform, with NewsPulse+ focusing on the wider European signals behind the headline.</p>
           <div class="hero-meta">
             <span>World News</span>
-            <span>By Ivaylo Tsvetkov</span>
+            <span>By Ivaylo Tsvetkov News Pulse+</span>
             <span>April 2026</span>
           </div>
           <div class="hero-actions">
@@ -1107,7 +1107,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>Global Politics</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>6 min read</span>
                 </div>
                 <h3><a href="middle-east-crisis-shapes-global-political-agenda.html">Middle East crisis shapes global political agenda</a></h3>
@@ -1121,7 +1121,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>United States</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>6 min read</span>
                 </div>
                 <h3><a href="us-inflation-reaches-multi-year-high-adding-pressure-economy.html">U.S. inflation reaches multi-year high, adding pressure on economy.</a></h3>
@@ -1135,7 +1135,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>Pets</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>5 min read</span>
                 </div>
                 <h3><a href="smart-dog-goes-viral-ordering-food-doorbell.html">Smart Dog Goes Viral After 'Ordering' Food Through Doorbell</a></h3>
@@ -1266,13 +1266,27 @@ try {
         <a href="index.html" class="footer-logo">News<span>Pulse+</span></a>
         <p>Independent digital reporting across politics, world affairs, markets, culture, sport, and the stories people are sharing now.</p>
       </div>
-      <form class="footer-newsletter">
-        <label for="footer-email">Daily briefing</label>
-        <div>
-          <input id="footer-email" type="email" placeholder="Email address">
-          <button type="submit">Subscribe</button>
-        </div>
-      </form>
+      <form class="footer-newsletter"
+      action="https://formsubmit.co/ivaylovt@gmail.com"
+      method="POST">
+
+  <label for="footer-email">Daily briefing</label>
+
+  <div>
+    <input id="footer-email"
+           type="email"
+           name="email"
+           placeholder="Email address"
+           required>
+
+    <button type="submit">Subscribe</button>
+  </div>
+
+  <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://newspulseplus.com/thank-you.html">
+
+</form>
     </div>
 
     <div class="container footer-grid">
@@ -1613,6 +1627,15 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 

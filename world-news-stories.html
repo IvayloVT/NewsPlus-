@@ -557,7 +557,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>Climate</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="global-climate-summit-shift-away-fossil-fuels.html">Global climate summit intensifies shift away from fossil fuels</a></h3>
@@ -573,7 +573,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>World Economy</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="global-markets-under-pressure-conflict-economic-uncertainty.html">Global markets under pressure amid conflict and economic uncertainty</a></h3>
@@ -589,7 +589,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>Middle East</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="middle-east-tensions-persist-despite-ceasefire-efforts.html">Middle East tensions persist despite ceasefire efforts</a></h3>
@@ -605,7 +605,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>Europe</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="rumen-radev-political-comeback-bulgaria.html">Rumen Radev's political comeback sparks a new era in Bulgaria</a></h3>
@@ -621,7 +621,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>World News</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="us-iran-tensions-global-agenda.html">Fears of wider conflict grow as U.S.-Iran tensions dominate global agenda</a></h3>
@@ -637,7 +637,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>Europe</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="bulgaria-crucial-election.html">Bulgaria prepares for crucial election as political deadlock continues</a></h3>
@@ -653,7 +653,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>Europe</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="spain-legalize-migrants.html">Spain plans to legalize up to 500,000 undocumented migrants in major reform</a></h3>
@@ -669,7 +669,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>World News</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="starmer-uk-iran.html">Starmer: UK will not be drawn into U.S.-Israel war with Iran</a></h3>
@@ -685,7 +685,7 @@ try {
           <div class="story-copy">
             <div class="story-meta">
               <span>World News</span>
-              <span>By News Pulse+ Editorial Team</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
               <span>4 min read</span>
             </div>
             <h3><a href="trump-hungary-prime-minister.html">Trump on Hungary's new prime minister: I like him, he will do well</a></h3>
@@ -710,13 +710,27 @@ try {
         <a href="index.html" class="footer-logo">News<span>Pulse+</span></a>
         <p>Independent digital reporting across politics, world affairs, markets, culture, sport, and the stories people are sharing now.</p>
       </div>
-      <form class="footer-newsletter">
-        <label for="footer-email">Daily briefing</label>
-        <div>
-          <input id="footer-email" type="email" placeholder="Email address">
-          <button type="submit">Subscribe</button>
-        </div>
-      </form>
+      <form class="footer-newsletter"
+      action="https://formsubmit.co/ivaylovt@gmail.com"
+      method="POST">
+
+  <label for="footer-email">Daily briefing</label>
+
+  <div>
+    <input id="footer-email"
+           type="email"
+           name="email"
+           placeholder="Email address"
+           required>
+
+    <button type="submit">Subscribe</button>
+  </div>
+
+  <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://newspulseplus.com/thank-you.html">
+
+</form>
     </div>
 
     <div class="container footer-grid">
@@ -1019,8 +1033,67 @@ function toggleMenu(){
   });
 })();
 </script>
+<script id="news-pulse-menu-sync">
+(function () {
+  function syncMenuState(open) {
+    var checkbox = document.getElementById('menu-toggle');
+    var nav = document.getElementById('site-nav');
+    var button = document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    if (typeof open !== 'boolean') {
+      open = !!((checkbox && checkbox.checked) || (nav && nav.classList.contains('nav-open')) || button.getAttribute('aria-expanded') === 'true');
+    }
+
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
+    if (checkbox) checkbox.checked = open;
+    if (nav) nav.classList.toggle('nav-open', open);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.getElementById('menu-toggle');
+    var button = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (!button || !nav) return;
+
+    if (!button.hasAttribute('aria-expanded')) {
+      button.setAttribute('aria-expanded', 'false');
+    }
+
+    if (checkbox) {
+      checkbox.addEventListener('change', function () {
+        syncMenuState(checkbox.checked);
+      });
+    }
+
+    button.addEventListener('click', function () {
+      setTimeout(function () {
+        syncMenuState();
+      }, 0);
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 760) syncMenuState(false);
+      });
+    });
+
+    syncMenuState(false);
+  });
+})();
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 

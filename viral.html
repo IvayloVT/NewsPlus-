@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script data-news-pulse-consent-default>
@@ -854,7 +854,7 @@ try {
           <p>Animal moments, travel clips, gaming wins, and unexpected live-TV reactions give the viral section a more polished social-news rhythm.</p>
           <div class="hero-meta">
             <span>Viral</span>
-            <span>By Ivaylo Tsvetkov</span>
+            <span>By Ivaylo Tsvetkov News Pulse+</span>
             <span>April 2026</span>
           </div>
           <div class="hero-actions">
@@ -929,7 +929,7 @@ try {
               <div class="story-body">
                 <div class="story-meta">
                   <span>Viral</span>
-                  <span>By Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>April 2026</span>
                 </div>
                 <h3>Smart Dog Goes Viral After 'Ordering' Food Through Doorbell</h3>
@@ -947,7 +947,7 @@ try {
               <div class="story-body">
                 <div class="story-meta">
                   <span>Technology</span>
-                  <span>By Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>April 2026</span>
                 </div>
                 <h3>Self-Driving Car Malfunction Sparks Debate After Getting Stuck in a Loop</h3>
@@ -965,7 +965,7 @@ try {
               <div class="story-body">
                 <div class="story-meta">
                   <span>Gaming</span>
-                  <span>By Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>April 2026</span>
                 </div>
                 <h3>Gamer Secures Unexpected Victory After Accidental Play Goes Viral</h3>
@@ -1096,7 +1096,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>Viral</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>4 min read</span>
                 </div>
                 <h3><a href="smart-dog-goes-viral-ordering-food-doorbell.html">Smart Dog Goes Viral After 'Ordering' Food Through Doorbell</a></h3>
@@ -1110,7 +1110,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>Technology</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>4 min read</span>
                 </div>
                 <h3><a href="self-driving-car-malfunction-sparks-debate.html">Self-Driving Car Malfunction Sparks Debate After Getting Stuck in a Loop</a></h3>
@@ -1124,7 +1124,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>Gaming</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>4 min read</span>
                 </div>
                 <h3><a href="gamer-secures-unexpected-victory.html">Gamer Secures Unexpected Victory After Accidental Play Goes Viral</a></h3>
@@ -1138,7 +1138,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>Travel</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>4 min read</span>
                 </div>
                 <h3><a href="passenger-sparks-viral-moment-plane-window-shade.html">Passenger Sparks Viral Moment After Opening Plane Window Shade at Worst Time</a></h3>
@@ -1152,7 +1152,7 @@ try {
               <div>
                 <div class="story-meta">
                   <span>Broadcast</span>
-                  <span>By News Pulse+ Editorial Team</span>
+                  <span>By Ivaylo Tsvetkov News Pulse+</span>
                   <span>4 min read</span>
                 </div>
                 <h3><a href="cat-steals-spotlight-live-tv-broadcast.html">Cat Steals the Spotlight After Interrupting Live TV Broadcast</a></h3>
@@ -1215,13 +1215,27 @@ try {
         <a href="index.html" class="footer-logo">News<span>Pulse+</span></a>
         <p>Independent digital reporting across politics, world affairs, markets, culture, sport, and the stories people are sharing now.</p>
       </div>
-      <form class="footer-newsletter">
-        <label for="footer-email">Daily briefing</label>
-        <div>
-          <input id="footer-email" type="email" placeholder="Email address">
-          <button type="submit">Subscribe</button>
-        </div>
-      </form>
+      <form class="footer-newsletter"
+      action="https://formsubmit.co/ivaylovt@gmail.com"
+      method="POST">
+
+  <label for="footer-email">Daily briefing</label>
+
+  <div>
+    <input id="footer-email"
+           type="email"
+           name="email"
+           placeholder="Email address"
+           required>
+
+    <button type="submit">Subscribe</button>
+  </div>
+
+  <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://newspulseplus.com/thank-you.html">
+
+</form>
     </div>
 
     <div class="container footer-grid">
@@ -1524,8 +1538,68 @@ function toggleMenu(){
   });
 })();
 </script>
+<script id="news-pulse-menu-sync">
+(function () {
+  function syncMenuState(open) {
+    var checkbox = document.getElementById('menu-toggle');
+    var nav = document.getElementById('site-nav');
+    var button = document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    if (typeof open !== 'boolean') {
+      open = !!((checkbox && checkbox.checked) || (nav && nav.classList.contains('nav-open')) || button.getAttribute('aria-expanded') === 'true');
+    }
+
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
+    if (checkbox) checkbox.checked = open;
+    if (nav) nav.classList.toggle('nav-open', open);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.getElementById('menu-toggle');
+    var button = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (!button || !nav) return;
+
+    if (!button.hasAttribute('aria-expanded')) {
+      button.setAttribute('aria-expanded', 'false');
+    }
+
+    if (checkbox) {
+      checkbox.addEventListener('change', function () {
+        syncMenuState(checkbox.checked);
+      });
+    }
+
+    button.addEventListener('click', function () {
+      setTimeout(function () {
+        syncMenuState();
+      }, 0);
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 760) syncMenuState(false);
+      });
+    });
+
+    syncMenuState(false);
+  });
+})();
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

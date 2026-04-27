@@ -4181,10 +4181,16 @@ body.story-archive-page .lang-switch:hover{
 }
 /* Clean mobile close button */
 @media (max-width:760px){
+  .menu-toggle:checked + .nav-toggle,
   .nav-toggle[aria-expanded="true"]{
+    background:var(--section-accent, var(--premium-accent-2, #7bd1ff)) !important;
+    color:#02111d !important;
+    border-color:rgba(155,232,255,0.85) !important;
     gap:0 !important;
   }
 
+  .menu-toggle:checked + .nav-toggle::before,
+  .menu-toggle:checked + .nav-toggle::after,
   .nav-toggle[aria-expanded="true"]::before,
   .nav-toggle[aria-expanded="true"]::after{
     content:none !important;
@@ -4345,28 +4351,6 @@ header a.logo span{
   .menu-toggle + .nav-toggle{
     display:inline-flex !important;
     cursor:pointer !important;
-  }
-
-  .menu-toggle:checked + .nav-toggle{
-    background:var(--section-accent, var(--premium-accent-2, #7bd1ff)) !important;
-    color:#02111d !important;
-    border-color:transparent !important;
-  }
-
-  .menu-toggle:checked + .nav-toggle::before{
-    background:
-      linear-gradient(#02111d,#02111d) 50% 50%/100% 2px no-repeat,
-      linear-gradient(#02111d,#02111d) 50% 50%/100% 2px no-repeat !important;
-    transform:rotate(45deg) !important;
-  }
-
-  .menu-toggle:checked + .nav-toggle::after{
-    content:"" !important;
-    width:16px !important;
-    height:2px !important;
-    margin-left:-24px !important;
-    background:#02111d !important;
-    transform:rotate(-45deg) !important;
   }
 
   .menu-toggle:checked ~ #site-nav{

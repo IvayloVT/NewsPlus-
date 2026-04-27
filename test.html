@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -200,7 +200,7 @@ footer {
       <p>
         NewsPulse+ delivers global news across politics, economics, world affairs,
         entertainment, sport, and viral culture. Each story focuses on clarity,
-        context, and understanding — not just headlines.
+        context, and understanding â€” not just headlines.
       </p>
     </div>
   </div>
@@ -286,7 +286,7 @@ footer {
 
 <footer>
   <div class="container">
-    <p>© 2026 NewsPulse+ | Independent digital news</p>
+    <p>Â© 2026 NewsPulse+ | Independent digital news</p>
     <p>
       <a href="about.html">About</a> |
       <a href="contact.html">Contact</a> |
@@ -297,5 +297,62 @@ footer {
   </div>
 </footer>
 
+<script id="news-pulse-menu-sync">
+(function () {
+  function syncMenuState(open) {
+    var checkbox = document.getElementById('menu-toggle');
+    var nav = document.getElementById('site-nav');
+    var button = document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    if (typeof open !== 'boolean') {
+      open = !!((checkbox && checkbox.checked) || (nav && nav.classList.contains('nav-open')) || button.getAttribute('aria-expanded') === 'true');
+    }
+
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
+    if (checkbox) checkbox.checked = open;
+    if (nav) nav.classList.toggle('nav-open', open);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.getElementById('menu-toggle');
+    var button = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (!button || !nav) return;
+
+    if (!button.hasAttribute('aria-expanded')) {
+      button.setAttribute('aria-expanded', 'false');
+    }
+
+    if (checkbox) {
+      checkbox.addEventListener('change', function () {
+        syncMenuState(checkbox.checked);
+      });
+    }
+
+    button.addEventListener('click', function () {
+      setTimeout(function () {
+        syncMenuState();
+      }, 0);
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 760) syncMenuState(false);
+      });
+    });
+
+    syncMenuState(false);
+  });
+})();
+</script>
 </body>
 </html>
+
+
+
+
+
+
+

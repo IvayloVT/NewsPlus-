@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <script data-news-pulse-consent-default>
@@ -860,7 +860,7 @@ try {
             Bulgaria election shift signals a demand for reform, but the harder test is whether voter frustration can become cleaner institutions, steadier leadership, and practical change.
           </p>
           <div class="article-meta">
-            <span>By Ivaylo Tsvetkov</span>
+            <span>By Ivaylo Tsvetkov News Pulse+</span>
             <span>April 2026</span>
             <span>4 min read</span>
           </div>
@@ -1035,13 +1035,27 @@ try {
         <a href="index.html" class="footer-logo">News<span>Pulse+</span></a>
         <p>Independent digital reporting across politics, world affairs, markets, culture, sport, and the stories people are sharing now.</p>
       </div>
-      <form class="footer-newsletter">
-        <label for="footer-email">Daily briefing</label>
-        <div>
-          <input id="footer-email" type="email" placeholder="Email address">
-          <button type="submit">Subscribe</button>
-        </div>
-      </form>
+      <form class="footer-newsletter"
+      action="https://formsubmit.co/ivaylovt@gmail.com"
+      method="POST">
+
+  <label for="footer-email">Daily briefing</label>
+
+  <div>
+    <input id="footer-email"
+           type="email"
+           name="email"
+           placeholder="Email address"
+           required>
+
+    <button type="submit">Subscribe</button>
+  </div>
+
+  <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://newspulseplus.com/thank-you.html">
+
+</form>
     </div>
 
     <div class="container footer-grid">
@@ -1504,8 +1518,67 @@ function toggleMenu(){
   });
 })();
 </script>
+<script id="news-pulse-menu-sync">
+(function () {
+  function syncMenuState(open) {
+    var checkbox = document.getElementById('menu-toggle');
+    var nav = document.getElementById('site-nav');
+    var button = document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    if (typeof open !== 'boolean') {
+      open = !!((checkbox && checkbox.checked) || (nav && nav.classList.contains('nav-open')) || button.getAttribute('aria-expanded') === 'true');
+    }
+
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
+    if (checkbox) checkbox.checked = open;
+    if (nav) nav.classList.toggle('nav-open', open);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.getElementById('menu-toggle');
+    var button = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('site-nav');
+    if (!button || !nav) return;
+
+    if (!button.hasAttribute('aria-expanded')) {
+      button.setAttribute('aria-expanded', 'false');
+    }
+
+    if (checkbox) {
+      checkbox.addEventListener('change', function () {
+        syncMenuState(checkbox.checked);
+      });
+    }
+
+    button.addEventListener('click', function () {
+      setTimeout(function () {
+        syncMenuState();
+      }, 0);
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 760) syncMenuState(false);
+      });
+    });
+
+    syncMenuState(false);
+  });
+})();
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
