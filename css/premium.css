@@ -2533,21 +2533,8 @@ footer{
 }
 
 .article-hero-card::after{
-  content:"Premium article";
-  position:absolute;
-  right:clamp(16px, 3vw, 28px);
-  top:clamp(16px, 3vw, 28px);
-  z-index:2;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.18);
-  background:rgba(3,9,17,0.72);
-  color:#fff;
-  font-size:.72rem;
-  font-weight:900;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  text-shadow:0 1px 2px rgba(0,0,0,.45);
+  content:none !important;
+  display:none !important;
 }
 
 .article-meta{
@@ -2665,9 +2652,8 @@ footer{
   }
 
   .article-hero-card::after{
-    top:12px;
-    right:12px;
-    font-size:.66rem;
+    content:none !important;
+    display:none !important;
   }
 
   .article-detail-strip{
