@@ -101,6 +101,38 @@ try {
     img{max-width:100%;display:block}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.86);
+    }
+    .topbar-inner{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .breaking{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .breaking span{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#02111d;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 12px;
+      border-radius:999px;
+      flex-shrink:0;
+    }
+    .breaking p,.topbar-inner>p{margin:0}
+
     header{
       position:sticky;
       top:0;
@@ -137,6 +169,13 @@ try {
       letter-spacing:-0.02em;
       line-height:1.15;
     }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
     .nav-links a{
       color:#d8e3f1;
       font-weight:600;
@@ -150,8 +189,7 @@ try {
       color:#fff;
     }
 
-    .lang-switch,
-    .nav-toggle{
+    .lang-switch{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -173,12 +211,36 @@ try {
       transition:.25s ease;
       box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
     }
-    .lang-switch:hover,
+    .lang-switch:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
     .nav-toggle:hover{
       background:rgba(255,255,255,0.08);
       transform:translateY(-1px);
     }
-    .nav-toggle{display:none}
 
     #google_translate_element{
       position:absolute;
@@ -363,18 +425,9 @@ try {
     @media (max-width:900px){
       .nav-toggle{display:inline-flex}
       .nav-links{
-        position:absolute;
-        top:calc(100% + 10px);
-        left:16px;
-        right:16px;
-        padding:14px;
-        border-radius:24px;
-        border:1px solid var(--line);
-        background:rgba(8,18,33,0.98);
-        box-shadow:var(--shadow);
         display:none;
         flex-direction:column;
-        align-items:stretch;
+        align-items:center;
       }
       .nav-links.nav-open{display:flex}
       .story-row{grid-template-columns:1fr}
@@ -383,7 +436,13 @@ try {
 
     @media (max-width:640px){
       .container{padding:0 16px}
-      .brand p{display:none}
+      .topbar-inner{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:10px;
+        padding-top:12px;
+        padding-bottom:12px;
+      }
       .archive-card{padding:24px}
       .footer-grid{grid-template-columns:1fr}
       .pager-card{align-items:flex-start}
@@ -464,7 +523,6 @@ try {
       background:#050c16 !important;
     }
     #siteHeader,
-    header,
     .topbar{
       position:static !important;
       top:auto !important;
@@ -495,9 +553,85 @@ try {
       -webkit-backdrop-filter:none !important;
     }</style>
   <link rel="stylesheet" href="css/premium.css" />
+<style id="homepage-mobile-menu-final">
+@media (max-width:760px){
+  .navbar{
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:14px !important;
+  }
+
+  .brand{
+    order:1 !important;
+    flex:1 1 auto !important;
+    max-width:calc(100% - 156px) !important;
+  }
+
+  .nav-toggle{
+    order:2 !important;
+    flex:0 0 auto !important;
+    margin-left:auto !important;
+    white-space:nowrap !important;
+  }
+
+  .navbar #site-nav{
+    display:none !important;
+    order:3 !important;
+    flex:0 0 100% !important;
+    width:100% !important;
+    margin-top:8px !important;
+  }
+
+  .navbar #site-nav.homepage-menu-open{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:8px !important;
+  }
+
+  .navbar #site-nav a,
+  .navbar #site-nav .lang-switch{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  body.homepage-lang-de .site-tagline{
+    max-width:12rem !important;
+    display:block !important;
+    line-height:1.08 !important;
+  }
+
+  body.homepage-lang-de .brand{
+    min-width:0 !important;
+    max-width:calc(100% - 156px) !important;
+  }
+
+  body.homepage-lang-de .logo{
+    max-width:100% !important;
+    font-size:clamp(1.85rem, 8vw, 2.2rem) !important;
+    line-height:.95 !important;
+    white-space:nowrap !important;
+  }
+
+  body.homepage-lang-de .nav-toggle{
+    align-self:flex-start !important;
+    margin-top:0 !important;
+  }
+}
+</style>
   <script src="js/consent-mode.js" defer></script>
 </head>
 <body class="trending-page trending-upgraded">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Trending</span>
+        <p>Track the stories gaining attention across news, markets, culture, sport, and viral moments.</p>
+      </div>
+      <p>Fast updates on what readers are following now.</p>
+    </div>
+  </div>
+
   <div id="google_translate_element"></div>
   <header>
     <div class="container navbar">
@@ -506,8 +640,7 @@ try {
         <p class="site-tagline">The stories moving the world.</p>
       </div>
 
-      <input class="menu-toggle" id="menu-toggle" type="checkbox" aria-label="Toggle menu">
-      <label class="nav-toggle" for="menu-toggle">Menu</label>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" id="homepage-menu-button">Menu</button>
 
       <nav class="nav-links" id="site-nav">
         <a href="index.html" class="active">Home</a>
@@ -1033,29 +1166,44 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   });
 })();
 </script>
-<script>
-function toggleMenu(){
-  var nav = document.getElementById("site-nav");
-  var btn = document.querySelector(".nav-toggle");
-  if (!nav || !btn) return;
+<script id="homepage-menu-script">
+(function () {
+  function setMenu(open) {
+    var nav = document.getElementById('site-nav');
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!nav || !button) return;
 
-  var isOpen = btn.getAttribute("aria-expanded") !== "true";
+    nav.classList.toggle('homepage-menu-open', open);
+    nav.classList.toggle('nav-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
 
-  btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  btn.textContent = isOpen ? "Close" : "Menu";
-
-  if (isOpen) {
-    nav.classList.add("nav-open");
-    nav.style.display = "grid";
-    nav.style.gridTemplateColumns = "repeat(2, minmax(0, 1fr))";
-    nav.style.width = "100%";
-  } else {
-    nav.classList.remove("nav-open");
-    nav.style.display = "";
-    nav.style.gridTemplateColumns = "";
-    nav.style.width = "";
+    if (open) {
+      nav.style.setProperty('display', 'grid', 'important');
+      nav.style.setProperty('grid-template-columns', 'repeat(2, minmax(0, 1fr))', 'important');
+      nav.style.setProperty('width', '100%', 'important');
+    } else {
+      nav.style.removeProperty('display');
+      nav.style.removeProperty('grid-template-columns');
+      nav.style.removeProperty('width');
+    }
   }
-}
+
+  window.toggleMenu = function () {
+    var nav = document.getElementById('site-nav');
+    setMenu(!(nav && nav.classList.contains('homepage-menu-open')));
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.toggleMenu();
+    });
+  });
+})();
 </script>
 <script id="news-pulse-german-header-controller">
 (function () {
@@ -1099,56 +1247,6 @@ function toggleMenu(){
       checks += 1;
       if (checks >= 60) clearInterval(timer);
     }, 250);
-  });
-})();
-</script>
-<script id="news-pulse-menu-sync">
-(function () {
-  function syncMenuState(open) {
-    var checkbox = document.getElementById('menu-toggle');
-    var nav = document.getElementById('site-nav');
-    var button = document.querySelector('.nav-toggle');
-    if (!button) return;
-
-    if (typeof open !== 'boolean') {
-      open = !!((checkbox && checkbox.checked) || (nav && nav.classList.contains('nav-open')) || button.getAttribute('aria-expanded') === 'true');
-    }
-
-    button.setAttribute('aria-expanded', open ? 'true' : 'false');
-    button.textContent = open ? 'Close' : 'Menu';
-    if (checkbox) checkbox.checked = open;
-    if (nav) nav.classList.toggle('nav-open', open);
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var checkbox = document.getElementById('menu-toggle');
-    var button = document.querySelector('.nav-toggle');
-    var nav = document.getElementById('site-nav');
-    if (!button || !nav) return;
-
-    if (!button.hasAttribute('aria-expanded')) {
-      button.setAttribute('aria-expanded', 'false');
-    }
-
-    if (checkbox) {
-      checkbox.addEventListener('change', function () {
-        syncMenuState(checkbox.checked);
-      });
-    }
-
-    button.addEventListener('click', function () {
-      setTimeout(function () {
-        syncMenuState();
-      }, 0);
-    });
-
-    nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (window.innerWidth <= 760) syncMenuState(false);
-      });
-    });
-
-    syncMenuState(false);
   });
 })();
 </script>
