@@ -1454,23 +1454,23 @@ footer{
 }
 
 .world-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/radev-won.jpg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/fossil-fuel.jpg') center/cover !important;
 }
 
 .politics-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/middle-east-agenda.jpg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/falkland.jpg') center/cover !important;
 }
 
 .economic-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/global-markets.jpg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/us-inflation.jpg') center/cover !important;
 }
 
 .entertainment-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/Top-Gun-3.jpg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/spain-entertainment.jpg') center/cover !important;
 }
 
 .sport-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/carlos-nasar.jpeg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/real-madrid.jpg') center/cover !important;
 }
 
 .viral-lead{
@@ -1800,31 +1800,31 @@ footer{
 .world-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/radev-won.jpg') center/cover !important;
+    url('../images/fossil-fuel.jpg') center/cover !important;
 }
 
 .politics-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/midterm-elections.jpg') center/cover !important;
+    url('../images/falkland.jpg') center/cover !important;
 }
 
 .economic-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/global-markets.jpg') center/cover !important;
+    url('../images/us-inflation.jpg') center/cover !important;
 }
 
 .entertainment-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/Top-Gun-3.jpg') center/cover !important;
+    url('../images/spain-entertainment.jpg') center/cover !important;
 }
 
 .sport-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/carlos-nasar.jpeg') center/cover !important;
+    url('../images/real-madrid.jpg') center/cover !important;
 }
 
 .viral-page .category-lead{
