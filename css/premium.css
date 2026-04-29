@@ -1470,11 +1470,11 @@ footer{
 }
 
 .sport-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/real-madrid.jpg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/psg-bayern.jpg') center/cover !important;
 }
 
 .viral-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/bachelor-bg.jpg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/31-years-later.jpg') center/cover !important;
 }
 
 .category-focus-card strong{
@@ -1824,13 +1824,13 @@ footer{
 .sport-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/real-madrid.jpg') center/cover !important;
+    url('../images/psg-bayern.jpg') center/cover !important;
 }
 
 .viral-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/bachelor-bg.jpg') center/cover !important;
+    url('../images/31-years-later.jpg') center/cover !important;
 }
 
 @media (max-width:760px){

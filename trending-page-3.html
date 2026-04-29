@@ -101,6 +101,38 @@ try {
     img{max-width:100%;display:block}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.86);
+    }
+    .topbar-inner{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .breaking{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .breaking span{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#02111d;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 12px;
+      border-radius:999px;
+      flex-shrink:0;
+    }
+    .breaking p,.topbar-inner>p{margin:0}
+
     header{
       position:sticky;
       top:0;
@@ -129,6 +161,9 @@ try {
       color:#f4f8fd;
     }
 .logo span{color:var(--accent-2)}
+    .archive-copy h1 span{
+      color: var(--accent-2);
+    }
     .site-tagline{
       margin:0;
       color:#a8b4c6;
@@ -136,6 +171,13 @@ try {
       font-weight:500;
       letter-spacing:-0.02em;
       line-height:1.15;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
     .nav-links a{
       color:#d8e3f1;
@@ -361,22 +403,6 @@ try {
     }
 
     @media (max-width:900px){
-      .nav-toggle{display:inline-flex}
-      .nav-links{
-        position:absolute;
-        top:calc(100% + 10px);
-        left:16px;
-        right:16px;
-        padding:14px;
-        border-radius:24px;
-        border:1px solid var(--line);
-        background:rgba(8,18,33,0.98);
-        box-shadow:var(--shadow);
-        display:none;
-        flex-direction:column;
-        align-items:stretch;
-      }
-      .nav-links.nav-open{display:flex}
       .story-row{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
     }
@@ -387,6 +413,44 @@ try {
       .archive-card{padding:24px}
       .footer-grid{grid-template-columns:1fr}
       .pager-card{align-items:flex-start}
+    }
+    @media (max-width:760px){
+      .topbar:not(header){display:none}
+      .topbar-inner,
+      .navbar{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        padding:12px 16px;
+      }
+      .nav-toggle{
+        display:inline-flex;
+        margin-left:auto;
+      }
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+        position:static;
+        border:0;
+        background:transparent;
+        box-shadow:none;
+      }
+      .nav-links.nav-open{display:flex}
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
     }
   
     footer{
@@ -495,19 +559,91 @@ try {
       -webkit-backdrop-filter:none !important;
     }</style>
   <link rel="stylesheet" href="css/premium.css" />
-  <script src="js/consent-mode.js" defer></script>
+  <style id="homepage-mobile-menu-final">
+@media (max-width:760px){
+  .navbar{
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:14px !important;
+  }
+
+  .brand{
+    order:1 !important;
+    flex:1 1 auto !important;
+    max-width:calc(100% - 156px) !important;
+  }
+
+  .nav-toggle{
+    order:2 !important;
+    flex:0 0 auto !important;
+    margin-left:auto !important;
+    white-space:nowrap !important;
+  }
+
+  .navbar #site-nav{
+    display:none !important;
+    order:3 !important;
+    flex:0 0 100% !important;
+    width:100% !important;
+    margin-top:8px !important;
+  }
+
+  .navbar #site-nav.homepage-menu-open{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:8px !important;
+  }
+
+  .navbar #site-nav a,
+  .navbar #site-nav .lang-switch{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  body.homepage-lang-de .site-tagline{
+    max-width:12rem !important;
+    display:block !important;
+    line-height:1.08 !important;
+  }
+
+  body.homepage-lang-de .brand{
+    min-width:0 !important;
+    max-width:calc(100% - 156px) !important;
+  }
+
+  body.homepage-lang-de .logo{
+    max-width:100% !important;
+    font-size:clamp(1.85rem, 8vw, 2.2rem) !important;
+    line-height:.95 !important;
+    white-space:nowrap !important;
+  }
+
+  body.homepage-lang-de .nav-toggle{
+    align-self:flex-start !important;
+    margin-top:0 !important;
+  }
+}
+</style>
+<script src="js/consent-mode.js" defer></script>
 </head>
 <body class="trending-page trending-upgraded">
-  <div id="google_translate_element"></div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Trending</span>
+        <p>Track the stories gaining attention across news, markets, culture, sport, and viral moments.</p>
+      </div>
+      <p>Fast updates on what readers are following now.</p>
+    </div>
+  </div>
   <header>
     <div class="container navbar">
       <div class="brand">
         <a href="index.html" class="logo">News<span>Pulse+</span></a>
         <p class="site-tagline">The stories moving the world.</p>
       </div>
-
-      <input class="menu-toggle" id="menu-toggle" type="checkbox" aria-label="Toggle menu">
-      <label class="nav-toggle" for="menu-toggle">Menu</label>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" id="homepage-menu-button">Menu</button>
 
       <nav class="nav-links" id="site-nav">
         <a href="index.html" class="active">Home</a>
@@ -521,18 +657,20 @@ try {
       </nav>
     </div>
   </header>
+
+  <div id="google_translate_element"></div>
   <section class="archive-hero trending-archive-hero">
     <div class="container">
       <div class="archive-card trending-archive-card">
         <div class="archive-copy">
           <span class="eyebrow">Trending Archive</span>
-          <h1>All the stories moving through NewsPulse+ right now.</h1>
+          <h1>All the stories moving through News<span>Pulse+</span> right now.</h1>
           <p>A cleaner archive for fast scanning across World News, Politics, Economic, Entertainment, Sport, and Viral. Page 3 highlights stories 21-30 from the full trending index.</p>
         </div>
         <div class="archive-scoreboard" aria-label="Trending archive details">
           <div>
-            <span>Total stories</span>
-            <strong>47</strong>
+            <span>TOTAL STORIES</span>
+            <strong>50</strong>
           </div>
           <div>
             <span>This page</span>
@@ -567,8 +705,8 @@ try {
 
       <div class="trending-desk-stats">
         <div>
-          <span>Coverage</span>
-          <strong>47</strong>
+          <span>COVERAGE</span>
+            <strong>50</strong>
           <p>stories indexed across every section.</p>
         </div>
         <div>
@@ -608,6 +746,53 @@ try {
       </div>
 
                         <div class="stories-stack">
+<article class="story-row">
+          <a href="cat-steals-spotlight-live-tv-broadcast.html">
+            <img src="images/cat-broadcast.jpeg" alt="Cat live broadcast story">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span>Live TV</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>4 min read</span>
+            </div>
+            <h3><a href="cat-steals-spotlight-live-tv-broadcast.html">Cat Steals the Spotlight After Interrupting Live TV Broadcast</a></h3>
+            <p>A curious cat wandering into frame transformed a routine live segment into a viral clip full of humor, surprise, and broadcaster professionalism.</p>
+            <a class="story-link" href="cat-steals-spotlight-live-tv-broadcast.html">Read article &rarr;</a>
+          </div>
+        </article>
+<article class="story-row">
+          <a href="passenger-sparks-viral-moment-plane-window-shade.html">
+            <img src="images/window-shade.jpeg" alt="Plane window shade story">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span>Travel</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>4 min read</span>
+            </div>
+            <h3><a href="passenger-sparks-viral-moment-plane-window-shade.html">Passenger Sparks Viral Moment After Opening Plane Window Shade at Worst Time</a></h3>
+            <p>A flood of sunrise light across a dark cabin turned one routine flight moment into a global conversation about travel etiquette.</p>
+            <a class="story-link" href="passenger-sparks-viral-moment-plane-window-shade.html">Read article &rarr;</a>
+          </div>
+        </article>
+
+<article class="story-row">
+          <a href="gamer-secures-unexpected-victory.html">
+            <img src="images/gamer.jpg" alt="Gaming viral story">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span>Gaming</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>4 min read</span>
+            </div>
+            <h3><a href="gamer-secures-unexpected-victory.html">Gamer Secures Unexpected Victory After Accidental Play Goes Viral</a></h3>
+            <p>An apparent misclick turned into an unforgettable esports moment, showing how unpredictability can reshape a high-pressure match in seconds.</p>
+            <a class="story-link" href="gamer-secures-unexpected-victory.html">Read article &rarr;</a>
+          </div>
+        </article>
+
 <article class="story-row">
           <a href="self-driving-car-malfunction-sparks-debate.html">
             <img src="images/self-driving-car.jpg" alt="Self-driving car viral story">
@@ -720,57 +905,11 @@ try {
           </div>
         </article>
 
-<article class="story-row">
-          <a href="global-music-industry-grows-through-collaboration.html">
-            <img src="images/global-music.jpg" alt="Global music collaboration story">
-          </a>
-          <div class="story-copy">
-            <div class="story-meta">
-              <span>Music</span>
-              <span>By Ivaylo Tsvetkov News Pulse+</span>
-              <span>4 min read</span>
-            </div>
-            <h3><a href="global-music-industry-grows-through-collaboration.html">Global music industry grows through collaboration</a></h3>
-            <p>Cross-border partnerships, streaming reach, and festival culture are helping reshape how global audiences discover music.</p>
-            <a class="story-link" href="global-music-industry-grows-through-collaboration.html">Read article &rarr;</a>
-          </div>
-        </article>
 
-<article class="story-row">
-          <a href="olivier-awards-underline-theatres-lasting-appeal.html">
-            <img src="images/olivier-awards.jpeg" alt="Olivier Awards story">
-          </a>
-          <div class="story-copy">
-            <div class="story-meta">
-              <span>Awards</span>
-              <span>By Ivaylo Tsvetkov News Pulse+</span>
-              <span>4 min read</span>
-            </div>
-            <h3><a href="olivier-awards-underline-theatres-lasting-appeal.html">Olivier Awards underline theatre's lasting appeal</a></h3>
-            <p>The awards have highlighted theatre's creativity, live connection, and ability to keep evolving even in a digital-first entertainment landscape.</p>
-            <a class="story-link" href="olivier-awards-underline-theatres-lasting-appeal.html">Read article &rarr;</a>
-          </div>
-        </article>
-
-<article class="story-row">
-          <a href="celebrity-influence-continues-to-shape-entertainment.html">
-            <img src="images/sydney-sweeney.jpg" alt="Celebrity culture story">
-          </a>
-          <div class="story-copy">
-            <div class="story-meta">
-              <span>Celebrity</span>
-              <span>By Ivaylo Tsvetkov News Pulse+</span>
-              <span>4 min read</span>
-            </div>
-            <h3><a href="celebrity-influence-continues-to-shape-entertainment.html">Celebrity influence continues to shape entertainment</a></h3>
-            <p>Celebrity narratives remain central to how audiences engage with media, brand partnerships, and the wider entertainment conversation.</p>
-            <a class="story-link" href="celebrity-influence-continues-to-shape-entertainment.html">Read article &rarr;</a>
-          </div>
-        </article>
       </div>
 
       <div class="pager-card">
-        <div class="pager-meta">Showing stories 21-30 of 47 trending stories. Up to 10 stories will appear on each archive page.</div>
+        <div class="pager-meta">Showing stories 21-30 of 50 trending stories. Up to 10 stories will appear on each archive page.</div>
                 <div class="pager-actions">
           <a class="pager-btn" href="trending.html">1</a>
           <a class="pager-btn" href="trending-page-2.html">2</a>
@@ -940,7 +1079,10 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     var label = document.getElementById('lang-text');
     lang = lang || savedLanguage();
     if (label) label.textContent = labels[lang] || 'EN';
-    if (document.body) document.body.classList.toggle('site-lang-de', lang === 'de');
+    if (document.body) {
+      document.body.classList.toggle('site-lang-de', lang === 'de');
+      document.body.classList.toggle('homepage-lang-de', lang === 'de');
+    }
   }
 
   function setTranslateCookie(lang) {
@@ -1042,29 +1184,44 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
   });
 })();
 </script>
-<script>
-function toggleMenu(){
-  var nav = document.getElementById("site-nav");
-  var btn = document.querySelector(".nav-toggle");
-  if (!nav || !btn) return;
+<script id="homepage-menu-script">
+(function () {
+  function setMenu(open) {
+    var nav = document.getElementById('site-nav');
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!nav || !button) return;
 
-  var isOpen = btn.getAttribute("aria-expanded") !== "true";
+    nav.classList.toggle('homepage-menu-open', open);
+    nav.classList.toggle('nav-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
 
-  btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  btn.textContent = isOpen ? "Close" : "Menu";
-
-  if (isOpen) {
-    nav.classList.add("nav-open");
-    nav.style.display = "grid";
-    nav.style.gridTemplateColumns = "repeat(2, minmax(0, 1fr))";
-    nav.style.width = "100%";
-  } else {
-    nav.classList.remove("nav-open");
-    nav.style.display = "";
-    nav.style.gridTemplateColumns = "";
-    nav.style.width = "";
+    if (open) {
+      nav.style.setProperty('display', 'grid', 'important');
+      nav.style.setProperty('grid-template-columns', 'repeat(2, minmax(0, 1fr))', 'important');
+      nav.style.setProperty('width', '100%', 'important');
+    } else {
+      nav.style.removeProperty('display');
+      nav.style.removeProperty('grid-template-columns');
+      nav.style.removeProperty('width');
+    }
   }
-}
+
+  window.toggleMenu = function () {
+    var nav = document.getElementById('site-nav');
+    setMenu(!(nav && nav.classList.contains('homepage-menu-open')));
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.toggleMenu();
+    });
+  });
+})();
 </script>
 <script id="news-pulse-german-header-controller">
 (function () {
@@ -1090,6 +1247,7 @@ function toggleMenu(){
     var select = document.querySelector('.goog-te-combo');
     var isGerman = savedLanguage() === 'de' || cookieLanguage() === 'de' || (select && select.value === 'de') || headerLooksGerman();
     document.body.classList.toggle('site-lang-de', isGerman);
+    document.body.classList.toggle('homepage-lang-de', isGerman);
   }
 
   window.newsPulseUpdateGermanHeader = updateGermanHeader;
@@ -1111,77 +1269,5 @@ function toggleMenu(){
   });
 })();
 </script>
-<script id="news-pulse-menu-sync">
-(function () {
-  function syncMenuState(open) {
-    var checkbox = document.getElementById('menu-toggle');
-    var nav = document.getElementById('site-nav');
-    var button = document.querySelector('.nav-toggle');
-    if (!button) return;
-
-    if (typeof open !== 'boolean') {
-      open = !!((checkbox && checkbox.checked) || (nav && nav.classList.contains('nav-open')) || button.getAttribute('aria-expanded') === 'true');
-    }
-
-    button.setAttribute('aria-expanded', open ? 'true' : 'false');
-    button.textContent = open ? 'Close' : 'Menu';
-    if (checkbox) checkbox.checked = open;
-    if (nav) nav.classList.toggle('nav-open', open);
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var checkbox = document.getElementById('menu-toggle');
-    var button = document.querySelector('.nav-toggle');
-    var nav = document.getElementById('site-nav');
-    if (!button || !nav) return;
-
-    if (!button.hasAttribute('aria-expanded')) {
-      button.setAttribute('aria-expanded', 'false');
-    }
-
-    if (checkbox) {
-      checkbox.addEventListener('change', function () {
-        syncMenuState(checkbox.checked);
-      });
-    }
-
-    button.addEventListener('click', function () {
-      setTimeout(function () {
-        syncMenuState();
-      }, 0);
-    });
-
-    nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (window.innerWidth <= 760) syncMenuState(false);
-      });
-    });
-
-    syncMenuState(false);
-  });
-})();
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

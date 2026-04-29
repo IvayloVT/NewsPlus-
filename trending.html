@@ -188,7 +188,9 @@ try {
       background:rgba(255,255,255,0.08);
       color:#fff;
     }
-
+    .archive-copy h1 span{
+      color: var(--accent-2);
+    }
     .lang-switch{
       display:inline-flex;
       align-items:center;
@@ -423,13 +425,6 @@ try {
     }
 
     @media (max-width:900px){
-      .nav-toggle{display:inline-flex}
-      .nav-links{
-        display:none;
-        flex-direction:column;
-        align-items:center;
-      }
-      .nav-links.nav-open{display:flex}
       .story-row{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
     }
@@ -446,6 +441,44 @@ try {
       .archive-card{padding:24px}
       .footer-grid{grid-template-columns:1fr}
       .pager-card{align-items:flex-start}
+    }
+    @media (max-width:760px){
+      .topbar:not(header){display:none}
+      .topbar-inner,
+      .navbar{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        padding:12px 16px;
+      }
+      .nav-toggle{
+        display:inline-flex;
+        margin-left:auto;
+      }
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+        position:static;
+        border:0;
+        background:transparent;
+        box-shadow:none;
+      }
+      .nav-links.nav-open{display:flex}
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
     }
   
     footer{
@@ -619,7 +652,7 @@ try {
   }
 }
 </style>
-  <script src="js/consent-mode.js" defer></script>
+<script src="js/consent-mode.js" defer></script>
 </head>
 <body class="trending-page trending-upgraded">
   <div class="topbar">
@@ -631,15 +664,12 @@ try {
       <p>Fast updates on what readers are following now.</p>
     </div>
   </div>
-
-  <div id="google_translate_element"></div>
   <header>
     <div class="container navbar">
       <div class="brand">
         <a href="index.html" class="logo">News<span>Pulse+</span></a>
         <p class="site-tagline">The stories moving the world.</p>
       </div>
-
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" id="homepage-menu-button">Menu</button>
 
       <nav class="nav-links" id="site-nav">
@@ -654,18 +684,20 @@ try {
       </nav>
     </div>
   </header>
+
+  <div id="google_translate_element"></div>
   <section class="archive-hero trending-archive-hero">
     <div class="container">
       <div class="archive-card trending-archive-card">
         <div class="archive-copy">
           <span class="eyebrow">Trending Archive</span>
-          <h1>All the stories moving through NewsPulse+ right now.</h1>
+          <h1>All the stories moving through News<span>Pulse+</span> right now.</h1>
           <p>A cleaner archive for fast scanning across World News, Politics, Economic, Entertainment, Sport, and Viral. Page 1 highlights the freshest stories from the full trending index.</p>
         </div>
         <div class="archive-scoreboard" aria-label="Trending archive details">
           <div>
-            <span>Total stories</span>
-            <strong>47</strong>
+            <span>TOTAL STORIES</span>
+            <strong>50</strong>
           </div>
           <div>
             <span>This page</span>
@@ -689,7 +721,7 @@ try {
 
   <section class="trending-desk-summary">
     <div class="container trending-desk-grid">
-      <a class="trending-desk-lead" href="middle-east-crisis-shapes-global-political-agenda.html">
+      <a class="trending-desk-lead">
         <img src="images/newsroom.jpg" alt="Blue-lit newsroom studio with large broadcast screens">
         <div>
           <span>Live Desk Lead</span>
@@ -700,8 +732,8 @@ try {
 
       <div class="trending-desk-stats">
         <div>
-          <span>Coverage</span>
-          <strong>47</strong>
+          <span>COVERAGE</span>
+            <strong>50</strong>
           <p>stories indexed across every section.</p>
         </div>
         <div>
@@ -741,6 +773,53 @@ try {
       </div>
 
                         <div class="stories-stack">
+<article class="story-row">
+          <a href="psg-bayern-champions-league-semi-final-thriller.html">
+            <img src="images/psg-bayern.jpg" alt="PSG and Bayern Munich Champions League semi-final graphic">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span class="category-pill">Football</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>5 min read</span>
+            </div>
+            <h3><a href="psg-bayern-champions-league-semi-final-thriller.html">PSG edge Bayern in record-breaking Champions League semi-final thriller</a></h3>
+            <p>PSG claimed a dramatic 5-4 first-leg win over Bayern in a nine-goal Champions League semi-final classic.</p>
+            <a class="story-link" href="psg-bayern-champions-league-semi-final-thriller.html">Read article &rarr;</a>
+          </div>
+        </article>
+<article class="story-row">
+          <a href="31-years-later-bulgaria-theft-case-closed.html">
+            <img src="images/31-years-later.jpg" alt="Sofia district court building in Bulgaria">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span>Bulgaria</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>4 min read</span>
+            </div>
+            <h3><a href="31-years-later-bulgaria-theft-case-closed.html">31 Years Later: Woman in Bulgaria receives notice about a long-closed theft case</a></h3>
+            <p>A decades-late official notice about a 1995 burglary has raised questions about justice delays and communication.</p>
+            <a class="story-link" href="31-years-later-bulgaria-theft-case-closed.html">Read article &rarr;</a>
+          </div>
+        </article>
+
+<article class="story-row">
+          <a href="harry-styles-zoe-engagement-rumors.html">
+            <img src="images/harry-styles-zoe.jpg" alt="Harry Styles and Zoe Kravitz walking together during a public appearance">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span>Celebrity</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>4 min read</span>
+            </div>
+            <h3><a href="harry-styles-zoe-engagement-rumors.html">Engagement rumors surround Harry Styles and Zoe Kravitz after recent appearance</a></h3>
+            <p>A public outing and ring speculation pushed the celebrity rumor cycle into a fast-moving online conversation.</p>
+            <a class="story-link" href="harry-styles-zoe-engagement-rumors.html">Read article &rarr;</a>
+          </div>
+        </article>
+
 <article class="story-row">
           <a href="bachelor-bulgaria-shock-exits-four-women.html">
             <img src="images/bachelor-bg.jpg" alt="The Bachelor Bulgaria scene with roses and contestants">
@@ -853,57 +932,11 @@ try {
           </div>
         </article>
 
-<article class="story-row">
-          <a href="global-markets-unsettled-rising-middle-east-tensions.html">
-            <img src="images/global-markets-unsettled.jpg" alt="Global markets unsettled visual">
-          </a>
-          <div class="story-copy">
-            <div class="story-meta">
-              <span>Global Economy</span>
-              <span>By Ivaylo Tsvetkov News Pulse+</span>
-              <span>4 min read</span>
-            </div>
-            <h3><a href="global-markets-unsettled-rising-middle-east-tensions.html">Global markets unsettled by rising Middle East tensions.</a></h3>
-            <p>Energy-price spikes, trade-route disruption, and investor caution are creating fresh instability across global markets.</p>
-            <a class="story-link" href="global-markets-unsettled-rising-middle-east-tensions.html">Read article &rarr;</a>
-          </div>
-        </article>
 
-<article class="story-row">
-          <a href="uk-economy-under-strain-confidence-weakens.html">
-            <img src="images/uk-economy-under.jpg" alt="UK market graphic showing financial strain and weakening confidence">
-          </a>
-          <div class="story-copy">
-            <div class="story-meta">
-              <span>United Kingdom</span>
-              <span>By Ivaylo Tsvetkov News Pulse+</span>
-              <span>4 min read</span>
-            </div>
-            <h3><a href="uk-economy-under-strain-confidence-weakens.html">UK economy under strain as confidence weakens.</a></h3>
-            <p>Consumers and businesses are becoming more cautious as higher costs, weaker demand, and wider instability weigh on the UK outlook.</p>
-            <a class="story-link" href="uk-economy-under-strain-confidence-weakens.html">Read article &rarr;</a>
-          </div>
-        </article>
-
-<article class="story-row">
-          <a href="uk-under-pressure-falklands-tensions-domestic-controversies.html">
-            <img src="images/falkland.jpg" alt="British politician speaking in Parliament during a period of political pressure">
-          </a>
-          <div class="story-copy">
-            <div class="story-meta">
-              <span>United Kingdom</span>
-              <span>By Ivaylo Tsvetkov News Pulse+</span>
-              <span>4 min read</span>
-            </div>
-            <h3><a href="uk-under-pressure-falklands-tensions-domestic-controversies.html">UK under pressure amid Falklands tensions and domestic controversies</a></h3>
-            <p>Renewed Falklands tensions and a series of domestic controversies are putting fresh pressure on the UK government and sharpening debate over leadership and credibility.</p>
-            <a class="story-link" href="uk-under-pressure-falklands-tensions-domestic-controversies.html">Read article &rarr;</a>
-          </div>
-        </article>
       </div>
 
       <div class="pager-card">
-        <div class="pager-meta">Showing stories 1-10 of 47 trending stories.</div>
+        <div class="pager-meta">Showing stories 1-10 of 50 trending stories.</div>
                 <div class="pager-actions">
           <span class="pager-btn active">1</span>
           <a class="pager-btn" href="trending-page-2.html">2</a>
@@ -1073,7 +1106,10 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     var label = document.getElementById('lang-text');
     lang = lang || savedLanguage();
     if (label) label.textContent = labels[lang] || 'EN';
-    if (document.body) document.body.classList.toggle('site-lang-de', lang === 'de');
+    if (document.body) {
+      document.body.classList.toggle('site-lang-de', lang === 'de');
+      document.body.classList.toggle('homepage-lang-de', lang === 'de');
+    }
   }
 
   function setTranslateCookie(lang) {
@@ -1238,6 +1274,7 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
     var select = document.querySelector('.goog-te-combo');
     var isGerman = savedLanguage() === 'de' || cookieLanguage() === 'de' || (select && select.value === 'de') || headerLooksGerman();
     document.body.classList.toggle('site-lang-de', isGerman);
+    document.body.classList.toggle('homepage-lang-de', isGerman);
   }
 
   window.newsPulseUpdateGermanHeader = updateGermanHeader;
@@ -1261,23 +1298,3 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
