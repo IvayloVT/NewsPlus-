@@ -3056,6 +3056,25 @@ body.trending-page .nav-links a:hover{
   color:#fff !important;
 }
 
+@media (min-width:761px){
+  body.trending-page .navbar{
+    flex-wrap:nowrap !important;
+  }
+
+  body.trending-page .nav-links{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    flex-wrap:nowrap !important;
+    gap:8px !important;
+  }
+
+  body.trending-page .nav-links a,
+  body.trending-page .lang-switch{
+    flex-shrink:0 !important;
+    white-space:nowrap !important;
+  }
+}
+
 @media (max-width:760px){
   body.trending-page .navbar{
     align-items:flex-start !important;
