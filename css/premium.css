@@ -329,7 +329,7 @@ iframe.skiptranslate,
   min-height:610px !important;
   background:
     linear-gradient(180deg, rgba(5,12,22,0.08) 0%, rgba(5,12,22,0.38) 48%, rgba(5,12,22,0.92) 100%),
-    url('../images/radev-won.jpg') center/cover !important;
+    url('../images/trump-charles.jpg?v=20260429f') center/cover !important;
 }
 
 .homepage-lead .hero-main-content{
@@ -1458,7 +1458,7 @@ footer{
 }
 
 .politics-lead{
-  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/falkland.jpg') center/cover !important;
+  background:linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.22) 100%), url('../images/trump-charles.jpg?v=20260429f') center/cover !important;
 }
 
 .economic-lead{
@@ -1806,7 +1806,7 @@ footer{
 .politics-page .category-lead{
   background:
     linear-gradient(90deg, rgba(5,12,22,0.94) 0%, rgba(5,12,22,0.66) 45%, rgba(5,12,22,0.2) 100%),
-    url('../images/falkland.jpg') center/cover !important;
+    url('../images/trump-charles.jpg?v=20260429f') center/cover !important;
 }
 
 .economic-page .category-lead{
