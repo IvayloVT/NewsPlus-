@@ -382,13 +382,21 @@ try {
     }
     .hero-side-item:first-child{border-top:0;padding-top:0}
     .hero-side-item .tag{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      width:auto;
+      padding:7px 12px;
+      border:1px solid rgba(155,232,255,0.18);
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2)) !important;
       font-size:.76rem;
       font-weight:800;
-      color:var(--accent-2);
+      color:#03101c !important;
       text-transform:uppercase;
       letter-spacing:.08em;
-      margin-bottom:8px;
+      margin-bottom:12px;
+      line-height:1;
+      box-shadow:none !important;
     }
     .hero-side-item h4{
       margin:0 0 8px;
@@ -573,6 +581,99 @@ try {
       line-height:1.55;
     }
 
+    .reader-choice-section{
+      margin-top:46px;
+      padding:34px;
+      border:1px solid rgba(155,232,255,0.14);
+      border-radius:24px;
+      background:
+        linear-gradient(135deg, rgba(123,209,255,0.10), rgba(7,17,31,0) 38%),
+        linear-gradient(180deg, rgba(11,24,42,0.92), rgba(5,12,22,0.98));
+      box-shadow:0 24px 70px rgba(0,0,0,0.24);
+    }
+    .reader-choice-header{
+      align-items:flex-start;
+      margin-bottom:24px;
+      padding-bottom:22px;
+      border-bottom:1px solid rgba(155,232,255,0.12);
+    }
+    .reader-choice-header h2{
+      font-size:clamp(1.9rem, 3vw, 2.65rem);
+      letter-spacing:-0.02em;
+    }
+    .reader-choice-header p{
+      max-width:760px;
+      font-size:1rem;
+      line-height:1.65;
+      color:#c4d3e5;
+    }
+    .reader-choice-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:18px;
+    }
+    .reader-choice-card{
+      position:relative;
+      min-height:240px;
+      padding:24px;
+      border:1px solid rgba(155,232,255,0.14);
+      border-radius:18px;
+      background:
+        linear-gradient(180deg, rgba(15,32,54,0.92), rgba(8,18,32,0.94));
+      overflow:hidden;
+      transition:transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .reader-choice-card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto;
+      height:3px;
+      background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+    .reader-choice-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(155,232,255,0.28);
+      background:
+        linear-gradient(180deg, rgba(18,39,64,0.96), rgba(8,18,32,0.96));
+    }
+    .reader-choice-number{
+      display:block;
+      margin-bottom:26px;
+      color:rgba(123,209,255,0.30);
+      font-size:2.35rem;
+      line-height:1;
+      font-weight:800;
+    }
+    .reader-choice-card .tag{
+      display:inline-flex;
+      width:auto;
+      margin:0 0 14px;
+      padding:7px 10px;
+      border:1px solid rgba(155,232,255,0.18);
+      border-radius:999px;
+      background:rgba(123,209,255,0.11) !important;
+      color:#9be8ff !important;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      box-shadow:none !important;
+    }
+    .reader-choice-card h4{
+      margin:0 0 14px;
+      max-width:520px;
+      color:#f4f8ff;
+      font-size:1.14rem;
+      line-height:1.35;
+      letter-spacing:0;
+    }
+    .reader-choice-card p{
+      margin:0;
+      color:#b8c7da;
+      font-size:.95rem;
+      line-height:1.65;
+    }
+
     .category-grid{
       display:grid;
       grid-template-columns:repeat(6, 1fr);
@@ -666,6 +767,12 @@ try {
       .newsletter-card{
         grid-template-columns:1fr;
       }
+      .reader-choice-grid{
+        grid-template-columns:1fr;
+      }
+      .reader-choice-card{
+        min-height:0;
+      }
       .top-stories-grid{
         grid-template-columns:repeat(2, 1fr);
       }
@@ -726,6 +833,21 @@ try {
       }
       .hero-main-content{
         padding:24px;
+      }
+      .reader-choice-section{
+        padding:22px;
+        border-radius:18px;
+      }
+      .reader-choice-header{
+        margin-bottom:18px;
+        padding-bottom:18px;
+      }
+      .reader-choice-card{
+        padding:20px;
+      }
+      .reader-choice-number{
+        margin-bottom:18px;
+        font-size:1.9rem;
       }
       .top-stories-grid,
       .category-grid{
@@ -986,26 +1108,29 @@ try {
   <main>
     <div class="container">
 
-      <section>
-        <div class="section-header">
+      <section class="reader-choice-section">
+        <div class="section-header reader-choice-header">
           <div>
             <h2>Why Readers Choose News<span class="brand-accent">Pulse+</span></h2>
             <p>NewsPulse+ is built for readers who want more than a list of headlines. Each story is shaped around useful context, quick summaries, and clear analysis of why the topic matters now.</p>
           </div>
         </div>
-        <div class="mini-grid">
-          <div class="mini-card">
+        <div class="reader-choice-grid">
+          <div class="reader-choice-card">
+            <span class="reader-choice-number">01</span>
             <span class="tag">Fast Context</span>
             <h4>Short summaries that explain the story before the details.</h4>
             <p>Articles are written to help readers understand the main point quickly, then explore the wider background.</p>
           </div>
-          <div class="mini-card">
+          <div class="reader-choice-card">
+            <span class="reader-choice-number">02</span>
             <span class="tag">Analysis</span>
             <h4>Coverage connects politics, economics, culture, sport, and online trends.</h4>
             <p>The site looks for the bigger pattern behind individual stories instead of treating every headline in isolation.</p>
           </div>
-          <div class="mini-card">
-            <span class="tag">EDITORIAL STANDARDS</span>
+          <div class="reader-choice-card">
+            <span class="reader-choice-number">03</span>
+            <span class="tag">Editorial Standards</span>
             <h4>Trusted journalism, built on accuracy and transparency.</h4>
             <p>NewsPulse+ delivers reliable global news coverage carefully reviewed for accuracy, clarity, and relevance.</p>
           </div>
@@ -1454,6 +1579,3 @@ window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
 </script>
 </body>
 </html>
-
-
-
