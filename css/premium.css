@@ -2393,8 +2393,10 @@ footer{
 
   .premium-footer .footer-brief .footer-pill{
     width:100% !important;
+    min-height:48px !important;
     justify-content:center;
     margin-top:4px !important;
+    padding:0 18px !important;
   }
 }
 /* High contrast accent buttons */
