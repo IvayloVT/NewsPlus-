@@ -1174,7 +1174,7 @@ try {
         var spans = meta ? Array.from(meta.querySelectorAll('span')).map(function (span) { return span.textContent.trim(); }) : [];
         var author = spans.find(function (text) { return text.toLowerCase().includes('ivaylo') || text.toLowerCase().includes('author'); }) || 'Ivaylo Tsvetkov';
         var date = spans.find(function (text) { return text.toLowerCase().includes('2026') || text.toLowerCase().includes('april'); }) || 'April 2026';
-        var read = spans.find(function (text) { return text.toLowerCase().includes('min'); }) || '5 min read';
+        var read = spans.find(function (text) { return text.toLowerCase().includes('min'); }) || '4 min read';
         var strip = document.createElement('div');
         strip.className = 'article-detail-strip';
         strip.innerHTML =
