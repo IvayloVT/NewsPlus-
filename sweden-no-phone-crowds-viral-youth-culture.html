@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox | News Pulse+</title>
+  <title>Sweden's No Phone Weekend Movement Gains Momentum as Thousands Embrace Digital Detox | News Pulse+</title>
   <meta name="description" content="Across Sweden, the No Phone Weekend movement is gaining momentum as people step away from smartphones, social media, and digital overload to reconnect offline." />
   <meta name="keywords" content="Sweden No Phone Weekend, digital detox, smartphone habits, mental health, digital wellbeing, social media breaks, News Pulse+" />
   <meta name="theme-color" content="#07111f" />
@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://newspulseplus.com/sweden-no-phone-crowds-viral-youth-culture.html" />
   <meta name="robots" content="index, follow" />
   <meta property="og:site_name" content="NewsPulse+" />
-  <meta property="og:title" content="Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox" />
+  <meta property="og:title" content="Sweden's No Phone Weekend Movement Gains Momentum as Thousands Embrace Digital Detox" />
   <meta property="og:description" content="Across Sweden, the No Phone Weekend movement is gaining momentum as people step away from smartphones, social media, and digital overload to reconnect offline." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://newspulseplus.com/sweden-no-phone-crowds-viral-youth-culture.html" />
@@ -23,10 +23,10 @@
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:alt" content="Young crowd in Sweden holding phones during a night-time public gathering" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox" />
+  <meta name="twitter:title" content="Sweden's No Phone Weekend Movement Gains Momentum as Thousands Embrace Digital Detox" />
   <meta name="twitter:description" content="Across Sweden, the No Phone Weekend movement is gaining momentum as people step away from smartphones, social media, and digital overload to reconnect offline." />
   <meta name="twitter:image" content="https://newspulseplus.com/images/sweden-nophone.jpg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","name":"Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox","headline":"Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox","description":"Across Sweden, the No Phone Weekend movement is gaining momentum as people step away from smartphones, social media, and digital overload to reconnect offline.","url":"https://newspulseplus.com/sweden-no-phone-crowds-viral-youth-culture.html","image":["https://newspulseplus.com/images/sweden-nophone.jpg"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/"},"author":{"@type":"Person","name":"Ivaylo Tsvetkov","description":"Founder of NewsPulse+, covering global politics, economics, public-interest news, sport, entertainment, and digital culture."},"articleSection":"Viral","datePublished":"2026-05-01"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","name":"Sweden's No Phone Weekend Movement Gains Momentum as Thousands Embrace Digital Detox","headline":"Sweden's No Phone Weekend Movement Gains Momentum as Thousands Embrace Digital Detox","description":"Across Sweden, the No Phone Weekend movement is gaining momentum as people step away from smartphones, social media, and digital overload to reconnect offline.","url":"https://newspulseplus.com/sweden-no-phone-crowds-viral-youth-culture.html","image":["https://newspulseplus.com/images/sweden-nophone.jpg"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/"},"author":{"@type":"Person","name":"Ivaylo Tsvetkov","description":"Founder of NewsPulse+, covering global politics, economics, public-interest news, sport, entertainment, and digital culture."},"articleSection":"Viral","datePublished":"2026-05-01"}</script>
 <script data-news-pulse-consent-default>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -854,7 +854,7 @@ try {
         </div>
         <div class="hero-content">
           <span class="eyebrow">Viral</span>
-          <h1>Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox</h1>
+          <h1>Sweden's No Phone Weekend Movement Gains Momentum as Thousands Embrace Digital Detox</h1>
           <p>
             Sweden's growing No Phone Weekend trend is turning digital detox into a national conversation about mental health, attention, productivity, and real-world connection.
           </p>
@@ -1128,23 +1128,30 @@ try {
       button.setAttribute("aria-expanded", String(isOpen));
     }
 
+
+
     function copyArticleLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        alert("Article link copied.");
-      }).catch(() => {
-        alert("Unable to copy the link right now.");
-      });
+      const url = window.location.href;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(() => {
+          alert('Article link copied.');
+        }).catch(() => {
+          prompt('Copy this link:', url);
+        });
+        return;
+      }
+      prompt('Copy this link:', url);
     }
 
     function shareOnX() {
-      const text = encodeURIComponent("Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox");
+      const text = encodeURIComponent('Sweden\'s No Phone Weekend Movement Gains Momentum as Thousands Embrace Digital Detox');
       const url = encodeURIComponent(window.location.href);
-      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+      window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank', 'noopener,noreferrer');
     }
 
     function shareOnFacebook() {
       const url = encodeURIComponent(window.location.href);
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank', 'noopener,noreferrer');
     }
   </script>
   <script>
