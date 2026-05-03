@@ -672,6 +672,9 @@ try {
     }</style>
   <link rel="stylesheet" href="css/premium.css" />
   <script src="js/consent-mode.js" defer></script>
+<style id="news-pulse-language-switcher-style">
+.language-switcher{position:relative;display:inline-block}.language-current{border:1px solid rgba(80,180,255,.35);background:rgba(8,18,32,.82);color:#eaf6ff;padding:10px 14px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;backdrop-filter:blur(14px);box-shadow:0 0 18px rgba(0,170,255,.18)}.language-menu{position:absolute;top:115%;right:0;min-width:180px;padding:10px;border-radius:18px;background:rgba(5,12,24,.96);border:1px solid rgba(80,180,255,.25);box-shadow:0 20px 45px rgba(0,0,0,.45);backdrop-filter:blur(18px);opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s ease;z-index:9999}.language-menu a{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:12px;color:#dff4ff;text-decoration:none;font-size:14px;font-weight:600}.language-menu a:hover{background:rgba(0,170,255,.14);color:#fff}.language-switcher:hover .language-menu,.language-switcher:focus-within .language-menu{opacity:1;visibility:visible;transform:translateY(0)}.language-menu .flag-icon{width:22px;height:14px;display:inline-block;flex:0 0 22px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 2px 6px rgba(0,0,0,.24);overflow:hidden}.flag-uk{background:linear-gradient(33deg,transparent 42%,#fff 42%,#fff 48%,#c8102e 48%,#c8102e 54%,#fff 54%,#fff 60%,transparent 60%),linear-gradient(147deg,transparent 42%,#fff 42%,#fff 48%,#c8102e 48%,#c8102e 54%,#fff 54%,#fff 60%,transparent 60%),linear-gradient(90deg,transparent 38%,#fff 38%,#fff 45%,#c8102e 45%,#c8102e 55%,#fff 55%,#fff 62%,transparent 62%),linear-gradient(0deg,transparent 34%,#fff 34%,#fff 43%,#c8102e 43%,#c8102e 57%,#fff 57%,#fff 66%,transparent 66%),#012169}.flag-bg{background:linear-gradient(to bottom,#fff 0 33.33%,#00966e 33.33% 66.66%,#d62612 66.66% 100%)}.flag-fr{background:linear-gradient(to right,#0055a4 0 33.33%,#fff 33.33% 66.66%,#ef4135 66.66% 100%)}.flag-de{background:linear-gradient(to bottom,#000 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66% 100%)}.flag-es{background:linear-gradient(to bottom,#aa151b 0 25%,#f1bf00 25% 75%,#aa151b 75% 100%)}@media (max-width:760px){.nav-links .language-switcher,.navbar #site-nav .language-switcher{width:100%!important;grid-column:1/-1!important;max-width:320px!important;justify-self:center!important;margin:0 auto!important}.nav-links .language-current,.navbar #site-nav .language-current{width:100%!important;min-height:58px!important;text-align:center!important}.nav-links .language-menu,.navbar #site-nav .language-menu{position:static!important;width:100%!important;margin-top:10px!important;display:none;flex-direction:column!important;gap:8px!important;opacity:1!important;visibility:visible!important;transform:none!important}.nav-links .language-switcher:hover .language-menu,.nav-links .language-switcher:focus-within .language-menu,.navbar #site-nav .language-switcher:hover .language-menu,.navbar #site-nav .language-switcher:focus-within .language-menu{display:flex!important}}
+</style>
 </head>
 <body class="privacy-photo-page">
 
@@ -703,7 +706,19 @@ try {
         <a href="entertainment.html">Entertainment</a>
         <a href="sport.html">Sport</a>
         <a href="viral.html">Viral</a>
-              <button class="lang-switch" onclick="toggleLanguage()"><span id="lang-text">EN</span></button>
+              <div class="language-switcher">
+          <button class="language-current" type="button">
+            &#127760; English
+          </button>
+
+          <div class="language-menu">
+            <a href="#" data-lang="en"><span class="flag-icon flag-uk" aria-hidden="true"></span>English</a>
+            <a href="#" data-lang="bg"><span class="flag-icon flag-bg" aria-hidden="true"></span>&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;</a>
+            <a href="#" data-lang="fr"><span class="flag-icon flag-fr" aria-hidden="true"></span>Fran&ccedil;ais</a>
+            <a href="#" data-lang="de"><span class="flag-icon flag-de" aria-hidden="true"></span>Deutsch</a>
+            <a href="#" data-lang="es"><span class="flag-icon flag-es" aria-hidden="true"></span>Espa&ntilde;ol</a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -1243,6 +1258,19 @@ function toggleMenu(){
 
     syncMenuState(false);
   });
+})();
+</script>
+<script id="news-pulse-language-dropdown-controller">
+(function(){
+  var labels={en:'English',bg:'\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438',fr:'Fran\u00e7ais',de:'Deutsch',es:'Espa\u00f1ol'};
+  function saved(){try{return localStorage.getItem('preferredLang')||'en'}catch(e){return 'en'}}
+  function setButton(lang){var current=document.querySelector('.language-current');if(current)current.innerHTML='&#127760; '+(labels[lang]||'English');}
+  function setCookie(lang){var value='/en/'+lang;var expires='expires='+new Date(Date.now()+365*24*60*60*1000).toUTCString();var base='googtrans='+value+'; '+expires+'; path=/';document.cookie=base;if(location.hostname&&location.hostname.indexOf('.')!==-1){document.cookie=base+'; domain='+location.hostname;document.cookie=base+'; domain=.'+location.hostname.replace(/^www\./,'');}}
+  function clearCookie(){document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';if(location.hostname&&location.hostname.indexOf('.')!==-1){document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain='+location.hostname;document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.'+location.hostname.replace(/^www\./,'');}}
+  function loadTranslate(){if(location.protocol!=='http:'&&location.protocol!=='https:')return;if(document.querySelector('script[data-news-pulse-translate]'))return;var script=document.createElement('script');script.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';script.async=true;script.setAttribute('data-news-pulse-translate','true');document.head.appendChild(script);}
+  function trigger(lang,attempt){var select=document.querySelector('.goog-te-combo');if(select){select.value=lang;select.dispatchEvent(new Event('change',{bubbles:true}));return true;}loadTranslate();if((attempt||0)<24)setTimeout(function(){trigger(lang,(attempt||0)+1)},250);return false;}
+  window.newsPulseChooseLanguage=function(lang){try{localStorage.setItem('preferredLang',lang)}catch(e){}setButton(lang);if(location.protocol!=='http:'&&location.protocol!=='https:')return;if(lang==='en'){clearCookie();window.location.reload();return;}setCookie(lang);if(!trigger(lang,0))setTimeout(function(){window.location.reload()},1800);};
+  document.addEventListener('DOMContentLoaded',function(){setButton(saved());document.querySelectorAll('.language-menu a[data-lang]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();window.newsPulseChooseLanguage(link.getAttribute('data-lang')||'en');});});});
 })();
 </script>
 </body>
