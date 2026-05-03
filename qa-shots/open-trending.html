@@ -1,0 +1,1436 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trending Stories | News Pulse+</title>
+  <meta name="description" content="Browse the Trending archive on News Pulse+ with the latest stories from every section, ranked by recency and split into 10-story pages." />
+  <meta name="theme-color" content="#07111f" />
+
+  <!-- Managed SEO and social preview metadata -->
+  <link rel="canonical" href="https://newspulseplus.com/trending.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:site_name" content="NewsPulse+" />
+  <meta property="og:title" content="Trending Stories" />
+  <meta property="og:description" content="Browse the Trending archive on News Pulse+ with the latest stories from every section, ranked by recency and split into 10-story pages." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newspulseplus.com/trending.html" />
+  <meta property="og:image" content="https://newspulseplus.com/images/Newspulseplus-preview.jpg?v=20260501" />
+  <meta property="og:image:secure_url" content="https://newspulseplus.com/images/Newspulseplus-preview.jpg?v=20260501" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="NewsPulse+ website preview image" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Trending Stories" />
+  <meta name="twitter:description" content="Browse the Trending archive on News Pulse+ with the latest stories from every section, ranked by recency and split into 10-story pages." />
+  <meta name="twitter:image" content="https://newspulseplus.com/images/Newspulseplus-preview.jpg?v=20260501" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Trending Stories","headline":"Trending Stories","description":"Browse the Trending archive on News Pulse+ with the latest stories from every section, ranked by recency and split into 10-story pages.","url":"https://newspulseplus.com/trending.html","image":["https://newspulseplus.com/images/Newspulseplus-preview.jpg?v=20260501"],"publisher":{"@type":"Organization","name":"NewsPulse+","url":"https://newspulseplus.com/"}}</script>
+<script data-news-pulse-consent-default>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+try {
+  var newsPulseConsent = JSON.parse(localStorage.getItem('newsPulseConsentMode') || 'null');
+  if (newsPulseConsent && newsPulseConsent.version === 1) {
+    gtag('consent', 'update', {
+      analytics_storage: newsPulseConsent.analytics ? 'granted' : 'denied',
+      ad_storage: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_user_data: newsPulseConsent.ads ? 'granted' : 'denied',
+      ad_personalization: newsPulseConsent.ads ? 'granted' : 'denied'
+    });
+  }
+} catch (error) {}
+</script>
+<script>
+(function () {
+  if (location.protocol !== 'http:' && location.protocol !== 'https:') {
+    return;
+  }
+
+  if (document.querySelector('script[data-news-pulse-adsense]')) {
+    return;
+  }
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6406860901026617';
+  script.crossOrigin = 'anonymous';
+  script.setAttribute('data-news-pulse-adsense', 'true');
+  document.head.appendChild(script);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1728;
+      --card:#0f1c30;
+      --card-2:#13233a;
+      --line:rgba(255,255,255,0.08);
+      --text:#f5f8fc;
+      --muted:#a9b6c8;
+      --accent:#3ba0ff;
+      --accent-2:#7bd1ff;
+      --shadow:none;
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter', Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
+      background:#050c16;
+      color:var(--text);
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:rgba(7,17,31,0.86);
+    }
+    .topbar-inner{
+      min-height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .breaking{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .breaking span{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#02111d;
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:8px 12px;
+      border-radius:999px;
+      flex-shrink:0;
+    }
+    .breaking p,.topbar-inner>p{margin:0}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,0.82);
+      border-bottom:1px solid var(--line);
+    }
+    .navbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      flex-shrink:0;
+    }
+    .logo{
+      font-size:clamp(2rem, 3vw, 2.4rem);
+      font-weight:900;
+      letter-spacing:-0.055em;
+      line-height:0.92;
+      color:#f4f8fd;
+    }
+.logo span{color:var(--accent-2)}
+    .site-tagline{
+      margin:0;
+      color:#a8b4c6;
+      font-size:clamp(0.96rem, 1-2vw, 1.08rem);
+      font-weight:500;
+      letter-spacing:-0.02em;
+      line-height:1.15;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      color:#d8e3f1;
+      font-weight:600;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+    }
+    .archive-copy h1 span{
+      color: var(--accent-2);
+    }
+    .lang-switch{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .lang-switch:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,0.88);
+      background:rgba(255,255,255,0.02);
+      color:#fff;
+      
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:auto;
+      font-size:.92rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.01em;
+      cursor:pointer;
+      transition:.25s ease;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+    .nav-toggle:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-1px);
+    }
+
+    #google_translate_element{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .goog-te-banner-frame.skiptranslate,
+    .skiptranslate iframe,
+    .goog-te-gadget,
+    .goog-te-gadget .goog-te-combo,
+    .goog-logo-link,
+    .goog-te-gadget span{
+      display:none !important;
+    }
+    body{top:0 !important;}
+
+    .archive-hero{
+      padding:34px 0 24px;
+    }
+    .archive-card,
+    .story-row,
+    .pager-card,
+    .footer-card{
+      background:linear-gradient(180deg, rgba(19,35,58,0.96), rgba(11,21,37,0.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+    .archive-card{
+      padding:30px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:16px;
+      font-size:.82rem;
+      font-weight:800;
+      color:#02111d;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      padding:9px 14px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .archive-card h1{
+      margin:0 0 12px;
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.04;
+      letter-spacing:-0.04em;
+      max-width:760px;
+    }
+    .archive-card p{
+      margin:0;
+      color:#d8e3f1;
+      line-height:1.75;
+      max-width:820px;
+    }
+    .archive-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .stories-section{
+      padding:8px 0 46px;
+    }
+    .section-header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:18px;
+    }
+    .section-header h2{
+      margin:0 0 8px;
+      font-size:1.6rem;
+      letter-spacing:-0.03em;
+    }
+    .section-header p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .stories-stack{
+      display:grid;
+      gap:18px;
+    }
+    .story-row{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:18px;
+      padding:18px;
+      transition:transform .22s ease, border-color .22s ease;
+    }
+    .story-row:hover{
+      transform:translateY(-4px);
+      border-color:rgba(123,209,255,0.22);
+    }
+    .story-row img{
+      width:100%;
+      height:170px;
+      object-fit:cover;
+      border-radius:18px;
+    }
+    .story-copy{
+      display:flex;
+      flex-direction:column;
+    }
+    .story-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:10px;
+      color:#b8c7d9;
+      font-size:.9rem;
+    }
+    .story-copy h3{
+      margin:0 0 10px;
+      font-size:1.18rem;
+      line-height:1.35;
+      letter-spacing:-0.02em;
+    }
+    .story-copy p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.96rem;
+    }
+    .story-link{
+      margin-top:16px;
+      color:var(--accent-2);
+      font-weight:700;
+    }
+
+    .pager-card{
+      margin-top:22px;
+      padding:20px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .pager-meta{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .pager-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .pager-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid rgba(123,209,255,0.25);
+      background:rgba(123,209,255,0.08);
+      color:#dff2ff;
+      font-weight:700;
+    }
+    .pager-btn.active{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#03101b;
+      border-color:transparent;
+    }
+    .pager-btn.disabled{
+      opacity:.45;
+      pointer-events:none;
+    }
+
+    @media (max-width:900px){
+      .story-row{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width:640px){
+      .container{padding:0 16px}
+      .topbar-inner{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:10px;
+        padding-top:12px;
+        padding-bottom:12px;
+      }
+      .archive-card{padding:24px}
+      .footer-grid{grid-template-columns:1fr}
+      .pager-card{align-items:flex-start}
+    }
+    @media (max-width:760px){
+      .topbar:not(header){display:none}
+      .topbar-inner,
+      .navbar{
+        flex-wrap:wrap;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        gap:14px;
+        padding:12px 16px;
+      }
+      .nav-toggle{
+        display:inline-flex;
+        margin-left:auto;
+      }
+      .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:8px;
+        padding-top:8px;
+        position:static;
+        border:0;
+        background:transparent;
+        box-shadow:none;
+      }
+      .nav-links.nav-open{display:flex}
+      .nav-links a,
+      .lang-switch{
+        width:auto;
+        min-width:96px;
+        margin:0 auto;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+  
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(3,9,17,0.55);
+      padding:34px 0 0;
+      margin-top:34px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr 1fr;
+      gap:24px;
+    }
+    .footer-brand h3,
+    .footer-col h4{
+      margin:0 0 12px;
+      font-size:1rem;
+    }
+    .footer-brand h3{
+      font-size:1.14rem;
+    }
+    .footer-brand h3 span{color:var(--accent-2)}
+    .footer-brand p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:380px;
+    }
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .footer-col a{
+      color:#dce8f5;
+      width:fit-content;
+      line-height:1.7;
+    }
+    .footer-col a:hover{color:var(--accent-2)}
+    .footer-bottom{
+      margin-top:26px;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (min-width:761px){
+      .navbar{
+        flex-wrap:nowrap;
+      }
+      .nav-links{
+        flex:1 1 auto;
+        min-width:0;
+        flex-wrap:nowrap;
+        justify-content:flex-end;
+        gap:8px;
+      }
+      .nav-links a{
+        white-space:nowrap;
+      }
+      .lang-switch{
+        flex-shrink:0;
+        white-space:nowrap;
+      }
+    }
+
+    /* Clean page surface override */
+    html,
+    body{
+      background:#050c16 !important;
+    }
+    #siteHeader,
+    .topbar{
+      position:static !important;
+      top:auto !important;
+      bottom:auto !important;
+      left:auto !important;
+      right:auto !important;
+      z-index:auto !important;
+      transform:none !important;
+      transition:none !important;
+      box-shadow:none !important;
+      filter:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }
+    .hero,
+    .article-hero,
+    .timeline-card,
+    .related-card,
+    .sidebar-card,
+    .category-card,
+    .story-card,
+    .feature-card,
+    .newsletter-card,
+    footer{
+      box-shadow:none !important;
+      filter:none !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }</style>
+  <link rel="stylesheet" href="css/premium.css" />
+<style id="homepage-mobile-menu-final">
+@media (max-width:760px){
+  .navbar{
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:14px !important;
+  }
+
+  .brand{
+    order:1 !important;
+    flex:1 1 auto !important;
+    max-width:calc(100% - 156px) !important;
+  }
+
+  .nav-toggle{
+    order:2 !important;
+    flex:0 0 auto !important;
+    margin-left:auto !important;
+    white-space:nowrap !important;
+  }
+
+  .navbar #site-nav{
+    display:none !important;
+    order:3 !important;
+    flex:0 0 100% !important;
+    width:100% !important;
+    margin-top:8px !important;
+  }
+
+  .navbar #site-nav.homepage-menu-open{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    gap:8px !important;
+  }
+
+  .navbar #site-nav a,
+  .navbar #site-nav .lang-switch{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  body.homepage-lang-de .site-tagline{
+    max-width:12rem !important;
+    display:block !important;
+    line-height:1.08 !important;
+  }
+
+  body.homepage-lang-de .brand{
+    min-width:0 !important;
+    max-width:calc(100% - 156px) !important;
+  }
+
+  body.homepage-lang-de .logo{
+    max-width:100% !important;
+    font-size:clamp(1.85rem, 8vw, 2.2rem) !important;
+    line-height:.95 !important;
+    white-space:nowrap !important;
+  }
+
+  body.homepage-lang-de .nav-toggle{
+    align-self:flex-start !important;
+    margin-top:0 !important;
+  }
+}
+</style>
+<script src="js/consent-mode.js" defer></script>
+
+<style id="news-pulse-language-switcher-style">
+.header-language-switcher{display:none!important}
+
+.language-switcher{position:relative;display:inline-block}.language-current{border:1px solid rgba(80,180,255,.35);background:rgba(8,18,32,.82);color:#eaf6ff;padding:10px 14px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;backdrop-filter:blur(14px);box-shadow:0 0 18px rgba(0,170,255,.18)}.language-menu{position:absolute;top:115%;right:0;min-width:180px;padding:10px;border-radius:18px;background:rgba(5,12,24,.96);border:1px solid rgba(80,180,255,.25);box-shadow:0 20px 45px rgba(0,0,0,.45);backdrop-filter:blur(18px);opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s ease;z-index:9999}.language-menu a{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:12px;color:#dff4ff;text-decoration:none;font-size:14px;font-weight:600}.language-menu a:hover{background:rgba(0,170,255,.14);color:#fff}.language-switcher:hover .language-menu,.language-switcher:focus-within .language-menu{opacity:1;visibility:visible;transform:translateY(0)}.language-menu .flag-icon{width:22px;height:14px;display:inline-block;flex:0 0 22px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 2px 6px rgba(0,0,0,.24);overflow:hidden}.flag-uk{background:linear-gradient(33deg,transparent 42%,#fff 42%,#fff 48%,#c8102e 48%,#c8102e 54%,#fff 54%,#fff 60%,transparent 60%),linear-gradient(147deg,transparent 42%,#fff 42%,#fff 48%,#c8102e 48%,#c8102e 54%,#fff 54%,#fff 60%,transparent 60%),linear-gradient(90deg,transparent 38%,#fff 38%,#fff 45%,#c8102e 45%,#c8102e 55%,#fff 55%,#fff 62%,transparent 62%),linear-gradient(0deg,transparent 34%,#fff 34%,#fff 43%,#c8102e 43%,#c8102e 57%,#fff 57%,#fff 66%,transparent 66%),#012169}.flag-bg{background:linear-gradient(to bottom,#fff 0 33.33%,#00966e 33.33% 66.66%,#d62612 66.66% 100%)}.flag-fr{background:linear-gradient(to right,#0055a4 0 33.33%,#fff 33.33% 66.66%,#ef4135 66.66% 100%)}.flag-de{background:linear-gradient(to bottom,#000 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66% 100%)}.flag-es{background:linear-gradient(to bottom,#aa151b 0 25%,#f1bf00 25% 75%,#aa151b 75% 100%)}@media (max-width:760px){.nav-links .language-switcher,.navbar #site-nav .language-switcher{width:100%!important;grid-column:1/-1!important;max-width:320px!important;justify-self:center!important;margin:0 auto!important}.nav-links .language-current,.navbar #site-nav .language-current{width:100%!important;min-height:58px!important;text-align:center!important}.nav-links .language-menu,.navbar #site-nav .language-menu{position:static!important;width:100%!important;margin-top:10px!important;display:none;flex-direction:column!important;gap:8px!important;opacity:1!important;visibility:visible!important;transform:none!important}.nav-links .language-switcher:hover .language-menu,.nav-links .language-switcher:focus-within .language-menu,.navbar #site-nav .language-switcher:hover .language-menu,.navbar #site-nav .language-switcher:focus-within .language-menu{display:flex!important}}
+@media (max-width:760px){.navbar{display:flex!important;flex-wrap:wrap!important;align-items:center!important;column-gap:8px!important}.navbar>.brand{order:1!important;flex:1 1 calc(100% - 220px)!important;max-width:calc(100% - 220px)!important;min-width:0!important}.navbar>.header-language-switcher{display:inline-block!important;width:96px!important;max-width:96px!important;margin-left:auto!important;margin-right:0!important;order:2!important;flex:0 0 96px!important}.navbar>.nav-toggle{order:3!important;width:96px!important;min-width:96px!important;height:48px!important;min-height:48px!important;max-height:48px!important;box-sizing:border-box!important;flex:0 0 96px!important;margin-left:0!important}.navbar>.header-language-switcher .language-current{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:96px!important;height:48px!important;min-height:48px!important;max-height:48px!important;border-radius:999px!important;box-sizing:border-box!important;padding:0 8px!important;text-align:center!important;white-space:nowrap!important;line-height:1!important}.navbar>.header-language-switcher .language-menu{position:absolute!important;top:calc(100% + 10px)!important;right:0!important;left:auto!important;width:220px!important;display:flex!important;flex-direction:column!important;gap:8px!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(8px)!important}.navbar>.header-language-switcher .language-menu a{width:100%!important;box-sizing:border-box!important;justify-content:flex-start!important}.navbar>.header-language-switcher:hover .language-menu,.navbar>.header-language-switcher:focus-within .language-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:translateY(0)!important}.nav-links>.language-switcher,.navbar #site-nav>.language-switcher{display:none!important}}
+</style>
+<style id="news-pulse-mobile-language-align-fix">
+@media (max-width:760px){
+  .navbar>.header-language-switcher .language-menu{
+    left:0!important;
+    right:auto!important;
+    transform:translateY(8px)!important;
+  }
+  .navbar>.header-language-switcher:hover .language-menu,
+  .navbar>.header-language-switcher:focus-within .language-menu{
+    transform:translateY(0)!important;
+  }
+}
+</style>
+</head>
+<body class="trending-page trending-upgraded">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="breaking">
+        <span>Trending</span>
+        <p>Track the stories gaining attention across news, markets, culture, sport, and viral moments.</p>
+      </div>
+      <p>Fast updates on what readers are following now.</p>
+    </div>
+  </div>
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <a href="index.html" class="logo">News<span>Pulse+</span></a>
+        <p class="site-tagline">The stories moving the world.</p>
+      </div>
+      <div class="language-switcher header-language-switcher">
+        <button class="language-current" type="button">
+          &#127760; English
+        </button>
+
+        <div class="language-menu">
+          <a href="#" data-lang="en"><span class="flag-icon flag-uk" aria-hidden="true"></span>English</a>
+          <a href="#" data-lang="bg"><span class="flag-icon flag-bg" aria-hidden="true"></span>&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;</a>
+          <a href="#" data-lang="fr"><span class="flag-icon flag-fr" aria-hidden="true"></span>Fran&ccedil;ais</a>
+          <a href="#" data-lang="de"><span class="flag-icon flag-de" aria-hidden="true"></span>Deutsch</a>
+          <a href="#" data-lang="es"><span class="flag-icon flag-es" aria-hidden="true"></span>Espa&ntilde;ol</a>
+        </div>
+      </div>
+
+      
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" id="homepage-menu-button">Close</button>
+
+      <nav class="nav-links nav-open homepage-menu-open" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="trending.html" class="active">Trending</a>
+        <div class="language-switcher">
+          <button class="language-current" type="button">
+            &#127760; English
+          </button>
+
+          <div class="language-menu">
+            <a href="#" data-lang="en"><span class="flag-icon flag-uk" aria-hidden="true"></span>English</a>
+            <a href="#" data-lang="bg"><span class="flag-icon flag-bg" aria-hidden="true"></span>&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;</a>
+            <a href="#" data-lang="fr"><span class="flag-icon flag-fr" aria-hidden="true"></span>Fran&ccedil;ais</a>
+            <a href="#" data-lang="de"><span class="flag-icon flag-de" aria-hidden="true"></span>Deutsch</a>
+            <a href="#" data-lang="es"><span class="flag-icon flag-es" aria-hidden="true"></span>Espa&ntilde;ol</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div id="google_translate_element"></div>
+  <section class="archive-hero trending-archive-hero">
+    <div class="container">
+      <div class="archive-card trending-archive-card">
+        <div class="archive-copy">
+          <span class="eyebrow">Trending Archive</span>
+          <h1>All the stories moving through News<span>Pulse+</span> right now.</h1>
+          <p>A cleaner archive for fast scanning across World News, Politics, Economic, Entertainment, Sport, and Viral. Page 1 highlights stories 1-10 from the full 60-story trending index.</p>
+        </div>
+        <div class="archive-scoreboard" aria-label="Trending archive details">
+          <div>
+            <span>TOTAL STORIES</span>
+            <strong>60</strong>
+          </div>
+          <div>
+            <span>This page</span>
+            <strong>1-10</strong>
+          </div>
+          <div>
+            <span>Focus</span>
+            <strong>Latest newsroom picks</strong>
+          </div>
+        </div>
+                <div class="archive-quick-nav" aria-label="Archive quick navigation">
+          <a href="trending.html" class="active">Page 1</a>
+          <a href="trending-page-2.html">Page 2</a>
+          <a href="trending-page-3.html">Page 3</a>
+          <a href="trending-page-4.html">Page 4</a>
+          <a href="trending-page-5.html">Page 5</a>
+          <a href="trending-page-6.html">Page 6</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trending-desk-summary">
+    <div class="container trending-desk-grid">
+      <a class="trending-desk-lead">
+        <img src="images/newsroom.jpg" alt="Blue-lit newsroom studio with large broadcast screens">
+        <div>
+          <span>Live Desk Lead</span>
+          <h2>Stories moving fastest across the newsroom</h2>
+          <p>Political risk, market pressure, franchise entertainment, sport momentum, and viral moments are shaping the current reading pattern.</p>
+        </div>
+      </a>
+
+      <div class="trending-desk-stats">
+        <div>
+          <span>COVERAGE</span>
+            <strong>60</strong>
+          <p>stories indexed across every section.</p>
+        </div>
+        <div>
+          <span>Rhythm</span>
+          <strong>10</strong>
+          <p>stories per archive page for easier scanning.</p>
+        </div>
+        <div>
+          <span>Focus</span>
+          <strong>Latest newsroom picks</strong>
+          <p>pages of ranked archive coverage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<main class="stories-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Trending page 1</h2>
+          <p>Stories 1-10, ordered for quick reading and easier comparison across sections.</p>
+        </div>
+      </div>
+
+      <div class="trending-archive-tools">
+        <div>
+          <span>Archive focus</span>
+          <strong>Freshest newsroom picks</strong>
+        </div>
+        <div>
+          <span class="trending-chip">World News</span>
+          <span class="trending-chip">Politics</span>
+          <span class="trending-chip">Economic</span>
+          <span class="trending-chip">Entertainment</span>
+          <span class="trending-chip">Sport</span>
+          <span class="trending-chip">Viral</span>
+        </div>
+      </div>
+
+                                                <div class="stories-stack">
+<article class="story-row">
+  <a href="prague-ghost-tour-video-sudden-scare-viral.html">
+    <img src="images/Prague-ghost.jpg" alt="Prague castle and cathedral skyline at night under dark clouds">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>Travel</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="prague-ghost-tour-video-sudden-scare-viral.html">
+        Prague Ghost Tour Video Goes Viral After Sudden Scare Leaves Group Shocked
+      </a>
+    </h3>
+    <p>
+      A nighttime Prague ghost-tour clip has gone viral after a sudden scare interrupted the story and left visitors visibly shocked.
+    </p>
+    <a class="story-link" href="prague-ghost-tour-video-sudden-scare-viral.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+  <a href="romania-castle-drone-footage-transylvania-viral.html">
+    <img src="images/romanian-castle.jpg" alt="Romanian castle in Transylvania surrounded by forest and blue evening hills">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>Travel</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="romania-castle-drone-footage-transylvania-viral.html">
+        Romania's Viral Castle Drone Footage Puts Transylvania Back in the Spotlight
+      </a>
+    </h3>
+    <p>
+      A cinematic drone clip of a Transylvanian castle has gone viral, drawing new attention to Romania's landscapes, history, and travel appeal.
+    </p>
+    <a class="story-link" href="romania-castle-drone-footage-transylvania-viral.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+  <a href="sweden-no-phone-crowds-viral-youth-culture.html">
+    <img src="images/sweden-nophone.jpg" alt="Young crowd in Sweden holding phones during a night-time public gathering">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>Digital Culture</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="sweden-no-phone-crowds-viral-youth-culture.html">
+        Sweden's "No Phone Weekend" Movement Gains Momentum as Thousands Embrace Digital Detox
+      </a>
+    </h3>
+    <p>
+      Sweden's No Phone Weekend trend is gaining traction as people step away from smartphones to reduce overload and reconnect offline.
+    </p>
+    <a class="story-link" href="sweden-no-phone-crowds-viral-youth-culture.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+  <a href="bulgarian-group-spotify-system-nearly-1-million.html">
+    <img src="images/bulgarian-group.jpg" alt="Bulgarian group Spotify streaming system illustration">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>Streaming</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="bulgarian-group-spotify-system-nearly-1-million.html">
+        How a Bulgarian Group Exploited Spotify's System to Generate Nearly $1 Million
+      </a>
+    </h3>
+    <p>
+      A Bulgarian group reportedly turned Spotify's 30-second rule, short tracks, and paid accounts into a nearly million-dollar streaming operation.
+    </p>
+    <a class="story-link" href="bulgarian-group-spotify-system-nearly-1-million.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+  <a href="trump-political-pressure-economy-global-tensions.html">
+    <img src="images/donald-trump-1.jpg" alt="Donald Trump seated in front of American flags">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>U.S. / Global</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="trump-political-pressure-economy-global-tensions.html">
+        Political pressure builds around Donald Trump as economic and global tensions rise
+      </a>
+    </h3>
+    <p>
+      Economic unease, Middle East tensions, and domestic divisions are putting renewed scrutiny on President Donald Trump's leadership.
+    </p>
+    <a class="story-link" href="trump-political-pressure-economy-global-tensions.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+  <a href="guide-dog-bulgarian-parliament-animal-welfare-reform.html">
+    <img src="images/guide_dog.jpg" alt="Guide dog Rover with Bulgarian MP Ivan Yanev inside parliament">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>Bulgaria</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="guide-dog-bulgarian-parliament-animal-welfare-reform.html">
+        Guide Dog's Presence in Bulgarian Parliament Highlights Push for Animal Welfare Reform
+      </a>
+    </h3>
+    <p>
+      Rover's role beside MP Ivan Yanev has turned a parliamentary moment into a wider conversation about accessibility, empathy, and animal welfare.
+    </p>
+    <a class="story-link" href="guide-dog-bulgarian-parliament-animal-welfare-reform.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+  <a href="donald-trump-king-charles-uk-visit.html">
+    <img src="images/trump-charles.jpg" alt="Donald Trump and King Charles during a formal UK visit">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>UK / U.S.</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="donald-trump-king-charles-uk-visit.html">
+        Donald Trump holds meeting with King Charles during UK visit
+      </a>
+    </h3>
+    <p>
+      A high-profile meeting between Donald Trump and King Charles draws attention to diplomacy, royal protocol, and UK&ndash;U.S. relations.
+    </p>
+    <a class="story-link" href="donald-trump-king-charles-uk-visit.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+  <a href="princess-leonor-politics-madrid-university.html">
+    <img src="images/pinces-leonor.jpg" alt="Princess Leonor of Spain during an official public appearance">
+  </a>
+  <div class="story-copy">
+    <div class="story-meta">
+      <span>Spain</span>
+      <span>By Ivaylo Tsvetkov News Pulse+</span>
+      <span>4 min read</span>
+    </div>
+    <h3>
+      <a href="princess-leonor-politics-madrid-university.html">
+        Princess Leonor turns to politics with Madrid university move
+      </a>
+    </h3>
+    <p>
+      Spain&rsquo;s future queen begins a new chapter in Madrid, combining academic study with preparation for her constitutional role.
+    </p>
+    <a class="story-link" href="princess-leonor-politics-madrid-university.html">
+      Read article &rarr;
+    </a>
+  </div>
+</article>
+
+<article class="story-row">
+          <a href="psg-bayern-champions-league-semi-final-thriller.html">
+            <img src="images/psg-bayern.jpg" alt="PSG and Bayern Munich Champions League semi-final graphic">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span class="category-pill">Football</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>4 min read</span>
+            </div>
+            <h3><a href="psg-bayern-champions-league-semi-final-thriller.html">PSG edge Bayern in record-breaking Champions League semi-final thriller</a></h3>
+            <p>PSG claimed a dramatic 5-4 first-leg win over Bayern in a nine-goal Champions League semi-final classic.</p>
+            <a class="story-link" href="psg-bayern-champions-league-semi-final-thriller.html">Read article &rarr;</a>
+          </div>
+        </article>
+
+<article class="story-row">
+          <a href="31-years-later-bulgaria-theft-case-closed.html">
+            <img src="images/31-years-later.jpg" alt="Sofia district court building in Bulgaria">
+          </a>
+          <div class="story-copy">
+            <div class="story-meta">
+              <span>Bulgaria</span>
+              <span>By Ivaylo Tsvetkov News Pulse+</span>
+              <span>4 min read</span>
+            </div>
+            <h3><a href="31-years-later-bulgaria-theft-case-closed.html">31 Years Later: Woman in Bulgaria receives notice about a long-closed theft case</a></h3>
+            <p>A decades-late official notice about a 1995 burglary has raised questions about justice delays and communication.</p>
+            <a class="story-link" href="31-years-later-bulgaria-theft-case-closed.html">Read article &rarr;</a>
+          </div>
+        </article>
+        </div>
+
+        <div class="pager-card">
+        <div class="pager-meta">Showing stories 1-10 of 60 trending stories. Up to 10 stories appear on each archive page.</div>
+                        <div class="pager-actions">
+          <span class="pager-btn active">1</span>
+          <a class="pager-btn" href="trending-page-2.html">2</a>
+          <a class="pager-btn" href="trending-page-3.html">3</a>
+          <a class="pager-btn" href="trending-page-4.html">4</a>
+          <a class="pager-btn" href="trending-page-5.html">5</a>
+          <a class="pager-btn" href="trending-page-6.html">6</a>
+          <a class="pager-btn" href="trending-page-2.html">Next page</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="premium-footer">
+    <div class="container footer-topline">
+      <div>
+        <a href="index.html" class="footer-logo">News<span>Pulse+</span></a>
+        <p>Independent digital reporting across politics, world affairs, markets, culture, sport, and the stories people are sharing now.</p>
+      </div>
+      <form class="footer-newsletter"
+      action="https://formsubmit.co/ivaylovt@gmail.com"
+      method="POST">
+
+  <label for="footer-email">Daily briefing</label>
+
+  <div>
+    <input id="footer-email"
+           type="email"
+           name="email"
+           placeholder="Email address"
+           required>
+
+    <button type="submit">Subscribe</button>
+  </div>
+
+  <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://newspulseplus.com/thank-you.html">
+
+</form>
+    </div>
+
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Sections</h4>
+        <a href="world-news.html">World News</a>
+        <a href="politics.html">Politics</a>
+        <a href="economic.html">Economic</a>
+        <a href="entertainment.html">Entertainment</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <a href="sport.html">Sport</a>
+        <a href="viral.html">Viral</a>
+        <a href="trending.html">Trending</a>
+        <a href="newsletter.html">Newsletter</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+
+      <div class="footer-col footer-brief">
+        <h4>Newsroom</h4>
+        <p>Built for clean reading, quick scanning, and credible editorial presentation on desktop and mobile.</p>
+        <a class="footer-pill" href="trending.html">Open trending desk</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 NewsPulse+. All rights reserved.</span>
+      <div>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookies</a>
+        <a href="terms.html">Terms</a>
+        <a href="index.html">Back to homepage</a>
+      </div>
+    </div>
+  </footer><!-- News Pulse+ AdSense placement controller -->
+<script>
+window.NEWS_PULSE_AD_SLOTS = window.NEWS_PULSE_AD_SLOTS || {
+  homepageAfterBriefing: '',
+  homepageInFeed: '',
+  homepageBeforeTrending: '',
+  categoryInFeed: '',
+  articleAfterIntro: '',
+  articleAfterBody: ''
+};
+
+(function () {
+  function canLoadAds() {
+    return location.protocol === 'http:' || location.protocol === 'https:';
+  }
+
+  function createAd(slotName, format) {
+    var slotId = window.NEWS_PULSE_AD_SLOTS && window.NEWS_PULSE_AD_SLOTS[slotName];
+    if (!slotId || !canLoadAds()) {
+      return null;
+    }
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'np-ad np-ad-' + slotName.replace(/[A-Z]/g, function (match) {
+      return '-' + match.toLowerCase();
+    });
+    wrapper.setAttribute('aria-label', 'Advertisement');
+
+    var ad = document.createElement('ins');
+    ad.className = 'adsbygoogle';
+    ad.style.display = 'block';
+    ad.setAttribute('data-ad-client', 'ca-pub-6406860901026617');
+    ad.setAttribute('data-ad-slot', slotId);
+    ad.setAttribute('data-ad-format', format || 'auto');
+    ad.setAttribute('data-full-width-responsive', 'true');
+    wrapper.appendChild(ad);
+
+    return wrapper;
+  }
+
+  function insertAfter(target, ad) {
+    if (target && ad && target.parentNode) {
+      target.parentNode.insertBefore(ad, target.nextSibling);
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (error) {}
+    }
+  }
+
+  function insertBefore(target, ad) {
+    if (target && ad && target.parentNode) {
+      target.parentNode.insertBefore(ad, target);
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (error) {}
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    insertAfter(document.querySelector('.homepage-briefing-strip'), createAd('homepageAfterBriefing', 'auto'));
+    insertAfter(document.querySelector('.stories-stack .story-row:nth-of-type(2)'), createAd('homepageInFeed', 'fluid'));
+    insertBefore(document.querySelector('.premium-trending'), createAd('homepageBeforeTrending', 'auto'));
+    insertAfter(document.querySelector('.category-page .story-grid, .category-grid'), createAd('categoryInFeed', 'fluid'));
+    insertAfter(document.querySelector('.article-body p:nth-of-type(2), .article-content p:nth-of-type(2)'), createAd('articleAfterIntro', 'auto'));
+    insertBefore(document.querySelector('.related-section'), createAd('articleAfterBody', 'auto'));
+  });
+})();
+</script>
+<script id="news-pulse-language-controller">
+(function () {
+  var languages = ['en', 'bg', 'fr', 'de', 'es'];
+  var labels = { en: 'EN', bg: 'BG', fr: 'FR', de: 'DE', es: 'ES' };
+
+  function savedLanguage() {
+    return localStorage.getItem('preferredLang') || 'en';
+  }
+
+  function nextLanguage(lang) {
+    var index = languages.indexOf(lang || 'en');
+    if (index < 0) index = 0;
+    return languages[(index + 1) % languages.length];
+  }
+
+  function updateLanguageButton(lang) {
+    var label = document.getElementById('lang-text');
+    lang = lang || savedLanguage();
+    if (label) label.textContent = labels[lang] || 'EN';
+    if (document.body) {
+      document.body.classList.toggle('site-lang-de', lang === 'de');
+      document.body.classList.toggle('homepage-lang-de', lang === 'de');
+    }
+  }
+
+  function setTranslateCookie(lang) {
+    var value = '/en/' + lang;
+    var expires = 'expires=' + new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+    var base = 'googtrans=' + value + '; ' + expires + '; path=/';
+    document.cookie = base;
+
+    if (location.hostname && location.hostname.indexOf('.') !== -1) {
+      document.cookie = base + '; domain=' + location.hostname;
+      document.cookie = base + '; domain=.' + location.hostname.replace(/^www\./, '');
+    }
+  }
+
+  function clearTranslateCookie() {
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+    if (location.hostname && location.hostname.indexOf('.') !== -1) {
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname;
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname.replace(/^www\./, '');
+    }
+  }
+
+  function loadTranslateScript() {
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+    if (document.querySelector('script[data-news-pulse-translate]')) return;
+
+    var script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    script.setAttribute('data-news-pulse-translate', 'true');
+    document.head.appendChild(script);
+  }
+
+  window.googleTranslateElementInit = function () {
+    var holder = document.getElementById('google_translate_element');
+    if (!holder) {
+      holder = document.createElement('div');
+      holder.id = 'google_translate_element';
+      holder.style.display = 'none';
+      document.body.appendChild(holder);
+    }
+
+    if (window.google && google.translate && google.translate.TranslateElement) {
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,fr,de,es', autoDisplay: false }, 'google_translate_element');
+    }
+
+    setTimeout(function () {
+      applyLanguage(savedLanguage(), false, 0);
+    }, 600);
+  };
+
+  function triggerSelector(lang, attempt) {
+    var select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      return true;
+    }
+
+    loadTranslateScript();
+    if (attempt < 24) {
+      setTimeout(function () {
+        triggerSelector(lang, attempt + 1);
+      }, 250);
+    }
+    return false;
+  }
+
+  function applyLanguage(lang, reloadIfNeeded, attempt) {
+    localStorage.setItem('preferredLang', lang);
+    updateLanguageButton(lang);
+
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+
+    if (lang === 'en') {
+      clearTranslateCookie();
+      if (reloadIfNeeded) window.location.reload();
+      return;
+    }
+
+    setTranslateCookie(lang);
+    var applied = triggerSelector(lang, attempt || 0);
+    if (!applied && reloadIfNeeded) {
+      setTimeout(function () {
+        window.location.reload();
+      }, 1800);
+    }
+  }
+
+  window.toggleLanguage = function () {
+    applyLanguage(nextLanguage(savedLanguage()), true, 0);
+  };
+
+  window.updateButtonText = updateLanguageButton;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateLanguageButton(savedLanguage());
+    loadTranslateScript();
+  });
+})();
+</script>
+<script id="news-pulse-german-header-controller">
+(function () {
+  function savedLanguage() {
+    try { return localStorage.getItem('preferredLang') || ''; }
+    catch (error) { return ''; }
+  }
+
+  function cookieLanguage() {
+    var match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+    return match ? decodeURIComponent(match[1]) : '';
+  }
+
+  function headerLooksGerman() {
+    var text = Array.prototype.map.call(document.querySelectorAll('header .site-tagline, header .brand p'), function (node) {
+      return node.textContent || '';
+    }).join(' ').toLowerCase();
+    return text.indexOf('geschichten') !== -1 || text.indexOf('welt bewegen') !== -1 || text.indexOf('die welt') !== -1;
+  }
+
+  function updateGermanHeader() {
+    if (!document.body) return;
+    var select = document.querySelector('.goog-te-combo');
+    var isGerman = savedLanguage() === 'de' || cookieLanguage() === 'de' || (select && select.value === 'de') || headerLooksGerman();
+    document.body.classList.toggle('site-lang-de', isGerman);
+    document.body.classList.toggle('homepage-lang-de', isGerman);
+  }
+
+  window.newsPulseUpdateGermanHeader = updateGermanHeader;
+  updateGermanHeader();
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateGermanHeader();
+    if (window.MutationObserver) {
+      new MutationObserver(updateGermanHeader).observe(document.documentElement, { childList: true, characterData: true, subtree: true });
+    }
+    document.addEventListener('change', updateGermanHeader, true);
+    document.addEventListener('click', function () { setTimeout(updateGermanHeader, 50); }, true);
+    var checks = 0;
+    var timer = setInterval(function () {
+      updateGermanHeader();
+      checks += 1;
+      if (checks >= 60) clearInterval(timer);
+    }, 250);
+  });
+})();
+</script>
+
+<script id="homepage-menu-script">
+(function () {
+  function setMenu(open) {
+    var nav = document.getElementById('site-nav');
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!nav || !button) return;
+
+    nav.classList.toggle('homepage-menu-open', open);
+    nav.classList.toggle('nav-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    button.textContent = open ? 'Close' : 'Menu';
+
+    if (open) {
+      nav.style.setProperty('display', 'grid', 'important');
+      nav.style.setProperty('grid-template-columns', 'repeat(2, minmax(0, 1fr))', 'important');
+      nav.style.setProperty('width', '100%', 'important');
+    } else {
+      nav.style.removeProperty('display');
+      nav.style.removeProperty('grid-template-columns');
+      nav.style.removeProperty('width');
+    }
+  }
+
+  window.toggleMenu = function () {
+    var nav = document.getElementById('site-nav');
+    setMenu(!(nav && nav.classList.contains('homepage-menu-open')));
+  };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var button = document.getElementById('homepage-menu-button') || document.querySelector('.nav-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.toggleMenu();
+    });
+  });
+})();
+</script>
+<script id="news-pulse-language-dropdown-controller">
+(function(){
+  var labels={en:'English',bg:'\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438',fr:'Fran\u00e7ais',de:'Deutsch',es:'Espa\u00f1ol'};
+  function saved(){try{return localStorage.getItem('preferredLang')||'en'}catch(e){return 'en'}}
+  function setButton(lang){document.querySelectorAll('.language-current').forEach(function(current){current.innerHTML='&#127760; '+(labels[lang]||'English');});}
+  function setCookie(lang){var value='/en/'+lang;var expires='expires='+new Date(Date.now()+365*24*60*60*1000).toUTCString();var base='googtrans='+value+'; '+expires+'; path=/';document.cookie=base;if(location.hostname&&location.hostname.indexOf('.')!==-1){document.cookie=base+'; domain='+location.hostname;document.cookie=base+'; domain=.'+location.hostname.replace(/^www\./,'');}}
+  function clearCookie(){document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';if(location.hostname&&location.hostname.indexOf('.')!==-1){document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain='+location.hostname;document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.'+location.hostname.replace(/^www\./,'');}}
+  function loadTranslate(){if(location.protocol!=='http:'&&location.protocol!=='https:')return;if(document.querySelector('script[data-news-pulse-translate]'))return;var script=document.createElement('script');script.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';script.async=true;script.setAttribute('data-news-pulse-translate','true');document.head.appendChild(script);}
+  function trigger(lang,attempt){var select=document.querySelector('.goog-te-combo');if(select){select.value=lang;select.dispatchEvent(new Event('change',{bubbles:true}));return true;}loadTranslate();if((attempt||0)<24)setTimeout(function(){trigger(lang,(attempt||0)+1)},250);return false;}
+  window.newsPulseChooseLanguage=function(lang){try{localStorage.setItem('preferredLang',lang)}catch(e){}setButton(lang);if(location.protocol!=='http:'&&location.protocol!=='https:')return;if(lang==='en'){clearCookie();window.location.reload();return;}setCookie(lang);if(!trigger(lang,0))setTimeout(function(){window.location.reload()},1800);};
+  document.addEventListener('DOMContentLoaded',function(){setButton(saved());document.querySelectorAll('.language-menu a[data-lang]').forEach(function(link){link.addEventListener('click',function(event){event.preventDefault();window.newsPulseChooseLanguage(link.getAttribute('data-lang')||'en');});});});
+})();
+</script>
+</body>
+</html>
+
+
+
+
