@@ -28,9 +28,9 @@
     min-height: 0 !important;
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    gap: 14px 16px !important;
+    gap: 12px 14px !important;
     align-items: start !important;
-    padding: 20px 0 !important;
+    padding: 18px 0 !important;
   }
 
   html body header > .container.navbar > .brand,
@@ -52,7 +52,7 @@
     max-width: 100% !important;
     margin: 0 !important;
     color: #f4f8fd !important;
-    font-size: clamp(2.4rem, 9.5vw, 3.55rem) !important;
+    font-size: clamp(2.25rem, 9vw, 3.3rem) !important;
     font-weight: 900 !important;
     letter-spacing: -0.055em !important;
     line-height: .92 !important;
@@ -66,7 +66,7 @@
     max-width: 100% !important;
     margin: 0 !important;
     color: #f4f8fd !important;
-    font-size: clamp(.98rem, 3.7vw, 1.18rem) !important;
+    font-size: clamp(.92rem, 3.5vw, 1.08rem) !important;
     font-weight: 800 !important;
     letter-spacing: 0 !important;
     line-height: 1.12 !important;
@@ -94,11 +94,11 @@
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
-    height: 58px !important;
-    min-height: 58px !important;
-    max-height: 58px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
     margin: 0 !important;
-    padding: 0 12px !important;
+    padding: 0 10px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -107,7 +107,7 @@
     background: rgba(9,22,38,.92) !important;
     border: 1px solid rgba(155,232,255,.34) !important;
     color: #f7fbff !important;
-    font-size: clamp(.95rem, 3.7vw, 1.08rem) !important;
+    font-size: clamp(.88rem, 3.4vw, 1rem) !important;
     font-weight: 900 !important;
     letter-spacing: 0 !important;
     line-height: 1 !important;
@@ -117,10 +117,10 @@
   html body header > .container.navbar > .header-language-switcher > .language-current,
   html body header#siteHeader > .container.topbar-inner > .header-language-switcher > .language-current {
     width: 100% !important;
-    height: 58px !important;
-    min-height: 58px !important;
-    max-height: 58px !important;
-    padding: 0 12px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+    padding: 0 10px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -129,7 +129,7 @@
     background: rgba(9,22,38,.92) !important;
     border: 1px solid rgba(155,232,255,.34) !important;
     color: #f7fbff !important;
-    font-size: clamp(.95rem, 3.7vw, 1.08rem) !important;
+    font-size: clamp(.88rem, 3.4vw, 1rem) !important;
     font-weight: 900 !important;
     letter-spacing: 0 !important;
     line-height: 1 !important;
@@ -173,19 +173,19 @@
   html body header > .container.navbar,
   html body header#siteHeader > .container.topbar-inner {
     width: min(var(--max-width, var(--max, 1240px)), calc(100% - 32px)) !important;
-    gap: 12px !important;
-    padding: 18px 0 !important;
+    gap: 10px !important;
+    padding: 16px 0 !important;
   }
 
   html body header > .container.navbar > .brand > .logo,
   html body header#siteHeader > .container.topbar-inner > .brand h1,
   html body header#siteHeader > .container.topbar-inner > .brand h1 > a {
-    font-size: clamp(2.25rem, 11vw, 2.95rem) !important;
+    font-size: clamp(2.1rem, 10.5vw, 2.75rem) !important;
   }
 
   html body header > .container.navbar > .brand > .site-tagline,
   html body header#siteHeader > .container.topbar-inner > .brand > p {
-    font-size: clamp(.92rem, 3.9vw, 1.05rem) !important;
+    font-size: clamp(.86rem, 3.7vw, .98rem) !important;
   }
 
   html body header > .container.navbar > .nav-toggle,
@@ -194,11 +194,11 @@
   html body header#siteHeader > .container.topbar-inner > .menu-toggle + .nav-toggle,
   html body header > .container.navbar > .header-language-switcher > .language-current,
   html body header#siteHeader > .container.topbar-inner > .header-language-switcher > .language-current {
-    height: 54px !important;
-    min-height: 54px !important;
-    max-height: 54px !important;
-    padding: 0 10px !important;
-    font-size: clamp(.88rem, 3.9vw, 1rem) !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    padding: 0 9px !important;
+    font-size: clamp(.82rem, 3.6vw, .94rem) !important;
   }
 }`;
 
