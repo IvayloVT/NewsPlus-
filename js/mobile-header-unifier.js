@@ -133,7 +133,7 @@
     flex: 0 0 auto !important;
     min-width: max-content !important;
     padding: 9px clamp(6px, .58vw, 10px) !important;
-    font-size: clamp(.78rem, .82vw, .88rem) !important;
+    font-size: clamp(.86rem, .9vw, .98rem) !important;
     line-height: 1 !important;
     white-space: nowrap !important;
   }
@@ -837,7 +837,7 @@
             flex: '0 0 auto',
             'min-width': 'max-content',
             padding: narrow ? '9px 4px' : '9px 8px',
-            'font-size': narrow ? '.72rem' : '.84rem',
+            'font-size': narrow ? '.82rem' : '.94rem',
             'line-height': '1',
             'white-space': 'nowrap'
           });
