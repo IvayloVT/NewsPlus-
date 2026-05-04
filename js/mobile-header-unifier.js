@@ -824,6 +824,19 @@
     return children;
   }
 
+  function isArticlePage() {
+    return !!(
+      document.querySelector('.article-hero-card, .article-card') ||
+      document.querySelector('meta[property="og:type"][content="article"]')
+    );
+  }
+
+  function normalizeArticleHeader() {
+    if (!isArticlePage() || document.getElementById('siteHeader')) return;
+    var header = document.querySelector('header.topbar');
+    if (header) header.id = 'siteHeader';
+  }
+
   function applyDesktopHeaderLayout() {
     if (!window.matchMedia || !window.matchMedia('(min-width: 761px)').matches) return;
 
@@ -1044,12 +1057,14 @@
     });
   }
 
+  normalizeArticleHeader();
   installHeaderStyle();
   wireLanguageMenus();
   wireSafariLanguageLinks();
   applyDesktopHeaderLayout();
   watchHeaderChanges();
   document.addEventListener('DOMContentLoaded', function () {
+    normalizeArticleHeader();
     installHeaderStyle();
     wireLanguageMenus();
     wireSafariLanguageLinks();
