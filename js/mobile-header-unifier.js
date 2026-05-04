@@ -365,7 +365,7 @@
     max-width: 100% !important;
     margin: 0 !important;
     color: #f4f8fd !important;
-    font-size: clamp(2.25rem, 9vw, 3.3rem) !important;
+    font-size: clamp(2.05rem, 8.2vw, 3.05rem) !important;
     font-weight: 900 !important;
     letter-spacing: -0.055em !important;
     line-height: .92 !important;
@@ -379,7 +379,7 @@
     max-width: 100% !important;
     margin: 0 !important;
     color: #bfd3ee !important;
-    font-size: clamp(.92rem, 3.5vw, 1.08rem) !important;
+    font-size: clamp(.84rem, 3.1vw, 1rem) !important;
     font-weight: 800 !important;
     letter-spacing: 0 !important;
     line-height: 1.12 !important;
@@ -408,32 +408,41 @@
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
-    height: 52px !important;
-    min-height: 52px !important;
-    max-height: 52px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
     margin: 0 !important;
     padding: 0 10px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    gap: 9px !important;
     border-radius: 999px !important;
     box-sizing: border-box !important;
     background: rgba(9,22,38,.92) !important;
     border: 1px solid rgba(155,232,255,.34) !important;
     color: #f7fbff !important;
-    font-size: clamp(.88rem, 3.4vw, 1rem) !important;
+    font-size: clamp(.82rem, 3.1vw, .94rem) !important;
     font-weight: 900 !important;
     letter-spacing: 0 !important;
     line-height: 1 !important;
     white-space: nowrap !important;
   }
 
+  html body header > .container.navbar > .header-language-switcher > .language-current .flag-icon,
+  html body header#siteHeader > .container.topbar-inner > .header-language-switcher > .language-current .flag-icon {
+    width: 22px !important;
+    height: 15px !important;
+    flex: 0 0 22px !important;
+    margin-right: 8px !important;
+  }
+
   html body header > .container.navbar > .header-language-switcher > .language-current,
   html body header#siteHeader > .container.topbar-inner > .header-language-switcher > .language-current {
     width: 100% !important;
-    height: 52px !important;
-    min-height: 52px !important;
-    max-height: 52px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
     padding: 0 10px !important;
     display: inline-flex !important;
     align-items: center !important;
@@ -443,7 +452,7 @@
     background: rgba(9,22,38,.92) !important;
     border: 1px solid rgba(155,232,255,.34) !important;
     color: #f7fbff !important;
-    font-size: clamp(.88rem, 3.4vw, 1rem) !important;
+    font-size: clamp(.82rem, 3.1vw, .94rem) !important;
     font-weight: 900 !important;
     letter-spacing: 0 !important;
     line-height: 1 !important;
@@ -495,12 +504,12 @@
   html body header > .container.navbar > .brand > .logo,
   html body header#siteHeader > .container.topbar-inner > .brand h1,
   html body header#siteHeader > .container.topbar-inner > .brand h1 > a {
-    font-size: clamp(2.1rem, 10.5vw, 2.75rem) !important;
+    font-size: clamp(1.95rem, 9.6vw, 2.55rem) !important;
   }
 
   html body header > .container.navbar > .brand > .site-tagline,
   html body header#siteHeader > .container.topbar-inner > .brand > p {
-    font-size: clamp(.86rem, 3.7vw, .98rem) !important;
+    font-size: clamp(.8rem, 3.4vw, .92rem) !important;
   }
 
   html body header > .container.navbar > .nav-toggle,
@@ -509,11 +518,11 @@
   html body header#siteHeader > .container.topbar-inner > .menu-toggle + .nav-toggle,
   html body header > .container.navbar > .header-language-switcher > .language-current,
   html body header#siteHeader > .container.topbar-inner > .header-language-switcher > .language-current {
-    height: 50px !important;
-    min-height: 50px !important;
-    max-height: 50px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
     padding: 0 9px !important;
-    font-size: clamp(.82rem, 3.6vw, .94rem) !important;
+    font-size: clamp(.78rem, 3.3vw, .9rem) !important;
   }
 }`;
 
@@ -670,6 +679,12 @@
       if (desktop && button.closest('header .language-switcher')) {
         if (!button.querySelector('.flag-icon.' + flagClass) || !button.querySelector('.language-current-label')) {
           button.innerHTML = '<span class="flag-icon ' + flagClass + '" aria-hidden="true"></span><span class="language-current-label">' + label + '</span>';
+        }
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+      } else if (button.closest('header .language-switcher')) {
+        if (!button.querySelector('.flag-icon.' + flagClass) || button.textContent.indexOf(label) === -1) {
+          button.innerHTML = '<span class="flag-icon ' + flagClass + '" aria-hidden="true"></span><span class="language-current-mobile-text">' + label + '</span>';
         }
         button.setAttribute('aria-label', label);
         button.setAttribute('title', label);
