@@ -7,6 +7,13 @@
     de: 'Deutsch',
     es: 'Espa\u00f1ol'
   };
+  var languageFlags = {
+    en: 'flag-uk',
+    bg: 'flag-bg',
+    fr: 'flag-fr',
+    de: 'flag-de',
+    es: 'flag-es'
+  };
 
   function pageUsesStaticDesktopHeader() {
     var file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
@@ -15,6 +22,10 @@
 
   if (pageUsesStaticDesktopHeader()) {
     document.documentElement.classList.add('news-pulse-static-desktop-header');
+  }
+
+  if ((location.pathname.split('/').pop() || 'index.html').toLowerCase() === 'index.html') {
+    document.documentElement.classList.add('news-pulse-home-page');
   }
 
   function installHeaderStyle() {
@@ -144,15 +155,16 @@
   html body header .container.topbar-inner > .header-language-switcher {
     order: 3 !important;
     display: block !important;
-    flex: 0 0 132px !important;
+    flex: 0 0 50px !important;
     position: relative !important;
     right: auto !important;
     top: auto !important;
     transform: none !important;
     width: auto !important;
-    min-width: 132px !important;
-    max-width: 132px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
     margin: 0 !important;
+    align-self: center !important;
     z-index: 50 !important;
   }
 
@@ -190,12 +202,72 @@
   html body header .container.navbar > .header-language-switcher > .language-current,
   html body header .container.topbar-inner > .header-language-switcher > .language-current {
     width: 100% !important;
-    min-height: 44px !important;
-    padding: 0 14px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    padding: 0 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    margin: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;
+    box-sizing: border-box !important;
     font-size: clamp(.84rem, .95vw, .96rem) !important;
     line-height: 1 !important;
     white-space: nowrap !important;
   }
+
+  html body header .language-switcher > .language-current .flag-icon {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 13px !important;
+    flex: 0 0 20px !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    position: static !important;
+    transform: none !important;
+    border-radius: 2px !important;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 2px 6px rgba(0,0,0,.24) !important;
+    overflow: hidden !important;
+  }
+
+  html body header .language-current .flag-uk {
+    background:
+      linear-gradient(33deg,transparent 42%,#fff 42%,#fff 48%,#c8102e 48%,#c8102e 54%,#fff 54%,#fff 60%,transparent 60%),
+      linear-gradient(147deg,transparent 42%,#fff 42%,#fff 48%,#c8102e 48%,#c8102e 54%,#fff 54%,#fff 60%,transparent 60%),
+      linear-gradient(90deg,transparent 38%,#fff 38%,#fff 45%,#c8102e 45%,#c8102e 55%,#fff 55%,#fff 62%,transparent 62%),
+      linear-gradient(0deg,transparent 34%,#fff 34%,#fff 43%,#c8102e 43%,#c8102e 57%,#fff 57%,#fff 66%,transparent 66%),
+      #012169 !important;
+  }
+
+  html body header .language-current .flag-bg {
+    background: linear-gradient(to bottom,#fff 0 33.33%,#00966e 33.33% 66.66%,#d62612 66.66% 100%) !important;
+  }
+
+  html body header .language-current .flag-fr {
+    background: linear-gradient(to right,#0055a4 0 33.33%,#fff 33.33% 66.66%,#ef4135 66.66% 100%) !important;
+  }
+
+  html body header .language-current .flag-de {
+    background: linear-gradient(to bottom,#000 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66% 100%) !important;
+  }
+
+  html body header .language-current .flag-es {
+    background: linear-gradient(to bottom,#aa151b 0 25%,#f1bf00 25% 75%,#aa151b 75% 100%) !important;
+  }
+
+  html body header .language-switcher > .language-current .language-current-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+  }
+
 
   html body header > .container.navbar > .menu-toggle,
   html body header#siteHeader > .container.topbar-inner > .menu-toggle,
@@ -580,10 +652,32 @@
 
   function updateLanguageButtons(lang) {
     var label = languages[lang] || languages.en;
+    var flagClass = languageFlags[lang] || languageFlags.en;
+    var desktop = window.matchMedia && window.matchMedia('(min-width: 761px)').matches;
     document.querySelectorAll('.language-current').forEach(function (button) {
-      button.innerHTML = '&#127760; ' + label;
+      if (desktop && button.closest('header .language-switcher')) {
+        if (!button.querySelector('.flag-icon.' + flagClass) || !button.querySelector('.language-current-label')) {
+          button.innerHTML = '<span class="flag-icon ' + flagClass + '" aria-hidden="true"></span><span class="language-current-label">' + label + '</span>';
+        }
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+      } else {
+        if (button.textContent.replace(/\s+/g, ' ').trim() !== label && button.textContent.indexOf(label) === -1) {
+          button.innerHTML = '&#127760; ' + label;
+        }
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+      }
     });
     document.documentElement.lang = lang === 'en' ? 'en' : lang;
+  }
+
+  var languageButtonTimer;
+  function scheduleLanguageButtonUpdate() {
+    clearTimeout(languageButtonTimer);
+    languageButtonTimer = setTimeout(function () {
+      updateLanguageButtons(savedLanguage());
+    }, 40);
   }
 
   function ensureTranslateContainer() {
@@ -637,6 +731,9 @@
     lang = languages[lang] ? lang : 'en';
     setSavedLanguage(lang);
     updateLanguageButtons(lang);
+    setTimeout(function () { updateLanguageButtons(lang); }, 100);
+    setTimeout(function () { updateLanguageButtons(lang); }, 500);
+    setTimeout(function () { updateLanguageButtons(lang); }, 1200);
     closeLanguageMenus();
 
     if (!isWebPage()) return;
@@ -716,7 +813,9 @@
       var menuInput = directChild(headerInner, '.menu-toggle');
       var narrow = window.matchMedia('(max-width: 1180px)').matches;
       var brandWidth = narrow ? '250px' : '280px';
-      var languageWidth = narrow ? '124px' : '132px';
+      var languageWidth = '50px';
+      var languageHeight = '34px';
+      var languagePadding = '0 10px';
 
       setStyles(header, {
         width: '100%',
@@ -855,17 +954,37 @@
         'min-width': languageWidth,
         'max-width': languageWidth,
         margin: '0',
+        'align-self': 'center',
         'z-index': '50'
       });
 
       setStyles(languageButton, {
         width: '100%',
-        'min-height': '44px',
-        padding: '0 10px',
+        height: languageHeight,
+        'min-height': languageHeight,
+        'max-height': languageHeight,
+        padding: languagePadding,
+        display: 'inline-flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'vertical-align': 'middle',
+        margin: '0',
+        position: 'relative',
+        top: '0',
+        transform: 'none',
+        'box-sizing': 'border-box',
         'font-size': narrow ? '.8rem' : '.88rem',
         'line-height': '1',
         'white-space': 'nowrap'
       });
+
+      if (nav) {
+        directChildren(nav, '.language-switcher').forEach(function (switcher) {
+          setStyles(switcher, {
+            display: 'none'
+          });
+        });
+      }
 
       setStyles(menuButton, { display: 'none' });
       setStyles(menuInput, { display: 'none' });
@@ -887,6 +1006,15 @@
       characterData: true
     });
     window.addEventListener('resize', scheduleDesktopHeaderLayout);
+    window.addEventListener('resize', function () {
+      updateLanguageButtons(savedLanguage());
+    });
+
+    new MutationObserver(scheduleLanguageButtonUpdate).observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
   }
 
   installHeaderStyle();
