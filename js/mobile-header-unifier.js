@@ -390,6 +390,7 @@
   html body header#siteHeader > .container.topbar-inner > .header-language-switcher {
     grid-column: 1 !important;
     grid-row: 2 !important;
+    position: relative !important;
     display: block !important;
     width: 100% !important;
     min-width: 0 !important;
@@ -463,8 +464,9 @@
     top: calc(100% + 10px) !important;
     left: 0 !important;
     right: auto !important;
-    width: min(220px, calc(100vw - 32px)) !important;
-    min-width: 0 !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     opacity: 0 !important;
@@ -530,11 +532,19 @@
     if (!switcher) return;
     var button = switcher.querySelector('.language-current');
     var menu = switcher.querySelector('.language-menu');
+    var mobile = window.matchMedia && window.matchMedia('(max-width: 760px)').matches;
 
     switcher.classList.toggle('language-open', isOpen);
     if (button) button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     setStyles(menu, {
       display: 'flex',
+      position: 'absolute',
+      top: 'calc(100% + 10px)',
+      left: mobile ? '0' : 'auto',
+      right: mobile ? 'auto' : '0',
+      width: mobile ? '100%' : 'auto',
+      'min-width': mobile ? '100%' : '220px',
+      'max-width': mobile ? '100%' : 'none',
       opacity: isOpen ? '1' : '0',
       visibility: isOpen ? 'visible' : 'hidden',
       'pointer-events': isOpen ? 'auto' : 'none',
@@ -569,9 +579,11 @@
         display: 'flex',
         position: 'absolute',
         top: 'calc(100% + 10px)',
-        right: '0',
-        left: 'auto',
-        'min-width': '220px',
+        right: window.matchMedia && window.matchMedia('(max-width: 760px)').matches ? 'auto' : '0',
+        left: window.matchMedia && window.matchMedia('(max-width: 760px)').matches ? '0' : 'auto',
+        width: window.matchMedia && window.matchMedia('(max-width: 760px)').matches ? '100%' : 'auto',
+        'min-width': window.matchMedia && window.matchMedia('(max-width: 760px)').matches ? '100%' : '220px',
+        'max-width': window.matchMedia && window.matchMedia('(max-width: 760px)').matches ? '100%' : 'none',
         'flex-direction': 'column',
         gap: '8px',
         'z-index': '99999'
